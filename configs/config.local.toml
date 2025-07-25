@@ -1,0 +1,10 @@
+[project] 
+name = "Base"
+description = "Base Repo"
+version = "v1"
+company = "Oguzhan"
+author = "Mert OGUZHAN" 
+
+[logger]
+filepath="./logs/base.log"
+rotation="50MB"
