@@ -1,2 +1,455 @@
 [2025-05-24 16:28:11] | DEBUG | [app:main:7] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
 [2025-05-24 16:28:11] | DEBUG | [app:main:8] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}}]
+[2025-07-25 15:32:19] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:32:19] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:32:19] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:32:53] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:32:53] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:32:53] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:32:53] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 15:51:14] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:51:14] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:51:14] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:51:14] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 15:51:35] | ERROR | [handler:inner:28] | [Database connection failed: No module named 'asyncpg']
+[2025-07-25 15:51:35] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:51:37] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:51:41] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:52:17] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:52:17] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '8888', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '8888', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:52:17] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:52:17] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 15:52:41] | ERROR | [handler:inner:28] | [Database connection failed: No module named 'asyncpg']
+[2025-07-25 15:52:41] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:52:43] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:52:47] | ERROR | [handler:inner:42] | [Database connection failed: 'NoneType' object has no attribute 'begin']
+[2025-07-25 15:56:22] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:56:22] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '8888', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '8888', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:56:22] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:56:22] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 15:56:43] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 20.8747 seconds]
+[2025-07-25 15:57:31] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 15:57:31] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 15:57:31] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 15:57:31] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 15:57:46] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 14.9751 seconds]
+[2025-07-25 15:57:46] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 15:57:46] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 15.0089 seconds]
+[2025-07-25 15:57:46] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 15.0117 seconds]
+[2025-07-25 15:57:46] | INFO | [crud:read_by_email:152] | [No user found with email: mert@gmail.com]
+[2025-07-25 15:57:46] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 15.0116 seconds]
+[2025-07-25 15:57:46] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 15.0120 seconds]
+[2025-07-25 15:57:46] | INFO | [crud:create:47] | [the data: <app.models.models.User object at 0x7fbb70acfa50> is added into the database.]
+[2025-07-25 15:57:46] | INFO | [handler:inner:10] | [create method is done successfully and it took: 15.1856 seconds]
+[2025-07-25 15:57:46] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 15.1860 seconds]
+[2025-07-25 16:02:54] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 16:02:54] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 16:02:54] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 16:02:54] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 16:03:09] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 15.1287 seconds]
+[2025-07-25 16:03:09] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 16:03:09] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 15.1471 seconds]
+[2025-07-25 16:03:09] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 15.1490 seconds]
+[2025-07-25 16:03:09] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 16:03:09] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 15.1488 seconds]
+[2025-07-25 16:03:09] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 15.1492 seconds]
+[2025-07-25 16:03:44] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 16:03:44] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 16:03:44] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 16:03:44] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 16:04:38] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 53.2228 seconds]
+[2025-07-25 16:04:38] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 16:04:38] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 53.2416 seconds]
+[2025-07-25 16:04:38] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 53.2435 seconds]
+[2025-07-25 16:04:38] | INFO | [crud:read_by_email:152] | [No user found with email: ayse@gmail.com]
+[2025-07-25 16:04:38] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 53.2432 seconds]
+[2025-07-25 16:04:38] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 53.2436 seconds]
+[2025-07-25 16:04:38] | INFO | [crud:create:47] | [the data: <app.models.models.User object at 0x7fd5529c4590> is added into the database.]
+[2025-07-25 16:04:38] | INFO | [handler:inner:10] | [create method is done successfully and it took: 53.4140 seconds]
+[2025-07-25 16:04:38] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 53.4144 seconds]
+[2025-07-25 16:04:52] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 16:04:52] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 16:04:52] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 16:04:52] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 16:05:18] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 26.0928 seconds]
+[2025-07-25 16:05:18] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 16:05:18] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 26.1121 seconds]
+[2025-07-25 16:05:18] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 26.1142 seconds]
+[2025-07-25 16:05:18] | INFO | [crud:read_by_email:152] | [No user found with email: mehmet@gmail.com]
+[2025-07-25 16:05:18] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 26.1140 seconds]
+[2025-07-25 16:05:18] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 26.1143 seconds]
+[2025-07-25 16:05:18] | INFO | [crud:create:47] | [the data: <app.models.models.User object at 0x7fad3863c190> is added into the database.]
+[2025-07-25 16:05:18] | INFO | [handler:inner:10] | [create method is done successfully and it took: 26.2844 seconds]
+[2025-07-25 16:05:18] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 26.2847 seconds]
+[2025-07-25 19:32:34] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:32:34] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:32:34] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:32:34] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:35:36] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:35:36] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:35:36] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:35:36] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:35:50] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 14.5567 seconds]
+[2025-07-25 19:35:50] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 19:35:50] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 14.5790 seconds]
+[2025-07-25 19:37:25] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:37:25] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:37:25] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:37:25] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:37:49] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 24.7644 seconds]
+[2025-07-25 19:37:49] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 19:37:49] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 24.7868 seconds]
+[2025-07-25 19:37:49] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 24.7891 seconds]
+[2025-07-25 19:37:49] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 19:37:49] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 24.7889 seconds]
+[2025-07-25 19:37:49] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 24.7892 seconds]
+[2025-07-25 19:44:33] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:44:33] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:44:33] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:44:33] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:50:50] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:50:50] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:50:50] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:50:50] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:52:18] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:52:18] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:52:18] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:52:18] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:54:12] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 19:54:12] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 19:54:12] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 19:54:12] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 19:54:37] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 24.8464 seconds]
+[2025-07-25 19:54:37] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 19:54:37] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 24.8669 seconds]
+[2025-07-25 19:54:37] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 24.8689 seconds]
+[2025-07-25 19:54:37] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 19:54:37] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 24.8687 seconds]
+[2025-07-25 19:54:37] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 24.8691 seconds]
+[2025-07-25 20:09:08] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 20:09:08] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 20:09:08] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 20:09:08] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 20:12:17] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 188.6527 seconds]
+[2025-07-25 20:12:17] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 20:12:17] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 188.6729 seconds]
+[2025-07-25 20:12:17] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 188.6752 seconds]
+[2025-07-25 20:12:17] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 20:12:17] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 188.6751 seconds]
+[2025-07-25 20:12:17] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 188.6754 seconds]
+[2025-07-25 20:22:58] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 20:22:58] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 20:22:58] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 20:22:58] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 20:23:17] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 19.3328 seconds]
+[2025-07-25 20:23:17] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 20:23:17] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 19.3517 seconds]
+[2025-07-25 20:23:17] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 19.3537 seconds]
+[2025-07-25 20:23:17] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 20:23:17] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 19.3535 seconds]
+[2025-07-25 20:23:17] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 19.3538 seconds]
+[2025-07-25 20:39:51] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 20:39:51] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 20:39:51] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 20:39:51] | INFO | [fastapi:run:33] | [Server Initialized!]
+[2025-07-25 20:40:00] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 8.9754 seconds]
+[2025-07-25 20:40:00] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 20:40:00] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 8.9949 seconds]
+[2025-07-25 20:40:00] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 8.9969 seconds]
+[2025-07-25 20:40:00] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 20:40:00] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 8.9967 seconds]
+[2025-07-25 20:40:00] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 8.9970 seconds]
+[2025-07-25 20:42:24] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 20:42:24] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 20:42:24] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 20:42:24] | INFO | [fastapi:run:48] | [Server Initialized!]
+[2025-07-25 20:54:37] | DEBUG | [app:main:9] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 20:54:37] | DEBUG | [app:main:10] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 20:54:37] | INFO | [fastapi:__post_init__:30] | [Fastapi init]
+[2025-07-25 20:54:37] | INFO | [fastapi:run:48] | [Server Initialized!]
+[2025-07-25 21:09:33] | DEBUG | [app:main:10] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 21:09:33] | DEBUG | [app:main:11] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 21:09:33] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-25 21:09:33] | INFO | [fastapi:__post_init__:32] | [Fastapi init]
+[2025-07-25 21:09:33] | INFO | [fastapi:run:50] | [Server Initialized!]
+[2025-07-25 21:10:45] | DEBUG | [app:main:10] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 21:10:45] | DEBUG | [app:main:11] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 21:10:45] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-25 21:10:45] | INFO | [fastapi:__post_init__:32] | [Fastapi init]
+[2025-07-25 21:10:45] | INFO | [fastapi:run:50] | [Server Initialized!]
+[2025-07-25 21:11:07] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 22.5943 seconds]
+[2025-07-25 21:11:07] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 21:11:07] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 22.6125 seconds]
+[2025-07-25 21:11:07] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 22.6148 seconds]
+[2025-07-25 21:11:07] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 21:11:07] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 22.6147 seconds]
+[2025-07-25 21:11:07] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 22.6150 seconds]
+[2025-07-25 21:11:33] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 48.6906 seconds]
+[2025-07-25 21:11:34] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-25 21:11:34] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 48.7086 seconds]
+[2025-07-25 21:11:34] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 48.7099 seconds]
+[2025-07-25 21:11:34] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-25 21:11:34] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 48.7096 seconds]
+[2025-07-25 21:11:34] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 48.7100 seconds]
+[2025-07-25 21:21:22] | DEBUG | [app:main:10] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 21:21:22] | DEBUG | [app:main:11] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 21:21:22] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-25 21:21:22] | INFO | [fastapi:__post_init__:32] | [Fastapi init]
+[2025-07-25 21:21:22] | INFO | [fastapi:run:50] | [Server Initialized!]
+[2025-07-25 21:23:00] | DEBUG | [app:main:10] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-25 21:23:00] | DEBUG | [app:main:11] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}}]
+[2025-07-25 21:23:00] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-25 21:23:00] | INFO | [fastapi:__post_init__:32] | [Fastapi init]
+[2025-07-25 21:23:00] | INFO | [fastapi:run:50] | [Server Initialized!]
+[2025-07-25 21:23:06] | INFO | [fastapi:add_youtube_transcript:130] | [video transcript result:  The challenge begins with how to pronounce
+his name. The first bit should sound like ‘Knee’, the second like ‘cha’ Knee – cha. Then we need to get past some of his extraordinary
+and provocative statements: ‘What doesn’t kill me makes
+me stronger’ ‘God is dead! And we have killed him.' And his large moustache. But when we do, we’ll discover a thinker
+who is intermittently enchanting, wise and very helpful. Friedrich Nietzsche was born in 1844 in a
+quiet village in the eastern part of Germany where his father was the priest. He did exceptionally well at school and university and so excelled at ancient Greek that he was made a professor at the University of Basel when still only in his mid-twenties. But his official career didn’t work out.
+He got fed up with his fellow academics, gave up his job and moved to Sils Maria in the
+Swiss alps where he lived quietly, working on his masterpieces, among them: The Birth of Tragedy,
+Human, All Too Human, The Gay Science, Thus Spoke Zarathustra, Beyond Good and Evil,
+On the Genealogy of Morals, He had lots of problems:
+- he didn’t get on with his family: 'I don’t like my mother and it’s painful
+even for me to hear my sister’s voice.’ - women kept rejecting him.
+- his books didn’t sell - And when he was only forty-four, he had
+a mental breakdown, precipitated when he saw a horse in a Turin street being beaten by its driver and ran over to embrace him shouting
+'I understand you'. He never recovered and died eleven sad years later. But his philosophy was full of heroism and
+grandeur. He was a prophet of what he called: SELBSTÜBERWINDUNG or SELF-OVERCOMING, the process by which a great-souled person - what he called an ÜBERMENSCH  rises above their
+circumstances and difficulties to embrace whatever life throws at them. He wanted his work to teach us, as he put
+it, ‘how to become who we really are’. His thought centers around 4 main recommendations: Own up to envy Envy is – Nietzsche recognised – a big
+part of life. Yet the lingering effects of Christianity generally teaches to be feel ashamed of our envious feelings. They seem an indication of evil. So we hide them from ourselves
+and others Yet there is nothing wrong with envy, maintained
+Nietzsche, so long as we use it as a guide to what we really want. Every person who makes
+us envious should be seen as an indication of what we could one day become. The envy-inducing
+writer, tycoon or chef is hinting at who you are capable of one day being. It's not that Nietzsche believed we always end up getting what we want. His own life had taught him this well enough). He simply
+insisted that we must face up to our true desires, put up a heroic fight to honour them,
+and only then mourn failure with solemn dignity. That is what it means to be an ÜBERMENSCH 2. Don’t be a Christian Nietzsche had some extreme things to say about Christianity ‘In the entire New Testament, there is only person worth respecting: Pilate, the
+Roman governor.’ It was knockabout stuff, but his true target
+was more subtle and more interesting: he resented Christianity for protecting people from their
+envy. Christianity had in Nietzsche’s account
+emerged in the late Roman Empire in the minds of timid slaves, who had lacked the stomach to get hold of what they really wanted  and so had clung to a philosophy that made a virtue of their cowardice. He called this SKLAVENMORAL Christians - whom he rather rudely termed
+DIE HEERDE, the herd - had wished to enjoy the real ingredients of fulfilment (a
+position in the world, sex, intellectual mastery, creativity) but had been too inept
+to get them. They had therefore fashioned a hypocritical
+creed denouncing what they wanted but were too weak to fight for  – while praising what they did not want but happened to have. So, in the Christian value system, sexlessness turned into purity [show text changing] weakness
+became goodness, submission-to-people-one-hates became obedience and, in Nietzsche’s phrase,
+“not-being-able-to-take-revenge” turned into “forgiveness.” Christianity amounted to a giant machine for
+bitter denial. 3. Never drink alcohol Nietzsche himself drank only water – and
+as a special treat, milk. And he thought we should do likewise. He wasn’t making a small, eccentric dietary point. The idea went to
+the heart of his philosophy, as contained in his declaration: ‘There have been two
+great narcotics in European civilisation: Christianity and alcohol.’ He hated alcohol for the very same reasons
+that he scorned Christianity: because both numb pain, and both reassure us that things
+are just fine as they are, sapping us of the will to change our lives for the better. A
+few drinks usher in a transient feeling of satisfaction that can get fatally in the way
+of taking the steps necessary to improve our lives. Nietzsche was obsessed with the awkward truth
+that getting really valuable things done hurts. “How little you know of human happiness
+- you comfortable people” he wrote “The secret of a fulfilled life is: live dangerously! Build your cities on the slopes
+of Mount Vesuvius!” 4. “God is Dead” Nietzsche’s dramatic assertion that God
+is dead is not, as it’s often taken to be, some kind of a celebratory statement. Despite his reservations about Christianity,
+Nietzsche did not think that the end of belief was anything to cheer about. Religious beliefs were false, he knew; but
+he observed that they were very beneficial in the sense of helping us cope with the problems
+of life. Nietzsche felt that the gap left by religion
+should ideally be filled by Culture (he meant: philosophy, art, music, literature): Culture should replace Scripture. However, Nietzsche was deeply suspicious of
+the way his own era was handling culture. He believed the universities were killing the humanities, turning them into dry academic exercises, rather than using them for what they were always meant to be: guides to life. He admired the way the Greeks had used tragic drama in a practical, therapeutic way, as an occasion for catharsis and moral education
+– and wished his own age to be comparably ambitious. He called for a reformation, in which people
+– newly conscious of the crisis brought on by the end of faith – would fill the
+gaps created by the disappearance of religion with philosophy and art. Every era faces particular psychological challenges,
+thought Nietzsche, and it is the task of the philosopher to identify, and help solve, these. For Nietzsche, the 19th century was reeling under the impact of two developments: Mass Democracy  and Atheism. The first threatened to unleash torrents of undigested
+envy; the second to leave humans without guidance or morality. In relation to both challenges, Nietzsche
+remains our endearing, fascinating often loveable and moustachioed guide.]
+[2025-07-26 00:34:34] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:34:34] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-pro', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': 'data'}}]
+[2025-07-26 00:34:34] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:34:34] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:34:34] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:34:45] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 10.9893 seconds]
+[2025-07-26 00:34:45] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-26 00:34:45] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 11.0078 seconds]
+[2025-07-26 00:34:45] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 11.0100 seconds]
+[2025-07-26 00:34:45] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-26 00:34:45] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 11.0098 seconds]
+[2025-07-26 00:34:45] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 11.0101 seconds]
+[2025-07-26 00:37:17] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:37:17] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': 'data'}}]
+[2025-07-26 00:37:17] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:37:17] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:37:17] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:37:42] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:37:46] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:37:46] | ERROR | [fastapi:add_text_note:166] | [Error processing note for subject_id 'fizik': fizik.json dosyası bulunamadı: data/fizik.json]
+[2025-07-26 00:41:56] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:41:56] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:41:56] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:41:56] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:41:56] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:42:16] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Karbon kimyası]
+[2025-07-26 00:42:20] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:42:20] | INFO | [json_handler:_load_data:31] | [json_handler path: /home/mert/projects/btk]
+[2025-07-26 00:42:20] | ERROR | [fastapi:add_text_note:166] | [Error processing note for subject_id 'kimya': Expecting value: line 1 column 1 (char 0)]
+[2025-07-26 00:44:32] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:44:32] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:44:32] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:44:32] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:44:32] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:44:51] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:44:56] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik ve Anorganik Kimya Karşılaştırması]
+[2025-07-26 00:44:56] | ERROR | [fastapi:add_text_note:166] | [Error processing note for subject_id 'kimya': Expecting value: line 1 column 1 (char 0)]
+[2025-07-26 00:46:24] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:46:24] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:46:24] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:46:24] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:46:24] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:46:44] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:46:44] | ERROR | [fastapi:add_text_note:165] | [Error processing note for subject_id 'kimya': Expecting value: line 1 column 1 (char 0)]
+[2025-07-26 00:47:36] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:47:36] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:47:36] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:47:36] | INFO | [fastapi:__post_init__:35] | [Fastapi init]
+[2025-07-26 00:47:36] | INFO | [fastapi:run:53] | [Server Initialized!]
+[2025-07-26 00:47:50] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Organik kimya]
+[2025-07-26 00:50:30] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 173.9962 seconds]
+[2025-07-26 00:50:30] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-26 00:50:30] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 174.0163 seconds]
+[2025-07-26 00:50:30] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 174.0188 seconds]
+[2025-07-26 00:50:30] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-26 00:50:30] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 174.0186 seconds]
+[2025-07-26 00:50:30] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 174.0189 seconds]
+[2025-07-26 00:50:39] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Kimyasal güvenlik]
+[2025-07-26 00:54:25] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:54:25] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:54:25] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:54:25] | INFO | [fastapi:__post_init__:36] | [Fastapi init]
+[2025-07-26 00:54:25] | INFO | [fastapi:run:54] | [Server Initialized!]
+[2025-07-26 00:55:51] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Kuantum sayıları]
+[2025-07-26 00:58:12] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 00:58:12] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 00:58:12] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 00:58:12] | INFO | [fastapi:__post_init__:36] | [Fastapi init]
+[2025-07-26 00:58:12] | INFO | [fastapi:run:54] | [Server Initialized!]
+[2025-07-26 00:58:48] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: İyonik bağ]
+[2025-07-26 01:00:04] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 01:00:04] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 01:00:04] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 01:00:04] | INFO | [fastapi:__post_init__:36] | [Fastapi init]
+[2025-07-26 01:00:04] | INFO | [fastapi:run:54] | [Server Initialized!]
+[2025-07-26 01:41:09] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 01:41:09] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 01:41:09] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 01:41:09] | INFO | [fastapi:__post_init__:37] | [Fastapi init]
+[2025-07-26 01:41:09] | INFO | [fastapi:run:55] | [Server Initialized!]
+[2025-07-26 01:41:20] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 10.9428 seconds]
+[2025-07-26 01:41:20] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-26 01:41:20] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 10.9630 seconds]
+[2025-07-26 01:41:20] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 10.9649 seconds]
+[2025-07-26 01:41:20] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-26 01:41:20] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 10.9647 seconds]
+[2025-07-26 01:41:20] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 10.9650 seconds]
+[2025-07-26 01:41:59] | INFO | [fastapi:add_youtube_transcript:136] | [video transcript result:  Athens, 2400 years ago. It’s a compact place:
+only about a quarter of a million people live here. There are fine baths, theatres, temples,
+shopping arcades and gymnasiums It’s warm for more than half the year. This is also home to the world’s first true
+– and probably greatest – philosopher: Plato Born into a prominent and wealthy family in the city, Plato devoted his life to one goal:
+helping people to reach a state of what he termed: εὐδαιμονία (Eudaimonia) or fulfilment. Plato is often confused with Socrates Socrates was an older friend,
+who taught Plato a lot but didn’t write any books. Plato wrote lots of them: 36, all
+dialogues: beautifully crafted scripts of imaginary discussions in which Socrates is
+always allocated a starring role - among them: The Republic
+The Symposium The Laws
+The Meno and
+The Apology Plato had four big ideas for making life more
+fulfilled. First big idea: Think more We rarely give ourselves time to think carefully
+and logically about our lives and how to live them. Sometimes we just go along with what the the
+Greeks called ‘doxa’: ‘popular opinions’. In the the 36 books he wrote, Plato showed
+this ‘common-sense’ to be riddled with errors, prejudice and superstition. Fame is great Follow your heart Money is the key to a good life The problem is, popular opinions edge us towards
+the wrong values, careers and relationships. Plato’s answer is ‘Know yourself.’ It means doing a special kind of therapy,
+philosophy: Subjecting your ideas to examination rather
+than acting on impulse. If you strengthen your self-knowledge, you
+don’t get so pulled around by feelings. Plato compared the role of our feelings to
+being dragged dangerously along by a group of wild horses. In honor of his mentor and friend, Socrates,
+this kind of examination is called a Socratic discussion. You can have it with yourself
+or ideally, with another person who isn’t trying to catch you out but wants to help
+you clarify your own ideas. Second Big idea: Let your lover change you. That sounds weird, if you think that love
+means finding someone who wants you just the way you are. In The Symposium , Plato’s play about a
+dinner party where a group of friends drink too much and get talking about love, sex and relationships, Plato says:
+“True love is admiration.” In other words, the person you need to get
+together with should have very good qualities … which you yourself lack. Let’s say, they should be really brave Or organised. Or warm and sincere By getting close to this person, you can become
+a little like they are. The right person for us helps us grow to our
+full potential. For Plato, in a good relationship, a couple
+shouldn’t love each other exactly as they are right now. They should be committed to educating each
+other – and to enduring the stormy passages this inevitably involves. Each person should want to seduce the other
+into becoming a better version of themselves. Three: decode the message of beauty. Everyone – pretty much – likes beautiful
+things Plato was the first to
+ask why do we like them? He found a fascinating reason: Beautiful objects are whispering important
+truths to us about the good life … We find things beautiful when we unconsciously
+sense in them qualities we need but are missing in our lives. gentleness harmony balance peace strength Beautiful objects therefore have a really
+important function. They help to educate our souls. Ugliness is a serious matter too. it parades
+dangerous and damaged characteristics in front of us. It makes it harder to be wise, kind
+and calm. Plato sees art as therapeutic: it is the duty
+of poets and painters (and nowadays, novelists, television producers and designers) to help
+us live good lives. Four: Reform society. Plato spent a lot of time thinking how the
+government and society should ideally be. He was the world’s first utopia thinker. In this, he was inspired by Athens’s great
+rival: Sparta. This was a city-sized machine for turning
+out great soldiers Everything the Spartans did – how they raised
+their children, how their economy was organised, whom they admired, how they had sex, what
+they ate – was tailored to that one goal. And Sparta was hugely successful, from a military
+point of view. But that wasn’t Plato’s concern. He wanted
+to know: how could a society get better at producing not military power but fulfilled
+people? In his book, The Republic, Plato identifies
+a number of changes that should be made: Athenian society was very focused on the rich,
+like the louche aristocrat Alcibiades, and sports celebrities, like the boxer Milo of
+Croton. Plato wasn’t impressed: it really matters
+who we admire, because celebrities influence our outlook, ideas and conduct. And bad heroes
+give glamour to flaws of character. Plato therefore wanted to give Athens new
+celebrities, replacing the current crop with ideally wise and good people he called Guardians models for everyone’s good development. These people would be distinguished by their record of
+public service, their modesty and simple habits, their dislike of the limelight and their wide
+and deep experience. They would be the most honored and admired people in society. He also wanted to end democracy in Athens.
+He wasn’t crazy. He just observed how few people think properly before they vote and
+therefore we get very substandard rulers. He didn’t want to replace democracy with
+horrid dictatorship; but wanted to prevent people from voting until
+they had started to think rationally. Until they had become philosophers. Otherwise, government
+would just be a kind of mob rule [back to To help the process, Plato started a school,
+The Academy, in Athens, which lasted a good 300 years. There, pupils learnt not just maths
+and spelling, but also how to be good and kind. His ultimate goal was that politicians should
+become philosophers: ‘The world will not be right,’ he said, ‘until kings become
+philosophers or philosophers kings.’ [show Hollande, Merkel, Cameron all trooping into
+a uni- then coming out as philosophers] Plato’s ideas remain deeply provocative
+and fascinating. What unites them is their ambition and their idealism. He wanted philosophy
+to be a tool to help us change the world. We should continue to be inspired by his example.]
+[2025-07-26 01:42:06] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Plato's philosophy]
+[2025-07-26 01:43:33] | DEBUG | [app:main:12] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-26 01:43:33] | DEBUG | [app:main:13] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}}]
+[2025-07-26 01:43:33] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-26 01:43:33] | INFO | [fastapi:__post_init__:37] | [Fastapi init]
+[2025-07-26 01:43:33] | INFO | [fastapi:run:55] | [Server Initialized!]
+[2025-07-26 01:43:46] | INFO | [fastapi:add_youtube_transcript:136] | [video transcript result:  I'm Dr Orion taraban and this is cycax Better Living Through psychology and the topic of today's short talk is the truth about the red pill so I think it's about time that I made this episode I think it's an important one and I hope that you will listen through to the very end first of all I think it will be helpful to Define what I mean by the red pill for the purposes of this conversation because the term can mean a lot of different things to a lot of different folks my working definition of the red pill is a set of knowledge and know-how that facilitates the construction of a world view that pertains to men's place in society and to intersexual Dynamics in particular it's red pill in that this worldview deviates in significant ways from the dominant social narratives about those topics I don't think that the red pill is equivalent to male feminism and I definitely don't see the red pill as anti-woman in fact I believe that many of the understandings in that knowledge set can and do substantially benefit women in that they can enable women to have much more satisfying relationships with the men of their choosing so that's my working definition of the red pill and what I'd like to suggest is that taking the red pill is something like a spiritual journey in as much as once the scales have dropped from your eyes and you come to perceive and recognize and understand some of the truths about intersexual Dynamics and the way relationships actually function you're no longer the same person you once were just like Saul was Blinded By the Light on the road to Damascus and was so transformed by the experience that he even changed his name so taking the red pill can be an evolution on par with a spiritual transformation and within this framework I think it's important to keep in mind two spiritual teachings which can meaningfully inform men's use of the red pill let's get right into it the first teaching is kind of a joke about Enlightenment and the joke goes like this enlightenment better not start having started better finish let's break this down because I think that this joke contains a powerful truth that is very applicable to the red pill so why might it be better for some people to not start the process towards Enlightenment I mean is there a better goal that we can aspire to how could this be a bad thing again the answer here has to do with the fact by the time you even make some meaningful progress toward the goal of Enlightenment you are no longer the person you were when you began your journey pursuing Enlightenment will require a complete transformation of your personality psychology lifestyle and relationships in short to embark on the process of Enlightenment is to lose everything everything you once knew anyway so that's a very high cost and it might be better for some people to know that price tag is very high before they get into it and why is this because if you start the process but don't finish it in many respects you will be worse off than if you had never started to begin with because what happens when you make some progress towards Enlightenment well let's say that you become increasingly dissatisfied with the world you begin to see through the heedless pursuit of money and fame and status and sex and may even renounce them entirely however because you haven't yet arrived at full enlightenment and you don't yet have anything better to replace it with maybe you've given up the bad but you haven't yet fully replaced it with the good what's more you've just given up a lot of the things that make life Pleasant and enjoyable without having yet arrived at real Joy or true understanding this means that with respect to Enlightenment it kind of gets worse before it gets better and if you're not committed to going all the way to the end then you might end up stopping at the halfway point between who you used to be and who you might become which is kind of the least functional place to stop so that's why there's this admonition to better finish if you start and I think this really holds true for the red pill because I think if you're going to take the red pill you have to completely swallow it otherwise don't put it in your mouth if you swallow it halfway it's kind of like it gets stuck in your throat a lot of the guys I hear talking online today it sounds like the red pill is stuck in their throat it's an aggravating sputtering irritant they're basically choking on the pill because they haven't yet fully swallowed it which in this metaphor means that they haven't yet fully integrated the knowledge set into their worldview now before I go any further if you're liking what you're hearing then please consider sending this episode to someone who might benefit from its message it's Word of Mouth referrals like that that really help to make the channel grow and if you're interested in going to grad school be sure to check out my top rated gr resale study program at Stellar gre.com you can use the coupon code psych for 10 off all membership plans now how do you know if you fully integrated the red pill it's very simple you know that you fully integrated the red pill when you are no longer upset by the truths that it reveals where there is anger there is not yet understanding and the ultimate goal of the red pill is understanding not an intellectual understanding that can rattle off a host of Statistics or esoteric terms or sex-based injustices but a deep emotional understanding that is predicated on an acceptance of reality reality is what it is no more no less getting angry at reality indicates a lack of acceptance about reality and it is our work to conform our understanding to reality not to work to conform reality to what our intellectual understanding believes it should be so if you're going to take the red pill make sure it doesn't get stuck in your throat because what's the alternative I mean you can't really spit it back up it's already been in your system and that means you can't unsee what you've seen under its influence and choking on the pills sucks men who do so are like those who quit halfway into Enlightenment they completely renounce women and sometimes Society at large but they don't really have anything better to replace it with yet now this might very well be an inevitable stage in the process toward true understanding and integration but if so it is definitely a stage in that process it is not the end goal so if you're still angry after a while and you can't spit that pill back up your only real choice is to keep swallowing until it's deep in your belly where you can finally digest it and eventually integrate it into who you are and you'll know you've done this when you're no longer angry and you begin to navigate the world of relationships more successfully than you used to and this leads us to the second spiritual teaching applicable to the red pill maybe you've heard it before it's before enlightenment chop wood carry water after Enlightenment chop wood carry water what does that mean well among other things I think it suggests the paradoxical truth that once you arrive at the point of Enlightenment everything is completely different and yet nothing may have changed it's a weird Paradox and difficult to put into words but it kind of makes sense if you think about it if you arrive at a higher level of awareness then the whole world changes because you yourself have changed despite nothing being objectively different so what does this have to do with the red pill well just like your blue pill beta simp days were probably characterized by relationships with women eventually your red pill Alpha King days will probably be characterized by relationships with women everything is completely different and yet nothing has changed and this is because accepting a very small minority of men women are going to be a part of our lives in one way or another and when fully integrated the red pill allows men to have fulfilling relationships with women in a way that makes sense for the particular individuals involved women are not the enemy and they are not to be feared or hated or shunned these emotional responses indicate a lack of acceptance and understanding that said I'm also not saying that men should just get over it many men have been significantly harmed by women and working through their trauma is going to be an essential stage of their journey and I'm not saying that the end result is supposed to look like men and women holding hands and singing Kumbaya for many men it is entirely appropriate not to return to the relationships they once had what I am saying is women aren't going anywhere and the vast majority of men will continue to relate to women in some form or another after they swallow the red pill understanding women and intersexual Dynamics more generally is kind of like finally reading the rule game the rule book to a game you have little choice but to play imagine all the fouls and the injuries and the violations that can accrue by playing a game if you don't know the rules however knowing the rules will not only keep you safer but should realistically inform your strategies when playing the game so I hope I haven't alienated my audience with this episode but you might as well know where I stand sooner as opposed to later I am not anti-woman despite having many opportunities in my personal story to become so I've worked to heal my trauma I've integrated my understanding into a comprehensive worldview and I enjoy fulfilling effortless relationships with women and I wish the same for all the other men out there a long episode but an important one what do you think does this fit with your own experience let me know in the comments below and if you've gotten this far you might as well like this episode And subscribe to this channel you may also consider becoming a channel member with perks like priority review of comments or booking a paid consultation as always thank you for listening]
+[2025-07-26 01:43:50] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: The Red Pill]
+[2025-07-27 01:32:42] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-27 01:32:42] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info'}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-27 01:32:42] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-27 01:32:42] | INFO | [rag_pipeline:__post_init__:32] | [Initializing embedding model...]
+[2025-07-27 01:32:42] | INFO | [rag_pipeline:__post_init__:47] | [No existing vectorstore found. It will be initialized on first update.]
+[2025-07-27 01:32:42] | INFO | [fastapi:__post_init__:39] | [Fastapi init]
+[2025-07-27 01:32:42] | INFO | [fastapi:run:57] | [Server Initialized!]
+[2025-07-27 01:32:54] | INFO | [handler:inner:26] | [create_engine method is done successfully and it took : 12.3690 seconds]
+[2025-07-27 01:32:54] | INFO | [handler:inner:39] | [Connection has been established.]
+[2025-07-27 01:32:54] | INFO | [handler:inner:26] | [create_session method is done successfully and it took : 12.3883 seconds]
+[2025-07-27 01:32:54] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 12.3906 seconds]
+[2025-07-27 01:32:54] | INFO | [crud:read_by_email:150] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-27 01:32:54] | INFO | [handler:inner:10] | [read_by_email method is done successfully and it took: 12.3903 seconds]
+[2025-07-27 01:32:54] | INFO | [handler:inner:26] | [close_session method is done successfully and it took : 12.3907 seconds]
+[2025-07-27 01:35:06] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Kimyasal tepkime hızı]
+[2025-07-27 01:35:06] | INFO | [rag_pipeline:load_notes:51] | [Loading notes from JSON file: app/data/kimya.json]
+[2025-07-27 01:35:06] | INFO | [rag_pipeline:load_notes:63] | [5 notes loaded and converted to NoteChunk objects for subject 'kimya'.]
+[2025-07-27 01:35:06] | INFO | [rag_pipeline:update_vector_db:71] | [Updating vectorstore with 5 new note chunks...]
+[2025-07-27 01:35:06] | INFO | [rag_pipeline:update_vector_db:81] | [Creating new FAISS vectorstore from scratch.]
+[2025-07-27 01:35:07] | INFO | [rag_pipeline:update_vector_db:88] | [Vectorstore saved successfully.]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:__post_init__:32] | [Initializing embedding model...]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:__post_init__:39] | [Loading existing FAISS vectorstore from vector_db...]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:__post_init__:45] | [Vectorstore loaded successfully.]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:load_notes:51] | [Loading notes from JSON file: app/data/kimya.json]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:load_notes:63] | [5 notes loaded and converted to NoteChunk objects for subject 'kimya'.]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:update_vector_db:71] | [Updating vectorstore with 5 new note chunks...]
+[2025-07-27 01:37:26] | INFO | [rag_pipeline:update_vector_db:84] | [Adding documents to existing vectorstore.]
+[2025-07-27 01:37:28] | INFO | [rag_pipeline:update_vector_db:88] | [Vectorstore saved successfully.]
+[2025-07-27 01:37:28] | INFO | [rag_pipeline:query:91] | [Performing similarity search for query: 'tepkimede hız' (top 1 results)]
+[2025-07-27 01:37:28] | INFO | [rag_pipeline:query:93] | [1 results retrieved from vectorstore.]

@@ -1,2 +1,17 @@
 toml == 0.10.2
 loguru == 0.7.3
+fastapi==0.116.1
+uvicorn==0.35.0
+Jinja2==3.1.6
+SQLAlchemy==2.0.41
+python-jose==3.5.0
+passlib==1.7.4
+python-multipart==0.0.20
+asyncpg==0.30.0
+python-dotenv==1.1.1
+youtube-transcript-api==1.2.1
+langchain==0.3.27
+langchain-google-genai==2.1.8
+langchain-community==0.3.27
+faiss-cpu==1.11.0.post1
+agentic-doc==0.3.1

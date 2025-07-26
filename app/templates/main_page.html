@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YKS-GPT</title>
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery 3.3.1 Slim -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome 5.15.4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <!-- Animate.css 4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+</head>
+<body>
+    <style>
+
+        #clearBtn {
+        /* Boyutlandırma ve Yuvarlak Şekil */
+        width: 60px; /* Butonun genişliği */
+        height: 60px; /* Butonun yüksekliği - genişlikle aynı olmalı ki yuvarlak olsun */
+        border-radius: 50%; /* Tamamen yuvarlak yapmak için */
+
+        /* Renk ve Metin */
+        background-color: #ee0a0a; /* Kırmızı renk */
+        color: #fff; /* Beyaz metin rengi */
+        font-size: 16px; /* Metin boyutu */
+        font-weight: bold; /* Metni kalın yap */
+
+        /* Metni Ortala (Flexbox Kullanarak) */
+        display: flex; /* Flexbox'ı etkinleştir */
+        justify-content: center; /* Yatayda (sağa-sola) ortala */
+        align-items: center; /* Dikeyde (yukarı-aşağı) ortala */
+
+        /* Ek Görsel Özellikler */
+        border: none; /* Kenarlık olmasın */
+        cursor: pointer; /* Fare imlecini işaretçi yap */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+        transition: all 0.3s ease-in-out; /* Yumuşak geçiş efektleri */
+    }
+
+    #clearBtn:hover {
+        /* Hover Efekti */
+        background-color: #cd0707; /* Daha koyu kırmızı */
+        transform: scale(1.1); /* Butonu biraz büyüt */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Gölgeyi belirginleştir */
+    }
+
+    #clearBtn:active {
+        /* Tıklama Anındaki Efekt */
+        background-color: #b00606; /* Daha da koyu kırmızı */
+        transform: scale(0.95); /* Butonu biraz küçült */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Gölgeyi küçült */
+    }
+
+
+        @media (max-width: 576px) {
+            #message-input {
+                flex-direction: row !important;  /* Yan yana diz */
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap; /* Gerekirse sar */
+            }
+
+
+
+            #question {
+                width: 100%;
+            }
+        }
+
+        .send_btn_class:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .underline-shadow {
+            width: 300px;
+            height: 3px;
+            background-color: rgba(13, 110, 253, 0.4); /* Daha açık mavi */
+            margin: 12px auto 0 auto;
+            border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 25px 3px rgba(13, 110, 253, 0.6); /* Geniş ve yumuşak mavi gölge */
+        }
+
+        .underline-shadow.d-none {
+            display: none;
+        }
+
+
+        .center-record-wrapper {
+            display: none;
+            height: 400px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Space between record button and cancel button */
+        }
+
+        #cancelRecordingBtn {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px; /* Additional space between buttons */
+        }
+
+        /* Make sure the recording button stays centered */
+        #record_btn_center {
+            margin: 0 auto;
+        }
+
+
+        .modern-btn {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modern-btn:hover {
+            background: linear-gradient(135deg, #6610f2, #007bff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .modern-btn i {
+            font-size: 20px;
+        }
+
+
+        #recordBtn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #000;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            z-index: 10;
+          }
+
+          @media (max-width: 576px) {
+            #recordBtn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #000;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                position: relative;
+                z-index: 10;
+            }
+            #send-button {
+                width: 60px !important;
+                height: 60px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                padding: 0 !important;
+                font-size: 14px !important;
+                text-align: center;
+            }
+        }
+
+          #recordBtn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: fill 0.3s ease;
+          }
+
+          #recordBtn.recording {
+            background-color: #0d6efd;
+            animation: pulse 1s infinite;
+          }
+
+          #recordBtn.recording svg {
+            fill: black;
+          }
+
+          /* Transition states for recordBtn */
+          #recordBtn.transitioning {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: #000;
+            transition: all 0.8s ;
+        }
+
+        @media (max-width: 576px) {
+            #recordBtn.transitioning {
+                top: 90%; /* Daha aşağıya al */
+            }
+        }
+
+          #recordBtn.transitioning svg {
+            fill: black;
+          }
+
+          @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+          }
+
+          #recordBtn:active{
+            color: #ffffff;
+          }
+
+          /* New styles for recording state */
+          .recording-state {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+          }
+
+
+          #record_btn_center {
+            width: 80px;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #6610f2, #007bff); /*record_btn_center gradyanlı renk eklendi */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+          }
+
+          #record_btn_center:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          }
+
+          #record_btn_center svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: fill 0.3s ease;
+          }
+
+          #record_btn_center.recording {
+            background-color: #0d6efd;
+            animation: pulse 1s infinite;
+          }
+
+          #record_btn_center.recording svg {
+            fill: black;
+          }
+
+          .center-record-wrapper {
+            display: none;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Yukarı hizala */
+            align-items: center;
+            padding-top: 50px; /* Yukarıdan boşluk bırak */
+            gap: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(13, 110, 253, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+            }
+        }
+
+        /* Aktif kayıt durumunda buton efekti */
+        #record_btn_center.recording {
+            background-color: #0d6efd; /* Mavi ton */
+            animation: pulse 1.5s infinite;
+        }
+
+        #record_btn_center.recording svg {
+            fill: black;
+        }
+
+        .record-button:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff); /*bu satırı kaldırdığımda bir problem gözükmüyor. Hem web size hem de mobil size'da
+            aynı görüntü (renk) gözüküyor şimdilik. */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .send-button:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade out animation for other elements */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Message input wrapper for smooth transitions */
+        .message-input {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #message-container {
+            width: 100%;
+            max-width: 900px; /* Masaüstü için genişletildi */
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px 4px rgba(25, 223, 114, 0.3);
+            overflow-y: auto;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+
+        /* Tablet ve küçük dizüstüler için */
+        @media (max-width: 1024px) {
+            #message-container {
+                max-width: 700px;
+            }
+        }
+
+        /* Mobil için */
+        @media (max-width: 768px) {
+            #message-container {
+                max-width: 90%;
+                height: 300px;
+                padding: 0.8rem;
+            }
+        }
+
+
+    /* Mesaj kutularına örnek stil */
+    .message-bubble {
+        padding: 0.75rem 1rem;
+        border-radius: 18px;
+        max-width: 75%;
+        word-wrap: break-word;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    /* Kullanıcının mesajı (sağda) */
+    .message-bubble.user {
+        align-self: flex-end;
+        background-color: #DCF8C6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Diğer mesajlar (solda) */
+    .message-bubble.other {
+        align-self: flex-start;
+        background-color: #f1f0f0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Animasyon (opsiyonel) */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+        /* Custom responsive height for message-container */
+        
+
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <div class="container d-flex">
+            <button class="navbar-toggler d-flex align-items-center d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <a class="navbar-brand d-none d-lg-block" href="#">
+                <img src="../static/img/logo.png"
+                alt="logo"
+                style="width: 50px; height: auto;">
+            </a>
+
+            <a class="navbar-brand mx-auto d-block d-lg-none" href="#">
+                <img src="../static/img/logo.png"
+                alt="logo"
+                style="width: 50px; height: auto;">
+            </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown" style="max-height: 38px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ders Notlarım
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/subject?subject=biyoloji">Biyoloji</a>
+                            <a class="dropdown-item" href="/subject?subject=kimya">Kimya</a>
+                            <a class="dropdown-item" href="/subject?subject=matematik">Matematik</a>
+                            <a class="dropdown-item" href="/subject?subject=fizik">Fizik</a>
+                            <a class="dropdown-item" href="/subject?subject=turkce">Türkçe</a>
+                            <a class="dropdown-item" href="/subject?subject=tarih">Tarih</a>
+                            <a class="dropdown-item" href="/subject?subject=felsefe">Felsefe</a>
+                            <a class="dropdown-item" href="/subject?subject=din">Din Kültürü</a>
+                            <a class="dropdown-item" href="/subject?subject=edebiyat">Edebiyat</a>
+                            <a class="dropdown-item" href="/subject?subject=geometri">Geometri</a>
+                            <a class="dropdown-item" href="/subject?subject=cografya">Coğrafya</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="modern-btn ml-3" onclick="logout()" style="padding: 6px 18px; font-size: 14px;">
+                            <i class="fa fa-sign-out-alt"></i> Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="chat-container">
+            <div class="text-center mb-4">
+                <div class="gif-class">
+                    <img src="../static/img/chatbot.gif" alt="Görsel Yüklenemedi" width="200" height="170" class="img-fluid">
+                </div>
+                <h2>Ask a question about the selected subject now!</h2>
+                <div id="question-underline" class=" d-none"> <hr style="background-color: rgba(13, 110, 253, 0.4); border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 25px 3px rgba(13, 110, 253, 0.6);">  </div>
+
+                <div class="advice-div d-flex justify-content-end">
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Give an advice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Question:</label>
+                                <textarea class="form-control" id="question-for-advice" disabled></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Answer:</label>
+                                <input id="output" type="text" class="form-control" id="recipient-name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Advice Answer:</label>
+                                <textarea class="form-control" id="advice"></textarea>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button onclick="save_advice()" id="save-advice" type="button" class="btn btn-primary">Send</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div id="clear_btn_div" style="margin-bottom: 10px;">
+                <button class="send_btn_class" style="border-radius: 55px; background-color:#ee0a0a; color:#fff; text-align:center;" id="clearBtn" onclick="clear_conversation()">Clear</button>
+            </div> -->
+
+            <div class="form-group text-center" id="subject-selector-wrapper">
+                <label for="subject-selector" class="font-weight-bold mb-2">Ders Seç</label>
+                <select class="custom-select shadow-sm" id="subject-selector" style="max-width: 300px; margin: 0 auto;">
+                  <option selected disabled>Birini Seç...</option>
+                  <option value="biyoloji">Biyoloji</option>
+                  <option value="kimya">Kimya</option>
+                  <option value="matematik">Matematik</option>
+                  <option value="fizik">Fizik</option>
+                  <option value="coğrafya">Coğrafya</option>
+                  <option value="tarih">Tarih</option>
+                  <option value="edebiyat">Edebiyat</option>
+                  <option value="geometri">Geometri</option>
+                  <option value="felsefe">Felsefe</option>
+                  <option value="türkçe">Türkçe</option>
+                  <option value="din">Din Kültürü ve Ahlak Bilgisi</option>
+                </select>
+            </div>
+
+            <div class="message-container animate__fadeInBottomLeft message-container-responsive" id="message-container">
+            </div>
+
+            <div class="center-record-wrapper d-none" id="recording-state">
+                <button id="record_btn_center" class="btn btn-primary">
+                    <svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 0 512 512" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M439.652,250.435c0-9.22-7.475-16.696-16.696-16.696c-9.22,0-16.696,7.475-16.696,16.696
+                            c0,82.854-67.407,150.261-150.261,150.261s-150.261-67.407-150.261-150.261c0-9.22-7.475-16.696-16.696-16.696
+                            c-9.22,0-16.696,7.475-16.696,16.696c0,95.638,73.486,174.422,166.957,182.885v45.289h-50.087c-9.22,0-16.696,7.475-16.696,16.696
+                            S179.997,512,189.217,512h133.565c9.22,0,16.696-7.475,16.696-16.696s-7.475-16.696-16.696-16.696h-50.087V433.32
+                            C366.166,424.857,439.652,346.073,439.652,250.435z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M256,0c-64.442,0-116.87,52.428-116.87,116.87v133.565c0,64.442,52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
+                            V116.87C372.87,52.428,320.442,0,256,0z M256,333.913c-40.313,0-74.042-28.837-81.799-66.894h163.597
+                            C330.042,305.076,296.313,333.913,256,333.913z M339.478,166.957h-50.087c-9.22,0-16.696,7.475-16.696,16.696
+                            c0,9.22,7.475,16.696,16.696,16.696h50.087v33.391H172.522v-33.391h50.087c9.22,0,16.696-7.475,16.696-16.696
+                            c0-9.22-7.475-16.696-16.696-16.696h-50.087v-33.391h50.087c9.22,0,16.696-7.475-16.696-16.696s-7.475-16.696-16.696-16.696
+                            h-48.407c7.757-38.057,41.485-66.783,81.799-66.783s74.042,28.725,81.799,66.783h-48.407c-9.22,0-16.696,7.475-16.696,16.696
+                            s7.475,16.696,16.696,16.696h50.087V166.957z"/>
+                    </g>
+                </g>
+                    </svg>
+                </button>
+                <button id="cancelRecordingBtn" class="btn btn-sm btn-danger" onclick="clear_conversation()"
+                    style="border-radius: 50%; width: 30px; height: 30px; padding: 0; font-size: 18px; line-height: 1;">
+                    &times;
+                </button>
+            </div>
+
+
+            <div class="message-input d-flex" id="message-input">
+                <input id="question" type="text" class="form-control" placeholder="You can ask a question">
+                <button id="send-button" onclick="sendText()" style="border-radius: 55px; background-color:#000; color:#fff" class="send_btn_class btn btn-dark btn-sm rounded-circle px-3 py-2" >Send</button>
+                <button class="record-button ml-2" class="btn btn-primary ml-2 " id="recordBtn" title="Speech">
+                    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 0 512 512" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M439.652,250.435c0-9.22-7.475-16.696-16.696-16.696c-9.22,0-16.696,7.475-16.696,16.696
+                            c0,82.854-67.407,150.261-150.261,150.261s-150.261-67.407-150.261-150.261c0-9.22-7.475-16.696-16.696-16.696
+                            c-9.22,0-16.696,7.475-16.696,16.696c0,95.638,73.486,174.422,166.957,182.885v45.289h-50.087c-9.22,0-16.696,7.475-16.696,16.696
+                            S179.997,512,189.217,512h133.565c9.22,0,16.696-7.475,16.696-16.696s-7.475-16.696-16.696-16.696h-50.087V433.32
+                            C366.166,424.857,439.652,346.073,439.652,250.435z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M256,0c-64.442,0-116.87,52.428-116.87,116.87v133.565c0,64.442,52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
+                            V116.87C372.87,52.428,320.442,0,256,0z M256,333.913c-40.313,0-74.042-28.837-81.799-66.894h163.597
+                            C330.042,305.076,296.313,333.913,256,333.913z M339.478,166.957h-50.087c-9.22,0-16.696,7.475-16.696,16.696
+                            c0,9.22,7.475,16.696,16.696,16.696h50.087v33.391H172.522v-33.391h50.087c9.22,0,16.696-7.475,16.696-16.696
+                            c0-9.22-7.475-16.696-16.696-16.696h-50.087v-33.391h50.087c9.22,0,16.696-7.475-16.696-16.696s-7.475-16.696-16.696-16.696
+                            h-48.407c7.757-38.057,41.485-66.783,81.799-66.783s74.042,28.725,81.799,66.783h-48.407c-9.22,0-16.696,7.475-16.696,16.696
+                            s7.475,16.696,16.696,16.696h50.087V166.957z"/>
+                    </g>
+                </g>
+                    </svg>
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="https://www.yongatek.com/Uploads/Original/e62d07192d3d9f69760f21c059292c3a.webp"
+                        class="mb-3"
+                        alt="logo"
+                        style="max-width: 200px;">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/instagram-brands-solid.ico" style="height: 18px; width:18px;margin-right: 5px;">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/linkedin-in-brands-solid_1_.ico" style="height: 18px; width:18px;margin-right: 5px;">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/square-youtube-brands-solid_2_.ico" style="height: 18px; width:18px;margin-right: 5px;">YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li>+90 555 555 5555</li>
+                        <li>Fax: +90 555 555 5555</li>
+                        <li>Çankaya/Ankara TÜRKİYE</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.yongatek.com/" class="text-white">Home</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">About Us</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">Services</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2024, All Rights Reserved by Mert</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type='text/javascript' src='../static/js/index.js'></script>
+
+    <script>
+        let isRecording = false;
+    let stream = null;
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isTransitioning = false;
+
+    const recordBtn = document.getElementById("recordBtn");
+    const recordBtnCenter = document.getElementById("record_btn_center");
+    const cancelBtn = document.getElementById("cancelRecordingBtn");
+    const messageContainer = document.getElementById("message-container");
+    const messageInput = document.getElementById("message-input");
+    const recordingState = document.getElementById("recording-state");
+
+    const underline = document.getElementById("question-underline");
+
+
+    // Send text butonu yanındaki record butonuna basıldığında TRANSITION başlat ve RecordButtonCenter ortaya çıksın.
+    recordBtn.addEventListener('click', function () {
+        if (!isTransitioning) {
+            underline.classList.remove('d-none');
+            startTransition();
+        }
+    });
+
+    // Record Button Center butonu altındaki çarpı (cancel) tuşuna basıldığında 1- eğer recording oluyorsa recording stop olsun,
+    // 2- isRecording değişkeni false olsun ve gerekli arayüz değişimleri yapılsın.
+    cancelBtn.addEventListener('click', function () {
+        underline.classList.add('d-none');
+        mediaRecorder.stop();
+        isRecording = false;
+        recordBtnCenter.classList.remove("recording");
+        console.log("Recording stopped");
+    });
+
+    // stream_initialize function: Gerekli olan navigator nesnesini tanımlar.
+    async function stream_initialize() {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = (event) => {
+            audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+            const formData = new FormData();
+            formData.append("audio_file", audioBlob, "recording.webm");
+
+            fetch("http://localhost:8080/handle_voice", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.blob())
+            .then(audioBlob => {
+
+                const audioUrl = URL.createObjectURL(audioBlob);
+
+                const audio = new Audio(audioUrl);
+                audio.play();
+
+                audio.onended = () => {
+                    URL.revokeObjectURL(audioUrl);
+                };
+            })
+            .catch(err => console.error("The error while sending the voice to the handle_voice endpoint: ", err));
+
+            audioChunks = [];
+        };
+    }
+
+    // send text butonu yanındaki siyah record buttonuna basıldığında transition başlatan function.
+    function startTransition() {
+
+        if (isTransitioning){
+            return;
+        }else{
+            // Butonun kaymasını önlemek için en yukarı scroll
+            window.scrollTo({ top: 0, behavior: 'auto' });
+
+            isTransitioning = true;
+
+            recordBtn.classList.add('transitioning');
+
+            // Fade out other elements (transition olduğunda bazı elementleri görünmez yap)
+            messageContainer.style.opacity = '0';
+            document.getElementById('question').style.opacity = '0';
+            document.getElementById('send-button').style.opacity = '0';
+
+
+            // After transition duration, hide original elements and show recording state
+            // Transition bittiğinde artık record button center'lı olan RECORDING arayüzü görünür olsun.
+            setTimeout(() => {
+                messageContainer.classList.add('d-none');
+                document.getElementById('question').classList.add('d-none');
+                document.getElementById('send-button').classList.add('d-none');
+                recordBtn.style.display = 'none';
+
+                // Show recording state
+                recordingState.classList.remove('d-none');
+                recordingState.style.opacity = '1';
+
+                isTransitioning = false;
+            }, 850);
+        }
+
+    }
+
+    // Eğer anlık olarak recording oluyorsa recording stop yap ve gerekli elementleri görünür yapıp normal main_page görünümüne geç.
+    function resetToInitialState() {
+        // Eğer recording oluyorsa anlık olarak recordingi durdur.
+        if (isRecording && mediaRecorder && mediaRecorder.state === "recording") {
+            console.log("media recorder is stopped")
+            mediaRecorder.stop();
+            isRecording = false;
+        }
+
+        // Reset recording button states
+        recordBtn.classList.remove('transitioning', 'recording');
+        recordBtnCenter.classList.remove('recording');
+
+        // Show original elements
+        recordingState.classList.add('d-none');
+        recordBtn.style.display = 'flex';
+        document.getElementById('question').classList.remove('d-none');
+        document.getElementById('send-button').classList.remove('d-none');
+        messageContainer.classList.remove('d-none');
+
+        setTimeout(() => {
+            messageContainer.style.opacity = '1';
+            document.getElementById('question').style.opacity = '1';
+            document.getElementById('send-button').style.opacity = '1';
+        }, 50);
+
+        audioChunks = [];
+        isTransitioning = false;
+
+        console.log("Kayıt iptal edildi.");
+    }
+
+    // Basıldığında Recording yapacak olan center'daki recording button'a basıldığında yapılacak işlemler.
+    recordBtnCenter.addEventListener('click', async function () {
+
+        // Eğer mediaRecorder nesnesi false ise yani herhangi bir initialize yoksa initialize olsun (onStop olduğunda yapılacak function belirlensin)
+        if (!mediaRecorder) {
+            await stream_initialize();
+        }
+
+        // Eğer anlık olarak recording yoksa recording'i başlat, record Button Center butonunun görünümünü pulse ile kayıt alıyormuş gibi göster.
+        if (!isRecording) {
+            mediaRecorder.start();
+            isRecording = true;
+            recordBtnCenter.classList.add("recording");
+            console.log("Recording started");
+        }
+        // Eğer zaten recording oluyorsa record button center butonuna bastığımda recording artık stop olsun, isRecording değişkeni false olsun.
+        else {
+            mediaRecorder.stop();
+            isRecording = false;
+            recordBtnCenter.classList.remove("recording");
+            console.log("Recording stopped");
+        }
+    });
+
+    // Record Button Center butonu altındaki cancel(çarpı) butonuna basıldığında veritabanındaki bütün konuşma geçmişi silinecek.
+    // Ve resetToInitialState function çağırılacak (main_page görünümüne geçilecek ve recording oluyorsa da recording stop edilecek).
+    function clear_conversation(){
+        underline.classList.add('d-none');
+        resetToInitialState();
+        fetch("http://localhost:8080/clear_conversation", {
+                method: "POST",
+            })
+            .then(res => res.json())
+            .then(res => console.log("Response: ", res))
+            .catch(err => console.error("Error while sending the voice: ", err));
+    }
+
+    async function logout() {
+        try {
+            const response = await fetch("/logout", {
+                method: "GET",
+                credentials: "include"  // çerezleri de gönder
+            });
+
+            if (response.redirected) {
+                // Yönlendirme varsa otomatik git
+                window.location.href = response.url;
+            } else {
+                // Geriye HTML dönmüşse manuel göster
+                const html = await response.text();
+                document.open();
+                document.write(html);
+                document.close();
+            }
+        } catch (error) {
+            console.error("Logout hatası:", error);
+        }
+    }
+    </script>
+
+</body>
+</html>
