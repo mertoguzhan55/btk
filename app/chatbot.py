@@ -58,7 +58,7 @@ class Chatbot:
 
         if not filtered_results:
             self.logger.warning("No relevant context found. Returning fallback answer.")
-            return "Bu konuda yeterli bilgi bulunamadı."
+            # return "Bu konuda yeterli bilgi bulunamadı."
 
         context = "\n".join([doc.page_content for doc, _ in filtered_results])
 

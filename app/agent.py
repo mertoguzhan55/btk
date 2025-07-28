@@ -50,6 +50,8 @@ class QuizGeneratorAgent:
 
             Konu: {student_quiz_keywords}
 
+            Eğer Konu anlamsız bir kelime veya cümle ise çoktan seçmeli soru OLUŞTURMA.
+
             Öğrencinin notları ve kaynakları:
             {context_chunks}
 
@@ -116,6 +118,7 @@ class QuizGeneratorAgent:
             - Öğrenciyi teşvik et, motive edici bir cümleyle bitir.
             - **Başlık veya yapay ayrımlar kullanma** (örneğin: "Doğru cevap:", "Yanlış cevap:", "Cesaretlendirme:" gibi ifadelerden kaçın).
             - Dil sade, profesyonel ve cesaret verici olsun.
+            - doğru cevabın, doğru şıkkın {correct_answer} olduğunu mutlaka cümle içerisinde belirt.
 
             Geri bildirim:
             """

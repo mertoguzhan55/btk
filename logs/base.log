@@ -2768,3 +2768,990 @@ to be a tool to help us change the world. We should continue to be inspired by h
 ]
 ```]
 [2025-07-28 22:02:33] | ERROR | [agent:quiz_generate:82] | [[JSON parse hatası: Expecting value: line 1 column 1 (char 0)]]
+[2025-07-28 22:08:35] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 22:08:35] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 22:08:35] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 22:08:35] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 22:08:35] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 22:08:35] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 22:08:35] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 22:08:39] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.0606 seconds]
+[2025-07-28 22:08:39] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:08:39] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.0789 seconds]
+[2025-07-28 22:08:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.0839 seconds]
+[2025-07-28 22:08:39] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:08:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.0840 seconds]
+[2025-07-28 22:10:13] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 22:10:13] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 22:10:13] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 22:10:13] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 22:10:13] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 22:10:13] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 22:10:13] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 22:10:16] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.2391 seconds]
+[2025-07-28 22:10:16] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:10:16] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.2609 seconds]
+[2025-07-28 22:10:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.2648 seconds]
+[2025-07-28 22:10:16] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:10:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.2649 seconds]
+[2025-07-28 22:10:22] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 9.0421 seconds]
+[2025-07-28 22:10:22] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:10:22] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 9.0611 seconds]
+[2025-07-28 22:10:22] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.0626 seconds]
+[2025-07-28 22:10:22] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:10:22] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.0628 seconds]
+[2025-07-28 22:10:35] | INFO | [agent:run:160] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "Matematik zor quiz yap", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--ff4d41ef-293b-4a8d-847d-75abb3c564f6-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'Matematik zor quiz yap', 'user_id': '1'}, 'id': '0feb9f8e-ee0c-43d4-a940-9e5a36bace8a', 'type': 'tool_call'}] usage_metadata={'input_tokens': 284, 'output_tokens': 116, 'total_tokens': 400, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 85}}]
+[2025-07-28 22:10:35] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'Matematik zor quiz yap']
+[2025-07-28 22:10:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5103 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:10:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5103): coğrafya 1 text...]
+[2025-07-28 22:10:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5103 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:10:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5103): coğrafya 1 text...]
+[2025-07-28 22:10:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5689 | İçerik: deneme exception 1...]
+[2025-07-28 22:10:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5689): deneme exception 1...]
+[2025-07-28 22:10:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5689 | İçerik: deneme exception 1...]
+[2025-07-28 22:10:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5689): deneme exception 1...]
+[2025-07-28 22:10:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5885 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:10:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5885): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:11:06] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n  {\n    "question": "Belirli integral ∫(0\'dan 1\'e) x * ln(x) dx ifadesinin değeri kaçtır?",\n    "choices": {\n      "A": "1/4",\n      "B": "-1/2",\n      "C": "0",\n      "D": "-1/4",\n      "E": "1/2"\n    },\n    "correct_answer": "D"\n  },\n  {\n    "question": "Gerçel katsayılı bir P(x) polinomu için P(x² + 1) = x⁴ + 4x² + 5 eşitliği veriliyor. Buna göre, P(x) = 0 denkleminin kökler toplamı kaçtır?",\n    "choices": {\n      "A": "2",\n      "B": "-1",\n      "C": "0",\n      "D": "-2",\n      "E": "1"\n    },\n    "correct_answer": "D"\n  },\n  {\n    "question": "x ≡ 7 (mod 11) ve x ≡ 11 (mod 13) koşullarını sağlayan en küçük pozitif tam sayı x kaçtır?",\n    "choices": {\n      "A": "117",\n      "B": "139",\n      "C": "128",\n      "D": "150",\n      "E": "106"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Bir fabrikada M1 ve M2 makineleri toplam üretimin sırasıyla %60 ve %40\'ını üretmektedir. M1 makinesi %3, M2 makinesi ise %5 oranında kusurlu ürün üretmektedir. Rastgele seçilen bir ürünün kusurlu olduğu bilindiğine göre, bu ürünün M1 makinesi tarafından üretilmiş olma olasılığı kaçtır?",\n    "choices": {\n      "A": "3/10",\n      "B": "9/19",\n      "C": "2/5",\n      "D": "1/2",\n      "E": "3/8"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "y\' + 2xy = x diferansiyel denkleminin y(0) = 1 başlangıç koşulunu sağlayan çözümü aşağıdakilerden hangisidir?",\n    "choices": {\n      "A": "y = 1/2 + e^(-x²)",\n      "B": "y = 1 - (1/2)e^(-x²)",\n      "C": "y = (1/2)(1 + e^(-x²))",\n      "D": "y = 1/2 - (1/2)e^(-x²)",\n      "E": "y = 1 + (1/2)e^(-x²)"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "A, özdeğerleri λ₁ = 1, λ₂ = 2, λ₃ = 3 olan 3x3 bir matris olsun. I, 3x3 birim matris olmak üzere, det(A² + 2A + I) değeri kaçtır?",\n    "choices": {\n      "A": "36",\n      "B": "144",\n      "C": "216",\n      "D": "576",\n      "E": "729"\n    },\n    "correct_answer": "D"\n  },\n  {\n    "question": "x²/25 + y²/9 = 1 elipsine (3, 12/5) noktasından çizilen teğet doğrusunun denklemi aşağıdakilerden hangisidir?",\n    "choices": {\n      "A": "9x - 20y + 75 = 0",\n      "B": "20x + 9y - 75 = 0",\n      "C": "9x + 20y + 75 = 0",\n      "D": "20x - 9y + 75 = 0",\n      "E": "9x + 20y - 75 = 0"\n    },\n    "correct_answer": "E"\n  },\n  {\n    "question": "lim(x→0) (sin(x) - x) / x³ limitinin değeri kaçtır?",\n    "choices": {\n      "A": "1/6",\n      "B": "0",\n      "C": "-1/6",\n      "D": "-1/3",\n      "E": "1/3"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "f(x) = ln(x² - 4x + 5) fonksiyonunun değer kümesi (range) aşağıdakilerden hangisidir?",\n    "choices": {\n      "A": "(0, ∞)",\n      "B": "[1, ∞)",\n      "C": "(-∞, ∞)",\n      "D": "[0, ∞)",\n      "E": "[ln(5), ∞)"\n    },\n    "correct_answer": "D"\n  },\n  {\n    "question": "x₁ + x₂ + x₃ + x₄ = 10 denkleminin x₁ ≥ 1, x₂ ≥ 2, x₃ ≥ 0, x₄ ≥ 0 koşullarını sağlayan kaç farklı negatif olmayan tam sayı çözümü vardır?",\n    "choices": {\n      "A": "84",\n      "B": "210",\n      "C": "70",\n      "D": "120",\n      "E": "35"\n    },\n    "correct_answer": "D"\n  }\n]\n```']
+[2025-07-28 22:11:06] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+  {
+    "question": "Belirli integral ∫(0'dan 1'e) x * ln(x) dx ifadesinin değeri kaçtır?",
+    "choices": {
+      "A": "1/4",
+      "B": "-1/2",
+      "C": "0",
+      "D": "-1/4",
+      "E": "1/2"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "Gerçel katsayılı bir P(x) polinomu için P(x² + 1) = x⁴ + 4x² + 5 eşitliği veriliyor. Buna göre, P(x) = 0 denkleminin kökler toplamı kaçtır?",
+    "choices": {
+      "A": "2",
+      "B": "-1",
+      "C": "0",
+      "D": "-2",
+      "E": "1"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "x ≡ 7 (mod 11) ve x ≡ 11 (mod 13) koşullarını sağlayan en küçük pozitif tam sayı x kaçtır?",
+    "choices": {
+      "A": "117",
+      "B": "139",
+      "C": "128",
+      "D": "150",
+      "E": "106"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Bir fabrikada M1 ve M2 makineleri toplam üretimin sırasıyla %60 ve %40'ını üretmektedir. M1 makinesi %3, M2 makinesi ise %5 oranında kusurlu ürün üretmektedir. Rastgele seçilen bir ürünün kusurlu olduğu bilindiğine göre, bu ürünün M1 makinesi tarafından üretilmiş olma olasılığı kaçtır?",
+    "choices": {
+      "A": "3/10",
+      "B": "9/19",
+      "C": "2/5",
+      "D": "1/2",
+      "E": "3/8"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "y' + 2xy = x diferansiyel denkleminin y(0) = 1 başlangıç koşulunu sağlayan çözümü aşağıdakilerden hangisidir?",
+    "choices": {
+      "A": "y = 1/2 + e^(-x²)",
+      "B": "y = 1 - (1/2)e^(-x²)",
+      "C": "y = (1/2)(1 + e^(-x²))",
+      "D": "y = 1/2 - (1/2)e^(-x²)",
+      "E": "y = 1 + (1/2)e^(-x²)"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "A, özdeğerleri λ₁ = 1, λ₂ = 2, λ₃ = 3 olan 3x3 bir matris olsun. I, 3x3 birim matris olmak üzere, det(A² + 2A + I) değeri kaçtır?",
+    "choices": {
+      "A": "36",
+      "B": "144",
+      "C": "216",
+      "D": "576",
+      "E": "729"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "x²/25 + y²/9 = 1 elipsine (3, 12/5) noktasından çizilen teğet doğrusunun denklemi aşağıdakilerden hangisidir?",
+    "choices": {
+      "A": "9x - 20y + 75 = 0",
+      "B": "20x + 9y - 75 = 0",
+      "C": "9x + 20y + 75 = 0",
+      "D": "20x - 9y + 75 = 0",
+      "E": "9x + 20y - 75 = 0"
+    },
+    "correct_answer": "E"
+  },
+  {
+    "question": "lim(x→0) (sin(x) - x) / x³ limitinin değeri kaçtır?",
+    "choices": {
+      "A": "1/6",
+      "B": "0",
+      "C": "-1/6",
+      "D": "-1/3",
+      "E": "1/3"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "f(x) = ln(x² - 4x + 5) fonksiyonunun değer kümesi (range) aşağıdakilerden hangisidir?",
+    "choices": {
+      "A": "(0, ∞)",
+      "B": "[1, ∞)",
+      "C": "(-∞, ∞)",
+      "D": "[0, ∞)",
+      "E": "[ln(5), ∞)"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "x₁ + x₂ + x₃ + x₄ = 10 denkleminin x₁ ≥ 1, x₂ ≥ 2, x₃ ≥ 0, x₄ ≥ 0 koşullarını sağlayan kaç farklı negatif olmayan tam sayı çözümü vardır?",
+    "choices": {
+      "A": "84",
+      "B": "210",
+      "C": "70",
+      "D": "120",
+      "E": "35"
+    },
+    "correct_answer": "D"
+  }
+]]
+[2025-07-28 22:11:06] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': "Belirli integral ∫(0'dan 1'e) x * ln(x) dx ifadesinin değeri kaçtır?", 'choices': {'A': '1/4', 'B': '-1/2', 'C': '0', 'D': '-1/4', 'E': '1/2'}, 'correct_answer': 'D'}, {'question': 'Gerçel katsayılı bir P(x) polinomu için P(x² + 1) = x⁴ + 4x² + 5 eşitliği veriliyor. Buna göre, P(x) = 0 denkleminin kökler toplamı kaçtır?', 'choices': {'A': '2', 'B': '-1', 'C': '0', 'D': '-2', 'E': '1'}, 'correct_answer': 'D'}, {'question': 'x ≡ 7 (mod 11) ve x ≡ 11 (mod 13) koşullarını sağlayan en küçük pozitif tam sayı x kaçtır?', 'choices': {'A': '117', 'B': '139', 'C': '128', 'D': '150', 'E': '106'}, 'correct_answer': 'C'}, {'question': "Bir fabrikada M1 ve M2 makineleri toplam üretimin sırasıyla %60 ve %40'ını üretmektedir. M1 makinesi %3, M2 makinesi ise %5 oranında kusurlu ürün üretmektedir. Rastgele seçilen bir ürünün kusurlu olduğu bilindiğine göre, bu ürünün M1 makinesi tarafından üretilmiş olma olasılığı kaçtır?", 'choices': {'A': '3/10', 'B': '9/19', 'C': '2/5', 'D': '1/2', 'E': '3/8'}, 'correct_answer': 'B'}, {'question': "y' + 2xy = x diferansiyel denkleminin y(0) = 1 başlangıç koşulunu sağlayan çözümü aşağıdakilerden hangisidir?", 'choices': {'A': 'y = 1/2 + e^(-x²)', 'B': 'y = 1 - (1/2)e^(-x²)', 'C': 'y = (1/2)(1 + e^(-x²))', 'D': 'y = 1/2 - (1/2)e^(-x²)', 'E': 'y = 1 + (1/2)e^(-x²)'}, 'correct_answer': 'C'}, {'question': 'A, özdeğerleri λ₁ = 1, λ₂ = 2, λ₃ = 3 olan 3x3 bir matris olsun. I, 3x3 birim matris olmak üzere, det(A² + 2A + I) değeri kaçtır?', 'choices': {'A': '36', 'B': '144', 'C': '216', 'D': '576', 'E': '729'}, 'correct_answer': 'D'}, {'question': 'x²/25 + y²/9 = 1 elipsine (3, 12/5) noktasından çizilen teğet doğrusunun denklemi aşağıdakilerden hangisidir?', 'choices': {'A': '9x - 20y + 75 = 0', 'B': '20x + 9y - 75 = 0', 'C': '9x + 20y + 75 = 0', 'D': '20x - 9y + 75 = 0', 'E': '9x + 20y - 75 = 0'}, 'correct_answer': 'E'}, {'question': 'lim(x→0) (sin(x) - x) / x³ limitinin değeri kaçtır?', 'choices': {'A': '1/6', 'B': '0', 'C': '-1/6', 'D': '-1/3', 'E': '1/3'}, 'correct_answer': 'C'}, {'question': 'f(x) = ln(x² - 4x + 5) fonksiyonunun değer kümesi (range) aşağıdakilerden hangisidir?', 'choices': {'A': '(0, ∞)', 'B': '[1, ∞)', 'C': '(-∞, ∞)', 'D': '[0, ∞)', 'E': '[ln(5), ∞)'}, 'correct_answer': 'D'}, {'question': 'x₁ + x₂ + x₃ + x₄ = 10 denkleminin x₁ ≥ 1, x₂ ≥ 2, x₃ ≥ 0, x₄ ≥ 0 koşullarını sağlayan kaç farklı negatif olmayan tam sayı çözümü vardır?', 'choices': {'A': '84', 'B': '210', 'C': '70', 'D': '120', 'E': '35'}, 'correct_answer': 'D'}]]
+[2025-07-28 22:14:45] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 22:14:45] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 22:14:45] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 22:14:45] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 22:14:45] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 22:14:45] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 22:14:45] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 22:14:49] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.9463 seconds]
+[2025-07-28 22:14:49] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:14:49] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.9651 seconds]
+[2025-07-28 22:14:49] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.9692 seconds]
+[2025-07-28 22:14:49] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:14:49] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.9694 seconds]
+[2025-07-28 22:15:06] | INFO | [agent:run:160] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "Fotosentez ile ilgili quiz yap bana", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--cc64d90b-8fb7-499a-95a6-9418297efc39-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'Fotosentez ile ilgili quiz yap bana', 'user_id': '1'}, 'id': '2d6a7c58-0144-4380-933c-8978a4c8d791', 'type': 'tool_call'}] usage_metadata={'input_tokens': 287, 'output_tokens': 109, 'total_tokens': 396, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 76}}]
+[2025-07-28 22:15:06] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'Fotosentez ile ilgili quiz yap bana']
+[2025-07-28 22:15:07] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5351 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:15:07] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5351): coğrafya 1 text...]
+[2025-07-28 22:15:07] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5351 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:15:07] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5351): coğrafya 1 text...]
+[2025-07-28 22:15:07] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5737 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:15:07] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5737): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:15:07] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5737 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:15:07] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5737): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:15:07] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6110 | İçerik: Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana bölümden oluşur:
+
+    Okyanusal kabuk: Denizler...]
+[2025-07-28 22:15:07] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6110): Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana...]
+[2025-07-28 22:15:19] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentez sürecinde bitkiler tarafından kullanılan temel hammaddeler nelerdir?",\n        "choices": {\n            "A": "Glikoz ve Oksijen",\n            "B": "Su ve Oksijen",\n            "C": "Karbondioksit ve Glikoz",\n            "D": "Karbondioksit ve Su",\n            "E": "Azot ve Hidrojen"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentez sonucunda üretilen ana ürünler hangileridir?",\n        "choices": {\n            "A": "Karbondioksit ve Su",\n            "B": "Azot ve Metan",\n            "C": "Glikoz (Şeker) ve Oksijen",\n            "D": "Klorofil ve Güneş Işığı",\n            "E": "Protein ve Yağ"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bitkilerde fotosentez olayı başlıca hangi organelde gerçekleşir?",\n        "choices": {\n            "A": "Mitokondri",\n            "B": "Ribozom",\n            "C": "Kloroplast",\n            "D": "Hücre Çekirdeği",\n            "E": "Golgi Aygıtı"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezde ışık enerjisini emen yeşil pigmentin adı nedir?",\n        "choices": {\n            "A": "Hemoglobin",\n            "B": "Melanin",\n            "C": "Klorofil",\n            "D": "Karoten",\n            "E": "Ksantofil"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışığa bağımlı reaksiyonları sırasında aşağıdakilerden hangisi gerçekleşmez?",\n        "choices": {\n            "A": "Su moleküllerinin parçalanması",\n            "B": "Oksijenin serbest bırakılması",\n            "C": "Karbondioksitin doğrudan şekere dönüştürülmesi",\n            "D": "ATP üretimi",\n            "E": "NADPH üretimi"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?",\n        "choices": {\n            "A": "Tilakoit zarlar",\n            "B": "Mitokondri iç zarı",\n            "C": "Kloroplastın stroması",\n            "D": "Hücre sitoplazması",\n            "E": "Hücre çekirdeği"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezde üretilen oksijenin canlılar için önemi nedir?",\n        "choices": {\n            "A": "Bitkilerin büyümesini hızlandırır.",\n            "B": "Atmosferdeki karbondioksit seviyesini artırır.",\n            "C": "Solunum için gerekli bir gazdır.",\n            "D": "Toprağın verimliliğini artırır.",\n            "E": "Su döngüsünü düzenler."\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez için gerekli olan enerji kaynağı nedir?",\n        "choices": {\n            "A": "Kimyasal enerji",\n            "B": "Isı enerjisi",\n            "C": "Elektrik enerjisi",\n            "D": "Güneş enerjisi",\n            "E": "Nükleer enerji"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",\n        "choices": {\n            "A": "Işık şiddeti",\n            "B": "Karbondioksit miktarı",\n            "C": "Sıcaklık",\n            "D": "Toprak pH\'ı",\n            "E": "Su miktarı"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentezin temel amacı nedir?",\n        "choices": {\n            "A": "Enerji üretmek için besinleri parçalamak",\n            "B": "Karbondioksit ve suyu kullanarak besin (organik madde) üretmek",\n            "C": "Oksijeni solunum için kullanmak",\n            "D": "Bitkilerin büyümesini engellemek",\n            "E": "Su buharını atmosfere salmak"\n        },\n        "correct_answer": "B"\n    }\n]\n```']
+[2025-07-28 22:15:19] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+    {
+        "question": "Fotosentez sürecinde bitkiler tarafından kullanılan temel hammaddeler nelerdir?",
+        "choices": {
+            "A": "Glikoz ve Oksijen",
+            "B": "Su ve Oksijen",
+            "C": "Karbondioksit ve Glikoz",
+            "D": "Karbondioksit ve Su",
+            "E": "Azot ve Hidrojen"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentez sonucunda üretilen ana ürünler hangileridir?",
+        "choices": {
+            "A": "Karbondioksit ve Su",
+            "B": "Azot ve Metan",
+            "C": "Glikoz (Şeker) ve Oksijen",
+            "D": "Klorofil ve Güneş Işığı",
+            "E": "Protein ve Yağ"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bitkilerde fotosentez olayı başlıca hangi organelde gerçekleşir?",
+        "choices": {
+            "A": "Mitokondri",
+            "B": "Ribozom",
+            "C": "Kloroplast",
+            "D": "Hücre Çekirdeği",
+            "E": "Golgi Aygıtı"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezde ışık enerjisini emen yeşil pigmentin adı nedir?",
+        "choices": {
+            "A": "Hemoglobin",
+            "B": "Melanin",
+            "C": "Klorofil",
+            "D": "Karoten",
+            "E": "Ksantofil"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışığa bağımlı reaksiyonları sırasında aşağıdakilerden hangisi gerçekleşmez?",
+        "choices": {
+            "A": "Su moleküllerinin parçalanması",
+            "B": "Oksijenin serbest bırakılması",
+            "C": "Karbondioksitin doğrudan şekere dönüştürülmesi",
+            "D": "ATP üretimi",
+            "E": "NADPH üretimi"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?",
+        "choices": {
+            "A": "Tilakoit zarlar",
+            "B": "Mitokondri iç zarı",
+            "C": "Kloroplastın stroması",
+            "D": "Hücre sitoplazması",
+            "E": "Hücre çekirdeği"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezde üretilen oksijenin canlılar için önemi nedir?",
+        "choices": {
+            "A": "Bitkilerin büyümesini hızlandırır.",
+            "B": "Atmosferdeki karbondioksit seviyesini artırır.",
+            "C": "Solunum için gerekli bir gazdır.",
+            "D": "Toprağın verimliliğini artırır.",
+            "E": "Su döngüsünü düzenler."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez için gerekli olan enerji kaynağı nedir?",
+        "choices": {
+            "A": "Kimyasal enerji",
+            "B": "Isı enerjisi",
+            "C": "Elektrik enerjisi",
+            "D": "Güneş enerjisi",
+            "E": "Nükleer enerji"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",
+        "choices": {
+            "A": "Işık şiddeti",
+            "B": "Karbondioksit miktarı",
+            "C": "Sıcaklık",
+            "D": "Toprak pH'ı",
+            "E": "Su miktarı"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentezin temel amacı nedir?",
+        "choices": {
+            "A": "Enerji üretmek için besinleri parçalamak",
+            "B": "Karbondioksit ve suyu kullanarak besin (organik madde) üretmek",
+            "C": "Oksijeni solunum için kullanmak",
+            "D": "Bitkilerin büyümesini engellemek",
+            "E": "Su buharını atmosfere salmak"
+        },
+        "correct_answer": "B"
+    }
+]]
+[2025-07-28 22:15:19] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': 'Fotosentez sürecinde bitkiler tarafından kullanılan temel hammaddeler nelerdir?', 'choices': {'A': 'Glikoz ve Oksijen', 'B': 'Su ve Oksijen', 'C': 'Karbondioksit ve Glikoz', 'D': 'Karbondioksit ve Su', 'E': 'Azot ve Hidrojen'}, 'correct_answer': 'D'}, {'question': 'Fotosentez sonucunda üretilen ana ürünler hangileridir?', 'choices': {'A': 'Karbondioksit ve Su', 'B': 'Azot ve Metan', 'C': 'Glikoz (Şeker) ve Oksijen', 'D': 'Klorofil ve Güneş Işığı', 'E': 'Protein ve Yağ'}, 'correct_answer': 'C'}, {'question': 'Bitkilerde fotosentez olayı başlıca hangi organelde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Ribozom', 'C': 'Kloroplast', 'D': 'Hücre Çekirdeği', 'E': 'Golgi Aygıtı'}, 'correct_answer': 'C'}, {'question': 'Fotosentezde ışık enerjisini emen yeşil pigmentin adı nedir?', 'choices': {'A': 'Hemoglobin', 'B': 'Melanin', 'C': 'Klorofil', 'D': 'Karoten', 'E': 'Ksantofil'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışığa bağımlı reaksiyonları sırasında aşağıdakilerden hangisi gerçekleşmez?', 'choices': {'A': 'Su moleküllerinin parçalanması', 'B': 'Oksijenin serbest bırakılması', 'C': 'Karbondioksitin doğrudan şekere dönüştürülmesi', 'D': 'ATP üretimi', 'E': 'NADPH üretimi'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?', 'choices': {'A': 'Tilakoit zarlar', 'B': 'Mitokondri iç zarı', 'C': 'Kloroplastın stroması', 'D': 'Hücre sitoplazması', 'E': 'Hücre çekirdeği'}, 'correct_answer': 'C'}, {'question': 'Fotosentezde üretilen oksijenin canlılar için önemi nedir?', 'choices': {'A': 'Bitkilerin büyümesini hızlandırır.', 'B': 'Atmosferdeki karbondioksit seviyesini artırır.', 'C': 'Solunum için gerekli bir gazdır.', 'D': 'Toprağın verimliliğini artırır.', 'E': 'Su döngüsünü düzenler.'}, 'correct_answer': 'C'}, {'question': 'Fotosentez için gerekli olan enerji kaynağı nedir?', 'choices': {'A': 'Kimyasal enerji', 'B': 'Isı enerjisi', 'C': 'Elektrik enerjisi', 'D': 'Güneş enerjisi', 'E': 'Nükleer enerji'}, 'correct_answer': 'D'}, {'question': 'Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?', 'choices': {'A': 'Işık şiddeti', 'B': 'Karbondioksit miktarı', 'C': 'Sıcaklık', 'D': "Toprak pH'ı", 'E': 'Su miktarı'}, 'correct_answer': 'D'}, {'question': 'Fotosentezin temel amacı nedir?', 'choices': {'A': 'Enerji üretmek için besinleri parçalamak', 'B': 'Karbondioksit ve suyu kullanarak besin (organik madde) üretmek', 'C': 'Oksijeni solunum için kullanmak', 'D': 'Bitkilerin büyümesini engellemek', 'E': 'Su buharını atmosfere salmak'}, 'correct_answer': 'B'}]]
+[2025-07-28 22:19:21] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 276.3125 seconds]
+[2025-07-28 22:19:21] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:19:21] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 276.3312 seconds]
+[2025-07-28 22:19:39] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 293.9754 seconds]
+[2025-07-28 22:19:39] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:19:39] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 293.9964 seconds]
+[2025-07-28 22:19:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 293.9978 seconds]
+[2025-07-28 22:19:39] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:19:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 293.9979 seconds]
+[2025-07-28 22:20:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 335.7407 seconds]
+[2025-07-28 22:20:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:20:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 335.7591 seconds]
+[2025-07-28 22:20:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 335.7627 seconds]
+[2025-07-28 22:20:20] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:20:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 335.7629 seconds]
+[2025-07-28 22:20:35] | INFO | [agent:run:160] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "Bana basit matematik sorular\\u0131 sor", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--03dc0bf5-5d25-4cd2-8df7-f0a61336f6b8-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'Bana basit matematik soruları sor', 'user_id': '1'}, 'id': '2e62f616-08f7-4c0c-81ef-1f1433855322', 'type': 'tool_call'}] usage_metadata={'input_tokens': 285, 'output_tokens': 118, 'total_tokens': 403, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 86}}]
+[2025-07-28 22:20:35] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'Bana basit matematik soruları sor']
+[2025-07-28 22:20:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4908 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:20:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4908): coğrafya 1 text...]
+[2025-07-28 22:20:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4908 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:20:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4908): coğrafya 1 text...]
+[2025-07-28 22:20:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5514 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:20:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5514): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:20:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5514 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:20:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5514): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:20:36] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5644 | İçerik: Arkadaşlar merhabalar Tonguç akademi'ye Hoş geldiniz bugünkü dersimizde harita ve ölçek hesaplamalar...]
+[2025-07-28 22:20:36] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5644): Arkadaşlar merhabalar Tonguç akademi'ye Hoş geldin...]
+[2025-07-28 22:20:43] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n    {\n        "question": "5 + 3 işleminin sonucu kaçtır?",\n        "choices": {"A": "7", "B": "8", "C": "9", "D": "6", "E": "10"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "10 - 4 işleminin sonucu kaçtır?",\n        "choices": {"A": "5", "B": "7", "C": "6", "D": "4", "E": "8"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "2 x 6 işleminin sonucu kaçtır?",\n        "choices": {"A": "8", "B": "10", "C": "14", "D": "12", "E": "9"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "15 ÷ 3 işleminin sonucu kaçtır?",\n        "choices": {"A": "4", "B": "6", "C": "5", "D": "3", "E": "7"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Ayşe\'nin 4 kalemi vardı. Annesi ona 3 kalem daha verdi. Ayşe\'nin toplam kaç kalemi oldu?",\n        "choices": {"A": "6", "B": "7", "C": "8", "D": "5", "E": "9"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir otobüste 12 yolcu vardı. Durakta 5 yolcu indi. Otobüste kaç yolcu kaldı?",\n        "choices": {"A": "8", "B": "6", "C": "7", "D": "9", "E": "10"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Aşağıdaki sayılardan hangisi diğerlerinden daha büyüktür?",\n        "choices": {"A": "15", "B": "21", "C": "19", "D": "12", "E": "18"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Aşağıdaki sayılardan hangisi bir çift sayıdır?",\n        "choices": {"A": "7", "B": "11", "C": "9", "D": "13", "E": "10"},\n        "correct_answer": "E"\n    },\n    {\n        "question": "25 + 10 işleminin sonucu kaçtır?",\n        "choices": {"A": "30", "B": "35", "C": "40", "D": "20", "E": "15"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "50 - 20 işleminin sonucu kaçtır?",\n        "choices": {"A": "20", "B": "40", "C": "30", "D": "25", "E": "35"},\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-28 22:20:43] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+    {
+        "question": "5 + 3 işleminin sonucu kaçtır?",
+        "choices": {"A": "7", "B": "8", "C": "9", "D": "6", "E": "10"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "10 - 4 işleminin sonucu kaçtır?",
+        "choices": {"A": "5", "B": "7", "C": "6", "D": "4", "E": "8"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "2 x 6 işleminin sonucu kaçtır?",
+        "choices": {"A": "8", "B": "10", "C": "14", "D": "12", "E": "9"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "15 ÷ 3 işleminin sonucu kaçtır?",
+        "choices": {"A": "4", "B": "6", "C": "5", "D": "3", "E": "7"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Ayşe'nin 4 kalemi vardı. Annesi ona 3 kalem daha verdi. Ayşe'nin toplam kaç kalemi oldu?",
+        "choices": {"A": "6", "B": "7", "C": "8", "D": "5", "E": "9"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir otobüste 12 yolcu vardı. Durakta 5 yolcu indi. Otobüste kaç yolcu kaldı?",
+        "choices": {"A": "8", "B": "6", "C": "7", "D": "9", "E": "10"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Aşağıdaki sayılardan hangisi diğerlerinden daha büyüktür?",
+        "choices": {"A": "15", "B": "21", "C": "19", "D": "12", "E": "18"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Aşağıdaki sayılardan hangisi bir çift sayıdır?",
+        "choices": {"A": "7", "B": "11", "C": "9", "D": "13", "E": "10"},
+        "correct_answer": "E"
+    },
+    {
+        "question": "25 + 10 işleminin sonucu kaçtır?",
+        "choices": {"A": "30", "B": "35", "C": "40", "D": "20", "E": "15"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "50 - 20 işleminin sonucu kaçtır?",
+        "choices": {"A": "20", "B": "40", "C": "30", "D": "25", "E": "35"},
+        "correct_answer": "C"
+    }
+]]
+[2025-07-28 22:20:43] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': '5 + 3 işleminin sonucu kaçtır?', 'choices': {'A': '7', 'B': '8', 'C': '9', 'D': '6', 'E': '10'}, 'correct_answer': 'B'}, {'question': '10 - 4 işleminin sonucu kaçtır?', 'choices': {'A': '5', 'B': '7', 'C': '6', 'D': '4', 'E': '8'}, 'correct_answer': 'C'}, {'question': '2 x 6 işleminin sonucu kaçtır?', 'choices': {'A': '8', 'B': '10', 'C': '14', 'D': '12', 'E': '9'}, 'correct_answer': 'D'}, {'question': '15 ÷ 3 işleminin sonucu kaçtır?', 'choices': {'A': '4', 'B': '6', 'C': '5', 'D': '3', 'E': '7'}, 'correct_answer': 'C'}, {'question': "Ayşe'nin 4 kalemi vardı. Annesi ona 3 kalem daha verdi. Ayşe'nin toplam kaç kalemi oldu?", 'choices': {'A': '6', 'B': '7', 'C': '8', 'D': '5', 'E': '9'}, 'correct_answer': 'B'}, {'question': 'Bir otobüste 12 yolcu vardı. Durakta 5 yolcu indi. Otobüste kaç yolcu kaldı?', 'choices': {'A': '8', 'B': '6', 'C': '7', 'D': '9', 'E': '10'}, 'correct_answer': 'C'}, {'question': 'Aşağıdaki sayılardan hangisi diğerlerinden daha büyüktür?', 'choices': {'A': '15', 'B': '21', 'C': '19', 'D': '12', 'E': '18'}, 'correct_answer': 'B'}, {'question': 'Aşağıdaki sayılardan hangisi bir çift sayıdır?', 'choices': {'A': '7', 'B': '11', 'C': '9', 'D': '13', 'E': '10'}, 'correct_answer': 'E'}, {'question': '25 + 10 işleminin sonucu kaçtır?', 'choices': {'A': '30', 'B': '35', 'C': '40', 'D': '20', 'E': '15'}, 'correct_answer': 'B'}, {'question': '50 - 20 işleminin sonucu kaçtır?', 'choices': {'A': '20', 'B': '40', 'C': '30', 'D': '25', 'E': '35'}, 'correct_answer': 'C'}]]
+[2025-07-28 22:21:31] | INFO | [agent:run:160] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "Bana tarih ile ilgili sorualr sor", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--d96ccae5-a402-4d40-bbbe-2c58ba37c425-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'Bana tarih ile ilgili sorualr sor', 'user_id': '1'}, 'id': '714b21df-9b50-463c-9ada-1fb46b4ae945', 'type': 'tool_call'}] usage_metadata={'input_tokens': 287, 'output_tokens': 98, 'total_tokens': 385, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 64}}]
+[2025-07-28 22:21:31] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'Bana tarih ile ilgili sorualr sor']
+[2025-07-28 22:21:32] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4592 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:21:32] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4592): coğrafya 1 text...]
+[2025-07-28 22:21:32] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4592 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:21:32] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4592): coğrafya 1 text...]
+[2025-07-28 22:21:32] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5476 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:21:32] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5476): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:21:32] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5476 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 22:21:32] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5476): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 22:21:32] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5756 | İçerik: deneme exception 1...]
+[2025-07-28 22:21:32] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5756): deneme exception 1...]
+[2025-07-28 22:21:44] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n    {\n        "question": "Mısır\'daki piramitlerin inşası hangi hanedanlık döneminde zirveye ulaşmıştır?",\n        "choices": {\n            "A": "Yeni Krallık",\n            "B": "Orta Krallık",\n            "C": "Eski Krallık",\n            "D": "Geç Dönem",\n            "E": "Ptolemaios Hanedanlığı"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Roma İmparatorluğu\'nun ikiye ayrılması hangi imparator döneminde gerçekleşmiştir?",\n        "choices": {\n            "A": "Augustus",\n            "B": "Konstantin I",\n            "C": "Julius Caesar",\n            "D": "Theodosius I",\n            "E": "Diocletianus"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Antik Yunan\'da demokrasinin beşiği olarak kabul edilen şehir devleti hangisidir?",\n        "choices": {\n            "A": "Sparta",\n            "B": "Korint",\n            "C": "Atina",\n            "D": "Tebai",\n            "E": "Argos"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Haçlı Seferleri\'nin temel amaçlarından biri aşağıdakilerden hangisidir?",\n        "choices": {\n            "A": "Yeni ticaret yolları keşfetmek",\n            "B": "Kutsal Toprakları Müslümanlardan geri almak",\n            "C": "Feodalizmi güçlendirmek",\n            "D": "Avrupa\'da krallıkların birliğini sağlamak",\n            "E": "Bizans İmparatorluğu\'nu yıkmak"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Osmanlı İmparatorluğu\'nun kuruluşu genellikle hangi padişahın dönemine atfedilir?",\n        "choices": {\n            "A": "Orhan Bey",\n            "B": "I. Murad",\n            "C": "Osman Bey",\n            "D": "Yıldırım Bayezid",\n            "E": "Fatih Sultan Mehmet"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Rönesans\'ın İtalya\'da başlamasının temel nedenlerinden biri aşağıdakilerden hangisidir?",\n        "choices": {\n            "A": "Katolik Kilisesi\'nin zayıflaması",\n            "B": "Zengin şehir devletlerinin varlığı ve sanat hamiliği",\n            "C": "Yeni ticaret yollarının keşfi",\n            "D": "Osmanlı İmparatorluğu\'nun Avrupa\'ya ilerlemesi",\n            "E": "Feodal sistemin çöküşü"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Kristof Kolomb\'un 1492\'de ulaştığı kıta, başlangıçta hangi isimle anılmıştır?",\n        "choices": {\n            "A": "Hindistan",\n            "B": "Doğu Asya",\n            "C": "Yeni Dünya",\n            "D": "Afrika",\n            "E": "Avustralya"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fransız İhtilali\'nin başlangıcı olarak kabul edilen olay aşağıdakilerden hangisidir?",\n        "choices": {\n            "A": "Versailles Sarayı\'na Yürüyüş",\n            "B": "İnsan ve Yurttaş Hakları Bildirisi\'nin ilanı",\n            "C": "Bastille Baskını",\n            "D": "Kral XVI. Louis\'nin idamı",\n            "E": "Robespierre\'in iktidara gelmesi"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "I. Dünya Savaşı\'nın başlamasına doğrudan neden olan olay aşağıdakilerden hangisidir?",\n        "choices": {\n            "A": "Almanya\'nın Belçika\'yı işgali",\n            "B": "Rusya\'nın seferberlik ilan etmesi",\n            "C": "Avusturya-Macaristan Arşidükü Franz Ferdinand\'ın Saraybosna\'da öldürülmesi",\n            "D": "Osmanlı İmparatorluğu\'nun savaşa girmesi",\n            "E": "Versay Antlaşması\'nın imzalanması"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Soğuk Savaş döneminde ABD ve Sovyetler Birliği arasındaki ideolojik ve siyasi gerilimi ifade eden terim aşağıdakilerden hangisidir?",\n        "choices": {\n            "A": "Küreselleşme",\n            "B": "Yeni Dünya Düzeni",\n            "C": "İki Kutuplu Dünya",\n            "D": "Çok Kutuplu Dünya",\n            "E": "Bağlantısızlar Hareketi"\n        },\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-28 22:21:44] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+    {
+        "question": "Mısır'daki piramitlerin inşası hangi hanedanlık döneminde zirveye ulaşmıştır?",
+        "choices": {
+            "A": "Yeni Krallık",
+            "B": "Orta Krallık",
+            "C": "Eski Krallık",
+            "D": "Geç Dönem",
+            "E": "Ptolemaios Hanedanlığı"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Roma İmparatorluğu'nun ikiye ayrılması hangi imparator döneminde gerçekleşmiştir?",
+        "choices": {
+            "A": "Augustus",
+            "B": "Konstantin I",
+            "C": "Julius Caesar",
+            "D": "Theodosius I",
+            "E": "Diocletianus"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Antik Yunan'da demokrasinin beşiği olarak kabul edilen şehir devleti hangisidir?",
+        "choices": {
+            "A": "Sparta",
+            "B": "Korint",
+            "C": "Atina",
+            "D": "Tebai",
+            "E": "Argos"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Haçlı Seferleri'nin temel amaçlarından biri aşağıdakilerden hangisidir?",
+        "choices": {
+            "A": "Yeni ticaret yolları keşfetmek",
+            "B": "Kutsal Toprakları Müslümanlardan geri almak",
+            "C": "Feodalizmi güçlendirmek",
+            "D": "Avrupa'da krallıkların birliğini sağlamak",
+            "E": "Bizans İmparatorluğu'nu yıkmak"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Osmanlı İmparatorluğu'nun kuruluşu genellikle hangi padişahın dönemine atfedilir?",
+        "choices": {
+            "A": "Orhan Bey",
+            "B": "I. Murad",
+            "C": "Osman Bey",
+            "D": "Yıldırım Bayezid",
+            "E": "Fatih Sultan Mehmet"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Rönesans'ın İtalya'da başlamasının temel nedenlerinden biri aşağıdakilerden hangisidir?",
+        "choices": {
+            "A": "Katolik Kilisesi'nin zayıflaması",
+            "B": "Zengin şehir devletlerinin varlığı ve sanat hamiliği",
+            "C": "Yeni ticaret yollarının keşfi",
+            "D": "Osmanlı İmparatorluğu'nun Avrupa'ya ilerlemesi",
+            "E": "Feodal sistemin çöküşü"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Kristof Kolomb'un 1492'de ulaştığı kıta, başlangıçta hangi isimle anılmıştır?",
+        "choices": {
+            "A": "Hindistan",
+            "B": "Doğu Asya",
+            "C": "Yeni Dünya",
+            "D": "Afrika",
+            "E": "Avustralya"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fransız İhtilali'nin başlangıcı olarak kabul edilen olay aşağıdakilerden hangisidir?",
+        "choices": {
+            "A": "Versailles Sarayı'na Yürüyüş",
+            "B": "İnsan ve Yurttaş Hakları Bildirisi'nin ilanı",
+            "C": "Bastille Baskını",
+            "D": "Kral XVI. Louis'nin idamı",
+            "E": "Robespierre'in iktidara gelmesi"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "I. Dünya Savaşı'nın başlamasına doğrudan neden olan olay aşağıdakilerden hangisidir?",
+        "choices": {
+            "A": "Almanya'nın Belçika'yı işgali",
+            "B": "Rusya'nın seferberlik ilan etmesi",
+            "C": "Avusturya-Macaristan Arşidükü Franz Ferdinand'ın Saraybosna'da öldürülmesi",
+            "D": "Osmanlı İmparatorluğu'nun savaşa girmesi",
+            "E": "Versay Antlaşması'nın imzalanması"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Soğuk Savaş döneminde ABD ve Sovyetler Birliği arasındaki ideolojik ve siyasi gerilimi ifade eden terim aşağıdakilerden hangisidir?",
+        "choices": {
+            "A": "Küreselleşme",
+            "B": "Yeni Dünya Düzeni",
+            "C": "İki Kutuplu Dünya",
+            "D": "Çok Kutuplu Dünya",
+            "E": "Bağlantısızlar Hareketi"
+        },
+        "correct_answer": "C"
+    }
+]]
+[2025-07-28 22:21:44] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': "Mısır'daki piramitlerin inşası hangi hanedanlık döneminde zirveye ulaşmıştır?", 'choices': {'A': 'Yeni Krallık', 'B': 'Orta Krallık', 'C': 'Eski Krallık', 'D': 'Geç Dönem', 'E': 'Ptolemaios Hanedanlığı'}, 'correct_answer': 'C'}, {'question': "Roma İmparatorluğu'nun ikiye ayrılması hangi imparator döneminde gerçekleşmiştir?", 'choices': {'A': 'Augustus', 'B': 'Konstantin I', 'C': 'Julius Caesar', 'D': 'Theodosius I', 'E': 'Diocletianus'}, 'correct_answer': 'D'}, {'question': "Antik Yunan'da demokrasinin beşiği olarak kabul edilen şehir devleti hangisidir?", 'choices': {'A': 'Sparta', 'B': 'Korint', 'C': 'Atina', 'D': 'Tebai', 'E': 'Argos'}, 'correct_answer': 'C'}, {'question': "Haçlı Seferleri'nin temel amaçlarından biri aşağıdakilerden hangisidir?", 'choices': {'A': 'Yeni ticaret yolları keşfetmek', 'B': 'Kutsal Toprakları Müslümanlardan geri almak', 'C': 'Feodalizmi güçlendirmek', 'D': "Avrupa'da krallıkların birliğini sağlamak", 'E': "Bizans İmparatorluğu'nu yıkmak"}, 'correct_answer': 'B'}, {'question': "Osmanlı İmparatorluğu'nun kuruluşu genellikle hangi padişahın dönemine atfedilir?", 'choices': {'A': 'Orhan Bey', 'B': 'I. Murad', 'C': 'Osman Bey', 'D': 'Yıldırım Bayezid', 'E': 'Fatih Sultan Mehmet'}, 'correct_answer': 'C'}, {'question': "Rönesans'ın İtalya'da başlamasının temel nedenlerinden biri aşağıdakilerden hangisidir?", 'choices': {'A': "Katolik Kilisesi'nin zayıflaması", 'B': 'Zengin şehir devletlerinin varlığı ve sanat hamiliği', 'C': 'Yeni ticaret yollarının keşfi', 'D': "Osmanlı İmparatorluğu'nun Avrupa'ya ilerlemesi", 'E': 'Feodal sistemin çöküşü'}, 'correct_answer': 'B'}, {'question': "Kristof Kolomb'un 1492'de ulaştığı kıta, başlangıçta hangi isimle anılmıştır?", 'choices': {'A': 'Hindistan', 'B': 'Doğu Asya', 'C': 'Yeni Dünya', 'D': 'Afrika', 'E': 'Avustralya'}, 'correct_answer': 'C'}, {'question': "Fransız İhtilali'nin başlangıcı olarak kabul edilen olay aşağıdakilerden hangisidir?", 'choices': {'A': "Versailles Sarayı'na Yürüyüş", 'B': "İnsan ve Yurttaş Hakları Bildirisi'nin ilanı", 'C': 'Bastille Baskını', 'D': "Kral XVI. Louis'nin idamı", 'E': "Robespierre'in iktidara gelmesi"}, 'correct_answer': 'C'}, {'question': "I. Dünya Savaşı'nın başlamasına doğrudan neden olan olay aşağıdakilerden hangisidir?", 'choices': {'A': "Almanya'nın Belçika'yı işgali", 'B': "Rusya'nın seferberlik ilan etmesi", 'C': "Avusturya-Macaristan Arşidükü Franz Ferdinand'ın Saraybosna'da öldürülmesi", 'D': "Osmanlı İmparatorluğu'nun savaşa girmesi", 'E': "Versay Antlaşması'nın imzalanması"}, 'correct_answer': 'C'}, {'question': 'Soğuk Savaş döneminde ABD ve Sovyetler Birliği arasındaki ideolojik ve siyasi gerilimi ifade eden terim aşağıdakilerden hangisidir?', 'choices': {'A': 'Küreselleşme', 'B': 'Yeni Dünya Düzeni', 'C': 'İki Kutuplu Dünya', 'D': 'Çok Kutuplu Dünya', 'E': 'Bağlantısızlar Hareketi'}, 'correct_answer': 'C'}]]
+[2025-07-28 22:26:18] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 22:26:18] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 22:26:18] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 22:26:18] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 22:26:18] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 22:26:18] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 22:26:18] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 22:26:23] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 5.3525 seconds]
+[2025-07-28 22:26:23] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:26:23] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 5.3712 seconds]
+[2025-07-28 22:26:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.3749 seconds]
+[2025-07-28 22:26:23] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:26:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.3751 seconds]
+[2025-07-28 22:28:42] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 144.4809 seconds]
+[2025-07-28 22:28:42] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:28:42] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 144.5002 seconds]
+[2025-07-28 22:28:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 144.5017 seconds]
+[2025-07-28 22:28:42] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:28:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 144.5018 seconds]
+[2025-07-28 22:29:15] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 176.6415 seconds]
+[2025-07-28 22:29:15] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:29:15] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 176.6599 seconds]
+[2025-07-28 22:29:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 176.6634 seconds]
+[2025-07-28 22:29:15] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:29:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 176.6636 seconds]
+[2025-07-28 22:29:50] | INFO | [agent:run:161] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"user_id": "1", "student_quiz_keywords": "sdfhsduyfsd"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--c5f3738f-89de-4b25-a153-93d7a312df35-0' tool_calls=[{'name': 'quiz_generate', 'args': {'user_id': '1', 'student_quiz_keywords': 'sdfhsduyfsd'}, 'id': '0309c1dd-4111-4b0f-9c29-8413ed14c634', 'type': 'tool_call'}] usage_metadata={'input_tokens': 285, 'output_tokens': 93, 'total_tokens': 378, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 62}}]
+[2025-07-28 22:29:50] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'sdfhsduyfsd']
+[2025-07-28 22:29:50] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4977 | İçerik: deneme exception 1...]
+[2025-07-28 22:29:50] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4977): deneme exception 1...]
+[2025-07-28 22:29:50] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4977 | İçerik: deneme exception 1...]
+[2025-07-28 22:29:50] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4977): deneme exception 1...]
+[2025-07-28 22:29:50] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5241 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:29:50] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5241): coğrafya 1 text...]
+[2025-07-28 22:29:50] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5241 | İçerik: coğrafya 1 text...]
+[2025-07-28 22:29:50] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5241): coğrafya 1 text...]
+[2025-07-28 22:29:50] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6343 | İçerik: Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana bölümden oluşur:
+
+    Okyanusal kabuk: Denizler...]
+[2025-07-28 22:29:50] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6343): Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana...]
+[2025-07-28 22:30:06] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n    {\n        "question": "Konu başlığı \\"sdfhsduyfsd\\" ne anlama gelmektedir?",\n        "choices": {"A": "Bilimsel bir terimdir.", "B": "Geçersiz veya anlamsız bir metin dizisidir.", "C": "Tarihi bir olayın kod adıdır.", "D": "Yeni bir programlama dilidir.", "E": "Bir sanat akımının adıdır."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Öğrencinin notları ve kaynakları bölümü neden boş bırakılmıştır?",\n        "choices": {"A": "Konu hakkında yeterli bilgiye sahip olduğu için.", "B": "Öğretmenin kendi kaynaklarını kullanmasını beklediği için.", "C": "Konu başlığı anlamsız olduğu ve içerik sağlanmadığı için.", "D": "Sadece test amaçlı bir deneme olduğu için.", "E": "Notlarını daha sonra eklemeyi planladığı için."},\n        "correct_answer": "C"\n    },\n    {\n        "question": "\\"sdfhsduyfsd\\" konusu hakkında çoktan seçmeli sorular üretmek için neye ihtiyaç duyulmaktadır?",\n        "choices": {"A": "Daha fazla anlamsız kelimeye.", "B": "Konuyla ilgili gerçek bilgilere ve içeriğe.", "C": "Rastgele harf kombinasyonlarına.", "D": "Öğrencinin kişisel tercihlerine.", "E": "Hiçbir şeye, mevcut haliyle yeterlidir."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir öğretmen olarak, \\"sdfhsduyfsd\\" gibi bir konu başlığıyla karşılaştığınızda ilk tepkiniz ne olmalıdır?",\n        "choices": {"A": "Hemen soruları üretmeye başlamak.", "B": "Konunun ne anlama geldiğini araştırmaya çalışmak.", "C": "Öğrenciye konuyu netleştirmesi ve içerik sağlaması gerektiğini bildirmek.", "D": "Konuyu tamamen göz ardı etmek.", "E": "Kendi hayal gücünüzü kullanarak bir konu uydurmak."},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bu tür bir \\"konu\\" ile verilen \\"boş notlar\\" göz önüne alındığında, üretilecek soruların kalitesi nasıl olur?",\n        "choices": {"A": "Çok yüksek ve bilgilendirici.", "B": "Orta düzeyde, bazı tahminler yapılabilir.", "C": "Düşük, çünkü soruların dayanağı olmaz.", "D": "Mükemmel, çünkü yaratıcılığı teşvik eder.", "E": "Konuyla tamamen alakasız ama yine de faydalı."},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Öğrencinin \\"sdfhsduyfsd\\" gibi bir konu vermesinin olası nedeni nedir?",\n        "choices": {"A": "Gerçek bir konuyu şifrelemek istemesi.", "B": "Bir yazım hatası veya test amaçlı bir giriş olması.", "C": "Öğretmenin bilgi düzeyini test etmek istemesi.", "D": "Yeni bir eğitim metodunu denemesi.", "E": "Gizli bir mesaj iletmek istemesi."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Gelecekte benzer bir durumla karşılaşmamak için öğrenciye ne tavsiye edilmelidir?",\n        "choices": {"A": "Daha karmaşık ve şifreli konular seçmesi.", "B": "Konu başlığını açıkça belirtmesi ve ilgili notlar/kaynaklar sağlaması.", "C": "Sadece tek kelimelik konular vermesi.", "D": "Konu başlığını tamamen boş bırakması.", "E": "Rastgele harf dizileri kullanmaya devam etmesi."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bu görevde verilen \\"Konu: sdfhsduyfsd\\" ve \\"Öğrencinin notları ve kaynakları: []\\" bilgileri neyi göstermektedir?",\n        "choices": {"A": "Görevin kolay olduğunu.", "B": "Görevin tamamlanması için gerekli bilginin eksik olduğunu.", "C": "Öğrencinin çok zeki olduğunu.", "D": "Konunun çok genel olduğunu.", "E": "Soruların rastgele üretilmesi gerektiğini."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir öğretmen ajanı olarak, bu durumda en sorumlu yaklaşım nedir?",\n        "choices": {"A": "Herhangi bir konu hakkında 10 soru üretmek.", "B": "Görevi reddetmek.", "C": "Durumu açıklayan ve daha fazla bilgi talep eden sorular üretmek.", "D": "Öğrenciyi notları olmadığı için cezalandırmak.", "E": "Konuyu kendi başına araştırıp soruları öyle üretmek."},\n        "correct_answer": "C"\n    },\n    {\n        "question": "\\"sdfhsduyfsd\\" kelimesinin herhangi bir dilde bilinen bir anlamı var mıdır?",\n        "choices": {"A": "Evet, Latince bir kökeni vardır.", "B": "Hayır, anlamsız bir karakter dizisidir.", "C": "Evet, eski bir Mısır hiyeroglifidir.", "D": "Evet, modern bir bilimsel kısaltmadır.", "E": "Evet, bir müzik terimidir."},\n        "correct_answer": "B"\n    }\n]\n```']
+[2025-07-28 22:30:06] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+    {
+        "question": "Konu başlığı \"sdfhsduyfsd\" ne anlama gelmektedir?",
+        "choices": {"A": "Bilimsel bir terimdir.", "B": "Geçersiz veya anlamsız bir metin dizisidir.", "C": "Tarihi bir olayın kod adıdır.", "D": "Yeni bir programlama dilidir.", "E": "Bir sanat akımının adıdır."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Öğrencinin notları ve kaynakları bölümü neden boş bırakılmıştır?",
+        "choices": {"A": "Konu hakkında yeterli bilgiye sahip olduğu için.", "B": "Öğretmenin kendi kaynaklarını kullanmasını beklediği için.", "C": "Konu başlığı anlamsız olduğu ve içerik sağlanmadığı için.", "D": "Sadece test amaçlı bir deneme olduğu için.", "E": "Notlarını daha sonra eklemeyi planladığı için."},
+        "correct_answer": "C"
+    },
+    {
+        "question": "\"sdfhsduyfsd\" konusu hakkında çoktan seçmeli sorular üretmek için neye ihtiyaç duyulmaktadır?",
+        "choices": {"A": "Daha fazla anlamsız kelimeye.", "B": "Konuyla ilgili gerçek bilgilere ve içeriğe.", "C": "Rastgele harf kombinasyonlarına.", "D": "Öğrencinin kişisel tercihlerine.", "E": "Hiçbir şeye, mevcut haliyle yeterlidir."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir öğretmen olarak, \"sdfhsduyfsd\" gibi bir konu başlığıyla karşılaştığınızda ilk tepkiniz ne olmalıdır?",
+        "choices": {"A": "Hemen soruları üretmeye başlamak.", "B": "Konunun ne anlama geldiğini araştırmaya çalışmak.", "C": "Öğrenciye konuyu netleştirmesi ve içerik sağlaması gerektiğini bildirmek.", "D": "Konuyu tamamen göz ardı etmek.", "E": "Kendi hayal gücünüzü kullanarak bir konu uydurmak."},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bu tür bir \"konu\" ile verilen \"boş notlar\" göz önüne alındığında, üretilecek soruların kalitesi nasıl olur?",
+        "choices": {"A": "Çok yüksek ve bilgilendirici.", "B": "Orta düzeyde, bazı tahminler yapılabilir.", "C": "Düşük, çünkü soruların dayanağı olmaz.", "D": "Mükemmel, çünkü yaratıcılığı teşvik eder.", "E": "Konuyla tamamen alakasız ama yine de faydalı."},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Öğrencinin \"sdfhsduyfsd\" gibi bir konu vermesinin olası nedeni nedir?",
+        "choices": {"A": "Gerçek bir konuyu şifrelemek istemesi.", "B": "Bir yazım hatası veya test amaçlı bir giriş olması.", "C": "Öğretmenin bilgi düzeyini test etmek istemesi.", "D": "Yeni bir eğitim metodunu denemesi.", "E": "Gizli bir mesaj iletmek istemesi."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Gelecekte benzer bir durumla karşılaşmamak için öğrenciye ne tavsiye edilmelidir?",
+        "choices": {"A": "Daha karmaşık ve şifreli konular seçmesi.", "B": "Konu başlığını açıkça belirtmesi ve ilgili notlar/kaynaklar sağlaması.", "C": "Sadece tek kelimelik konular vermesi.", "D": "Konu başlığını tamamen boş bırakması.", "E": "Rastgele harf dizileri kullanmaya devam etmesi."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bu görevde verilen \"Konu: sdfhsduyfsd\" ve \"Öğrencinin notları ve kaynakları: []\" bilgileri neyi göstermektedir?",
+        "choices": {"A": "Görevin kolay olduğunu.", "B": "Görevin tamamlanması için gerekli bilginin eksik olduğunu.", "C": "Öğrencinin çok zeki olduğunu.", "D": "Konunun çok genel olduğunu.", "E": "Soruların rastgele üretilmesi gerektiğini."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir öğretmen ajanı olarak, bu durumda en sorumlu yaklaşım nedir?",
+        "choices": {"A": "Herhangi bir konu hakkında 10 soru üretmek.", "B": "Görevi reddetmek.", "C": "Durumu açıklayan ve daha fazla bilgi talep eden sorular üretmek.", "D": "Öğrenciyi notları olmadığı için cezalandırmak.", "E": "Konuyu kendi başına araştırıp soruları öyle üretmek."},
+        "correct_answer": "C"
+    },
+    {
+        "question": "\"sdfhsduyfsd\" kelimesinin herhangi bir dilde bilinen bir anlamı var mıdır?",
+        "choices": {"A": "Evet, Latince bir kökeni vardır.", "B": "Hayır, anlamsız bir karakter dizisidir.", "C": "Evet, eski bir Mısır hiyeroglifidir.", "D": "Evet, modern bir bilimsel kısaltmadır.", "E": "Evet, bir müzik terimidir."},
+        "correct_answer": "B"
+    }
+]]
+[2025-07-28 22:30:06] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': 'Konu başlığı "sdfhsduyfsd" ne anlama gelmektedir?', 'choices': {'A': 'Bilimsel bir terimdir.', 'B': 'Geçersiz veya anlamsız bir metin dizisidir.', 'C': 'Tarihi bir olayın kod adıdır.', 'D': 'Yeni bir programlama dilidir.', 'E': 'Bir sanat akımının adıdır.'}, 'correct_answer': 'B'}, {'question': 'Öğrencinin notları ve kaynakları bölümü neden boş bırakılmıştır?', 'choices': {'A': 'Konu hakkında yeterli bilgiye sahip olduğu için.', 'B': 'Öğretmenin kendi kaynaklarını kullanmasını beklediği için.', 'C': 'Konu başlığı anlamsız olduğu ve içerik sağlanmadığı için.', 'D': 'Sadece test amaçlı bir deneme olduğu için.', 'E': 'Notlarını daha sonra eklemeyi planladığı için.'}, 'correct_answer': 'C'}, {'question': '"sdfhsduyfsd" konusu hakkında çoktan seçmeli sorular üretmek için neye ihtiyaç duyulmaktadır?', 'choices': {'A': 'Daha fazla anlamsız kelimeye.', 'B': 'Konuyla ilgili gerçek bilgilere ve içeriğe.', 'C': 'Rastgele harf kombinasyonlarına.', 'D': 'Öğrencinin kişisel tercihlerine.', 'E': 'Hiçbir şeye, mevcut haliyle yeterlidir.'}, 'correct_answer': 'B'}, {'question': 'Bir öğretmen olarak, "sdfhsduyfsd" gibi bir konu başlığıyla karşılaştığınızda ilk tepkiniz ne olmalıdır?', 'choices': {'A': 'Hemen soruları üretmeye başlamak.', 'B': 'Konunun ne anlama geldiğini araştırmaya çalışmak.', 'C': 'Öğrenciye konuyu netleştirmesi ve içerik sağlaması gerektiğini bildirmek.', 'D': 'Konuyu tamamen göz ardı etmek.', 'E': 'Kendi hayal gücünüzü kullanarak bir konu uydurmak.'}, 'correct_answer': 'C'}, {'question': 'Bu tür bir "konu" ile verilen "boş notlar" göz önüne alındığında, üretilecek soruların kalitesi nasıl olur?', 'choices': {'A': 'Çok yüksek ve bilgilendirici.', 'B': 'Orta düzeyde, bazı tahminler yapılabilir.', 'C': 'Düşük, çünkü soruların dayanağı olmaz.', 'D': 'Mükemmel, çünkü yaratıcılığı teşvik eder.', 'E': 'Konuyla tamamen alakasız ama yine de faydalı.'}, 'correct_answer': 'C'}, {'question': 'Öğrencinin "sdfhsduyfsd" gibi bir konu vermesinin olası nedeni nedir?', 'choices': {'A': 'Gerçek bir konuyu şifrelemek istemesi.', 'B': 'Bir yazım hatası veya test amaçlı bir giriş olması.', 'C': 'Öğretmenin bilgi düzeyini test etmek istemesi.', 'D': 'Yeni bir eğitim metodunu denemesi.', 'E': 'Gizli bir mesaj iletmek istemesi.'}, 'correct_answer': 'B'}, {'question': 'Gelecekte benzer bir durumla karşılaşmamak için öğrenciye ne tavsiye edilmelidir?', 'choices': {'A': 'Daha karmaşık ve şifreli konular seçmesi.', 'B': 'Konu başlığını açıkça belirtmesi ve ilgili notlar/kaynaklar sağlaması.', 'C': 'Sadece tek kelimelik konular vermesi.', 'D': 'Konu başlığını tamamen boş bırakması.', 'E': 'Rastgele harf dizileri kullanmaya devam etmesi.'}, 'correct_answer': 'B'}, {'question': 'Bu görevde verilen "Konu: sdfhsduyfsd" ve "Öğrencinin notları ve kaynakları: []" bilgileri neyi göstermektedir?', 'choices': {'A': 'Görevin kolay olduğunu.', 'B': 'Görevin tamamlanması için gerekli bilginin eksik olduğunu.', 'C': 'Öğrencinin çok zeki olduğunu.', 'D': 'Konunun çok genel olduğunu.', 'E': 'Soruların rastgele üretilmesi gerektiğini.'}, 'correct_answer': 'B'}, {'question': 'Bir öğretmen ajanı olarak, bu durumda en sorumlu yaklaşım nedir?', 'choices': {'A': 'Herhangi bir konu hakkında 10 soru üretmek.', 'B': 'Görevi reddetmek.', 'C': 'Durumu açıklayan ve daha fazla bilgi talep eden sorular üretmek.', 'D': 'Öğrenciyi notları olmadığı için cezalandırmak.', 'E': 'Konuyu kendi başına araştırıp soruları öyle üretmek.'}, 'correct_answer': 'C'}, {'question': '"sdfhsduyfsd" kelimesinin herhangi bir dilde bilinen bir anlamı var mıdır?', 'choices': {'A': 'Evet, Latince bir kökeni vardır.', 'B': 'Hayır, anlamsız bir karakter dizisidir.', 'C': 'Evet, eski bir Mısır hiyeroglifidir.', 'D': 'Evet, modern bir bilimsel kısaltmadır.', 'E': 'Evet, bir müzik terimidir.'}, 'correct_answer': 'B'}]]
+[2025-07-28 22:32:24] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 366.2226 seconds]
+[2025-07-28 22:32:24] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:32:24] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 366.2393 seconds]
+[2025-07-28 22:32:24] | INFO | [chatbot:ask_question:49] | [Asking question for subject 'felsefe' by user 1: ahlak nedir]
+[2025-07-28 22:32:24] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'ahlak nedir']
+[2025-07-28 22:32:25] | WARNING | [chatbot:ask_question:60] | [No relevant context found. Returning fallback answer.]
+[2025-07-28 22:32:25] | INFO | [crud:create:49] | [the data: <app.models.models.QuestionAnswer object at 0x7fa1241c4990> is added into the database.]
+[2025-07-28 22:32:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 366.7461 seconds]
+[2025-07-28 22:34:07] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 22:34:07] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 22:34:07] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 22:34:07] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 22:34:07] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 22:34:07] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 22:34:07] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 22:34:18] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.2999 seconds]
+[2025-07-28 22:34:18] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:34:18] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.3186 seconds]
+[2025-07-28 22:34:18] | INFO | [chatbot:ask_question:49] | [Asking question for subject 'felsefe' by user 1: ahlak nedir]
+[2025-07-28 22:34:18] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'ahlak nedir']
+[2025-07-28 22:34:19] | WARNING | [chatbot:ask_question:60] | [No relevant context found. Returning fallback answer.]
+[2025-07-28 22:34:22] | INFO | [crud:create:49] | [the data: <app.models.models.QuestionAnswer object at 0x7f0da06616d0> is added into the database.]
+[2025-07-28 22:34:22] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 14.3088 seconds]
+[2025-07-28 22:36:53] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 165.3848 seconds]
+[2025-07-28 22:36:53] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:36:53] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 165.4024 seconds]
+[2025-07-28 22:36:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 165.4041 seconds]
+[2025-07-28 22:36:53] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:36:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 165.4042 seconds]
+[2025-07-28 22:37:18] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 190.5181 seconds]
+[2025-07-28 22:37:18] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:37:18] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 190.5376 seconds]
+[2025-07-28 22:37:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 190.5389 seconds]
+[2025-07-28 22:37:18] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-28 22:37:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 190.5390 seconds]
+[2025-07-28 22:38:45] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 277.4492 seconds]
+[2025-07-28 22:38:45] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 22:38:45] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 277.4674 seconds]
+[2025-07-28 22:38:45] | INFO | [chatbot:ask_question:49] | [Asking question for subject 'felsefe' by user 1: What is the different between become a good person and become a bad person]
+[2025-07-28 22:38:45] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'What is the different between become a good person and become a bad person']
+[2025-07-28 22:38:45] | WARNING | [chatbot:ask_question:60] | [No relevant context found. Returning fallback answer.]
+[2025-07-28 22:38:52] | INFO | [crud:create:49] | [the data: <app.models.models.QuestionAnswer object at 0x7f0d60400ad0> is added into the database.]
+[2025-07-28 22:38:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 284.8712 seconds]
+[2025-07-28 23:40:04] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 23:40:04] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 23:40:04] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 23:40:04] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 23:40:04] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 23:40:04] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 23:40:04] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 23:40:13] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 9.0697 seconds]
+[2025-07-28 23:40:13] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:40:13] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 9.0883 seconds]
+[2025-07-28 23:40:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.0915 seconds]
+[2025-07-28 23:40:13] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:40:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.0916 seconds]
+[2025-07-28 23:40:16] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 12.3398 seconds]
+[2025-07-28 23:40:16] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:40:16] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 12.3572 seconds]
+[2025-07-28 23:40:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 12.3588 seconds]
+[2025-07-28 23:40:16] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:40:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 12.3589 seconds]
+[2025-07-28 23:40:22] | INFO | [agent:run:161] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"user_id": "1", "student_quiz_keywords": "sadfsdfsd"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--7ff99bf5-c356-4996-b9f8-61f48900927b-0' tool_calls=[{'name': 'quiz_generate', 'args': {'user_id': '1', 'student_quiz_keywords': 'sadfsdfsd'}, 'id': '5a74b0bc-ab08-49c2-8cc8-98cb0e6dbe1a', 'type': 'tool_call'}] usage_metadata={'input_tokens': 283, 'output_tokens': 89, 'total_tokens': 372, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 60}}]
+[2025-07-28 23:40:22] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'sadfsdfsd']
+[2025-07-28 23:40:23] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4792 | İçerik: deneme exception 1...]
+[2025-07-28 23:40:23] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4792): deneme exception 1...]
+[2025-07-28 23:40:23] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4792 | İçerik: deneme exception 1...]
+[2025-07-28 23:40:23] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4792): deneme exception 1...]
+[2025-07-28 23:40:23] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5180 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:40:23] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5180): coğrafya 1 text...]
+[2025-07-28 23:40:23] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5180 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:40:23] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5180): coğrafya 1 text...]
+[2025-07-28 23:40:23] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6517 | İçerik: Arkadaşlar merhabalar Tonguç akademi'ye Hoş geldiniz bugünkü dersimizde harita ve ölçek hesaplamalar...]
+[2025-07-28 23:40:23] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6517): Arkadaşlar merhabalar Tonguç akademi'ye Hoş geldin...]
+[2025-07-28 23:40:40] | INFO | [agent:quiz_generate:73] | [Model output (raw): '```json\n[\n    {\n        "question": "Öğrenmenin temel amacı nedir?",\n        "choices": {"A": "Sadece sınavları geçmek", "B": "Yeni bilgiler edinmek ve anlamak", "C": "Arkadaş edinmek", "D": "Boş zamanı değerlendirmek", "E": "Ezber yeteneğini geliştirmek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Etkili bir çalışma yöntemi olarak ne önerilir?",\n        "choices": {"A": "Sadece okumak", "B": "Düzenli tekrar yapmak", "C": "Son dakikaya bırakmak", "D": "Müzik dinleyerek çalışmak", "E": "Not almadan dinlemek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir konuyu daha iyi anlamak için ne yapılmalıdır?",\n        "choices": {"A": "Sadece öğretmeni dinlemek", "B": "Soru sormaktan kaçınmak", "C": "Konu hakkında araştırma yapmak ve sorular sormak", "D": "Kitabı hızlıca okumak", "E": "Başkalarının notlarını kopyalamak"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bilgiyi kalıcı hale getirmenin en iyi yollarından biri nedir?",\n        "choices": {"A": "Sadece bir kez okumak", "B": "Uygulama ve pratik yapmak", "C": "Başkalarına anlatmak", "D": "Not almamak", "E": "Sadece dinlemek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Öğrenme sürecinde hedefler belirlemenin faydası nedir?",\n        "choices": {"A": "Motivasyonu azaltır", "B": "Odaklanmayı artırır ve yön verir", "C": "Stresi artırır", "D": "Gereksiz zaman kaybıdır", "E": "Sadece öğretmenler için gereklidir"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Aktif öğrenme ne anlama gelir?",\n        "choices": {"A": "Sadece dersleri dinlemek", "B": "Öğrencinin sürece aktif olarak katılması", "C": "Sadece not tutmak", "D": "Pasif bir şekilde bilgi almak", "E": "Sadece ezberlemek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Erteleme alışkanlığını yenmek için ne yapılabilir?",\n        "choices": {"A": "Görevleri son ana bırakmak", "B": "Küçük adımlarla başlamak ve görevleri bölmek", "C": "Hiçbir şey yapmamak", "D": "Daha fazla uyumak", "E": "Başkalarının yapmasını beklemek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Geri bildirimin (feedback) öğrenmedeki önemi nedir?",\n        "choices": {"A": "Gereksizdir, sadece eleştiridir", "B": "Hataları fark etmeyi ve gelişmeyi sağlar", "C": "Öğrenciyi demoralize eder", "D": "Sadece not vermek içindir", "E": "Öğretmenin işini kolaylaştırır"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Eleştirel düşünme becerisi neyi ifade eder?",\n        "choices": {"A": "Her şeyi sorgulamadan kabul etmek", "B": "Bilgiyi analiz etme, değerlendirme ve yorumlama yeteneği", "C": "Sadece başkalarını eleştirmek", "D": "Yaratıcı olmamak", "E": "Sadece ezberlemek"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Sınavlara hazırlanırken en etkili yöntemlerden biri nedir?",\n        "choices": {"A": "Sadece sınavdan önceki gece çalışmak", "B": "Düzenli ve planlı bir şekilde çalışmak", "C": "Konuları sadece okuyarak geçmek", "D": "Arkadaşlarla sürekli sohbet etmek", "E": "Hiçbir şey yapmamak"},\n        "correct_answer": "B"\n    }\n]\n```']
+[2025-07-28 23:40:40] | INFO | [agent:quiz_generate:77] | [Cleaned content: [
+    {
+        "question": "Öğrenmenin temel amacı nedir?",
+        "choices": {"A": "Sadece sınavları geçmek", "B": "Yeni bilgiler edinmek ve anlamak", "C": "Arkadaş edinmek", "D": "Boş zamanı değerlendirmek", "E": "Ezber yeteneğini geliştirmek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Etkili bir çalışma yöntemi olarak ne önerilir?",
+        "choices": {"A": "Sadece okumak", "B": "Düzenli tekrar yapmak", "C": "Son dakikaya bırakmak", "D": "Müzik dinleyerek çalışmak", "E": "Not almadan dinlemek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir konuyu daha iyi anlamak için ne yapılmalıdır?",
+        "choices": {"A": "Sadece öğretmeni dinlemek", "B": "Soru sormaktan kaçınmak", "C": "Konu hakkında araştırma yapmak ve sorular sormak", "D": "Kitabı hızlıca okumak", "E": "Başkalarının notlarını kopyalamak"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bilgiyi kalıcı hale getirmenin en iyi yollarından biri nedir?",
+        "choices": {"A": "Sadece bir kez okumak", "B": "Uygulama ve pratik yapmak", "C": "Başkalarına anlatmak", "D": "Not almamak", "E": "Sadece dinlemek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Öğrenme sürecinde hedefler belirlemenin faydası nedir?",
+        "choices": {"A": "Motivasyonu azaltır", "B": "Odaklanmayı artırır ve yön verir", "C": "Stresi artırır", "D": "Gereksiz zaman kaybıdır", "E": "Sadece öğretmenler için gereklidir"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Aktif öğrenme ne anlama gelir?",
+        "choices": {"A": "Sadece dersleri dinlemek", "B": "Öğrencinin sürece aktif olarak katılması", "C": "Sadece not tutmak", "D": "Pasif bir şekilde bilgi almak", "E": "Sadece ezberlemek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Erteleme alışkanlığını yenmek için ne yapılabilir?",
+        "choices": {"A": "Görevleri son ana bırakmak", "B": "Küçük adımlarla başlamak ve görevleri bölmek", "C": "Hiçbir şey yapmamak", "D": "Daha fazla uyumak", "E": "Başkalarının yapmasını beklemek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Geri bildirimin (feedback) öğrenmedeki önemi nedir?",
+        "choices": {"A": "Gereksizdir, sadece eleştiridir", "B": "Hataları fark etmeyi ve gelişmeyi sağlar", "C": "Öğrenciyi demoralize eder", "D": "Sadece not vermek içindir", "E": "Öğretmenin işini kolaylaştırır"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Eleştirel düşünme becerisi neyi ifade eder?",
+        "choices": {"A": "Her şeyi sorgulamadan kabul etmek", "B": "Bilgiyi analiz etme, değerlendirme ve yorumlama yeteneği", "C": "Sadece başkalarını eleştirmek", "D": "Yaratıcı olmamak", "E": "Sadece ezberlemek"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Sınavlara hazırlanırken en etkili yöntemlerden biri nedir?",
+        "choices": {"A": "Sadece sınavdan önceki gece çalışmak", "B": "Düzenli ve planlı bir şekilde çalışmak", "C": "Konuları sadece okuyarak geçmek", "D": "Arkadaşlarla sürekli sohbet etmek", "E": "Hiçbir şey yapmamak"},
+        "correct_answer": "B"
+    }
+]]
+[2025-07-28 23:40:40] | INFO | [agent:quiz_generate:79] | [Cleaned content questions: [{'question': 'Öğrenmenin temel amacı nedir?', 'choices': {'A': 'Sadece sınavları geçmek', 'B': 'Yeni bilgiler edinmek ve anlamak', 'C': 'Arkadaş edinmek', 'D': 'Boş zamanı değerlendirmek', 'E': 'Ezber yeteneğini geliştirmek'}, 'correct_answer': 'B'}, {'question': 'Etkili bir çalışma yöntemi olarak ne önerilir?', 'choices': {'A': 'Sadece okumak', 'B': 'Düzenli tekrar yapmak', 'C': 'Son dakikaya bırakmak', 'D': 'Müzik dinleyerek çalışmak', 'E': 'Not almadan dinlemek'}, 'correct_answer': 'B'}, {'question': 'Bir konuyu daha iyi anlamak için ne yapılmalıdır?', 'choices': {'A': 'Sadece öğretmeni dinlemek', 'B': 'Soru sormaktan kaçınmak', 'C': 'Konu hakkında araştırma yapmak ve sorular sormak', 'D': 'Kitabı hızlıca okumak', 'E': 'Başkalarının notlarını kopyalamak'}, 'correct_answer': 'C'}, {'question': 'Bilgiyi kalıcı hale getirmenin en iyi yollarından biri nedir?', 'choices': {'A': 'Sadece bir kez okumak', 'B': 'Uygulama ve pratik yapmak', 'C': 'Başkalarına anlatmak', 'D': 'Not almamak', 'E': 'Sadece dinlemek'}, 'correct_answer': 'B'}, {'question': 'Öğrenme sürecinde hedefler belirlemenin faydası nedir?', 'choices': {'A': 'Motivasyonu azaltır', 'B': 'Odaklanmayı artırır ve yön verir', 'C': 'Stresi artırır', 'D': 'Gereksiz zaman kaybıdır', 'E': 'Sadece öğretmenler için gereklidir'}, 'correct_answer': 'B'}, {'question': 'Aktif öğrenme ne anlama gelir?', 'choices': {'A': 'Sadece dersleri dinlemek', 'B': 'Öğrencinin sürece aktif olarak katılması', 'C': 'Sadece not tutmak', 'D': 'Pasif bir şekilde bilgi almak', 'E': 'Sadece ezberlemek'}, 'correct_answer': 'B'}, {'question': 'Erteleme alışkanlığını yenmek için ne yapılabilir?', 'choices': {'A': 'Görevleri son ana bırakmak', 'B': 'Küçük adımlarla başlamak ve görevleri bölmek', 'C': 'Hiçbir şey yapmamak', 'D': 'Daha fazla uyumak', 'E': 'Başkalarının yapmasını beklemek'}, 'correct_answer': 'B'}, {'question': 'Geri bildirimin (feedback) öğrenmedeki önemi nedir?', 'choices': {'A': 'Gereksizdir, sadece eleştiridir', 'B': 'Hataları fark etmeyi ve gelişmeyi sağlar', 'C': 'Öğrenciyi demoralize eder', 'D': 'Sadece not vermek içindir', 'E': 'Öğretmenin işini kolaylaştırır'}, 'correct_answer': 'B'}, {'question': 'Eleştirel düşünme becerisi neyi ifade eder?', 'choices': {'A': 'Her şeyi sorgulamadan kabul etmek', 'B': 'Bilgiyi analiz etme, değerlendirme ve yorumlama yeteneği', 'C': 'Sadece başkalarını eleştirmek', 'D': 'Yaratıcı olmamak', 'E': 'Sadece ezberlemek'}, 'correct_answer': 'B'}, {'question': 'Sınavlara hazırlanırken en etkili yöntemlerden biri nedir?', 'choices': {'A': 'Sadece sınavdan önceki gece çalışmak', 'B': 'Düzenli ve planlı bir şekilde çalışmak', 'C': 'Konuları sadece okuyarak geçmek', 'D': 'Arkadaşlarla sürekli sohbet etmek', 'E': 'Hiçbir şey yapmamak'}, 'correct_answer': 'B'}]]
+[2025-07-28 23:43:59] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 23:43:59] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 23:43:59] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 23:43:59] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 23:43:59] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 23:43:59] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 23:43:59] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 23:44:02] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.4072 seconds]
+[2025-07-28 23:44:02] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:44:02] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.4314 seconds]
+[2025-07-28 23:44:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.4350 seconds]
+[2025-07-28 23:44:02] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:44:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.4351 seconds]
+[2025-07-28 23:44:06] | INFO | [agent:run:163] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "dsfdsfsd", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--023fa8de-e382-4b5b-8f81-90a2ad8e9914-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'dsfdsfsd', 'user_id': '1'}, 'id': '69c14a1b-198a-48d0-b718-03a66d79a556', 'type': 'tool_call'}] usage_metadata={'input_tokens': 284, 'output_tokens': 89, 'total_tokens': 373, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 60}}]
+[2025-07-28 23:44:06] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'dsfdsfsd']
+[2025-07-28 23:44:33] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4757 | İçerik: deneme exception 1...]
+[2025-07-28 23:44:33] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4757): deneme exception 1...]
+[2025-07-28 23:44:33] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.4757 | İçerik: deneme exception 1...]
+[2025-07-28 23:44:33] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.4757): deneme exception 1...]
+[2025-07-28 23:44:33] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5208 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:44:33] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5208): coğrafya 1 text...]
+[2025-07-28 23:44:33] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5208 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:44:33] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5208): coğrafya 1 text...]
+[2025-07-28 23:44:33] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6371 | İçerik: Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana bölümden oluşur:
+
+    Okyanusal kabuk: Denizler...]
+[2025-07-28 23:44:33] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6371): Yer kabuğu, Dünya’nın en dış katmanıdır ve iki ana...]
+[2025-07-28 23:44:34] | INFO | [agent:quiz_generate:75] | [Model output (raw): '[]']
+[2025-07-28 23:44:34] | INFO | [agent:quiz_generate:79] | [Cleaned content: []]
+[2025-07-28 23:44:34] | INFO | [agent:quiz_generate:81] | [Cleaned content questions: []]
+[2025-07-28 23:46:07] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 23:46:07] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 23:46:07] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 23:46:07] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 23:46:07] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 23:46:07] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 23:46:07] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 23:46:10] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.5999 seconds]
+[2025-07-28 23:46:11] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:46:11] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.6196 seconds]
+[2025-07-28 23:46:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.6239 seconds]
+[2025-07-28 23:46:11] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:46:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.6241 seconds]
+[2025-07-28 23:46:29] | INFO | [agent:run:163] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "IMDB en y\\u00fcksek filmler ile ilgili quiz yapar m\\u0131sun", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--1a3d8b88-e13c-421d-89e3-009566b8460a-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'IMDB en yüksek filmler ile ilgili quiz yapar mısun', 'user_id': '1'}, 'id': '34de0aa2-536a-4354-82f0-c4180a22e862', 'type': 'tool_call'}] usage_metadata={'input_tokens': 292, 'output_tokens': 130, 'total_tokens': 422, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 93}}]
+[2025-07-28 23:46:29] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'IMDB en yüksek filmler ile ilgili quiz yapar mısun']
+[2025-07-28 23:46:29] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5893 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:46:29] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5893): coğrafya 1 text...]
+[2025-07-28 23:46:29] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5893 | İçerik: coğrafya 1 text...]
+[2025-07-28 23:46:29] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5893): coğrafya 1 text...]
+[2025-07-28 23:46:29] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6309 | İçerik: deneme exception 1...]
+[2025-07-28 23:46:29] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6309): deneme exception 1...]
+[2025-07-28 23:46:29] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6309 | İçerik: deneme exception 1...]
+[2025-07-28 23:46:29] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6309): deneme exception 1...]
+[2025-07-28 23:46:29] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6463 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-28 23:46:29] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6463): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-28 23:46:43] | INFO | [agent:quiz_generate:75] | [Model output (raw): '```json\n[\n  {\n    "question": "IMDB\'nin tüm zamanların en yüksek puanlı filmleri listesinde (Top 250) genellikle 1 numarada yer alan film hangisidir?",\n    "choices": {\n      "A": "The Godfather",\n      "B": "The Dark Knight",\n      "C": "Esaretin Bedeli (The Shawshank Redemption)",\n      "D": "Pulp Fiction",\n      "E": "Yüzüklerin Efendisi: Kralın Dönüşü"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "IMDB Top 250 listesinin üst sıralarında yer alan \'Baba\' (The Godfather) filminin yönetmeni kimdir?",\n    "choices": {\n      "A": "Martin Scorsese",\n      "B": "Steven Spielberg",\n      "C": "Francis Ford Coppola",\n      "D": "Quentin Tarantino",\n      "E": "Alfred Hitchcock"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Christopher Nolan\'ın yönettiği ve IMDB\'de yüksek puan alan \'Kara Şövalye\' (The Dark Knight) filmi hangi yılda gösterime girmiştir?",\n    "choices": {\n      "A": "2005",\n      "B": "2010",\n      "C": "2008",\n      "D": "2003",\n      "E": "2012"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "\'Forrest Gump\' filminde başrol oynayan ve bu rolüyle En İyi Erkek Oyuncu Oscar\'ını kazanan aktör kimdir?",\n    "choices": {\n      "A": "Brad Pitt",\n      "B": "Tom Hanks",\n      "C": "Leonardo DiCaprio",\n      "D": "Johnny Depp",\n      "E": "Matt Damon"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Quentin Tarantino\'nun kült filmi \'Ucuz Roman\' (Pulp Fiction) hangi ana türlere girer?",\n    "choices": {\n      "A": "Bilim Kurgu",\n      "B": "Romantik Komedi",\n      "C": "Suç, Dram, Gerilim",\n      "D": "Fantastik",\n      "E": "Tarihi Dram"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Aşağıdaki filmlerden hangisi genellikle IMDB Top 250 listesinin ilk 20\'sinde yer almaz?",\n    "choices": {\n      "A": "Schindler\'in Listesi",\n      "B": "Dövüş Kulübü (Fight Club)",\n      "C": "Titanik (Titanic)",\n      "D": "Başlangıç (Inception)",\n      "E": "Yüzüklerin Efendisi: Kralın Dönüşü"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "IMDB Top 250 listesinde yer alan ve \'Baba\' (The Godfather) filminin devamı niteliğindeki film hangisidir?",\n    "choices": {\n      "A": "Baba III",\n      "B": "Scarface",\n      "C": "Baba II (The Godfather Part II)",\n      "D": "Goodfellas",\n      "E": "Dokunulmazlar (The Untouchables)"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "\'Neden bu kadar ciddisin?\' (Why so serious?) repliği, IMDB\'de yüksek puan alan hangi filmden alınmıştır?",\n    "choices": {\n      "A": "Dövüş Kulübü (Fight Club)",\n      "B": "Matrix",\n      "C": "Kara Şövalye (The Dark Knight)",\n      "D": "Esaretin Bedeli (The Shawshank Redemption)",\n      "E": "Yedi (Se7en)"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "IMDB Top 250 listesinde genellikle üst sıralarda yer alan animasyon filmlerinden biri hangisidir?",\n    "choices": {\n      "A": "Oyuncak Hikayesi (Toy Story)",\n      "B": "Ruhların Kaçışı (Spirited Away)",\n      "C": "Kayıp Balık Nemo (Finding Nemo)",\n      "D": "Aslan Kral (The Lion King)",\n      "E": "Shrek"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Aşağıdaki filmlerden hangisi, IMDB Top 250 listesinde yer alan ve İngilizce olmayan, uluslararası alanda büyük beğeni toplamış bir yapımdır?",\n    "choices": {\n      "A": "Gladyatör (Gladiator)",\n      "B": "Parazit (Parasite)",\n      "C": "Er Ryan\'ı Kurtarmak (Saving Private Ryan)",\n      "D": "Akıl Oyunları (A Beautiful Mind)",\n      "E": "Yeşil Yol (The Green Mile)"\n    },\n    "correct_answer": "B"\n  }\n]\n```']
+[2025-07-28 23:46:43] | INFO | [agent:quiz_generate:79] | [Cleaned content: [
+  {
+    "question": "IMDB'nin tüm zamanların en yüksek puanlı filmleri listesinde (Top 250) genellikle 1 numarada yer alan film hangisidir?",
+    "choices": {
+      "A": "The Godfather",
+      "B": "The Dark Knight",
+      "C": "Esaretin Bedeli (The Shawshank Redemption)",
+      "D": "Pulp Fiction",
+      "E": "Yüzüklerin Efendisi: Kralın Dönüşü"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "IMDB Top 250 listesinin üst sıralarında yer alan 'Baba' (The Godfather) filminin yönetmeni kimdir?",
+    "choices": {
+      "A": "Martin Scorsese",
+      "B": "Steven Spielberg",
+      "C": "Francis Ford Coppola",
+      "D": "Quentin Tarantino",
+      "E": "Alfred Hitchcock"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Christopher Nolan'ın yönettiği ve IMDB'de yüksek puan alan 'Kara Şövalye' (The Dark Knight) filmi hangi yılda gösterime girmiştir?",
+    "choices": {
+      "A": "2005",
+      "B": "2010",
+      "C": "2008",
+      "D": "2003",
+      "E": "2012"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "'Forrest Gump' filminde başrol oynayan ve bu rolüyle En İyi Erkek Oyuncu Oscar'ını kazanan aktör kimdir?",
+    "choices": {
+      "A": "Brad Pitt",
+      "B": "Tom Hanks",
+      "C": "Leonardo DiCaprio",
+      "D": "Johnny Depp",
+      "E": "Matt Damon"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Quentin Tarantino'nun kült filmi 'Ucuz Roman' (Pulp Fiction) hangi ana türlere girer?",
+    "choices": {
+      "A": "Bilim Kurgu",
+      "B": "Romantik Komedi",
+      "C": "Suç, Dram, Gerilim",
+      "D": "Fantastik",
+      "E": "Tarihi Dram"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Aşağıdaki filmlerden hangisi genellikle IMDB Top 250 listesinin ilk 20'sinde yer almaz?",
+    "choices": {
+      "A": "Schindler'in Listesi",
+      "B": "Dövüş Kulübü (Fight Club)",
+      "C": "Titanik (Titanic)",
+      "D": "Başlangıç (Inception)",
+      "E": "Yüzüklerin Efendisi: Kralın Dönüşü"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "IMDB Top 250 listesinde yer alan ve 'Baba' (The Godfather) filminin devamı niteliğindeki film hangisidir?",
+    "choices": {
+      "A": "Baba III",
+      "B": "Scarface",
+      "C": "Baba II (The Godfather Part II)",
+      "D": "Goodfellas",
+      "E": "Dokunulmazlar (The Untouchables)"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "'Neden bu kadar ciddisin?' (Why so serious?) repliği, IMDB'de yüksek puan alan hangi filmden alınmıştır?",
+    "choices": {
+      "A": "Dövüş Kulübü (Fight Club)",
+      "B": "Matrix",
+      "C": "Kara Şövalye (The Dark Knight)",
+      "D": "Esaretin Bedeli (The Shawshank Redemption)",
+      "E": "Yedi (Se7en)"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "IMDB Top 250 listesinde genellikle üst sıralarda yer alan animasyon filmlerinden biri hangisidir?",
+    "choices": {
+      "A": "Oyuncak Hikayesi (Toy Story)",
+      "B": "Ruhların Kaçışı (Spirited Away)",
+      "C": "Kayıp Balık Nemo (Finding Nemo)",
+      "D": "Aslan Kral (The Lion King)",
+      "E": "Shrek"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Aşağıdaki filmlerden hangisi, IMDB Top 250 listesinde yer alan ve İngilizce olmayan, uluslararası alanda büyük beğeni toplamış bir yapımdır?",
+    "choices": {
+      "A": "Gladyatör (Gladiator)",
+      "B": "Parazit (Parasite)",
+      "C": "Er Ryan'ı Kurtarmak (Saving Private Ryan)",
+      "D": "Akıl Oyunları (A Beautiful Mind)",
+      "E": "Yeşil Yol (The Green Mile)"
+    },
+    "correct_answer": "B"
+  }
+]]
+[2025-07-28 23:46:43] | INFO | [agent:quiz_generate:81] | [Cleaned content questions: [{'question': "IMDB'nin tüm zamanların en yüksek puanlı filmleri listesinde (Top 250) genellikle 1 numarada yer alan film hangisidir?", 'choices': {'A': 'The Godfather', 'B': 'The Dark Knight', 'C': 'Esaretin Bedeli (The Shawshank Redemption)', 'D': 'Pulp Fiction', 'E': 'Yüzüklerin Efendisi: Kralın Dönüşü'}, 'correct_answer': 'C'}, {'question': "IMDB Top 250 listesinin üst sıralarında yer alan 'Baba' (The Godfather) filminin yönetmeni kimdir?", 'choices': {'A': 'Martin Scorsese', 'B': 'Steven Spielberg', 'C': 'Francis Ford Coppola', 'D': 'Quentin Tarantino', 'E': 'Alfred Hitchcock'}, 'correct_answer': 'C'}, {'question': "Christopher Nolan'ın yönettiği ve IMDB'de yüksek puan alan 'Kara Şövalye' (The Dark Knight) filmi hangi yılda gösterime girmiştir?", 'choices': {'A': '2005', 'B': '2010', 'C': '2008', 'D': '2003', 'E': '2012'}, 'correct_answer': 'C'}, {'question': "'Forrest Gump' filminde başrol oynayan ve bu rolüyle En İyi Erkek Oyuncu Oscar'ını kazanan aktör kimdir?", 'choices': {'A': 'Brad Pitt', 'B': 'Tom Hanks', 'C': 'Leonardo DiCaprio', 'D': 'Johnny Depp', 'E': 'Matt Damon'}, 'correct_answer': 'B'}, {'question': "Quentin Tarantino'nun kült filmi 'Ucuz Roman' (Pulp Fiction) hangi ana türlere girer?", 'choices': {'A': 'Bilim Kurgu', 'B': 'Romantik Komedi', 'C': 'Suç, Dram, Gerilim', 'D': 'Fantastik', 'E': 'Tarihi Dram'}, 'correct_answer': 'C'}, {'question': "Aşağıdaki filmlerden hangisi genellikle IMDB Top 250 listesinin ilk 20'sinde yer almaz?", 'choices': {'A': "Schindler'in Listesi", 'B': 'Dövüş Kulübü (Fight Club)', 'C': 'Titanik (Titanic)', 'D': 'Başlangıç (Inception)', 'E': 'Yüzüklerin Efendisi: Kralın Dönüşü'}, 'correct_answer': 'C'}, {'question': "IMDB Top 250 listesinde yer alan ve 'Baba' (The Godfather) filminin devamı niteliğindeki film hangisidir?", 'choices': {'A': 'Baba III', 'B': 'Scarface', 'C': 'Baba II (The Godfather Part II)', 'D': 'Goodfellas', 'E': 'Dokunulmazlar (The Untouchables)'}, 'correct_answer': 'C'}, {'question': "'Neden bu kadar ciddisin?' (Why so serious?) repliği, IMDB'de yüksek puan alan hangi filmden alınmıştır?", 'choices': {'A': 'Dövüş Kulübü (Fight Club)', 'B': 'Matrix', 'C': 'Kara Şövalye (The Dark Knight)', 'D': 'Esaretin Bedeli (The Shawshank Redemption)', 'E': 'Yedi (Se7en)'}, 'correct_answer': 'C'}, {'question': 'IMDB Top 250 listesinde genellikle üst sıralarda yer alan animasyon filmlerinden biri hangisidir?', 'choices': {'A': 'Oyuncak Hikayesi (Toy Story)', 'B': 'Ruhların Kaçışı (Spirited Away)', 'C': 'Kayıp Balık Nemo (Finding Nemo)', 'D': 'Aslan Kral (The Lion King)', 'E': 'Shrek'}, 'correct_answer': 'B'}, {'question': 'Aşağıdaki filmlerden hangisi, IMDB Top 250 listesinde yer alan ve İngilizce olmayan, uluslararası alanda büyük beğeni toplamış bir yapımdır?', 'choices': {'A': 'Gladyatör (Gladiator)', 'B': 'Parazit (Parasite)', 'C': "Er Ryan'ı Kurtarmak (Saving Private Ryan)", 'D': 'Akıl Oyunları (A Beautiful Mind)', 'E': 'Yeşil Yol (The Green Mile)'}, 'correct_answer': 'B'}]]
+[2025-07-28 23:49:45] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 218.5947 seconds]
+[2025-07-28 23:49:46] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:49:46] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 218.6148 seconds]
+[2025-07-28 23:49:46] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 218.6170 seconds]
+[2025-07-28 23:49:46] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:49:46] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 218.6171 seconds]
+[2025-07-28 23:51:26] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 318.9905 seconds]
+[2025-07-28 23:51:26] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:51:26] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 319.0118 seconds]
+[2025-07-28 23:51:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 319.0147 seconds]
+[2025-07-28 23:51:26] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:51:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 319.0148 seconds]
+[2025-07-28 23:51:45] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 338.0297 seconds]
+[2025-07-28 23:51:45] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:51:45] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 338.0485 seconds]
+[2025-07-28 23:51:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 338.0506 seconds]
+[2025-07-28 23:51:45] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:51:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 338.0507 seconds]
+[2025-07-28 23:58:25] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 737.8261 seconds]
+[2025-07-28 23:58:25] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:58:25] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 737.8465 seconds]
+[2025-07-28 23:58:31] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-28 23:58:31] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-28 23:58:31] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-28 23:58:31] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-28 23:58:31] | INFO | [fastapi:__post_init__:47] | [Fastapi init]
+[2025-07-28 23:58:31] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-28 23:58:31] | INFO | [fastapi:run:67] | [Server Initialized!]
+[2025-07-28 23:58:40] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 8.5971 seconds]
+[2025-07-28 23:58:40] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:58:40] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 8.6156 seconds]
+[2025-07-28 23:58:40] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.6189 seconds]
+[2025-07-28 23:58:40] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:58:40] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.6190 seconds]
+[2025-07-28 23:58:42] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.5701 seconds]
+[2025-07-28 23:58:42] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:58:42] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.5878 seconds]
+[2025-07-28 23:58:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.5901 seconds]
+[2025-07-28 23:58:42] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:58:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.5902 seconds]
+[2025-07-28 23:59:00] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 28.3944 seconds]
+[2025-07-28 23:59:00] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-28 23:59:00] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 28.4111 seconds]
+[2025-07-28 23:59:00] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 28.4134 seconds]
+[2025-07-28 23:59:00] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-28 23:59:00] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 28.4136 seconds]
+[2025-07-29 00:03:08] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-29 00:03:08] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-29 00:03:08] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-29 00:03:08] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-29 00:03:08] | INFO | [fastapi:__post_init__:49] | [Fastapi init]
+[2025-07-29 00:03:08] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-29 00:03:08] | INFO | [fastapi:run:69] | [Server Initialized!]
+[2025-07-29 00:03:11] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.2168 seconds]
+[2025-07-29 00:03:11] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 00:03:11] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.2358 seconds]
+[2025-07-29 00:03:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.2404 seconds]
+[2025-07-29 00:03:11] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 00:03:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.2406 seconds]
+[2025-07-29 00:04:49] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-29 00:04:49] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-29 00:04:49] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-29 00:04:49] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-29 00:04:49] | INFO | [fastapi:__post_init__:49] | [Fastapi init]
+[2025-07-29 00:04:49] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-29 00:04:49] | INFO | [fastapi:run:69] | [Server Initialized!]
+[2025-07-29 00:04:53] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.5726 seconds]
+[2025-07-29 00:04:53] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 00:04:53] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.5908 seconds]
+[2025-07-29 00:04:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.5950 seconds]
+[2025-07-29 00:04:53] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 00:04:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.5952 seconds]
+[2025-07-29 00:05:27] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 38.6681 seconds]
+[2025-07-29 00:05:27] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 00:05:27] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 38.6865 seconds]
+[2025-07-29 00:05:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 38.6884 seconds]
+[2025-07-29 00:05:27] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 00:05:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 38.6885 seconds]
+[2025-07-29 00:06:40] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-29 00:06:40] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-29 00:06:40] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-29 00:06:40] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-29 00:06:40] | INFO | [fastapi:__post_init__:49] | [Fastapi init]
+[2025-07-29 00:06:40] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-29 00:06:40] | INFO | [fastapi:run:69] | [Server Initialized!]
+[2025-07-29 00:06:43] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 2.8154 seconds]
+[2025-07-29 00:06:43] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 00:06:43] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 2.8385 seconds]
+[2025-07-29 00:06:43] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 2.8425 seconds]
+[2025-07-29 00:06:43] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 00:06:43] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 2.8426 seconds]

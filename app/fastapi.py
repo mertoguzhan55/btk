@@ -6,6 +6,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi import Form, Request
 from app.logger import Logger
+import os
+import json
 from app.utils import verify_password, hash_password, create_access_token
 from fastapi.responses import JSONResponse, RedirectResponse, HTMLResponse
 from app.video_transcriper import VideoTranscript
@@ -311,6 +313,31 @@ class FastAPIServer:
             response = self.agent.evaluate(question, answer, correct_answer, user_id)
 
             return JSONResponse(content=response)
+
+
+        
+        @self.app.get("/get_user_notes")
+        def get_user_notes(request: Request):
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+            
+            directory = "app/data"
+            notes = []
+
+            for file in os.listdir(directory):
+                if file.endswith(f"_{user_id}.json"):
+                    subject = file.split("_")[0]
+                    with open(os.path.join(directory, file), "r", encoding="utf-8") as f:
+                        try:
+                            entries = json.load(f)
+                            for entry in entries:
+                                entry["subject"] = subject
+                                notes.append(entry)
+                        except Exception as e:
+                            continue
+            return JSONResponse(content={"notes": notes})
+        
+
 
 
         @self.app.get("/logout")
