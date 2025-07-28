@@ -29,25 +29,10 @@ class RagPipeline:
     logger: any
 
     def __post_init__(self):
-        self.logger.info("Initializing embedding model...")
-        self.embedding_model = GoogleGenerativeAIEmbeddings(model=str(self.model_name))
+        self.logger.info("Embedding model initializing...")
+        self.embedding_model = GoogleGenerativeAIEmbeddings(model=self.model_name)
 
-        self.db_path = self.vector_db_directory
-        self.vectorstore = None
-
-        if os.path.exists(self.db_path) and os.listdir(self.db_path):
-            self.logger.info(f"Loading existing FAISS vectorstore from {self.db_path}...")
-            self.vectorstore = FAISS.load_local(
-                self.db_path,
-                self.embedding_model,
-                allow_dangerous_deserialization=True
-            )
-            self.logger.info("Vectorstore loaded successfully.")
-        else:
-            self.logger.info("No existing vectorstore found. It will be initialized on first update.")
-            self.vectorstore = None
-
-    def load_notes(self, json_path: str, subject_id: str) -> List[NoteChunk]:
+    def load_notes(self, json_path: str, subject_id: str, user_id: int) -> List[NoteChunk]:
         self.logger.info(f"Loading notes from JSON file: {json_path}")
         with open(json_path, "r", encoding="utf-8") as f:
             notes = json.load(f)
@@ -60,15 +45,16 @@ class RagPipeline:
                 label=note["label"],
                 content=note["note"]
             ))
-        self.logger.info(f"{len(chunks)} notes loaded and converted to NoteChunk objects for subject '{subject_id}'.")
+        self.logger.info(f"{len(chunks)} notes loaded and converted to NoteChunk objects for subject '{subject_id}' and user {user_id}.")
         return chunks
 
-    def update_vector_db(self, note_chunks: List[NoteChunk]):
+    def update_vector_db(self, note_chunks: List[NoteChunk], user_id: int):
         if not note_chunks:
             self.logger.info("No note chunks provided. Skipping vectorstore update.")
             return
 
         self.logger.info(f"Updating vectorstore with {len(note_chunks)} new note chunks...")
+
         documents = [
             Document(
                 page_content=chunk.content,
@@ -77,21 +63,43 @@ class RagPipeline:
             for chunk in note_chunks
         ]
 
-        if self.vectorstore is None:
-            self.logger.info("Creating new FAISS vectorstore from scratch.")
-            self.vectorstore = FAISS.from_documents(documents, self.embedding_model)
+        user_db_path = os.path.join(self.vector_db_directory, f"user_{user_id}")
+        os.makedirs(user_db_path, exist_ok=True)  # 👈 Klasörü burada da garantile
+
+        if os.listdir(user_db_path):  # 👈 içi doluysa yükle ve ekle
+            self.logger.info(f"Loading existing vectorstore for user {user_id}")
+            vectorstore = FAISS.load_local(
+                user_db_path,
+                self.embedding_model,
+                allow_dangerous_deserialization=True
+            )
+            vectorstore.add_documents(documents)
         else:
-            self.logger.info("Adding documents to existing vectorstore.")
-            self.vectorstore.add_documents(documents)
+            self.logger.info(f"Creating new vectorstore for user {user_id}")
+            vectorstore = FAISS.from_documents(documents, self.embedding_model)
 
-        self.vectorstore.save_local(self.db_path)
-        self.logger.info("Vectorstore saved successfully.")
+        vectorstore.save_local(user_db_path)  # 👈 dosyayı user_{id} klasörüne kaydet
+        self.logger.info(f"Vectorstore saved to {user_db_path}")
 
-    def query(self, query: str, k: int = 1):
-        self.logger.info(f"Performing similarity search for query: '{query}' (top {k} results)")
-        results = self.vectorstore.similarity_search(query, k=k)
-        self.logger.info(f"{len(results)} results retrieved from vectorstore.")
-        return results
+
+    def query_with_scores(self, query: str, user_id: int, k: int = 3):
+
+        user_db_path = os.path.join(self.vector_db_directory, f"user_{user_id}")
+        if not os.path.exists(user_db_path):
+            self.logger.warning(f"No vectorstore found for user {user_id}. Returning empty results.")
+            return []
+
+        vectorstore = FAISS.load_local(
+            user_db_path,
+            self.embedding_model,
+            allow_dangerous_deserialization=True
+        )
+
+        self.logger.info(f"Querying vectorstore for user {user_id} with query: '{query}'")
+        results_with_scores = vectorstore.similarity_search_with_score(query, k=k)
+        return results_with_scores
+
+
 
 if __name__ == "__main__":
     # Kullanıcı yeni not eklediğinde:
@@ -114,6 +122,8 @@ if __name__ == "__main__":
     pipeline.update_vector_db(note_chunks)
 
     # Arama yapmak için:
-    results = pipeline.query("tepkimede hız")
-    for r in results:
-        print(r.page_content, "→", r.metadata["label"])
+    results_with_scores = pipeline.query_with_scores("tepkimede hız", k=3)
+    for i, (doc, score) in enumerate(results_with_scores, start=1):
+        print(f"[{i}] Skor: {score:.4f}")
+        print(f"İçerik: {doc.page_content}")
+        print(f"Etiket: {doc.metadata['label']}\n")

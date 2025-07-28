@@ -22,30 +22,17 @@ class JsonHandler:
     def __post_init__(self):
         pass
 
-    def _load_data(self, subject_id: str) -> List[NoteEntry]:
-        """
-        Belirtilen subject_id'ye ait JSON dosyasını yükler.
-        Dosya yoksa boş bir liste döndürür.
-        """
-        filepath = self.directory + f"/{subject_id}.json"
-
-        print(f"file_path: {filepath}")
-
+    def _load_data(self, subject_id: str, user_id: int) -> List[NoteEntry]:
+        filepath = os.path.join(self.directory, f"{subject_id}_{user_id}.json")
         if not os.path.exists(filepath):
-            raise FileNotFoundError(f"{subject_id}.json dosyası bulunamadı: {filepath}")
-        
+            return []
         with open(filepath, 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
-
-            return [NoteEntry(**item) for item in raw_data]
-        
+        return [NoteEntry(**item) for item in raw_data]
     
-    def _save_data(self, subject_id: str, data: List[NoteEntry]):
-        """
-        Veriyi belirtilen subject_id'ye ait JSON dosyasına kaydeder.
-        """
-        filepath = self.directory + f"/{subject_id}.json"
-        # Pydantic objelerini JSON uyumlu dict'lere dönüştür
+
+    def _save_data(self, subject_id: str, user_id: int, data: List[NoteEntry]):
+        filepath = os.path.join(self.directory, f"{subject_id}_{user_id}.json")
         json_data = [item.model_dump() for item in data]
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=4, ensure_ascii=False)
@@ -58,29 +45,15 @@ class JsonHandler:
         return self._load_data(subject_id)
         
     
-    def add_note_to_subject(self, subject_id: str, label: str, note_text: str) -> NoteEntry:
-        """
-        Yeni bir notu belirli bir konunun JSON dosyasına ekler.
-        """
+    def add_note_to_subject(self, subject_id: str, user_id: int, label: str, note_text: str) -> NoteEntry:
         note_text = note_text.strip()
-        existing_notes = self._load_data(subject_id)
+        existing_notes = self._load_data(subject_id, user_id)
 
-        # Yeni ID'yi belirle
-        if existing_notes:
-            max_id = max(note.id for note in existing_notes)
-            new_id = max_id + 1
-        else:
-            new_id = 1
-        
-        # Yeni not kaydını oluştur
+        new_id = max((note.id for note in existing_notes), default=0) + 1
         new_note_entry = NoteEntry(id=new_id, label=label, note=note_text)
-        
-        # Mevcut notlara yeni notu ekle
+
         existing_notes.append(new_note_entry)
-        
-        # Güncellenmiş veriyi kaydet
-        self._save_data(subject_id, existing_notes)
-        print(f"Not '{new_id}' ID'si ile '{subject_id}.json' dosyasına başarıyla eklendi.")
+        self._save_data(subject_id, user_id, existing_notes)
         return new_note_entry
     
     def get_all_notes(self) -> Dict[str, List[NoteEntry]]:

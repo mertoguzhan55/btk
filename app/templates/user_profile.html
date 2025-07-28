@@ -28,7 +28,14 @@
 <body>
     <style>
         
-
+        #quiz-body .card {
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        #quiz-body .card:hover {
+            transform: scale(1.01);
+        }
 
         #clearBtn {
         /* Boyutlandırma ve Yuvarlak Şekil */
@@ -507,144 +514,65 @@
         </div>
     </nav>
 
+
+    <!-- Quiz Başlatma Alanı -->
+    <div class="container my-4">
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Konu Girerek Mini Quiz Oluştur</h4>
+            <input type="text" id="quiz-input" class="form-control mb-3" placeholder="örn. çember, elektriksel alan...">
+            <button onclick="generateQuiz()" class="btn btn-primary">Quiz Oluştur</button>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content p-4">
+        <div class="modal-header">
+            <h5 class="modal-title">Senin İçin Oluşturulan Quiz</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="quiz-body">
+            <!-- Sorular burada gösterilecek -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" onclick="submitAnswers()">Cevapları Gönder</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
     <div class="container my-5">
         <div class="chat-container">
             <div class="text-center mb-4">
                 <div class="gif-class">
                     <img src="../static/img/chatbot.gif" alt="Görsel Yüklenemedi" width="200" height="170" class="img-fluid">
                 </div>
-                <h2>Ask a question about the selected subject now!</h2>
-                <div id="question-underline" class=" d-none"> <hr style="background-color: rgba(13, 110, 253, 0.4); border-radius: 4px;
-            transition: all 0.4s ease-in-out;
-            box-shadow: 0 0 25px 3px rgba(13, 110, 253, 0.6);">  </div>
-
-                <div class="advice-div d-flex justify-content-end">
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Give an advice</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Question:</label>
-                                <textarea class="form-control" id="question-for-advice" disabled></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Answer:</label>
-                                <input id="output" type="text" class="form-control" id="recipient-name" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Advice Answer:</label>
-                                <textarea class="form-control" id="advice"></textarea>
-                            </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button onclick="save_advice()" id="save-advice" type="button" class="btn btn-primary">Send</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+                <h2>Profil Bilgileriniz</h2>
+                <div class="underline-shadow my-3"></div>
+            </div>
+    
+            <!-- Ders seçme ve mesaj alanlarını kaldırıyoruz ama dış yapılar kalıyor -->
+            <div class="form-group text-center" id="subject-selector-wrapper" style="display: none;"></div>
+    
+            <div class="message-container animate__fadeInBottomLeft message-container-responsive" id="message-container" style="height: auto; padding: 2rem; display: flex; justify-content: center;">
+                <div style="width: 100%; max-width: 500px; background-color: #f8f9fa; border-radius: 12px; padding: 20px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
+                    <h5 class="text-left mb-4"><i class="fas fa-user-circle"></i> Kullanıcı Bilgileri</h5>
+                    <p><strong>ID:</strong> {{ user_id }}</p>
+                    <p><strong>İsim:</strong> {{ username }}</p>
+                    <p><strong>Email:</strong> {{ email }}</p>
                 </div>
-
             </div>
-
-            <!-- <div id="clear_btn_div" style="margin-bottom: 10px;">
-                <button class="send_btn_class" style="border-radius: 55px; background-color:#ee0a0a; color:#fff; text-align:center;" id="clearBtn" onclick="clear_conversation()">Clear</button>
-            </div> -->
-
-            <div class="form-group text-center" id="subject-selector-wrapper">
-                <label for="subject-selector" class="font-weight-bold mb-2">Ders Seç</label>
-                <select class="custom-select shadow-sm" id="subject-selector" style="max-width: 300px; margin: 0 auto;">
-                  <option selected disabled>Birini Seç...</option>
-                  <option value="biyoloji">Biyoloji</option>
-                  <option value="kimya">Kimya</option>
-                  <option value="matematik">Matematik</option>
-                  <option value="fizik">Fizik</option>
-                  <option value="cografya">Coğrafya</option>
-                  <option value="tarih">Tarih</option>
-                  <option value="edebiyat">Edebiyat</option>
-                  <option value="geometri">Geometri</option>
-                  <option value="felsefe">Felsefe</option>
-                  <option value="turkce">Türkçe</option>
-                  <option value="din">Din Kültürü ve Ahlak Bilgisi</option>
-                </select>
-            </div>
-
-            <div class="message-container animate__fadeInBottomLeft message-container-responsive" id="message-container">
-            </div>
-
-            <div class="center-record-wrapper d-none" id="recording-state">
-                <button id="record_btn_center" class="btn btn-primary">
-                    <svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve">
-                <g>
-                    <g>
-                        <path d="M439.652,250.435c0-9.22-7.475-16.696-16.696-16.696c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,82.854-67.407,150.261-150.261,150.261s-150.261-67.407-150.261-150.261c0-9.22-7.475-16.696-16.696-16.696
-                            c-9.22,0-16.696,7.475-16.696,16.696c0,95.638,73.486,174.422,166.957,182.885v45.289h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            S179.997,512,189.217,512h133.565c9.22,0,16.696-7.475,16.696-16.696s-7.475-16.696-16.696-16.696h-50.087V433.32
-                            C366.166,424.857,439.652,346.073,439.652,250.435z"/>
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path d="M256,0c-64.442,0-116.87,52.428-116.87,116.87v133.565c0,64.442,52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
-                            V116.87C372.87,52.428,320.442,0,256,0z M256,333.913c-40.313,0-74.042-28.837-81.799-66.894h163.597
-                            C330.042,305.076,296.313,333.913,256,333.913z M339.478,166.957h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,9.22,7.475,16.696,16.696,16.696h50.087v33.391H172.522v-33.391h50.087c9.22,0,16.696-7.475,16.696-16.696
-                            c0-9.22-7.475-16.696-16.696-16.696h-50.087v-33.391h50.087c9.22,0,16.696-7.475-16.696-16.696s-7.475-16.696-16.696-16.696
-                            h-48.407c7.757-38.057,41.485-66.783,81.799-66.783s74.042,28.725,81.799,66.783h-48.407c-9.22,0-16.696,7.475-16.696,16.696
-                            s7.475,16.696,16.696,16.696h50.087V166.957z"/>
-                    </g>
-                </g>
-                    </svg>
-                </button>
-                <button id="cancelRecordingBtn" class="btn btn-sm btn-danger" onclick="clear_conversation()"
-                    style="border-radius: 50%; width: 30px; height: 30px; padding: 0; font-size: 18px; line-height: 1;">
-                    &times;
-                </button>
-            </div>
-
-
-            <div class="message-input d-flex" id="message-input">
-                <input id="question" type="text" class="form-control" placeholder="You can ask a question">
-                <button id="send-button" onclick="sendText()" style="border-radius: 55px; background-color:#000; color:#fff" class="send_btn_class btn btn-dark btn-sm rounded-circle px-3 py-2" >Send</button>
-                <button class="record-button ml-2" class="btn btn-primary ml-2 " id="recordBtn" title="Speech">
-                    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve">
-                <g>
-                    <g>
-                        <path d="M439.652,250.435c0-9.22-7.475-16.696-16.696-16.696c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,82.854-67.407,150.261-150.261,150.261s-150.261-67.407-150.261-150.261c0-9.22-7.475-16.696-16.696-16.696
-                            c-9.22,0-16.696,7.475-16.696,16.696c0,95.638,73.486,174.422,166.957,182.885v45.289h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            S179.997,512,189.217,512h133.565c9.22,0,16.696-7.475,16.696-16.696s-7.475-16.696-16.696-16.696h-50.087V433.32
-                            C366.166,424.857,439.652,346.073,439.652,250.435z"/>
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path d="M256,0c-64.442,0-116.87,52.428-116.87,116.87v133.565c0,64.442,52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
-                            V116.87C372.87,52.428,320.442,0,256,0z M256,333.913c-40.313,0-74.042-28.837-81.799-66.894h163.597
-                            C330.042,305.076,296.313,333.913,256,333.913z M339.478,166.957h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,9.22,7.475,16.696,16.696,16.696h50.087v33.391H172.522v-33.391h50.087c9.22,0,16.696-7.475,16.696-16.696
-                            c0-9.22-7.475-16.696-16.696-16.696h-50.087v-33.391h50.087c9.22,0,16.696-7.475-16.696-16.696s-7.475-16.696-16.696-16.696
-                            h-48.407c7.757-38.057,41.485-66.783,81.799-66.783s74.042,28.725,81.799,66.783h-48.407c-9.22,0-16.696,7.475-16.696,16.696
-                            s7.475,16.696,16.696,16.696h50.087V166.957z"/>
-                    </g>
-                </g>
-                    </svg>
-                </button>
-            </div>
-
-
+    
+            <!-- Sesli kayıt bölümü de gizlendi -->
+            <div class="center-record-wrapper d-none" id="recording-state"></div>
+    
+            <!-- Giriş alanı da kaldırıldı -->
+            <div class="message-input d-flex" id="message-input" style="display: none;"></div>
         </div>
     </div>
 
@@ -708,251 +636,83 @@
 
     const underline = document.getElementById("question-underline");
 
-    async function sendText() {
-        const questionInput = document.getElementById("question");
-        const question = questionInput.value.trim();
 
-        const subjectSelect = document.getElementById("subject-selector");
-        const subject = subjectSelect.value;
+    let currentQuestions = [];
 
-        if (!question) {
-            alert("Lütfen bir soru yazın.");
-            return;
-        }
+    let correctAnswers = []; 
 
-        if (!subject || subject === "Birini Seç..." || subjectSelect.selectedIndex === 0) {
-            alert("Lütfen bir ders seçin.");
-            return;
-        }
+    async function generateQuiz() {
+        const input = document.getElementById("quiz-input").value.trim();
+        if (!input) return alert("Lütfen bir konu girin.");
 
-        addMessageToChat("user", question);
-        questionInput.value = "";
-        showTypingGif();
-
-        const payload = {
-            question: question,
-            subject_id: subject
-        };
-
-        fetch("/ask-question", {
+        const res = await fetch("/generate_quiz", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(response => response.json())
-        .then(data => {
-            removeTypingGif();
-            addMessageToChat("other", data.answer);
-        })
-        .catch(error => {
-            removeTypingGif();
-            addMessageToChat("other", "Bir hata oluştu.");
-            console.error("İstek hatası:", error);
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user_input: input })
         });
+        const data = await res.json();
+        console.log(data)
+
+        const quizBody = document.getElementById("quiz-body");
+        quizBody.innerHTML = "";
+        currentQuestions = data.questions;
+
+        correctAnswers = currentQuestions.map(q => q.correct_answer);
+
+        data.questions.forEach((q, idx) => {
+            const div = document.createElement("div");
+            div.classList.add("card", "mb-3", "p-3");
+
+            const optionsHtml = Object.entries(q.choices).map(
+                ([key, val]) => `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer-${idx}" id="answer-${idx}-${key}" value="${key}">
+                    <label class="form-check-label" for="answer-${idx}-${key}">${key}) ${val}</label>
+                </div>`
+            ).join("");
+
+            div.innerHTML = `
+                <p><strong>Soru ${idx + 1}:</strong> ${q.question}</p>
+                ${optionsHtml}
+                <div id="feedback-${idx}" class="mt-2 text-muted"></div>
+            `;
+            quizBody.appendChild(div);
+        });
+
+        $('#quizModal').modal('show');
     }
 
 
+async function submitAnswers() {
+    for (let i = 0; i < currentQuestions.length; i++) {
+        const question = currentQuestions[i];
+        const selectedOption = document.querySelector(`input[name="answer-${i}"]:checked`);
+        const answer = selectedOption ? selectedOption.value : null;
 
-
-    async function addMessageToChat(sender, message) {
-        const bubble = document.createElement("div");
-        bubble.classList.add("message-bubble", sender === "user" ? "user" : "other");
-        bubble.innerText = message;
-
-        const container = document.getElementById("message-container");
-        container.appendChild(bubble);
-        container.scrollTop = container.scrollHeight;
-    }
-
-    
-    async function showTypingGif() {
-        const bubble = document.createElement("div");
-        bubble.id = "typing-bubble";
-        bubble.classList.add("message-bubble", "other");
-
-        const gif = document.createElement("img");
-        gif.src = "/static/img/typing.gif";
-        gif.alt = "Cevap yazılıyor...";
-        gif.style.width = "50px";
-        gif.style.height = "auto";
-
-        bubble.appendChild(gif);
-        document.getElementById("message-container").appendChild(bubble);
-    }
-
-    async function removeTypingGif() {
-        const bubble = document.getElementById("typing-bubble");
-        if (bubble) {
-            bubble.remove();
+        if (!answer) {
+            document.getElementById(`feedback-${i}`).innerHTML = "Lütfen bir şık seçin.";
+            continue;
         }
-    }
 
-
-
-
-
-
-    // Send text butonu yanındaki record butonuna basıldığında TRANSITION başlat ve RecordButtonCenter ortaya çıksın.
-    recordBtn.addEventListener('click', function () {
-        if (!isTransitioning) {
-            underline.classList.remove('d-none');
-            startTransition();
-        }
-    });
-
-    // Record Button Center butonu altındaki çarpı (cancel) tuşuna basıldığında 1- eğer recording oluyorsa recording stop olsun,
-    // 2- isRecording değişkeni false olsun ve gerekli arayüz değişimleri yapılsın.
-    cancelBtn.addEventListener('click', function () {
-        underline.classList.add('d-none');
-        mediaRecorder.stop();
-        isRecording = false;
-        recordBtnCenter.classList.remove("recording");
-        console.log("Recording stopped");
-    });
-
-    // stream_initialize function: Gerekli olan navigator nesnesini tanımlar.
-    async function stream_initialize() {
-        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorder = new MediaRecorder(stream);
-
-        mediaRecorder.ondataavailable = (event) => {
-            audioChunks.push(event.data);
-        };
-
-        mediaRecorder.onstop = () => {
-            const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-            const formData = new FormData();
-            formData.append("audio_file", audioBlob, "recording.webm");
-
-            fetch("http://localhost:8080/handle_voice", {
-                method: "POST",
-                body: formData
+        const res = await fetch("/evaluate_answer", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                question: question.question,
+                answer: answer,
+                correct_answer: correctAnswers[i]
             })
-            .then(res => res.blob())
-            .then(audioBlob => {
+        });
 
-                const audioUrl = URL.createObjectURL(audioBlob);
-
-                const audio = new Audio(audioUrl);
-                audio.play();
-
-                audio.onended = () => {
-                    URL.revokeObjectURL(audioUrl);
-                };
-            })
-            .catch(err => console.error("The error while sending the voice to the handle_voice endpoint: ", err));
-
-            audioChunks = [];
-        };
+        const data = await res.json();
+        const feedbackEl = document.getElementById(`feedback-${i}`);
+        feedbackEl.innerHTML = `<strong>Geri Bildirim:</strong> ${data.feedback} <br><strong>Puan:</strong> ${data.score}`;
+        feedbackEl.classList.add("text-success");
     }
-
-    // send text butonu yanındaki siyah record buttonuna basıldığında transition başlatan function.
-    function startTransition() {
-
-        if (isTransitioning){
-            return;
-        }else{
-            // Butonun kaymasını önlemek için en yukarı scroll
-            window.scrollTo({ top: 0, behavior: 'auto' });
-
-            isTransitioning = true;
-
-            recordBtn.classList.add('transitioning');
-
-            // Fade out other elements (transition olduğunda bazı elementleri görünmez yap)
-            messageContainer.style.opacity = '0';
-            document.getElementById('question').style.opacity = '0';
-            document.getElementById('send-button').style.opacity = '0';
+}
 
 
-            // After transition duration, hide original elements and show recording state
-            // Transition bittiğinde artık record button center'lı olan RECORDING arayüzü görünür olsun.
-            setTimeout(() => {
-                messageContainer.classList.add('d-none');
-                document.getElementById('question').classList.add('d-none');
-                document.getElementById('send-button').classList.add('d-none');
-                recordBtn.style.display = 'none';
 
-                // Show recording state
-                recordingState.classList.remove('d-none');
-                recordingState.style.opacity = '1';
-
-                isTransitioning = false;
-            }, 850);
-        }
-
-    }
-
-    // Eğer anlık olarak recording oluyorsa recording stop yap ve gerekli elementleri görünür yapıp normal main_page görünümüne geç.
-    function resetToInitialState() {
-        // Eğer recording oluyorsa anlık olarak recordingi durdur.
-        if (isRecording && mediaRecorder && mediaRecorder.state === "recording") {
-            console.log("media recorder is stopped")
-            mediaRecorder.stop();
-            isRecording = false;
-        }
-
-        // Reset recording button states
-        recordBtn.classList.remove('transitioning', 'recording');
-        recordBtnCenter.classList.remove('recording');
-
-        // Show original elements
-        recordingState.classList.add('d-none');
-        recordBtn.style.display = 'flex';
-        document.getElementById('question').classList.remove('d-none');
-        document.getElementById('send-button').classList.remove('d-none');
-        messageContainer.classList.remove('d-none');
-
-        setTimeout(() => {
-            messageContainer.style.opacity = '1';
-            document.getElementById('question').style.opacity = '1';
-            document.getElementById('send-button').style.opacity = '1';
-        }, 50);
-
-        audioChunks = [];
-        isTransitioning = false;
-
-        console.log("Kayıt iptal edildi.");
-    }
-
-    // Basıldığında Recording yapacak olan center'daki recording button'a basıldığında yapılacak işlemler.
-    recordBtnCenter.addEventListener('click', async function () {
-
-        // Eğer mediaRecorder nesnesi false ise yani herhangi bir initialize yoksa initialize olsun (onStop olduğunda yapılacak function belirlensin)
-        if (!mediaRecorder) {
-            await stream_initialize();
-        }
-
-        // Eğer anlık olarak recording yoksa recording'i başlat, record Button Center butonunun görünümünü pulse ile kayıt alıyormuş gibi göster.
-        if (!isRecording) {
-            mediaRecorder.start();
-            isRecording = true;
-            recordBtnCenter.classList.add("recording");
-            console.log("Recording started");
-        }
-        // Eğer zaten recording oluyorsa record button center butonuna bastığımda recording artık stop olsun, isRecording değişkeni false olsun.
-        else {
-            mediaRecorder.stop();
-            isRecording = false;
-            recordBtnCenter.classList.remove("recording");
-            console.log("Recording stopped");
-        }
-    });
-
-    // Record Button Center butonu altındaki cancel(çarpı) butonuna basıldığında veritabanındaki bütün konuşma geçmişi silinecek.
-    // Ve resetToInitialState function çağırılacak (main_page görünümüne geçilecek ve recording oluyorsa da recording stop edilecek).
-    function clear_conversation(){
-        underline.classList.add('d-none');
-        resetToInitialState();
-        fetch("http://localhost:8080/clear_conversation", {
-                method: "POST",
-            })
-            .then(res => res.json())
-            .then(res => console.log("Response: ", res))
-            .catch(err => console.error("Error while sending the voice: ", err));
-    }
 
     async function logout() {
         try {
@@ -975,6 +735,7 @@
             console.error("Logout hatası:", error);
         }
     }
+    
     </script>
 
 </body>

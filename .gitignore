@@ -3,3 +3,4 @@ extras
 .env
 vector_db
 data
+*.log

@@ -17,6 +17,7 @@ def main(args, configs):
     label_extractor = LabelExtractor(**configs["LabelExtractor"],logger=logger)
     json_handler = JsonHandler(**configs["JsonHandler"], logger=logger)
     rag_pipeline = RagPipeline(**configs["RagPipeline"], logger=logger)
+    
 
     crud = CRUDOperations(**configs["crud"], logger=logger)
     fastapi = FastAPIServer(**configs["fastapi"], crud=crud, transcripter = transcripter, label_extractor = label_extractor, json_handler=json_handler, rag_pipeline = rag_pipeline, logger=logger)

@@ -4,6 +4,8 @@ from sqlalchemy import select
 from app.connection import Connection
 from typing import Union
 from app.logger import Logger
+from sqlalchemy import select, desc
+from app.models.models import QuestionAnswer
 from app.handler import custom_db_crud_handler
 import asyncio
 
@@ -152,6 +154,17 @@ class CRUDOperations:
             self.logger.info(f"No user found with email: {email}")
 
         return user
+    
+    @custom_db_crud_handler
+    async def get_last_n_conversation(self, user_id: int, n: int = 5):
+        async with self.connection.session() as session:
+            result = await session.execute(
+                select(QuestionAnswer)
+                .where(QuestionAnswer.user_id == user_id)
+                .order_by(desc(QuestionAnswer.created_at))
+                .limit(n)
+            )
+            return result.scalars().all()
 
 
 

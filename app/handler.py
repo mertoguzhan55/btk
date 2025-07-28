@@ -2,16 +2,15 @@ import time
 
 
 def custom_db_crud_handler(func):
-    start_time = time.time()
-    async def inner(self, *args):
+    async def inner(self, *args, **kwargs):
         try:
-            result = await func(self, *args)
-            end_time = time.time()
-            self.logger.info(f"{func.__name__} method is done successfully and it took: {end_time-start_time:.4f} seconds")
+            result = await func(self, *args, **kwargs)
             return result
         except Exception as e:
+            import traceback
+            traceback.print_exc()  # <== burası
             await self.connection.session.rollback()
-            self.logger.error(f"Exception : {e}")
+            self.logger.error(f"[DBHandler] Exception in {func.__name__}: {e}")
             return False
         finally:
             await self.connection.close_session()

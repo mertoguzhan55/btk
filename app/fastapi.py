@@ -13,7 +13,11 @@ from app.json_handler import JsonHandler
 from app.regex import regex_for_id_extracting_from_the_link
 from urllib.parse import urlencode
 from app.label_extractor_from_video import LabelExtractor
+from app.utils import verify_password, verify_token_from_cookie
+from app.chatbot import Chatbot
 from app.rag_pipeline import RagPipeline
+from app.models.models import QuestionAnswer
+from app.agent import QuizGeneratorAgent
 from app.crud import CRUDOperations
 from app.models.models import User
 
@@ -24,12 +28,16 @@ class FastAPIServer:
     port: int
     reload: bool
     log_level: str
+    chatbot_model_name: str
+    temperature_for_chatbot: float
     crud: CRUDOperations
     transcripter: VideoTranscript
     label_extractor: LabelExtractor
     json_handler: JsonHandler
     rag_pipeline: RagPipeline
     logger: Logger
+    retrieved_chunk_threshold_for_agent_quiz: float = 0.7
+
 
     def __post_init__(self):
         self.app = FastAPI()
@@ -37,6 +45,8 @@ class FastAPIServer:
         self.templates = Jinja2Templates(directory="app/templates")
         self.app.mount(f"/static", StaticFiles(directory="app/static"), name="static")
         self.logger.info("Fastapi init")
+        self.agent = QuizGeneratorAgent(self.rag_pipeline, retrieved_chunk_threshold_for_agent_quiz = self.retrieved_chunk_threshold_for_agent_quiz, logger=self.logger)
+        self.chatbot = Chatbot(rag_pipeline=self.rag_pipeline, model_name=self.chatbot_model_name, temperature=self.temperature_for_chatbot, logger=self.logger)
 
         self.subject_map = {
             "matematik": "Matematik",
@@ -128,7 +138,7 @@ class FastAPIServer:
             
             
         @self.app.post("/add_youtube_transcript")
-        async def add_youtube_transcript(subject_id: str = Form(...), youtube_id: str = Form(...), language_code: str = Form(...)):
+        async def add_youtube_transcript(request: Request, subject_id: str = Form(...), youtube_id: str = Form(...), language_code: str = Form(...)):
 
             video_id = regex_for_id_extracting_from_the_link(youtube_id)
 
@@ -139,14 +149,19 @@ class FastAPIServer:
             label = self.label_extractor.extract(subject_id, text)
 
             try:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
                 saved_note = self.json_handler.add_note_to_subject(
                     subject_id=subject_id,
+                    user_id=user_id,
                     label=label,
                     note_text=text
                 )
 
-                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}.json", subject_id= subject_id)
-                self.rag_pipeline.update_vector_db(note_chunks)
+                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
+
+                self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
 
                 params = urlencode({"subject": subject_id, "success": "1"})
                 return RedirectResponse(url=f"/subject?{params}", status_code=303)
@@ -160,23 +175,28 @@ class FastAPIServer:
         @self.app.post("/add_text_note")
         async def add_text_note(request:Request, subject_id: str = Form(...), note_text: str = Form(...)):
             token = request.cookies.get("access_token")
+
             if not token:
                 raise HTTPException(status_code=401, detail="Unauthorized: No access token provided.")
     
             try:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
 
                 label = self.label_extractor.extract(subject_id, note_text)
                 
                 # Bu method öğrenci ders ile ilgili veri eklediğinde o dersin .json dosyasına label olarak yeni note verisi ekler.
                 saved_note = self.json_handler.add_note_to_subject(
                     subject_id=subject_id,
+                    user_id=user_id,
                     label=label,
                     note_text=note_text
                 )
 
                 # Bu method; öğrenci tarafından yeni bir veri eklendiğinde vector database'i günceller.
-                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}.json", subject_id= subject_id)
-                self.rag_pipeline.update_vector_db(note_chunks)
+                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
+
+                self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
 
                 
                 params = urlencode({"subject": subject_id, "success": "1"})
@@ -197,8 +217,100 @@ class FastAPIServer:
         
 
         @self.app.post("/ask-question")
-        async def ask_question():
-            pass
+        async def ask_question(request: Request):
+
+            token = request.cookies.get("access_token")
+
+            if token:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
+                await self.crud.initialize()
+                data = await request.json()
+                subject_id = data.get("subject_id")
+                question = data.get("question")
+
+                if not subject_id or not question:
+                    return {"error": "Subject ID ve soru gereklidir."}
+
+                # Cevabı üret
+
+                # Bunları bir metne çevir
+
+                # Chatbot'a ver
+                answer = self.chatbot.ask_question(
+                    subject_id=subject_id,
+                    question=question,
+                    user_id=user_id,
+                )
+
+
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
+                question_answer = QuestionAnswer(
+                    user_id=user_id,
+                    question=question,
+                    answer=answer
+                )
+
+                await self.crud.create(question_answer)
+
+                return {"answer": answer}
+            raise HTTPException(status_code=401, detail="Unauthorized: No access token provided.")
+
+        
+        @self.app.get("/profile")
+        async def get_profile_html(request: Request):
+            await self.crud.initialize()
+            try:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
+                # Veritabanından kullanıcı bilgilerini al
+                user = await self.crud.read_by_id(User, user_id)
+                print(user)
+
+                if user is None:
+                    return self.templates.TemplateResponse("error.html", {"request": request, "message": "Kullanıcı bulunamadı."})
+
+                return self.templates.TemplateResponse("user_profile.html", {
+                    "request": request,
+                    "user_id": user_id,
+                    "email": user["name"]
+                })
+
+            except Exception as e:
+                return self.templates.TemplateResponse("error.html", {"request": request, "message": str(e)})
+
+
+        @self.app.post("/generate_quiz")
+        async def generate_quiz(request: Request):
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+            
+            data = await request.json()
+            topic = data.get("user_input")
+            result = self.agent.run(topic, user_id)
+
+            return JSONResponse(content={"questions": result.get("questions", [])})
+
+        @self.app.post("/evaluate_answer")
+        async def evaluate_answer(request: Request):
+            data = await request.json()
+            question = data.get("question")
+            answer = data.get("answer")
+            correct_answer = data.get("correct_answer")
+
+            print(f"question: {question}")
+            print(f"answer: {answer}")
+
+            payload = verify_token_from_cookie(request)
+            user_id = str(payload["sub"])
+
+            response = self.agent.evaluate(question, answer, correct_answer, user_id)
+
+            return JSONResponse(content=response)
 
 
         @self.app.get("/logout")
