@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YKS-GPT</title>
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery 3.3.1 Slim -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4.3.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome 5.15.4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+    <!-- Animate.css 4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+</head>
+<body>
+    <style>
+
+#floatingInfoBtn {
+    position: fixed;
+    top: 180px; /* Quiz butonunun altına gelsin */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingInfoBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingInfoBtn:focus {
+    outline: none;
+}
+        
+        /* Sağ alt köşede yuvarlak quiz butonu */
+        #floatingQuizBtn {
+    position: fixed;
+    top: 120px; /* ⬅ Aşağı yerine yukarıya taşıdık */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingQuizBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingQuizBtn:focus {
+    outline: none;
+}
+
+#floatingQuizBtn i {
+    pointer-events: none;
+}
+
+
+        #quiz-body .card {
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        #quiz-body .card:hover {
+            transform: scale(1.01);
+        }
+
+        #clearBtn {
+        /* Boyutlandırma ve Yuvarlak Şekil */
+        width: 60px; /* Butonun genişliği */
+        height: 60px; /* Butonun yüksekliği - genişlikle aynı olmalı ki yuvarlak olsun */
+        border-radius: 50%; /* Tamamen yuvarlak yapmak için */
+
+        /* Renk ve Metin */
+        background-color: #ee0a0a; /* Kırmızı renk */
+        color: #fff; /* Beyaz metin rengi */
+        font-size: 16px; /* Metin boyutu */
+        font-weight: bold; /* Metni kalın yap */
+
+        /* Metni Ortala (Flexbox Kullanarak) */
+        display: flex; /* Flexbox'ı etkinleştir */
+        justify-content: center; /* Yatayda (sağa-sola) ortala */
+        align-items: center; /* Dikeyde (yukarı-aşağı) ortala */
+
+        /* Ek Görsel Özellikler */
+        border: none; /* Kenarlık olmasın */
+        cursor: pointer; /* Fare imlecini işaretçi yap */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+        transition: all 0.3s ease-in-out; /* Yumuşak geçiş efektleri */
+    }
+
+    #clearBtn:hover {
+        /* Hover Efekti */
+        background-color: #cd0707; /* Daha koyu kırmızı */
+        transform: scale(1.1); /* Butonu biraz büyüt */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Gölgeyi belirginleştir */
+    }
+
+    #clearBtn:active {
+        /* Tıklama Anındaki Efekt */
+        background-color: #b00606; /* Daha da koyu kırmızı */
+        transform: scale(0.95); /* Butonu biraz küçült */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Gölgeyi küçült */
+    }
+
+
+        @media (max-width: 576px) {
+            #message-input {
+                flex-direction: row !important;  /* Yan yana diz */
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap; /* Gerekirse sar */
+            }
+
+
+
+            #question {
+                width: 100%;
+            }
+        }
+
+        .send_btn_class:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .underline-shadow {
+            width: 300px;
+            height: 3px;
+            background-color: rgba(13, 110, 253, 0.4); /* Daha açık mavi */
+            margin: 12px auto 0 auto;
+            border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 25px 3px rgba(13, 110, 253, 0.6); /* Geniş ve yumuşak mavi gölge */
+        }
+
+        .underline-shadow.d-none {
+            display: none;
+        }
+
+
+        .center-record-wrapper {
+            display: none;
+            height: 400px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Space between record button and cancel button */
+        }
+
+        #cancelRecordingBtn {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px; /* Additional space between buttons */
+        }
+
+        /* Make sure the recording button stays centered */
+        #record_btn_center {
+            margin: 0 auto;
+        }
+
+
+        .modern-btn {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modern-btn:hover {
+            background: linear-gradient(135deg, #6610f2, #007bff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .modern-btn i {
+            font-size: 20px;
+        }
+
+
+        #recordBtn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #000;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            z-index: 10;
+          }
+
+          @media (max-width: 576px) {
+            #recordBtn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #000;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                position: relative;
+                z-index: 10;
+            }
+            #send-button {
+                width: 60px !important;
+                height: 60px !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                padding: 0 !important;
+                font-size: 14px !important;
+                text-align: center;
+            }
+        }
+
+          #recordBtn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: fill 0.3s ease;
+          }
+
+          #recordBtn.recording {
+            background-color: #0d6efd;
+            animation: pulse 1s infinite;
+          }
+
+          #recordBtn.recording svg {
+            fill: black;
+          }
+
+          /* Transition states for recordBtn */
+          #recordBtn.transitioning {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: #000;
+            transition: all 0.8s ;
+        }
+
+        @media (max-width: 576px) {
+            #recordBtn.transitioning {
+                top: 90%; /* Daha aşağıya al */
+            }
+        }
+
+          #recordBtn.transitioning svg {
+            fill: black;
+          }
+
+          @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+          }
+
+          #recordBtn:active{
+            color: #ffffff;
+          }
+
+          /* New styles for recording state */
+          .recording-state {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+          }
+
+
+          #record_btn_center {
+            width: 80px;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #6610f2, #007bff); /*record_btn_center gradyanlı renk eklendi */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+          }
+
+          #record_btn_center:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          }
+
+          #record_btn_center svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: fill 0.3s ease;
+          }
+
+          #record_btn_center.recording {
+            background-color: #0d6efd;
+            animation: pulse 1s infinite;
+          }
+
+          #record_btn_center.recording svg {
+            fill: black;
+          }
+
+          .center-record-wrapper {
+            display: none;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Yukarı hizala */
+            align-items: center;
+            padding-top: 50px; /* Yukarıdan boşluk bırak */
+            gap: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(13, 110, 253, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+            }
+        }
+
+        /* Aktif kayıt durumunda buton efekti */
+        #record_btn_center.recording {
+            background-color: #0d6efd; /* Mavi ton */
+            animation: pulse 1.5s infinite;
+        }
+
+        #record_btn_center.recording svg {
+            fill: black;
+        }
+
+        .record-button:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff); /*bu satırı kaldırdığımda bir problem gözükmüyor. Hem web size hem de mobil size'da
+            aynı görüntü (renk) gözüküyor şimdilik. */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .send-button:hover{
+            /*background: linear-gradient(135deg, #6610f2, #007bff);*/
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade out animation for other elements */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Message input wrapper for smooth transitions */
+        .message-input {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #message-container {
+            width: 100%;
+            max-width: 900px; /* Masaüstü için genişletildi */
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px 4px rgba(25, 223, 114, 0.3);
+            overflow-y: auto;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+
+        /* Tablet ve küçük dizüstüler için */
+        @media (max-width: 1024px) {
+            #message-container {
+                max-width: 700px;
+            }
+        }
+
+        /* Mobil için */
+        @media (max-width: 768px) {
+            #message-container {
+                max-width: 90%;
+                height: 300px;
+                padding: 0.8rem;
+            }
+        }
+
+
+    /* Mesaj kutularına örnek stil */
+    .message-bubble {
+        padding: 0.75rem 1rem;
+        border-radius: 18px;
+        max-width: 75%;
+        word-wrap: break-word;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    /* Kullanıcının mesajı (sağda) */
+    .message-bubble.user {
+        align-self: flex-end;
+        background-color: #DCF8C6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Diğer mesajlar (solda) */
+    .message-bubble.other {
+        align-self: flex-start;
+        background-color: #f1f0f0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Animasyon (opsiyonel) */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+        /* Custom responsive height for message-container */
+        
+        .note-card {
+        width: 300px;
+        height: 280px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .note-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .note-card h5 {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .note-card .note-preview {
+        flex-grow: 1;
+        font-size: 0.95rem;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .note-card .see-more-link {
+        display: inline-block;
+        font-size: 0.9rem;
+        color: #0d6efd;
+        margin-top: 0.5rem;
+    }
+
+    .note-card button {
+        align-self: flex-start;
+    }
+
+    /* Ders filtresi stil */
+    #subjectFilter {
+        max-width: 300px;
+        margin: 30px auto 10px auto;
+        display: block;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background: #f8f9fa;
+        box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+        font-weight: 500;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #subjectFilter:hover {
+        box-shadow: 0 0 18px rgba(0, 123, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .note-card {
+            width: 90%;
+        }
+
+        #subjectFilter {
+            width: 80%;
+        }
+    }
+
+    .note-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .note-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <div class="container d-flex">
+            <button class="navbar-toggler d-flex align-items-center d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <a class="navbar-brand d-none d-lg-block" href="#">
+                <img src="../static/img/logo2_optimized.png"
+                alt="logo"
+                style="width: 90px; height: 70px;">
+            </a>
+
+            <a class="navbar-brand mx-auto d-block d-lg-none" href="#">
+                <img src="../static/img/logo2_optimized.png"
+                alt="logo"
+                style="width: 50px; height: auto;">
+            </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkımda</a>
+                    </li>
+
+                    <li class="nav-item dropdown" style="max-height: 38px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ders Notlarım
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/subject?subject=biyoloji">Biyoloji</a>
+                            <a class="dropdown-item" href="/subject?subject=kimya">Kimya</a>
+                            <a class="dropdown-item" href="/subject?subject=matematik">Matematik</a>
+                            <a class="dropdown-item" href="/subject?subject=fizik">Fizik</a>
+                            <a class="dropdown-item" href="/subject?subject=turkce">Türkçe</a>
+                            <a class="dropdown-item" href="/subject?subject=tarih">Tarih</a>
+                            <a class="dropdown-item" href="/subject?subject=felsefe">Felsefe</a>
+                            <a class="dropdown-item" href="/subject?subject=din">Din Kültürü</a>
+                            <a class="dropdown-item" href="/subject?subject=edebiyat">Edebiyat</a>
+                            <a class="dropdown-item" href="/subject?subject=geometri">Geometri</a>
+                            <a class="dropdown-item" href="/subject?subject=cografya">Coğrafya</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="#">YKSAgent</a>
+                    </li>
+
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="/profile">Profilim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="modern-btn ml-3" onclick="logout()" style="padding: 6px 18px; font-size: 14px;">
+                            <i class="fa fa-sign-out-alt"></i> Çıkış Yap
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Quiz Başlatma Butonu (Sağ Alt Köşe) -->
+    <button id="floatingQuizBtn" onclick="generateQuiz()" title="Quiz Oluştur">
+        Quiz
+    </button>
+
+    <!-- Bilgilerim Butonu -->
+<button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
+    Bilgilerim
+</button>
+
+
+    <!-- Quiz Modal -->
+    <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content p-4">
+        <div class="modal-header">
+            <h5 class="modal-title">Senin İçin Oluşturulan Quiz</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="quiz-body">
+            <!-- Sorular burada gösterilecek -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" onclick="submitAnswers()">Cevapları Gönder</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    
+
+    <select id="subjectFilter" class="form-control" onchange="renderNotes(this.value)">
+        <option value="all">Tüm Dersler</option>
+        <option value="biyoloji">Biyoloji</option>
+        <option value="kimya">Kimya</option>
+        <option value="fizik">Fizik</option>
+        <option value="cografya">Coğrafya</option>
+        <option value="tarih">Tarih</option>
+        <!-- diğer dersler -->
+    </select>
+
+    <div class="container my-5">
+        <div class="chat-container">
+            <div class="text-center mb-4">
+                <div class="gif-class">
+                    <div style="height: 90px; width: 200px;"></div>
+                </div>
+                <div> NOTLARIM</div>
+            </div>
+    
+            <!-- Ders seçme ve mesaj alanlarını kaldırıyoruz ama dış yapılar kalıyor -->
+            <div class="form-group text-center" id="subject-selector-wrapper" style="display: none;"></div>
+    
+            <div id="note-div" class="note-grid"></div>
+    
+            <!-- Sesli kayıt bölümü de gizlendi -->
+            <div class="center-record-wrapper d-none" id="recording-state"></div>
+    
+            <!-- Giriş alanı da kaldırıldı -->
+            <div class="message-input d-flex" id="message-input" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Quiz Konu Giriş Modalı -->
+<div class="modal fade" id="quizTopicModal" tabindex="-1" role="dialog" aria-labelledby="quizTopicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizTopicModalLabel">Konu Gir</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="quiz-topic-input" class="form-control" placeholder="örn. elektriksel alan, çember, fotosentez..." />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+          <button type="button" class="btn btn-primary" onclick="submitQuizTopic()">Quiz Oluştur</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="loading-overlay" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.85); z-index: 2000; justify-content: center; align-items: center;">
+    <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+      <span class="sr-only">Yükleniyor...</span>
+    </div>
+    <div class="mt-3 text-center font-weight-bold">Quiz hazırlanıyor, lütfen bekleyin...</div>
+  </div>
+
+
+  <!-- Bilgilerim Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Kullanıcı Bilgileriniz</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ID:</strong> {{ user_id }}</p>
+          <p><strong>İsim:</strong> {{ username }}</p>
+          <p><strong>Email:</strong> {{ email }}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Note Detay Modalı -->
+<div class="modal fade" id="noteDetailModal" tabindex="-1" role="dialog" aria-labelledby="noteDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="noteDetailModalLabel">Not Detayı</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 id="modal-note-title" class="text-primary"></h5>
+          <small class="text-muted d-block mb-2">Ders: <span id="modal-note-subject"></span></small>
+          <p id="modal-note-content" style="white-space: pre-wrap;"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <img src="../static/img/logo2_optimized.png"
+                        class="mb-3"
+                        alt="logo"
+                        style="max-width: 200px;">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/instagram-brands-solid.ico" style="height: 18px; width:18px;margin-right: 5px;">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/linkedin-in-brands-solid_1_.ico" style="height: 18px; width:18px;margin-right: 5px;">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/square-youtube-brands-solid_2_.ico" style="height: 18px; width:18px;margin-right: 5px;">YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li>+90 555 555 5555</li>
+                        <li>Fax: +90 555 555 5555</li>
+                        <li>Çankaya/Ankara TÜRKİYE</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.yongatek.com/" class="text-white">Home</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">About Us</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">Services</a></li>
+                        <li><a href="https://www.yongatek.com/" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2025, All Rights Reserved by Mert</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type='text/javascript' src='../static/js/index.js'></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    renderNotes("all");
+});
+        let isRecording = false;
+    let stream = null;
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isTransitioning = false;
+
+    const recordBtn = document.getElementById("recordBtn");
+    const recordBtnCenter = document.getElementById("record_btn_center");
+    const cancelBtn = document.getElementById("cancelRecordingBtn");
+    const messageContainer = document.getElementById("message-container");
+    const messageInput = document.getElementById("message-input");
+    const recordingState = document.getElementById("recording-state");
+
+    const underline = document.getElementById("question-underline");
+
+
+    let currentQuestions = [];
+
+    let correctAnswers = []; 
+
+    async function submitQuizTopic() {
+    const input = document.getElementById("quiz-topic-input").value.trim();
+    if (!input) {
+        alert("Lütfen bir konu girin.");
+        return;
+    }
+
+    $('#quizTopicModal').modal('hide');
+    document.getElementById("loading-overlay").style.display = "flex";
+
+    try {
+        const res = await fetch("/generate_quiz", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user_input: input })
+        });
+
+        const data = await res.json();
+        const quizBody = document.getElementById("quiz-body");
+        quizBody.innerHTML = "";
+        currentQuestions = data.questions;
+        correctAnswers = currentQuestions.map(q => q.correct_answer);
+
+        data.questions.forEach((q, idx) => {
+            const div = document.createElement("div");
+            div.classList.add("card", "mb-3", "p-3");
+
+            const optionsHtml = Object.entries(q.choices).map(
+                ([key, val]) => `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer-${idx}" id="answer-${idx}-${key}" value="${key}">
+                    <label class="form-check-label" for="answer-${idx}-${key}">${key}) ${val}</label>
+                </div>`
+            ).join("");
+
+            div.innerHTML = `
+                <p><strong>Soru ${idx + 1}:</strong> ${q.question}</p>
+                ${optionsHtml}
+                <div id="feedback-${idx}" class="mt-2 text-muted"></div>
+            `;
+            quizBody.appendChild(div);
+        });
+
+        $('#quizModal').modal('show');
+    } catch (error) {
+        console.error("Quiz oluşturulurken hata:", error);
+        alert("Quiz oluşturulamadı. Lütfen tekrar deneyin.");
+    } finally {
+        document.getElementById("loading-overlay").style.display = "none";
+    }
+}
+
+
+    async function generateQuiz() {
+        const topic = prompt("Lütfen quiz için bir konu girin:");
+        if (!topic) return;
+
+        const res = await fetch("/generate_quiz", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user_input: topic })
+        });
+        const data = await res.json();
+        console.log(data)
+
+        const quizBody = document.getElementById("quiz-body");
+        quizBody.innerHTML = "";
+        currentQuestions = data.questions;
+
+        correctAnswers = currentQuestions.map(q => q.correct_answer);
+
+        data.questions.forEach((q, idx) => {
+            const div = document.createElement("div");
+            div.classList.add("card", "mb-3", "p-3");
+
+            const optionsHtml = Object.entries(q.choices).map(
+                ([key, val]) => `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer-${idx}" id="answer-${idx}-${key}" value="${key}">
+                    <label class="form-check-label" for="answer-${idx}-${key}">${key}) ${val}</label>
+                </div>`
+            ).join("");
+
+            div.innerHTML = `
+                <p><strong>Soru ${idx + 1}:</strong> ${q.question}</p>
+                ${optionsHtml}
+                <div id="feedback-${idx}" class="mt-2 text-muted"></div>
+            `;
+            quizBody.appendChild(div);
+        });
+
+        $('#quizModal').modal('show');
+    }
+
+
+    async function submitAnswers() {
+    // Loading başlat
+    document.getElementById("loading-overlay").style.display = "flex";
+
+    const feedbackPromises = [];
+
+    for (let i = 0; i < currentQuestions.length; i++) {
+        const question = currentQuestions[i];
+        const selectedOption = document.querySelector(`input[name="answer-${i}"]:checked`);
+        const answer = selectedOption ? selectedOption.value : null;
+
+        const feedbackEl = document.getElementById(`feedback-${i}`);
+
+        if (!answer) {
+            feedbackEl.innerHTML = "Lütfen bir şık seçin.";
+            feedbackEl.classList.remove("text-success");
+            feedbackEl.classList.add("text-danger");
+            continue;
+        }
+
+        // Her fetch isteğini Promise olarak kaydet
+        const promise = fetch("/evaluate_answer", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                question: question.question,
+                answer: answer,
+                correct_answer: correctAnswers[i]
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            feedbackEl.innerHTML = `<strong>Geri Bildirim:</strong> ${data.feedback} <br><strong>Puan:</strong> ${data.score}`;
+            feedbackEl.classList.remove("text-danger");
+            feedbackEl.classList.add("text-success");
+        })
+        .catch(err => {
+            feedbackEl.innerHTML = `<strong>Hata:</strong> Değerlendirme sırasında sorun oluştu.`;
+            feedbackEl.classList.add("text-danger");
+        });
+
+        feedbackPromises.push(promise);
+    }
+
+    // Tüm fetch işlemleri bitene kadar bekle
+    await Promise.all(feedbackPromises);
+
+    // Loading kapat
+    document.getElementById("loading-overlay").style.display = "none";
+}
+
+    
+
+
+    async function logout() {
+        try {
+            const response = await fetch("/logout", {
+                method: "GET",
+                credentials: "include"  // çerezleri de gönder
+            });
+
+            if (response.redirected) {
+                // Yönlendirme varsa otomatik git
+                window.location.href = response.url;
+            } else {
+                // Geriye HTML dönmüşse manuel göster
+                const html = await response.text();
+                document.open();
+                document.write(html);
+                document.close();
+            }
+        } catch (error) {
+            console.error("Logout hatası:", error);
+        }
+    }
+
+    function generateQuiz() {
+    $('#quizTopicModal').modal('show');
+}
+
+function showInfoModal() {
+    $('#infoModal').modal('show');
+}
+
+
+async function renderNotes(subject) {
+    const container = document.getElementById("note-div");
+    container.innerHTML = "";
+
+    let url = "/get_user_notes";
+    if (subject) {
+        url += `/${subject}`;
+    }
+
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const filteredNotes = data.notes || [];
+
+        if (filteredNotes.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center w-100'>Bu derse ait not bulunamadı.</p>";
+            return;
+        }
+
+        filteredNotes.forEach(note => {
+            const card = document.createElement("div");
+            card.className = "note-card card shadow-sm p-3";
+            card.style.cursor = "pointer";
+            card.onclick = () => showNoteModal(note);
+
+            const fullNote = note.note;
+            const isLong = fullNote.length > 300;
+            const preview = isLong ? fullNote.slice(0, 250) + "..." : fullNote;
+
+            card.innerHTML = `
+                <h5 class="text-primary">${note.label}</h5>
+                <small class="text-muted mb-2 d-block">Ders: ${note.subject}</small>
+                <p class="note-preview">${preview}</p>
+                ${isLong ? `<a href="#" class="text-info see-more-link" onclick="toggleNote(this, \`${fullNote.replace(/`/g, "\\`")}\`); return false;">Devamını gör</a>` : ""}
+                <button class="btn btn-sm btn-danger mt-2" onclick="deleteNote('${note.subject}', ${note.id})">Sil</button>
+            `;
+
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Notlar yüklenemedi:", error);
+        container.innerHTML = "<p class='text-danger'>Notlar yüklenemedi.</p>";
+    }
+}
+
+
+async function deleteNote(subject, noteId) {
+    if (!confirm("Bu notu silmek istediğinize emin misiniz?")) return;
+
+    try {
+        const res = await fetch(`/delete_note/${subject}/${noteId}`, {
+            method: "DELETE"
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+            alert("Not başarıyla silindi.");
+            renderNotes(document.getElementById("subjectFilter").value); // Filtreye göre yeniden yükle
+        } else {
+            alert("Not silinemedi: " + (data.detail || "Bilinmeyen hata."));
+        }
+    } catch (error) {
+        console.error("Silme hatası:", error);
+        alert("Not silinirken bir hata oluştu.");
+    }
+}
+
+
+function showNoteModal(note) {
+    document.getElementById("modal-note-title").textContent = note.label;
+    document.getElementById("modal-note-subject").textContent = note.subject;
+    document.getElementById("modal-note-content").textContent = note.note;
+    $('#noteDetailModal').modal('show');
+}
+    
+    </script>
+
+</body>
+</html>

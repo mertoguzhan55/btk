@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ subject_name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .section-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .custom-alert {
+            position: relative;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideFadeIn 0.5s forwards;
+            z-index: 1000;
+        }
+
+        .custom-alert.success {
+            background-color: #e0f8ea;
+            color: #1e7e34;
+        }
+
+        .custom-alert-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        @keyframes slideFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    {% if success == "1" %}
+        <div id="customAlert" class="custom-alert success">
+            <span class="custom-alert-icon">✅</span>
+            <span class="custom-alert-message">Not başarıyla eklendi.</span>
+        </div>
+    {% endif %}
+
+    <div class="container mt-5">
+
+        <div class="text-center mb-4">
+            <h1 class="display-4 text-primary">{{ subject_name }}</h1>
+            <p class="lead">Bu sayfa <strong>{{ subject_id }}</strong> dersi için oluşturuldu.</p>
+        </div>
+
+        <!-- YouTube Video Transkript Formu -->
+        <div class="section-box">
+            <h4>YouTube Video ID ile Transkript Ekle</h4>
+            <form action="/add_youtube_transcript" method="POST">
+                <input type="hidden" name="subject_id" value="{{ subject_id }}">
+        
+                <div class="form-group">
+                    <label for="youtube_id">YouTube Video ID</label>
+                    <input type="text" class="form-control" id="youtube_id" name="youtube_id" placeholder="Örn: dQw4w9WgXcQ" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="language_code">Video Dili</label>
+                    <select class="form-control" id="language_code" name="language_code" required>
+                        <option value="tr" selected>Türkçe</option>
+                        <option value="en">İngilizce</option>
+                        <option value="de">Almanca</option>
+                        <option value="fr">Fransızca</option>
+                        <option value="es">İspanyolca</option>
+                        <option value="ar">Arapça</option>
+                        <option value="ru">Rusça</option>
+                    </select>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Transkript Al ve Kaydet</button>
+            </form>
+        </div>
+
+        <!-- Doğrudan Metin Notu Ekle -->
+        <div class="section-box">
+            <h4>Metin Notu Ekle</h4>
+            <form action="/add_text_note" method="POST">
+                <input type="hidden" name="subject_id" value="{{ subject_id }}">
+                <div class="form-group">
+                    <label for="note_text">Not Metni</label>
+                    <textarea class="form-control" id="note_text" name="note_text" rows="4" placeholder="Notunuzu buraya yazın..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Kaydet</button>
+            </form>
+        </div>
+
+        <!-- PDF Dosyası Yükle -->
+        <div class="section-box">
+            <h4>PDF Yükle (OCR ile Not Ekle)</h4>
+            <form action="/upload_pdf" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="subject_id" value="{{ subject_id }}">
+                <div class="form-group">
+                    <label for="pdf_file">PDF Dosyası</label>
+                    <input type="file" class="form-control-file" id="pdf_file" name="pdf_file" accept=".pdf" required>
+                </div>
+                <button type="submit" class="btn btn-dark">Yükle ve OCR ile Kaydet</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        const alertBox = document.getElementById("customAlert");
+        if (alertBox) {
+            setTimeout(() => {
+                alertBox.style.animation = "slideFadeOut 0.5s forwards";
+                setTimeout(() => alertBox.remove(), 500);
+            }, 3000);
+        }
+    });
+</script>
+</html>
