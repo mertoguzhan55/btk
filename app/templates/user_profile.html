@@ -1093,40 +1093,27 @@ async function renderNotes(subject) {
     }
 }
 
-// async function fetchUserNotes() {
-//     const container = document.getElementById("message-container");
-//     container.innerHTML = "";
 
-//     try {
-//         const res = await fetch(`/get_user_notes`);
-//         const data = await res.json();
+async function deleteNote(subject, noteId) {
+    if (!confirm("Bu notu silmek istediğinize emin misiniz?")) return;
 
-//         if (data.notes.length === 0) {
-//             container.innerHTML = "<p class='text-muted'>Henüz notunuz yok.</p>";
-//             return;
-//         }
+    try {
+        const res = await fetch(`/delete_note/${subject}/${noteId}`, {
+            method: "DELETE"
+        });
 
-//         data.notes.forEach(note => {
-//             const card = document.createElement("div");
-//             card.className = "card w-100 p-3 shadow-sm";
-//             card.style.maxWidth = "600px";
-
-//             card.innerHTML = `
-//                 <h5 class="text-primary">${note.label} <small class="text-muted">(${note.subject})</small></h5>
-//                 <p>${note.note}</p>
-//                 <button class="btn btn-sm btn-danger mt-2" onclick="deleteNote('${note.subject}', ${note.id})">
-//                     Sil
-//                 </button>
-//             `;
-
-//             container.appendChild(card);
-//         });
-
-//     } catch (error) {
-//         console.error("Notlar yüklenemedi:", error);
-//         container.innerHTML = "<p class='text-danger'>Notlar yüklenemedi.</p>";
-//     }
-// }
+        const data = await res.json();
+        if (res.ok) {
+            alert("Not başarıyla silindi.");
+            renderNotes(document.getElementById("subjectFilter").value); // Filtreye göre yeniden yükle
+        } else {
+            alert("Not silinemedi: " + (data.detail || "Bilinmeyen hata."));
+        }
+    } catch (error) {
+        console.error("Silme hatası:", error);
+        alert("Not silinirken bir hata oluştu.");
+    }
+}
 
 
 function showNoteModal(note) {

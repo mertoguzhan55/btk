@@ -353,6 +353,33 @@ class FastAPIServer:
             return JSONResponse(content={"notes": notes})
         
 
+        @self.app.delete("/delete_note/{subject}/{note_id}")
+        async def delete_note(subject: str, note_id: int, request: Request):
+            try:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
+                filename = f"app/data/{subject}_{user_id}.json"
+                if not os.path.exists(filename):
+                    raise HTTPException(status_code=404, detail="Not dosyası bulunamadı.")
+
+                with open(filename, "r", encoding="utf-8") as f:
+                    notes = json.load(f)
+
+                updated_notes = [note for note in notes if note["id"] != note_id]
+
+                if len(updated_notes) == len(notes):
+                    raise HTTPException(status_code=404, detail="Not bulunamadı.")
+
+                with open(filename, "w", encoding="utf-8") as f:
+                    json.dump(updated_notes, f, ensure_ascii=False, indent=2)
+
+                return JSONResponse(content={"success": True, "message": "Not silindi."})
+
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+        
+
 
 
         @self.app.get("/logout")
