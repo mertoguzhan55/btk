@@ -316,25 +316,40 @@ class FastAPIServer:
 
 
         
-        @self.app.get("/get_user_notes")
-        def get_user_notes(request: Request):
+        @self.app.get("/get_user_notes/{subject}")
+        def get_user_notes_by_subject(request: Request, subject: str):
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
-            
-            directory = "app/data"
             notes = []
 
-            for file in os.listdir(directory):
-                if file.endswith(f"_{user_id}.json"):
-                    subject = file.split("_")[0]
-                    with open(os.path.join(directory, file), "r", encoding="utf-8") as f:
+            # Eğer subject "all" ise tüm ders dosyalarını tara
+            if subject == "all":
+                directory = "app/data"
+                for file in os.listdir(directory):
+                    if file.endswith(f"_{user_id}.json"):
+                        current_subject = file.split("_")[0]
+                        file_path = os.path.join(directory, file)
                         try:
+                            with open(file_path, "r", encoding="utf-8") as f:
+                                entries = json.load(f)
+                                for entry in entries:
+                                    entry["subject"] = current_subject
+                                    notes.append(entry)
+                        except Exception:
+                            continue
+            else:
+                # Belirli bir ders için
+                file_path = f"app/data/{subject}_{user_id}.json"
+                if os.path.exists(file_path):
+                    try:
+                        with open(file_path, "r", encoding="utf-8") as f:
                             entries = json.load(f)
                             for entry in entries:
                                 entry["subject"] = subject
                                 notes.append(entry)
-                        except Exception as e:
-                            continue
+                    except Exception:
+                        pass
+
             return JSONResponse(content={"notes": notes})
         
 

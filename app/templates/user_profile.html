@@ -499,6 +499,89 @@
 
         /* Custom responsive height for message-container */
         
+        .note-card {
+        width: 300px;
+        height: 280px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .note-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .note-card h5 {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .note-card .note-preview {
+        flex-grow: 1;
+        font-size: 0.95rem;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .note-card .see-more-link {
+        display: inline-block;
+        font-size: 0.9rem;
+        color: #0d6efd;
+        margin-top: 0.5rem;
+    }
+
+    .note-card button {
+        align-self: flex-start;
+    }
+
+    /* Ders filtresi stil */
+    #subjectFilter {
+        max-width: 300px;
+        margin: 30px auto 10px auto;
+        display: block;
+        border-radius: 30px;
+        padding: 10px 20px;
+        background: #f8f9fa;
+        box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+        font-weight: 500;
+        transition: box-shadow 0.3s ease;
+    }
+
+    #subjectFilter:hover {
+        box-shadow: 0 0 18px rgba(0, 123, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .note-card {
+            width: 90%;
+        }
+
+        #subjectFilter {
+            width: 80%;
+        }
+    }
+
+    .note-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .note-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
     </style>
 
@@ -607,34 +690,32 @@
     </div>
 
 
-    <div class="message-container animate__fadeInBottomLeft message-container-responsive" id="message-container" style="height: auto; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-        <!-- Kullanıcı notları buraya JS ile eklenecek -->
-    </div>
+
     
 
-
+    <select id="subjectFilter" class="form-control" onchange="renderNotes(this.value)">
+        <option value="all">Tüm Dersler</option>
+        <option value="biyoloji">Biyoloji</option>
+        <option value="kimya">Kimya</option>
+        <option value="fizik">Fizik</option>
+        <option value="cografya">Coğrafya</option>
+        <option value="tarih">Tarih</option>
+        <!-- diğer dersler -->
+    </select>
 
     <div class="container my-5">
         <div class="chat-container">
             <div class="text-center mb-4">
                 <div class="gif-class">
-                    <img src="../static/img/chatbot.gif" alt="Görsel Yüklenemedi" width="200" height="170" class="img-fluid">
+                    <div style="height: 90px; width: 200px;"></div>
                 </div>
-                <h2>Profil Bilgileriniz</h2>
-                <div class="underline-shadow my-3"></div>
+                <div> NOTLARIM</div>
             </div>
     
             <!-- Ders seçme ve mesaj alanlarını kaldırıyoruz ama dış yapılar kalıyor -->
             <div class="form-group text-center" id="subject-selector-wrapper" style="display: none;"></div>
     
-            <div class="message-container animate__fadeInBottomLeft message-container-responsive" id="message-container" style="height: auto; padding: 2rem; display: flex; justify-content: center;">
-                <div style="width: 100%; max-width: 500px; background-color: #f8f9fa; border-radius: 12px; padding: 20px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
-                    <h5 class="text-left mb-4"><i class="fas fa-user-circle"></i> Kullanıcı Bilgileri</h5>
-                    <p><strong>ID:</strong> {{ user_id }}</p>
-                    <p><strong>İsim:</strong> {{ username }}</p>
-                    <p><strong>Email:</strong> {{ email }}</p>
-                </div>
-            </div>
+            <div id="note-div" class="note-grid"></div>
     
             <!-- Sesli kayıt bölümü de gizlendi -->
             <div class="center-record-wrapper d-none" id="recording-state"></div>
@@ -696,6 +777,28 @@
     </div>
   </div>
 
+  <!-- Note Detay Modalı -->
+<div class="modal fade" id="noteDetailModal" tabindex="-1" role="dialog" aria-labelledby="noteDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="noteDetailModalLabel">Not Detayı</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 id="modal-note-title" class="text-primary"></h5>
+          <small class="text-muted d-block mb-2">Ders: <span id="modal-note-subject"></span></small>
+          <p id="modal-note-content" style="white-space: pre-wrap;"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
     <footer class="bg-dark text-white py-4">
         <div class="container">
@@ -741,7 +844,9 @@
     <script type='text/javascript' src='../static/js/index.js'></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", fetchUserNotes);
+        document.addEventListener("DOMContentLoaded", () => {
+    renderNotes("all");
+});
         let isRecording = false;
     let stream = null;
     let mediaRecorder = null;
@@ -942,32 +1047,41 @@ function showInfoModal() {
 }
 
 
-
-
-async function fetchUserNotes() {
-    const container = document.getElementById("message-container");
+async function renderNotes(subject) {
+    const container = document.getElementById("note-div");
     container.innerHTML = "";
 
-    try {
-        const res = await fetch(`/get_user_notes`);
-        const data = await res.json();
+    let url = "/get_user_notes";
+    if (subject) {
+        url += `/${subject}`;
+    }
 
-        if (data.notes.length === 0) {
-            container.innerHTML = "<p class='text-muted'>Henüz notunuz yok.</p>";
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const filteredNotes = data.notes || [];
+
+        if (filteredNotes.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center w-100'>Bu derse ait not bulunamadı.</p>";
             return;
         }
 
-        data.notes.forEach(note => {
+        filteredNotes.forEach(note => {
             const card = document.createElement("div");
-            card.className = "card w-100 p-3 shadow-sm";
-            card.style.maxWidth = "600px";
+            card.className = "note-card card shadow-sm p-3";
+            card.style.cursor = "pointer";
+            card.onclick = () => showNoteModal(note);
+
+            const fullNote = note.note;
+            const isLong = fullNote.length > 300;
+            const preview = isLong ? fullNote.slice(0, 250) + "..." : fullNote;
 
             card.innerHTML = `
-                <h5 class="text-primary">${note.label} <small class="text-muted">(${note.subject})</small></h5>
-                <p>${note.note}</p>
-                <button class="btn btn-sm btn-danger mt-2" onclick="deleteNote('${note.subject}', ${note.id})">
-                    Sil
-                </button>
+                <h5 class="text-primary">${note.label}</h5>
+                <small class="text-muted mb-2 d-block">Ders: ${note.subject}</small>
+                <p class="note-preview">${preview}</p>
+                ${isLong ? `<a href="#" class="text-info see-more-link" onclick="toggleNote(this, \`${fullNote.replace(/`/g, "\\`")}\`); return false;">Devamını gör</a>` : ""}
+                <button class="btn btn-sm btn-danger mt-2" onclick="deleteNote('${note.subject}', ${note.id})">Sil</button>
             `;
 
             container.appendChild(card);
@@ -979,6 +1093,48 @@ async function fetchUserNotes() {
     }
 }
 
+// async function fetchUserNotes() {
+//     const container = document.getElementById("message-container");
+//     container.innerHTML = "";
+
+//     try {
+//         const res = await fetch(`/get_user_notes`);
+//         const data = await res.json();
+
+//         if (data.notes.length === 0) {
+//             container.innerHTML = "<p class='text-muted'>Henüz notunuz yok.</p>";
+//             return;
+//         }
+
+//         data.notes.forEach(note => {
+//             const card = document.createElement("div");
+//             card.className = "card w-100 p-3 shadow-sm";
+//             card.style.maxWidth = "600px";
+
+//             card.innerHTML = `
+//                 <h5 class="text-primary">${note.label} <small class="text-muted">(${note.subject})</small></h5>
+//                 <p>${note.note}</p>
+//                 <button class="btn btn-sm btn-danger mt-2" onclick="deleteNote('${note.subject}', ${note.id})">
+//                     Sil
+//                 </button>
+//             `;
+
+//             container.appendChild(card);
+//         });
+
+//     } catch (error) {
+//         console.error("Notlar yüklenemedi:", error);
+//         container.innerHTML = "<p class='text-danger'>Notlar yüklenemedi.</p>";
+//     }
+// }
+
+
+function showNoteModal(note) {
+    document.getElementById("modal-note-title").textContent = note.label;
+    document.getElementById("modal-note-subject").textContent = note.subject;
+    document.getElementById("modal-note-content").textContent = note.note;
+    $('#noteDetailModal').modal('show');
+}
     
     </script>
 
