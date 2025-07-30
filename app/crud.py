@@ -5,7 +5,7 @@ from app.connection import Connection
 from typing import Union
 from app.logger import Logger
 from sqlalchemy import select, desc
-from app.models.models import QuestionAnswer
+from app.models.models import QuestionAnswer, Challenges
 from app.handler import custom_db_crud_handler
 import asyncio
 
@@ -64,6 +64,28 @@ class CRUDOperations:
         await self.connection.close_session()
         self.logger.info(f"Data read successfully: {result.to_dict()}")
         return result.to_dict()
+    
+    @custom_db_crud_handler
+    async def read_challenge_by_id(self, challenge_id: int):
+        """
+        Retrieves a Challenge object by its ID.
+
+        Args:
+            challenge_id (int): The ID of the challenge.
+
+        Returns:
+            Challenges | None: The Challenge object if found, None otherwise.
+        """
+        challenge = await self.connection.session.get(Challenges, challenge_id)
+        await self.connection.close_session()
+
+        if challenge:
+            self.logger.info(f"Challenge found: {challenge}")
+        else:
+            self.logger.info(f"No challenge found with ID: {challenge_id}")
+
+        return challenge
+
 
     @custom_db_crud_handler
     async def read_all(self, model: any) -> Union[list, bool]:
@@ -129,6 +151,58 @@ class CRUDOperations:
         else:
             self.logger.info(f"Could not find any record with ID {obj_id}")
             return False
+    
+    @custom_db_crud_handler
+    async def delete_challenge_by_id(self, challenge_id: int) -> bool:
+        """
+        Deletes a Challenge record by its ID.
+
+        Args:
+            challenge_id (int): ID of the challenge to delete.
+
+        Returns:
+            bool: True if deleted, False if not found or failed.
+        """
+        challenge = await self.connection.session.get(Challenges, challenge_id)
+        
+        if challenge:
+            await self.connection.session.delete(challenge)
+            await self.connection.session.commit()
+            await self.connection.close_session()
+            self.logger.info(f"Challenge deleted successfully: ID {challenge_id}")
+            return True
+        else:
+            self.logger.info(f"No Challenge found with ID {challenge_id}")
+            await self.connection.close_session()
+            return False
+        
+    
+    @custom_db_crud_handler
+    async def mark_challenge_as_accepted(self, challenge_id: int, user_id: int) -> bool:
+        """
+        Marks a challenge as accepted by receiver if the user is the receiver.
+
+        Args:
+            challenge_id (int): ID of the challenge to accept.
+            user_id (int): ID of the receiver (for validation).
+
+        Returns:
+            bool: True if successfully marked, False otherwise.
+        """
+        stmt = select(Challenges).where(Challenges.id == challenge_id)
+        result = await self.connection.session.execute(stmt)
+        challenge = result.scalar_one_or_none()
+
+        if not challenge or challenge.challenge_receiver_id != user_id:
+            await self.connection.close_session()
+            return False
+
+        challenge.accepted_receiver = True
+        await self.connection.session.commit()
+        await self.connection.close_session()
+        self.logger.info(f"Challenge {challenge_id} accepted by user {user_id}")
+        return True
+    
         
     @custom_db_crud_handler
     async def read_by_email(self, model: any, email: str):
@@ -165,6 +239,33 @@ class CRUDOperations:
                 .limit(n)
             )
             return result.scalars().all()
+
+
+    @custom_db_crud_handler
+    async def read_challenges(self, filters: dict = None) -> Union[list, bool]:
+        """
+        Retrieves challenges from the database with optional filtering.
+
+        Args:
+            filters (dict, optional): Filter conditions as a dictionary. Defaults to None.
+
+        Returns:
+            Union[list, bool]: List of Challenges objects or False if error.
+        """
+        stmt = select(Challenges)
+
+        if filters:
+            for key, value in filters.items():
+                stmt = stmt.where(getattr(Challenges, key) == value)
+
+        result = await self.connection.session.execute(stmt)
+        challenges = result.scalars().all()
+
+        await self.connection.close_session()
+
+        self.logger.info(f"Challenges read with filters: {filters}. Found: {len(challenges)} records.")
+        return challenges
+
 
 
 

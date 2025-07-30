@@ -28,6 +28,33 @@
 <body>
     <style>
 
+#floatingIncomingBtn {
+    position: fixed;
+    top: 300px; /* En aşağıda */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingIncomingBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingIncomingBtn:focus {
+    outline: none;
+}
+
 #floatingInfoBtn {
     position: fixed;
     top: 180px; /* Quiz butonunun altına gelsin */
@@ -583,6 +610,34 @@
     }
 }
 
+
+#floatingChallengeBtn {
+    position: fixed;
+    top: 240px; /* Diğerlerinden aşağıda */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingChallengeBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingChallengeBtn:focus {
+    outline: none;
+}
+
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -656,17 +711,28 @@
 
         </div>
     </nav>
-
+    
 
     <!-- Quiz Başlatma Butonu (Sağ Alt Köşe) -->
     <button id="floatingQuizBtn" onclick="generateQuiz()" title="Quiz Oluştur">
-        Quiz
+        <i class="fas fa-clipboard"></i>
     </button>
 
+
     <!-- Bilgilerim Butonu -->
-<button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
-    Bilgilerim
-</button>
+    <button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
+        <i class="fas fa-user-circle"></i>
+    </button>
+
+    <button id="floatingChallengeBtn" onclick="openChallengeModal()" title="Challenge Gönder">
+        <i class="fas fa-bolt"></i>
+    </button>
+
+    
+        
+    <button id="floatingIncomingBtn" onclick="openIncomingChallengesModal()" title="Gelen Challenge'lar">
+        <i class="fas fa-inbox"></i>
+    </button>
 
 
     <!-- Quiz Modal -->
@@ -707,7 +773,7 @@
         <div class="chat-container">
             <div class="text-center mb-4">
                 <div class="gif-class">
-                    <div style="height: 90px; width: 200px;"></div>
+                    <div style="height: 65px; width: 200px;"></div>
                 </div>
                 <div> NOTLARIM</div>
             </div>
@@ -725,12 +791,35 @@
         </div>
     </div>
 
+
+    <!-- Challenge Modal -->
+<div class="modal fade" id="challengeModal" tabindex="-1" role="dialog" aria-labelledby="challengeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Challenge Gönder</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="email" id="challenge-email" class="form-control" placeholder="Rakibin e-posta adresi">
+          <input type="text" id="challenge-topic" class="form-control mt-3" placeholder="Konu girin (örn: çember, fotosentez...)">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">İptal</button>
+          <button class="btn btn-primary" onclick="sendChallenge()">Challenge Gönder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- Quiz Konu Giriş Modalı -->
 <div class="modal fade" id="quizTopicModal" tabindex="-1" role="dialog" aria-labelledby="quizTopicModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content p-4">
         <div class="modal-header">
-          <h5 class="modal-title" id="quizTopicModalLabel">Konu Gir</h5>
+          <h5 class="modal-title" id="quizTopicModalLabel">Quiz Olmak İstediğin Konuyu Açıkla</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -791,6 +880,27 @@
           <h5 id="modal-note-title" class="text-primary"></h5>
           <small class="text-muted d-block mb-2">Ders: <span id="modal-note-subject"></span></small>
           <p id="modal-note-content" style="white-space: pre-wrap;"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Gelen Challenge'lar Modalı -->
+<div class="modal fade" id="incomingChallengesModal" tabindex="-1" role="dialog" aria-labelledby="incomingChallengesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Gelen Challenge İstekleri</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="incoming-challenges-body">
+          <p class="text-muted text-center">Yükleniyor...</p>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
@@ -1122,7 +1232,100 @@ function showNoteModal(note) {
     document.getElementById("modal-note-content").textContent = note.note;
     $('#noteDetailModal').modal('show');
 }
+
+
+function openChallengeModal() {
+    $('#challengeModal').modal('show');
+}
+
+async function sendChallenge() {
+    const email = document.getElementById("challenge-email").value.trim();
+    const topic = document.getElementById("challenge-topic").value.trim();
+
+    if (!email || !topic) {
+        alert("Lütfen e-posta ve konu girin.");
+        return;
+    }
+
+    try {
+        const res = await fetch("/send_challenge", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, topic })
+        });
+
+        const data = await res.json();
+        alert(data.message || "Challenge gönderildi.");
+        $('#challengeModal').modal('hide');
+    } catch (err) {
+        console.error(err);
+        alert("Challenge gönderilemedi.");
+    }
+}
+
     
+function openIncomingChallengesModal() {
+    $('#incomingChallengesModal').modal('show');
+    fetchIncomingChallenges();
+}
+
+async function fetchIncomingChallenges() {
+    const container = document.getElementById("incoming-challenges-body");
+    container.innerHTML = "<p class='text-muted text-center'>Yükleniyor...</p>";
+
+    try {
+        const res = await fetch("/get_challenges");
+        const data = await res.json();
+        const challenges = data.challenges;
+
+        if (challenges.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center'>Henüz challenge isteğiniz yok.</p>";
+            return;
+        }
+
+        container.innerHTML = "";
+        challenges.forEach(c => {
+            const div = document.createElement("div");
+            div.className = "card mb-3 p-3";
+
+            div.innerHTML = `
+                <p><strong>Konu:</strong> ${c.topic}</p>
+                <button class="btn btn-success btn-sm mr-2" onclick="acceptChallenge('${c.id}')">Kabul Et</button>
+                <button class="btn btn-danger btn-sm" onclick="rejectChallenge('${c.id}')">Reddet</button>
+            `;
+
+            container.appendChild(div);
+        });
+    } catch (error) {
+        console.error("Challenge verisi alınamadı:", error);
+        container.innerHTML = "<p class='text-danger'>Challenge mesajları yüklenirken bir hata oluştu.</p>";
+    }
+}
+
+async function acceptChallenge(id) {
+    const res = await fetch("/accept_challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    });
+    const data = await res.json();
+    alert(data.message);
+    if (data.quiz_match_id) {
+        window.location.href = `/start_challenge_quiz/${data.quiz_match_id}`;
+    }
+}
+
+async function rejectChallenge(id) {
+    const res = await fetch("/reject_challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    });
+    const data = await res.json();
+    alert(data.message);
+    fetchIncomingChallenges(); // tekrar yükle
+}
+
     </script>
 
 </body>

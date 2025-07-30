@@ -5,6 +5,9 @@ from fastapi import FastAPI, Request, Depends, Response, status, UploadFile, Fil
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi import Form, Request
+from fastapi import BackgroundTasks
+from typing import List
+from uuid import uuid4
 from app.logger import Logger
 import os
 import json
@@ -18,10 +21,13 @@ from app.label_extractor_from_video import LabelExtractor
 from app.utils import verify_password, verify_token_from_cookie
 from app.chatbot import Chatbot
 from app.rag_pipeline import RagPipeline
-from app.models.models import QuestionAnswer
+from app.models.models import QuestionAnswer, Challenges
 from app.agent import QuizGeneratorAgent
+from app. challenge_generator import ChallengeGenerator
 from app.crud import CRUDOperations
 from app.models.models import User
+
+
 
 @dataclass
 class FastAPIServer:
@@ -47,8 +53,11 @@ class FastAPIServer:
         self.templates = Jinja2Templates(directory="app/templates")
         self.app.mount(f"/static", StaticFiles(directory="app/static"), name="static")
         self.logger.info("Fastapi init")
+        self.challenge_generator = ChallengeGenerator(logger=self.logger)
         self.agent = QuizGeneratorAgent(self.rag_pipeline, retrieved_chunk_threshold_for_agent_quiz = self.retrieved_chunk_threshold_for_agent_quiz, logger=self.logger)
         self.chatbot = Chatbot(rag_pipeline=self.rag_pipeline, model_name=self.chatbot_model_name, temperature=self.temperature_for_chatbot, logger=self.logger)
+
+        self.challenge_messages = []
 
         self.subject_map = {
             "matematik": "Matematik",
@@ -378,7 +387,103 @@ class FastAPIServer:
 
             except Exception as e:
                 raise HTTPException(status_code=500, detail=str(e))
+            
         
+        # Kullanıcıya challenge mesajı gönder
+        @self.app.post("/send_challenge")
+        async def send_challenge(request: Request):
+
+            await self.crud.initialize()
+
+            payload = verify_token_from_cookie(request)
+            challenge_sender_id = int(payload["sub"])
+            data = await request.json()
+
+            challenge_receiver_user_email = data.get("email")
+            challenge_topic = data.get("topic")
+
+            challenge_quiz_json = self.challenge_generator.run(challenge_topic, challenge_sender_id)
+            
+            challenge_receiver_user_id = await self.crud.read_by_email(User, challenge_receiver_user_email)
+
+            if not challenge_receiver_user_id:
+                return JSONResponse(status_code=404, content={"message": "Bu e-posta adresine sahip kullanıcı bulunamadı."})
+
+            challenge = Challenges(challenge_sender_id = challenge_sender_id, challenge_receiver_id = challenge_receiver_user_id.id, quiz_json = challenge_quiz_json)
+
+            await self.crud.create(challenge)
+
+            return JSONResponse(content={"message": "Challenge isteği gönderildi."})
+        
+
+
+        @self.app.get("/get_challenges")
+        async def get_challenges(request: Request):
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            filters = {
+                "challenge_receiver_id": user_id,
+                "accepted_receiver": False
+            }
+            incoming_challenges = await self.crud.read_challenges(filters=filters)
+
+            challenges_list = []
+            for c in incoming_challenges:
+                try:
+                    question = c.quiz_json.get("questions", [])[0].get("question", "Bilinmeyen Konu")
+                except Exception:
+                    question = "Bilinmeyen Konu"
+
+                challenges_list.append({
+                    "id": c.id,
+                    "topic": question
+                })
+
+            return JSONResponse(content={"challenges": challenges_list})
+        
+
+        @self.app.post("/accept_challenge")
+        async def accept_challenge(request: Request):
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            data = await request.json()
+            challenge_id = int(data.get("id"))
+
+            success = await self.crud.mark_challenge_as_accepted(challenge_id, user_id)
+
+            if not success:
+                return JSONResponse(status_code=403, content={"message": "Bu challenge size ait değil veya bulunamadı."})
+
+            return JSONResponse(content={
+                "message": "Challenge kabul edildi!",
+                "quiz_match_id": challenge_id
+            })
+        
+
+
+        @self.app.post("/reject_challenge")
+        async def reject_challenge(request: Request):
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+            
+            data = await request.json()
+            challenge_id = int(data.get("id"))
+
+            challenge = await self.crud.read_challenge_by_id(challenge_id)
+
+            if not challenge or challenge.challenge_receiver_id != user_id:
+                return JSONResponse(status_code=403, content={"message": "Bu challenge size ait değil."})
+
+            await self.crud.delete_challenge_by_id(challenge_id)
+
+            return JSONResponse(content={"message": "Challenge reddedildi."})
+
+
 
 
 

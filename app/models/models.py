@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
+import json
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text
 from . import Base
 
@@ -30,3 +31,14 @@ class QuestionAnswer(Base):
     created_at = Column(DateTime, default=func.now())
 
     user = relationship("User", back_populates="questions")
+
+
+class Challenges(Base):
+    __tablename__ = 'challenges'
+
+    id = Column(Integer, primary_key=True, index=True)
+    challenge_sender_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    challenge_receiver_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    accepted_sender = Column(Boolean, default=True)
+    accepted_receiver = Column(Boolean, default=False)
+    quiz_json = Column(JSON)

@@ -4019,3 +4019,1092 @@ to be a tool to help us change the world. We should continue to be inspired by h
 [2025-07-29 23:16:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 37.8401 seconds]
 [2025-07-29 23:16:53] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
 [2025-07-29 23:16:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 37.8402 seconds]
+[2025-07-29 23:34:18] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-29 23:34:18] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-29 23:34:18] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-29 23:34:18] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-29 23:34:18] | INFO | [fastapi:__post_init__:49] | [Fastapi init]
+[2025-07-29 23:34:18] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-29 23:34:18] | INFO | [fastapi:run:69] | [Server Initialized!]
+[2025-07-29 23:34:27] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 8.7614 seconds]
+[2025-07-29 23:34:27] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:34:27] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 8.7806 seconds]
+[2025-07-29 23:34:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7835 seconds]
+[2025-07-29 23:34:27] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:34:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7836 seconds]
+[2025-07-29 23:34:29] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 11.0868 seconds]
+[2025-07-29 23:34:29] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:34:29] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 11.1066 seconds]
+[2025-07-29 23:34:29] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 11.1087 seconds]
+[2025-07-29 23:34:29] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:34:29] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 11.1088 seconds]
+[2025-07-29 23:34:57] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 39.4943 seconds]
+[2025-07-29 23:34:57] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:34:57] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 39.5149 seconds]
+[2025-07-29 23:34:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 39.5174 seconds]
+[2025-07-29 23:34:57] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:34:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 39.5175 seconds]
+[2025-07-29 23:35:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 61.7352 seconds]
+[2025-07-29 23:35:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:35:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 61.7553 seconds]
+[2025-07-29 23:35:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 61.7574 seconds]
+[2025-07-29 23:35:20] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:35:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 61.7575 seconds]
+[2025-07-29 23:42:52] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-29 23:42:52] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-29 23:42:52] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-29 23:42:52] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-29 23:42:52] | INFO | [fastapi:__post_init__:62] | [Fastapi init]
+[2025-07-29 23:42:52] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-29 23:42:52] | INFO | [fastapi:run:84] | [Server Initialized!]
+[2025-07-29 23:42:56] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.7710 seconds]
+[2025-07-29 23:42:56] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:42:56] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.7887 seconds]
+[2025-07-29 23:42:56] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.7928 seconds]
+[2025-07-29 23:42:56] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:42:56] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.7930 seconds]
+[2025-07-29 23:43:02] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.3837 seconds]
+[2025-07-29 23:43:02] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-29 23:43:02] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.4043 seconds]
+[2025-07-29 23:43:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.4066 seconds]
+[2025-07-29 23:43:02] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-29 23:43:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.4068 seconds]
+[2025-07-30 21:54:47] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 21:54:47] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 21:54:47] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 21:54:47] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 21:54:47] | INFO | [fastapi:__post_init__:62] | [Fastapi init]
+[2025-07-30 21:54:47] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 21:54:47] | INFO | [fastapi:run:84] | [Server Initialized!]
+[2025-07-30 21:54:58] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.3206 seconds]
+[2025-07-30 21:54:58] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:54:58] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.3497 seconds]
+[2025-07-30 21:54:58] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.3541 seconds]
+[2025-07-30 21:54:58] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:54:58] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.3542 seconds]
+[2025-07-30 21:55:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 32.8848 seconds]
+[2025-07-30 21:55:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:55:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 32.9050 seconds]
+[2025-07-30 21:55:20] | INFO | [chatbot:ask_question:49] | [Asking question for subject 'geometri' by user 1: bana eşkenar üçgenin özellikelrini söyler misin]
+[2025-07-30 21:55:20] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'bana eşkenar üçgenin özellikelrini söyler misin']
+[2025-07-30 21:55:26] | WARNING | [chatbot:ask_question:60] | [No relevant context found. Returning fallback answer.]
+[2025-07-30 21:55:29] | INFO | [crud:create:49] | [the data: <app.models.models.QuestionAnswer object at 0x7feff43bdd90> is added into the database.]
+[2025-07-30 21:55:29] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 42.0465 seconds]
+[2025-07-30 21:55:36] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 48.1043 seconds]
+[2025-07-30 21:55:36] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:55:36] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 48.1258 seconds]
+[2025-07-30 21:55:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 48.1278 seconds]
+[2025-07-30 21:55:36] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:55:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 48.1280 seconds]
+[2025-07-30 21:55:40] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 52.3480 seconds]
+[2025-07-30 21:55:40] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:55:40] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 52.3672 seconds]
+[2025-07-30 21:55:40] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 52.3689 seconds]
+[2025-07-30 21:55:40] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:55:40] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 52.3690 seconds]
+[2025-07-30 21:57:57] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 189.5876 seconds]
+[2025-07-30 21:57:57] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:57:57] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 189.6053 seconds]
+[2025-07-30 21:57:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 189.6068 seconds]
+[2025-07-30 21:57:57] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:57:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 189.6069 seconds]
+[2025-07-30 21:58:49] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 241.4490 seconds]
+[2025-07-30 21:58:49] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:58:49] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 241.4692 seconds]
+[2025-07-30 21:58:49] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 241.4726 seconds]
+[2025-07-30 21:58:49] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:58:49] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 241.4727 seconds]
+[2025-07-30 21:59:07] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 259.2091 seconds]
+[2025-07-30 21:59:07] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 21:59:07] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 259.2284 seconds]
+[2025-07-30 21:59:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 259.2298 seconds]
+[2025-07-30 21:59:07] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 21:59:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 259.2299 seconds]
+[2025-07-30 22:00:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 324.9748 seconds]
+[2025-07-30 22:00:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:00:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 324.9941 seconds]
+[2025-07-30 22:00:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 324.9955 seconds]
+[2025-07-30 22:00:12] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:00:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 324.9957 seconds]
+[2025-07-30 22:00:25] | INFO | [agent:run:163] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "\\u00e7ember", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--0813f941-1822-4fbd-91dc-2bf4408e7455-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'çember', 'user_id': '1'}, 'id': '632285df-67ba-4c29-af78-48c91fc8a762', 'type': 'tool_call'}] usage_metadata={'input_tokens': 281, 'output_tokens': 109, 'total_tokens': 390, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 82}}]
+[2025-07-30 22:00:25] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 1 with query: 'çember']
+[2025-07-30 22:00:26] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5170 | İçerik: coğrafya 1 text...]
+[2025-07-30 22:00:26] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5170): coğrafya 1 text...]
+[2025-07-30 22:00:26] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5170 | İçerik: coğrafya 1 text...]
+[2025-07-30 22:00:26] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5170): coğrafya 1 text...]
+[2025-07-30 22:00:26] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5629 | İçerik: deneme exception 1...]
+[2025-07-30 22:00:26] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5629): deneme exception 1...]
+[2025-07-30 22:00:26] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5629 | İçerik: deneme exception 1...]
+[2025-07-30 22:00:26] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5629): deneme exception 1...]
+[2025-07-30 22:00:26] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.6363 | İçerik: Deprem, yer kabuğundaki kırılmalar sonucu ani enerji boşalmasıyla oluşan yer sarsıntısıdır. Genellik...]
+[2025-07-30 22:00:26] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.6363): Deprem, yer kabuğundaki kırılmalar sonucu ani ener...]
+[2025-07-30 22:00:37] | INFO | [agent:quiz_generate:75] | [Model output (raw): '```json\n[\n    {\n        "question": "Bir çemberin merkezinden çember üzerindeki herhangi bir noktaya olan uzaklığa ne ad verilir?",\n        "choices": {"A": "Çap", "B": "Kiriş", "C": "Yarıçap", "D": "Teğet", "E": "Kesen"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Yarıçapı 7 cm olan bir çemberin çevresi kaç cm\'dir? (π = 22/7 alınız)",\n        "choices": {"A": "22", "B": "44", "C": "14", "D": "77", "E": "154"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Çapı 10 cm olan bir çemberin alanı kaç cm²\'dir? (π = 3 alınız)",\n        "choices": {"A": "30", "B": "60", "C": "75", "D": "100", "E": "150"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bir çemberde, merkez açının ölçüsü 80 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?",\n        "choices": {"A": "40", "B": "80", "C": "160", "D": "20", "E": "120"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir çemberde, çevre açının ölçüsü 50 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?",\n        "choices": {"A": "25", "B": "50", "C": "100", "D": "75", "E": "150"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bir çemberde, merkeze en uzak kiriş aşağıdakilerden hangisidir?",\n        "choices": {"A": "Yarıçap", "B": "Çap", "C": "Teğet", "D": "Kesen", "E": "Yay"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir çembere sadece bir noktada değen doğruya ne ad verilir?",\n        "choices": {"A": "Kiriş", "B": "Kesen", "C": "Çap", "D": "Teğet", "E": "Yarıçap"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Bir çemberde, aynı yayı gören merkez açı ile çevre açı arasındaki ilişki nedir?",\n        "choices": {"A": "Merkez açı, çevre açının yarısıdır.", "B": "Çevre açı, merkez açının iki katıdır.", "C": "Merkez açı ile çevre açı eşittir.", "D": "Merkez açı, çevre açının iki katıdır.", "E": "İkisi de 90 derecedir."},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Çevresi 60 cm olan bir çemberin yarıçapı kaç cm\'dir? (π = 3 alınız)",\n        "choices": {"A": "5", "B": "10", "C": "15", "D": "20", "E": "30"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Alanı 48 cm² olan bir çemberin yarıçapı kaç cm\'dir? (π = 3 alınız)",\n        "choices": {"A": "2", "B": "4", "C": "6", "D": "8", "E": "16"},\n        "correct_answer": "B"\n    }\n]\n```']
+[2025-07-30 22:00:37] | INFO | [agent:quiz_generate:79] | [Cleaned content: [
+    {
+        "question": "Bir çemberin merkezinden çember üzerindeki herhangi bir noktaya olan uzaklığa ne ad verilir?",
+        "choices": {"A": "Çap", "B": "Kiriş", "C": "Yarıçap", "D": "Teğet", "E": "Kesen"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Yarıçapı 7 cm olan bir çemberin çevresi kaç cm'dir? (π = 22/7 alınız)",
+        "choices": {"A": "22", "B": "44", "C": "14", "D": "77", "E": "154"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Çapı 10 cm olan bir çemberin alanı kaç cm²'dir? (π = 3 alınız)",
+        "choices": {"A": "30", "B": "60", "C": "75", "D": "100", "E": "150"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bir çemberde, merkez açının ölçüsü 80 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?",
+        "choices": {"A": "40", "B": "80", "C": "160", "D": "20", "E": "120"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir çemberde, çevre açının ölçüsü 50 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?",
+        "choices": {"A": "25", "B": "50", "C": "100", "D": "75", "E": "150"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bir çemberde, merkeze en uzak kiriş aşağıdakilerden hangisidir?",
+        "choices": {"A": "Yarıçap", "B": "Çap", "C": "Teğet", "D": "Kesen", "E": "Yay"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir çembere sadece bir noktada değen doğruya ne ad verilir?",
+        "choices": {"A": "Kiriş", "B": "Kesen", "C": "Çap", "D": "Teğet", "E": "Yarıçap"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Bir çemberde, aynı yayı gören merkez açı ile çevre açı arasındaki ilişki nedir?",
+        "choices": {"A": "Merkez açı, çevre açının yarısıdır.", "B": "Çevre açı, merkez açının iki katıdır.", "C": "Merkez açı ile çevre açı eşittir.", "D": "Merkez açı, çevre açının iki katıdır.", "E": "İkisi de 90 derecedir."},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Çevresi 60 cm olan bir çemberin yarıçapı kaç cm'dir? (π = 3 alınız)",
+        "choices": {"A": "5", "B": "10", "C": "15", "D": "20", "E": "30"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Alanı 48 cm² olan bir çemberin yarıçapı kaç cm'dir? (π = 3 alınız)",
+        "choices": {"A": "2", "B": "4", "C": "6", "D": "8", "E": "16"},
+        "correct_answer": "B"
+    }
+]]
+[2025-07-30 22:00:37] | INFO | [agent:quiz_generate:81] | [Cleaned content questions: [{'question': 'Bir çemberin merkezinden çember üzerindeki herhangi bir noktaya olan uzaklığa ne ad verilir?', 'choices': {'A': 'Çap', 'B': 'Kiriş', 'C': 'Yarıçap', 'D': 'Teğet', 'E': 'Kesen'}, 'correct_answer': 'C'}, {'question': "Yarıçapı 7 cm olan bir çemberin çevresi kaç cm'dir? (π = 22/7 alınız)", 'choices': {'A': '22', 'B': '44', 'C': '14', 'D': '77', 'E': '154'}, 'correct_answer': 'B'}, {'question': "Çapı 10 cm olan bir çemberin alanı kaç cm²'dir? (π = 3 alınız)", 'choices': {'A': '30', 'B': '60', 'C': '75', 'D': '100', 'E': '150'}, 'correct_answer': 'C'}, {'question': 'Bir çemberde, merkez açının ölçüsü 80 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?', 'choices': {'A': '40', 'B': '80', 'C': '160', 'D': '20', 'E': '120'}, 'correct_answer': 'B'}, {'question': 'Bir çemberde, çevre açının ölçüsü 50 derece ise, bu açının gördüğü yayın ölçüsü kaç derecedir?', 'choices': {'A': '25', 'B': '50', 'C': '100', 'D': '75', 'E': '150'}, 'correct_answer': 'C'}, {'question': 'Bir çemberde, merkeze en uzak kiriş aşağıdakilerden hangisidir?', 'choices': {'A': 'Yarıçap', 'B': 'Çap', 'C': 'Teğet', 'D': 'Kesen', 'E': 'Yay'}, 'correct_answer': 'B'}, {'question': 'Bir çembere sadece bir noktada değen doğruya ne ad verilir?', 'choices': {'A': 'Kiriş', 'B': 'Kesen', 'C': 'Çap', 'D': 'Teğet', 'E': 'Yarıçap'}, 'correct_answer': 'D'}, {'question': 'Bir çemberde, aynı yayı gören merkez açı ile çevre açı arasındaki ilişki nedir?', 'choices': {'A': 'Merkez açı, çevre açının yarısıdır.', 'B': 'Çevre açı, merkez açının iki katıdır.', 'C': 'Merkez açı ile çevre açı eşittir.', 'D': 'Merkez açı, çevre açının iki katıdır.', 'E': 'İkisi de 90 derecedir.'}, 'correct_answer': 'D'}, {'question': "Çevresi 60 cm olan bir çemberin yarıçapı kaç cm'dir? (π = 3 alınız)", 'choices': {'A': '5', 'B': '10', 'C': '15', 'D': '20', 'E': '30'}, 'correct_answer': 'B'}, {'question': "Alanı 48 cm² olan bir çemberin yarıçapı kaç cm'dir? (π = 3 alınız)", 'choices': {'A': '2', 'B': '4', 'C': '6', 'D': '8', 'E': '16'}, 'correct_answer': 'B'}]]
+[2025-07-30 22:02:23] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 455.1158 seconds]
+[2025-07-30 22:02:23] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:02:23] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 455.1323 seconds]
+[2025-07-30 22:02:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 455.1338 seconds]
+[2025-07-30 22:02:23] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:02:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 455.1339 seconds]
+[2025-07-30 22:03:48] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 540.9589 seconds]
+[2025-07-30 22:03:48] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:03:48] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 540.9768 seconds]
+[2025-07-30 22:03:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 540.9782 seconds]
+[2025-07-30 22:03:48] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:03:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 540.9783 seconds]
+[2025-07-30 22:04:27] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 579.9337 seconds]
+[2025-07-30 22:04:27] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:04:27] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 580.0001 seconds]
+[2025-07-30 22:04:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 580.0024 seconds]
+[2025-07-30 22:04:27] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:04:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 580.0025 seconds]
+[2025-07-30 22:04:36] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 588.8291 seconds]
+[2025-07-30 22:04:36] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:04:36] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 588.8494 seconds]
+[2025-07-30 22:04:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 588.8516 seconds]
+[2025-07-30 22:04:36] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:04:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 588.8517 seconds]
+[2025-07-30 22:05:38] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 650.2112 seconds]
+[2025-07-30 22:05:38] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:05:38] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 650.2340 seconds]
+[2025-07-30 22:05:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 650.2370 seconds]
+[2025-07-30 22:05:38] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:05:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 650.2371 seconds]
+[2025-07-30 22:06:36] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 709.0575 seconds]
+[2025-07-30 22:06:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:06:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 709.0754 seconds]
+[2025-07-30 22:06:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 709.0772 seconds]
+[2025-07-30 22:06:37] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:06:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 709.0774 seconds]
+[2025-07-30 22:06:52] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 724.8491 seconds]
+[2025-07-30 22:06:52] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:06:52] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 724.8661 seconds]
+[2025-07-30 22:06:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 724.8675 seconds]
+[2025-07-30 22:06:52] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:06:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 724.8676 seconds]
+[2025-07-30 22:07:03] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 735.9033 seconds]
+[2025-07-30 22:07:03] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:07:03] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 735.9197 seconds]
+[2025-07-30 22:07:03] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 735.9211 seconds]
+[2025-07-30 22:07:03] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:07:03] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 735.9212 seconds]
+[2025-07-30 22:11:11] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 983.4583 seconds]
+[2025-07-30 22:11:11] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:11:11] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 983.4811 seconds]
+[2025-07-30 22:11:21] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 993.4631 seconds]
+[2025-07-30 22:11:21] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:11:21] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 993.4831 seconds]
+[2025-07-30 22:11:21] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 993.5238 seconds]
+[2025-07-30 22:11:21] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:11:21] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 993.5238 seconds]
+[2025-07-30 22:11:23] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 995.1764 seconds]
+[2025-07-30 22:11:23] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:11:23] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 995.1953 seconds]
+[2025-07-30 22:11:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 995.1968 seconds]
+[2025-07-30 22:11:23] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:11:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 995.1969 seconds]
+[2025-07-30 22:11:32] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 1004.4921 seconds]
+[2025-07-30 22:11:32] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:11:32] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 1004.5114 seconds]
+[2025-07-30 22:11:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 1004.5129 seconds]
+[2025-07-30 22:11:32] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:11:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 1004.5130 seconds]
+[2025-07-30 22:48:53] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 22:48:53] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 22:48:53] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 22:48:53] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 22:48:53] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 22:48:53] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 22:48:53] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 22:49:45] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 52.7363 seconds]
+[2025-07-30 22:49:45] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:49:45] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 52.7622 seconds]
+[2025-07-30 22:49:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 52.7657 seconds]
+[2025-07-30 22:49:45] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:49:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 52.7658 seconds]
+[2025-07-30 22:49:47] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 54.7096 seconds]
+[2025-07-30 22:49:47] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:49:47] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 54.7267 seconds]
+[2025-07-30 22:49:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 54.7286 seconds]
+[2025-07-30 22:49:47] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:49:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 54.7287 seconds]
+[2025-07-30 22:50:16] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 83.3501 seconds]
+[2025-07-30 22:50:16] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:50:16] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 83.3703 seconds]
+[2025-07-30 22:50:17] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fotosentez", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--98d20cd8-2d86-421e-bf0f-f2064f3e66f9-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fotosentez', 'user_id': '1'}, 'id': '59d244a7-e413-4727-8724-b2ea45ba9f0f', 'type': 'tool_call'}] usage_metadata={'input_tokens': 276, 'output_tokens': 96, 'total_tokens': 372, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 68}}]
+[2025-07-30 22:50:31] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentezin temel amacı nedir?",\n        "choices": {"A": "Hayvanlar için enerji üretmek", "B": "Karbondioksit salınımı", "C": "Glikoz sentezlemek", "D": "Su emilimi", "E": "Oksijen tüketimi"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez için birincil ham maddeler aşağıdakilerden hangisidir?",\n        "choices": {"A": "Oksijen ve glikoz", "B": "Su ve karbondioksit", "C": "Azot ve güneş ışığı", "D": "ATP ve NADPH", "E": "Klorofil ve enzimler"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezin ana ürünleri nelerdir?",\n        "choices": {"A": "Karbondioksit ve su", "B": "Azot ve ATP", "C": "Oksijen ve glikoz", "D": "Işık enerjisi ve ısı", "E": "Klorofil ve enzimler"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bitki hücrelerinde fotosentez öncelikli olarak hangi organelde gerçekleşir?",\n        "choices": {"A": "Mitokondri", "B": "Çekirdek", "C": "Ribozom", "D": "Kloroplast", "E": "Endoplazmik Retikulum"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentez sırasında ışık enerjisini emmek için hangi pigment gereklidir?",\n        "choices": {"A": "Hemoglobin", "B": "Melanin", "C": "Karoten", "D": "Antosiyanin", "E": "Klorofil"},\n        "correct_answer": "E"\n    },\n    {\n        "question": "Fotosentez genellikle iki ana aşamaya ayrılır. Bunlar nelerdir?",\n        "choices": {"A": "Glikoliz ve Krebs döngüsü", "B": "Fermentasyon ve Solunum", "C": "Işığa bağımlı ve Işıktan bağımsız tepkimeler", "D": "Anabolizma ve Katabolizma", "E": "Oksidasyon ve Redüksiyon"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışığa bağımlı tepkimeleri sırasında aşağıdakilerden hangileri üretilir?",\n        "choices": {"A": "Glikoz ve oksijen", "B": "Karbondioksit ve su", "C": "ATP ve NADPH", "D": "Nişasta ve lipitler", "E": "Amino asitler ve proteinler"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Calvin döngüsünde (ışıktan bağımsız tepkimeler) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?",\n        "choices": {"A": "Oksijen", "B": "Su", "C": "Azot", "D": "Karbondioksit", "E": "ATP"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentez, Dünya\'daki çoğu yaşam formu için neden hayati öneme sahiptir?",\n        "choices": {"A": "Atmosfer için azot üretir.", "B": "Doğrudan hayvan hareketini sağlar.", "C": "Isınma için ısı salgılar.", "D": "Işık enerjisini kimyasal enerjiye (besin) dönüştürür ve oksijen üretir.", "E": "Organik maddeyi parçalar."},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Aşağıdaki faktörlerden hangisi, belirli bir noktaya kadar fotosentez hızını genellikle *artırır*?",\n        "choices": {"A": "Azalan ışık şiddeti", "B": "Azalan CO2 konsantrasyonu", "C": "Artan oksijen konsantrasyonu", "D": "Azalan su mevcudiyeti", "E": "Yüksek ışık şiddeti"},\n        "correct_answer": "E"\n    }\n]\n```']
+[2025-07-30 22:50:31] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Fotosentezin temel amacı nedir?",
+        "choices": {"A": "Hayvanlar için enerji üretmek", "B": "Karbondioksit salınımı", "C": "Glikoz sentezlemek", "D": "Su emilimi", "E": "Oksijen tüketimi"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez için birincil ham maddeler aşağıdakilerden hangisidir?",
+        "choices": {"A": "Oksijen ve glikoz", "B": "Su ve karbondioksit", "C": "Azot ve güneş ışığı", "D": "ATP ve NADPH", "E": "Klorofil ve enzimler"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezin ana ürünleri nelerdir?",
+        "choices": {"A": "Karbondioksit ve su", "B": "Azot ve ATP", "C": "Oksijen ve glikoz", "D": "Işık enerjisi ve ısı", "E": "Klorofil ve enzimler"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bitki hücrelerinde fotosentez öncelikli olarak hangi organelde gerçekleşir?",
+        "choices": {"A": "Mitokondri", "B": "Çekirdek", "C": "Ribozom", "D": "Kloroplast", "E": "Endoplazmik Retikulum"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentez sırasında ışık enerjisini emmek için hangi pigment gereklidir?",
+        "choices": {"A": "Hemoglobin", "B": "Melanin", "C": "Karoten", "D": "Antosiyanin", "E": "Klorofil"},
+        "correct_answer": "E"
+    },
+    {
+        "question": "Fotosentez genellikle iki ana aşamaya ayrılır. Bunlar nelerdir?",
+        "choices": {"A": "Glikoliz ve Krebs döngüsü", "B": "Fermentasyon ve Solunum", "C": "Işığa bağımlı ve Işıktan bağımsız tepkimeler", "D": "Anabolizma ve Katabolizma", "E": "Oksidasyon ve Redüksiyon"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışığa bağımlı tepkimeleri sırasında aşağıdakilerden hangileri üretilir?",
+        "choices": {"A": "Glikoz ve oksijen", "B": "Karbondioksit ve su", "C": "ATP ve NADPH", "D": "Nişasta ve lipitler", "E": "Amino asitler ve proteinler"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Calvin döngüsünde (ışıktan bağımsız tepkimeler) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?",
+        "choices": {"A": "Oksijen", "B": "Su", "C": "Azot", "D": "Karbondioksit", "E": "ATP"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentez, Dünya'daki çoğu yaşam formu için neden hayati öneme sahiptir?",
+        "choices": {"A": "Atmosfer için azot üretir.", "B": "Doğrudan hayvan hareketini sağlar.", "C": "Isınma için ısı salgılar.", "D": "Işık enerjisini kimyasal enerjiye (besin) dönüştürür ve oksijen üretir.", "E": "Organik maddeyi parçalar."},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Aşağıdaki faktörlerden hangisi, belirli bir noktaya kadar fotosentez hızını genellikle *artırır*?",
+        "choices": {"A": "Azalan ışık şiddeti", "B": "Azalan CO2 konsantrasyonu", "C": "Artan oksijen konsantrasyonu", "D": "Azalan su mevcudiyeti", "E": "Yüksek ışık şiddeti"},
+        "correct_answer": "E"
+    }
+]]
+[2025-07-30 22:50:31] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Fotosentezin temel amacı nedir?', 'choices': {'A': 'Hayvanlar için enerji üretmek', 'B': 'Karbondioksit salınımı', 'C': 'Glikoz sentezlemek', 'D': 'Su emilimi', 'E': 'Oksijen tüketimi'}, 'correct_answer': 'C'}, {'question': 'Fotosentez için birincil ham maddeler aşağıdakilerden hangisidir?', 'choices': {'A': 'Oksijen ve glikoz', 'B': 'Su ve karbondioksit', 'C': 'Azot ve güneş ışığı', 'D': 'ATP ve NADPH', 'E': 'Klorofil ve enzimler'}, 'correct_answer': 'B'}, {'question': 'Fotosentezin ana ürünleri nelerdir?', 'choices': {'A': 'Karbondioksit ve su', 'B': 'Azot ve ATP', 'C': 'Oksijen ve glikoz', 'D': 'Işık enerjisi ve ısı', 'E': 'Klorofil ve enzimler'}, 'correct_answer': 'C'}, {'question': 'Bitki hücrelerinde fotosentez öncelikli olarak hangi organelde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Çekirdek', 'C': 'Ribozom', 'D': 'Kloroplast', 'E': 'Endoplazmik Retikulum'}, 'correct_answer': 'D'}, {'question': 'Fotosentez sırasında ışık enerjisini emmek için hangi pigment gereklidir?', 'choices': {'A': 'Hemoglobin', 'B': 'Melanin', 'C': 'Karoten', 'D': 'Antosiyanin', 'E': 'Klorofil'}, 'correct_answer': 'E'}, {'question': 'Fotosentez genellikle iki ana aşamaya ayrılır. Bunlar nelerdir?', 'choices': {'A': 'Glikoliz ve Krebs döngüsü', 'B': 'Fermentasyon ve Solunum', 'C': 'Işığa bağımlı ve Işıktan bağımsız tepkimeler', 'D': 'Anabolizma ve Katabolizma', 'E': 'Oksidasyon ve Redüksiyon'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışığa bağımlı tepkimeleri sırasında aşağıdakilerden hangileri üretilir?', 'choices': {'A': 'Glikoz ve oksijen', 'B': 'Karbondioksit ve su', 'C': 'ATP ve NADPH', 'D': 'Nişasta ve lipitler', 'E': 'Amino asitler ve proteinler'}, 'correct_answer': 'C'}, {'question': 'Calvin döngüsünde (ışıktan bağımsız tepkimeler) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?', 'choices': {'A': 'Oksijen', 'B': 'Su', 'C': 'Azot', 'D': 'Karbondioksit', 'E': 'ATP'}, 'correct_answer': 'D'}, {'question': "Fotosentez, Dünya'daki çoğu yaşam formu için neden hayati öneme sahiptir?", 'choices': {'A': 'Atmosfer için azot üretir.', 'B': 'Doğrudan hayvan hareketini sağlar.', 'C': 'Isınma için ısı salgılar.', 'D': 'Işık enerjisini kimyasal enerjiye (besin) dönüştürür ve oksijen üretir.', 'E': 'Organik maddeyi parçalar.'}, 'correct_answer': 'D'}, {'question': 'Aşağıdaki faktörlerden hangisi, belirli bir noktaya kadar fotosentez hızını genellikle *artırır*?', 'choices': {'A': 'Azalan ışık şiddeti', 'B': 'Azalan CO2 konsantrasyonu', 'C': 'Artan oksijen konsantrasyonu', 'D': 'Azalan su mevcudiyeti', 'E': 'Yüksek ışık şiddeti'}, 'correct_answer': 'E'}]]
+[2025-07-30 22:50:31] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 98.9482 seconds]
+[2025-07-30 22:50:31] | INFO | [crud:read_by_email:152] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-30 22:50:31] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 98.9484 seconds]
+[2025-07-30 22:51:08] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 135.6343 seconds]
+[2025-07-30 22:51:08] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:51:08] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 135.6549 seconds]
+[2025-07-30 22:51:09] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fotosentez", "user_id": "1"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--dd9570bd-253b-491c-8fd1-a4a7702a37cd-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fotosentez', 'user_id': '1'}, 'id': 'dbf5d337-4c95-41b9-b45b-8f641037f5e7', 'type': 'tool_call'}] usage_metadata={'input_tokens': 276, 'output_tokens': 96, 'total_tokens': 372, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 68}}]
+[2025-07-30 22:51:20] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentezin temel amacı nedir?",\n        "choices": {\n            "A": "Hayvanlar için oksijen üretmek",\n            "B": "Işık enerjisini kimyasal enerjiye dönüştürmek",\n            "C": "Atmosferden karbondioksit emmek",\n            "D": "Glikozu enerji için parçalamak",\n            "E": "Bitki büyümesi için protein sentezlemek"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Ökaryotik hücrelerde fotosentezden öncelikli olarak sorumlu organel hangisidir?",\n        "choices": {\n            "A": "Mitokondri",\n            "B": "Ribozom",\n            "C": "Kloroplast",\n            "D": "Çekirdek",\n            "E": "Endoplazmik Retikulum"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez için ana reaktanlar (girdiler) nelerdir?",\n        "choices": {\n            "A": "Glikoz ve Oksijen",\n            "B": "Karbondioksit ve Su",\n            "C": "Su ve Oksijen",\n            "D": "Karbondioksit ve Glikoz",\n            "E": "Oksijen ve Işık"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezin ana ürünleri (çıktıları) nelerdir?",\n        "choices": {\n            "A": "Karbondioksit ve Su",\n            "B": "ATP ve NADPH",\n            "C": "Glikoz ve Oksijen",\n            "D": "Nişasta ve Su",\n            "E": "Işık ve Isı"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez sırasında ışık enerjisini emmek için gerekli olan pigment hangisidir?",\n        "choices": {\n            "A": "Antosiyanin",\n            "B": "Klorofil",\n            "C": "Karotenoid",\n            "D": "Ksantofil",\n            "E": "Melanin"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezin ışığa bağımlı reaksiyonları kloroplastın hangi bölümünde gerçekleşir?",\n        "choices": {\n            "A": "Stroma",\n            "B": "Dış zar",\n            "C": "Tilakoit zarlar",\n            "D": "İç zar",\n            "E": "Zarlar arası boşluk"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Calvin döngüsü (ışıktan bağımsız reaksiyonlar) kloroplastın hangi bölümünde gerçekleşir?",\n        "choices": {\n            "A": "Tilakoit lümen",\n            "B": "Granum",\n            "C": "Stroma",\n            "D": "Dış zar",\n            "E": "İç zar"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Aşağıdakilerden hangisi ışığa bağımlı reaksiyonlar için doğrudan gerekli DEĞİLDİR?",\n        "choices": {\n            "A": "Su",\n            "B": "Işık enerjisi",\n            "C": "Karbondioksit",\n            "D": "Klorofil",\n            "E": "NADP+"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Işığa bağımlı reaksiyonlar sırasında üretilen ve daha sonra Calvin döngüsünde kullanılan birincil kimyasal enerji formu nedir?",\n        "choices": {\n            "A": "Glikoz",\n            "B": "Oksijen",\n            "C": "Su",\n            "D": "ATP ve NADPH",\n            "E": "Karbondioksit"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Aşağıdaki faktörlerden hangisi genellikle fotosentez hızını *azaltır*?",\n        "choices": {\n            "A": "Artan ışık yoğunluğu",\n            "B": "Artan CO2 konsantrasyonu",\n            "C": "Optimal sıcaklık",\n            "D": "Azalan su mevcudiyeti",\n            "E": "Artan klorofil içeriği"\n        },\n        "correct_answer": "D"\n    }\n]\n```']
+[2025-07-30 22:51:20] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Fotosentezin temel amacı nedir?",
+        "choices": {
+            "A": "Hayvanlar için oksijen üretmek",
+            "B": "Işık enerjisini kimyasal enerjiye dönüştürmek",
+            "C": "Atmosferden karbondioksit emmek",
+            "D": "Glikozu enerji için parçalamak",
+            "E": "Bitki büyümesi için protein sentezlemek"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Ökaryotik hücrelerde fotosentezden öncelikli olarak sorumlu organel hangisidir?",
+        "choices": {
+            "A": "Mitokondri",
+            "B": "Ribozom",
+            "C": "Kloroplast",
+            "D": "Çekirdek",
+            "E": "Endoplazmik Retikulum"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez için ana reaktanlar (girdiler) nelerdir?",
+        "choices": {
+            "A": "Glikoz ve Oksijen",
+            "B": "Karbondioksit ve Su",
+            "C": "Su ve Oksijen",
+            "D": "Karbondioksit ve Glikoz",
+            "E": "Oksijen ve Işık"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezin ana ürünleri (çıktıları) nelerdir?",
+        "choices": {
+            "A": "Karbondioksit ve Su",
+            "B": "ATP ve NADPH",
+            "C": "Glikoz ve Oksijen",
+            "D": "Nişasta ve Su",
+            "E": "Işık ve Isı"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez sırasında ışık enerjisini emmek için gerekli olan pigment hangisidir?",
+        "choices": {
+            "A": "Antosiyanin",
+            "B": "Klorofil",
+            "C": "Karotenoid",
+            "D": "Ksantofil",
+            "E": "Melanin"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezin ışığa bağımlı reaksiyonları kloroplastın hangi bölümünde gerçekleşir?",
+        "choices": {
+            "A": "Stroma",
+            "B": "Dış zar",
+            "C": "Tilakoit zarlar",
+            "D": "İç zar",
+            "E": "Zarlar arası boşluk"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Calvin döngüsü (ışıktan bağımsız reaksiyonlar) kloroplastın hangi bölümünde gerçekleşir?",
+        "choices": {
+            "A": "Tilakoit lümen",
+            "B": "Granum",
+            "C": "Stroma",
+            "D": "Dış zar",
+            "E": "İç zar"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Aşağıdakilerden hangisi ışığa bağımlı reaksiyonlar için doğrudan gerekli DEĞİLDİR?",
+        "choices": {
+            "A": "Su",
+            "B": "Işık enerjisi",
+            "C": "Karbondioksit",
+            "D": "Klorofil",
+            "E": "NADP+"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Işığa bağımlı reaksiyonlar sırasında üretilen ve daha sonra Calvin döngüsünde kullanılan birincil kimyasal enerji formu nedir?",
+        "choices": {
+            "A": "Glikoz",
+            "B": "Oksijen",
+            "C": "Su",
+            "D": "ATP ve NADPH",
+            "E": "Karbondioksit"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Aşağıdaki faktörlerden hangisi genellikle fotosentez hızını *azaltır*?",
+        "choices": {
+            "A": "Artan ışık yoğunluğu",
+            "B": "Artan CO2 konsantrasyonu",
+            "C": "Optimal sıcaklık",
+            "D": "Azalan su mevcudiyeti",
+            "E": "Artan klorofil içeriği"
+        },
+        "correct_answer": "D"
+    }
+]]
+[2025-07-30 22:51:20] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Fotosentezin temel amacı nedir?', 'choices': {'A': 'Hayvanlar için oksijen üretmek', 'B': 'Işık enerjisini kimyasal enerjiye dönüştürmek', 'C': 'Atmosferden karbondioksit emmek', 'D': 'Glikozu enerji için parçalamak', 'E': 'Bitki büyümesi için protein sentezlemek'}, 'correct_answer': 'B'}, {'question': 'Ökaryotik hücrelerde fotosentezden öncelikli olarak sorumlu organel hangisidir?', 'choices': {'A': 'Mitokondri', 'B': 'Ribozom', 'C': 'Kloroplast', 'D': 'Çekirdek', 'E': 'Endoplazmik Retikulum'}, 'correct_answer': 'C'}, {'question': 'Fotosentez için ana reaktanlar (girdiler) nelerdir?', 'choices': {'A': 'Glikoz ve Oksijen', 'B': 'Karbondioksit ve Su', 'C': 'Su ve Oksijen', 'D': 'Karbondioksit ve Glikoz', 'E': 'Oksijen ve Işık'}, 'correct_answer': 'B'}, {'question': 'Fotosentezin ana ürünleri (çıktıları) nelerdir?', 'choices': {'A': 'Karbondioksit ve Su', 'B': 'ATP ve NADPH', 'C': 'Glikoz ve Oksijen', 'D': 'Nişasta ve Su', 'E': 'Işık ve Isı'}, 'correct_answer': 'C'}, {'question': 'Fotosentez sırasında ışık enerjisini emmek için gerekli olan pigment hangisidir?', 'choices': {'A': 'Antosiyanin', 'B': 'Klorofil', 'C': 'Karotenoid', 'D': 'Ksantofil', 'E': 'Melanin'}, 'correct_answer': 'B'}, {'question': 'Fotosentezin ışığa bağımlı reaksiyonları kloroplastın hangi bölümünde gerçekleşir?', 'choices': {'A': 'Stroma', 'B': 'Dış zar', 'C': 'Tilakoit zarlar', 'D': 'İç zar', 'E': 'Zarlar arası boşluk'}, 'correct_answer': 'C'}, {'question': 'Calvin döngüsü (ışıktan bağımsız reaksiyonlar) kloroplastın hangi bölümünde gerçekleşir?', 'choices': {'A': 'Tilakoit lümen', 'B': 'Granum', 'C': 'Stroma', 'D': 'Dış zar', 'E': 'İç zar'}, 'correct_answer': 'C'}, {'question': 'Aşağıdakilerden hangisi ışığa bağımlı reaksiyonlar için doğrudan gerekli DEĞİLDİR?', 'choices': {'A': 'Su', 'B': 'Işık enerjisi', 'C': 'Karbondioksit', 'D': 'Klorofil', 'E': 'NADP+'}, 'correct_answer': 'C'}, {'question': 'Işığa bağımlı reaksiyonlar sırasında üretilen ve daha sonra Calvin döngüsünde kullanılan birincil kimyasal enerji formu nedir?', 'choices': {'A': 'Glikoz', 'B': 'Oksijen', 'C': 'Su', 'D': 'ATP ve NADPH', 'E': 'Karbondioksit'}, 'correct_answer': 'D'}, {'question': 'Aşağıdaki faktörlerden hangisi genellikle fotosentez hızını *azaltır*?', 'choices': {'A': 'Artan ışık yoğunluğu', 'B': 'Artan CO2 konsantrasyonu', 'C': 'Optimal sıcaklık', 'D': 'Azalan su mevcudiyeti', 'E': 'Artan klorofil içeriği'}, 'correct_answer': 'D'}]]
+[2025-07-30 22:51:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 147.4988 seconds]
+[2025-07-30 22:51:20] | INFO | [crud:read_by_email:152] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-30 22:51:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 147.4989 seconds]
+[2025-07-30 22:52:00] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 22:52:00] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 22:52:00] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 22:52:00] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 22:52:00] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 22:52:00] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 22:52:00] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 22:52:10] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.0100 seconds]
+[2025-07-30 22:52:10] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:52:10] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.0324 seconds]
+[2025-07-30 22:52:10] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.0356 seconds]
+[2025-07-30 22:52:10] | INFO | [crud:read_by_email:152] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:52:10] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.0357 seconds]
+[2025-07-30 22:52:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 11.8914 seconds]
+[2025-07-30 22:52:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:52:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 11.9126 seconds]
+[2025-07-30 22:52:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 11.9147 seconds]
+[2025-07-30 22:52:12] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:52:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 11.9148 seconds]
+[2025-07-30 22:52:21] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 20.9174 seconds]
+[2025-07-30 22:52:21] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:52:21] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 20.9397 seconds]
+[2025-07-30 22:52:22] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"user_id": "1", "student_quiz_keywords": "fotosentez"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--ed55173e-0bbd-424c-bff6-ffdcc13d7c0e-0' tool_calls=[{'name': 'quiz_generate', 'args': {'user_id': '1', 'student_quiz_keywords': 'fotosentez'}, 'id': 'fc383649-6640-4e9b-8da5-a0ac7b2ff1cb', 'type': 'tool_call'}] usage_metadata={'input_tokens': 276, 'output_tokens': 88, 'total_tokens': 364, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 60}}]
+[2025-07-30 22:52:36] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n  {\n    "question": "Fotosentez nedir?",\n    "choices": {\n      "A": "Canlıların besinlerini parçalayarak enerji üretmesi.",\n      "B": "Bitkilerin ve bazı diğer organizmaların ışık enerjisini kullanarak organik madde üretmesi.",\n      "C": "Hücrelerin oksijen kullanarak ATP sentezlemesi.",\n      "D": "Bakterilerin inorganik maddelerden enerji elde etmesi.",\n      "E": "Mantarların ölü organik maddeleri ayrıştırması."\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Fotosentez için gerekli temel maddeler nelerdir?",\n    "choices": {\n      "A": "Azot ve fosfat",\n      "B": "Karbondioksit ve su",\n      "C": "Oksijen ve glikoz",\n      "D": "Kükürt ve metan",\n      "E": "Amonyak ve nitrat"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Fotosentez sonucunda üretilen temel organik besin maddesi ve gaz nedir?",\n    "choices": {\n      "A": "Protein ve azot",\n      "B": "Yağ ve karbondioksit",\n      "C": "Glikoz ve oksijen",\n      "D": "Nişasta ve metan",\n      "E": "Selüloz ve hidrojen"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Fotosentez olayı bitki hücresinin hangi organelinde gerçekleşir?",\n    "choices": {\n      "A": "Mitokondri",\n      "B": "Ribozom",\n      "C": "Endoplazmik retikulum",\n      "D": "Kloroplast",\n      "E": "Golgi aygıtı"\n    },\n    "correct_answer": "D"\n  },\n  {\n    "question": "Fotosentezin ışığa bağımlı reaksiyonları nerede gerçekleşir?",\n    "choices": {\n      "A": "Stroma",\n      "B": "Tilakoit zar",\n      "C": "Dış zar",\n      "D": "İç zar",\n      "E": "Ribozom"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?",\n    "choices": {\n      "A": "Tilakoit boşluk",\n      "B": "Kloroplastın stroması",\n      "C": "Hücre sitoplazması",\n      "D": "Mitokondri matriksi",\n      "E": "Hücre çekirdeği"\n    },\n    "correct_answer": "B"\n  },\n  {\n    "question": "Bitkilere yeşil rengini veren ve ışık enerjisini emen pigment aşağıdakilerden hangisidir?",\n    "choices": {\n      "A": "Antosiyanin",\n      "B": "Karoten",\n      "C": "Klorofil",\n      "D": "Ksantofil",\n      "E": "Fikosiyanin"\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen faktörlerden biri değildir?",\n    "choices": {\n      "A": "Işık şiddeti",\n      "B": "Karbondioksit miktarı",\n      "C": "Ortam sıcaklığı",\n      "D": "Topraktaki mineral miktarı",\n      "E": "Oksijen miktarı"\n    },\n    "correct_answer": "E"\n  },\n  {\n    "question": "Fotosentezin Dünya üzerindeki canlılar için en önemli katkısı nedir?",\n    "choices": {\n      "A": "Atmosferdeki azot dengesini sağlamak.",\n      "B": "Topraktaki mineral döngüsünü hızlandırmak.",\n      "C": "Oksijen üretimi ve organik besin sentezi.",\n      "D": "Su döngüsünü düzenlemek.",\n      "E": "Volkanik faaliyetleri tetiklemek."\n    },\n    "correct_answer": "C"\n  },\n  {\n    "question": "Genel fotosentez denklemi aşağıdakilerden hangisidir?",\n    "choices": {\n      "A": "C6H12O6 + 6O2 → 6CO2 + 6H2O + Enerji",\n      "B": "6CO2 + 6H2O + Işık Enerjisi → C6H12O6 + 6O2",\n      "C": "6CO2 + 6O2 → C6H12O6 + 6H2O + Enerji",\n      "D": "C6H12O6 + 6H2O → 6CO2 + 6O2 + Enerji",\n      "E": "H2O + CO2 → O2 + C6H12O6"\n    },\n    "correct_answer": "B"\n  }\n]\n```']
+[2025-07-30 22:52:36] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+  {
+    "question": "Fotosentez nedir?",
+    "choices": {
+      "A": "Canlıların besinlerini parçalayarak enerji üretmesi.",
+      "B": "Bitkilerin ve bazı diğer organizmaların ışık enerjisini kullanarak organik madde üretmesi.",
+      "C": "Hücrelerin oksijen kullanarak ATP sentezlemesi.",
+      "D": "Bakterilerin inorganik maddelerden enerji elde etmesi.",
+      "E": "Mantarların ölü organik maddeleri ayrıştırması."
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Fotosentez için gerekli temel maddeler nelerdir?",
+    "choices": {
+      "A": "Azot ve fosfat",
+      "B": "Karbondioksit ve su",
+      "C": "Oksijen ve glikoz",
+      "D": "Kükürt ve metan",
+      "E": "Amonyak ve nitrat"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Fotosentez sonucunda üretilen temel organik besin maddesi ve gaz nedir?",
+    "choices": {
+      "A": "Protein ve azot",
+      "B": "Yağ ve karbondioksit",
+      "C": "Glikoz ve oksijen",
+      "D": "Nişasta ve metan",
+      "E": "Selüloz ve hidrojen"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Fotosentez olayı bitki hücresinin hangi organelinde gerçekleşir?",
+    "choices": {
+      "A": "Mitokondri",
+      "B": "Ribozom",
+      "C": "Endoplazmik retikulum",
+      "D": "Kloroplast",
+      "E": "Golgi aygıtı"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "Fotosentezin ışığa bağımlı reaksiyonları nerede gerçekleşir?",
+    "choices": {
+      "A": "Stroma",
+      "B": "Tilakoit zar",
+      "C": "Dış zar",
+      "D": "İç zar",
+      "E": "Ribozom"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?",
+    "choices": {
+      "A": "Tilakoit boşluk",
+      "B": "Kloroplastın stroması",
+      "C": "Hücre sitoplazması",
+      "D": "Mitokondri matriksi",
+      "E": "Hücre çekirdeği"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "Bitkilere yeşil rengini veren ve ışık enerjisini emen pigment aşağıdakilerden hangisidir?",
+    "choices": {
+      "A": "Antosiyanin",
+      "B": "Karoten",
+      "C": "Klorofil",
+      "D": "Ksantofil",
+      "E": "Fikosiyanin"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen faktörlerden biri değildir?",
+    "choices": {
+      "A": "Işık şiddeti",
+      "B": "Karbondioksit miktarı",
+      "C": "Ortam sıcaklığı",
+      "D": "Topraktaki mineral miktarı",
+      "E": "Oksijen miktarı"
+    },
+    "correct_answer": "E"
+  },
+  {
+    "question": "Fotosentezin Dünya üzerindeki canlılar için en önemli katkısı nedir?",
+    "choices": {
+      "A": "Atmosferdeki azot dengesini sağlamak.",
+      "B": "Topraktaki mineral döngüsünü hızlandırmak.",
+      "C": "Oksijen üretimi ve organik besin sentezi.",
+      "D": "Su döngüsünü düzenlemek.",
+      "E": "Volkanik faaliyetleri tetiklemek."
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "Genel fotosentez denklemi aşağıdakilerden hangisidir?",
+    "choices": {
+      "A": "C6H12O6 + 6O2 → 6CO2 + 6H2O + Enerji",
+      "B": "6CO2 + 6H2O + Işık Enerjisi → C6H12O6 + 6O2",
+      "C": "6CO2 + 6O2 → C6H12O6 + 6H2O + Enerji",
+      "D": "C6H12O6 + 6H2O → 6CO2 + 6O2 + Enerji",
+      "E": "H2O + CO2 → O2 + C6H12O6"
+    },
+    "correct_answer": "B"
+  }
+]]
+[2025-07-30 22:52:36] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Fotosentez nedir?', 'choices': {'A': 'Canlıların besinlerini parçalayarak enerji üretmesi.', 'B': 'Bitkilerin ve bazı diğer organizmaların ışık enerjisini kullanarak organik madde üretmesi.', 'C': 'Hücrelerin oksijen kullanarak ATP sentezlemesi.', 'D': 'Bakterilerin inorganik maddelerden enerji elde etmesi.', 'E': 'Mantarların ölü organik maddeleri ayrıştırması.'}, 'correct_answer': 'B'}, {'question': 'Fotosentez için gerekli temel maddeler nelerdir?', 'choices': {'A': 'Azot ve fosfat', 'B': 'Karbondioksit ve su', 'C': 'Oksijen ve glikoz', 'D': 'Kükürt ve metan', 'E': 'Amonyak ve nitrat'}, 'correct_answer': 'B'}, {'question': 'Fotosentez sonucunda üretilen temel organik besin maddesi ve gaz nedir?', 'choices': {'A': 'Protein ve azot', 'B': 'Yağ ve karbondioksit', 'C': 'Glikoz ve oksijen', 'D': 'Nişasta ve metan', 'E': 'Selüloz ve hidrojen'}, 'correct_answer': 'C'}, {'question': 'Fotosentez olayı bitki hücresinin hangi organelinde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Ribozom', 'C': 'Endoplazmik retikulum', 'D': 'Kloroplast', 'E': 'Golgi aygıtı'}, 'correct_answer': 'D'}, {'question': 'Fotosentezin ışığa bağımlı reaksiyonları nerede gerçekleşir?', 'choices': {'A': 'Stroma', 'B': 'Tilakoit zar', 'C': 'Dış zar', 'D': 'İç zar', 'E': 'Ribozom'}, 'correct_answer': 'B'}, {'question': 'Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir?', 'choices': {'A': 'Tilakoit boşluk', 'B': 'Kloroplastın stroması', 'C': 'Hücre sitoplazması', 'D': 'Mitokondri matriksi', 'E': 'Hücre çekirdeği'}, 'correct_answer': 'B'}, {'question': 'Bitkilere yeşil rengini veren ve ışık enerjisini emen pigment aşağıdakilerden hangisidir?', 'choices': {'A': 'Antosiyanin', 'B': 'Karoten', 'C': 'Klorofil', 'D': 'Ksantofil', 'E': 'Fikosiyanin'}, 'correct_answer': 'C'}, {'question': 'Aşağıdakilerden hangisi fotosentez hızını etkileyen faktörlerden biri değildir?', 'choices': {'A': 'Işık şiddeti', 'B': 'Karbondioksit miktarı', 'C': 'Ortam sıcaklığı', 'D': 'Topraktaki mineral miktarı', 'E': 'Oksijen miktarı'}, 'correct_answer': 'E'}, {'question': 'Fotosentezin Dünya üzerindeki canlılar için en önemli katkısı nedir?', 'choices': {'A': 'Atmosferdeki azot dengesini sağlamak.', 'B': 'Topraktaki mineral döngüsünü hızlandırmak.', 'C': 'Oksijen üretimi ve organik besin sentezi.', 'D': 'Su döngüsünü düzenlemek.', 'E': 'Volkanik faaliyetleri tetiklemek.'}, 'correct_answer': 'C'}, {'question': 'Genel fotosentez denklemi aşağıdakilerden hangisidir?', 'choices': {'A': 'C6H12O6 + 6O2 → 6CO2 + 6H2O + Enerji', 'B': '6CO2 + 6H2O + Işık Enerjisi → C6H12O6 + 6O2', 'C': '6CO2 + 6O2 → C6H12O6 + 6H2O + Enerji', 'D': 'C6H12O6 + 6H2O → 6CO2 + 6O2 + Enerji', 'E': 'H2O + CO2 → O2 + C6H12O6'}, 'correct_answer': 'B'}]]
+[2025-07-30 22:52:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 35.9325 seconds]
+[2025-07-30 22:52:36] | INFO | [crud:read_by_email:152] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-30 22:52:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 35.9326 seconds]
+[2025-07-30 22:52:36] | ERROR | [handler:inner:13] | [[DBHandler] Exception in create: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $2: <app.models.models.User object at 0x7f87... ('User' object cannot be interpreted as an integer)
+[SQL: INSERT INTO challenges (challenge_sender_id, challenge_receiver_id, accepted_sender, accepted_receiver, quiz_json) VALUES ($1::INTEGER, $2::INTEGER, $3::BOOLEAN, $4::BOOLEAN, $5::JSON) RETURNING challenges.id]
+[parameters: (1, <app.models.models.User object at 0x7f87b8148350>, True, False, '{"questions": [{"question": "Fotosentez nedir?", "choices": {"A": "Canl\\u0131lar\\u0131n besinlerini par\\u00e7alayarak enerji \\u00fcretmesi.", "B" ... (3194 characters truncated) ... \\u2192 C6H12O6 + 6H2O + Enerji", "D": "C6H12O6 + 6H2O \\u2192 6CO2 + 6O2 + Enerji", "E": "H2O + CO2 \\u2192 O2 + C6H12O6"}, "correct_answer": "B"}]}')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)]
+[2025-07-30 22:52:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 35.9498 seconds]
+[2025-07-30 22:54:27] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 22:54:27] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 22:54:27] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 22:54:27] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 22:54:27] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 22:54:27] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 22:54:27] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 22:54:38] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 22:54:38] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 22:54:38] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 22:54:38] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 22:54:38] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 22:54:38] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 22:54:38] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 22:54:42] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.5651 seconds]
+[2025-07-30 22:54:42] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:54:42] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.5908 seconds]
+[2025-07-30 22:54:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.5954 seconds]
+[2025-07-30 22:54:42] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 22:54:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.5955 seconds]
+[2025-07-30 22:54:52] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 14.0863 seconds]
+[2025-07-30 22:54:52] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 22:54:52] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 14.1062 seconds]
+[2025-07-30 22:54:54] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"user_id": "1", "student_quiz_keywords": "fotosentez"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--336f9190-a283-4ba1-adb1-6fa9e4b76c60-0' tool_calls=[{'name': 'quiz_generate', 'args': {'user_id': '1', 'student_quiz_keywords': 'fotosentez'}, 'id': 'a79a6a9e-14be-4e0a-bfde-02644818ea31', 'type': 'tool_call'}] usage_metadata={'input_tokens': 276, 'output_tokens': 96, 'total_tokens': 372, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 68}}]
+[2025-07-30 22:55:07] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentezin temel amacı nedir?",\n        "choices": {\n            "A": "Oksijen üretmek",\n            "B": "Karbondioksit tüketmek",\n            "C": "Bitkinin büyümesi için besin üretmek",\n            "D": "Su buharı salmak",\n            "E": "Işık enerjisini ısıya dönüştürmek"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez için gerekli temel maddeler hangileridir?",\n        "choices": {\n            "A": "Oksijen ve glikoz",\n            "B": "Karbondioksit ve su",\n            "C": "Azot ve fosfat",\n            "D": "Klorofil ve nişasta",\n            "E": "ATP ve NADPH"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentez sonucunda hangi ürünler oluşur?",\n        "choices": {\n            "A": "Karbondioksit ve su",\n            "B": "Azot ve amonyak",\n            "C": "Oksijen ve glikoz",\n            "D": "Klorofil ve ATP",\n            "E": "Hidrojen ve metan"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bitkilerde fotosentez olayı hangi organelde gerçekleşir?",\n        "choices": {\n            "A": "Mitokondri",\n            "B": "Ribozom",\n            "C": "Endoplazmik retikulum",\n            "D": "Kloroplast",\n            "E": "Golgi aygıtı"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentezde ışık enerjisini emen temel pigment hangisidir?",\n        "choices": {\n            "A": "Karoten",\n            "B": "Klorofil",\n            "C": "Ksantofil",\n            "D": "Antosiyanin",\n            "E": "Hemoglobin"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentez kaç ana aşamadan oluşur?",\n        "choices": {\n            "A": "Bir",\n            "B": "Üç",\n            "C": "İki",\n            "D": "Dört",\n            "E": "Beş"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışığa bağımlı reaksiyonları sırasında üretilen enerji taşıyıcı moleküller hangileridir?",\n        "choices": {\n            "A": "Glikoz ve oksijen",\n            "B": "ATP ve NADPH",\n            "C": "Karbondioksit ve su",\n            "D": "Nişasta ve protein",\n            "E": "Amino asitler ve yağ asitleri"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezin ışıktan bağımsız reaksiyonlarında (Calvin Döngüsü) hangi gaz kullanılır?",\n        "choices": {\n            "A": "Oksijen",\n            "B": "Azot",\n            "C": "Karbondioksit",\n            "D": "Hidrojen",\n            "E": "Metan"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez, dünya üzerindeki yaşam için neden hayati öneme sahiptir?",\n        "choices": {\n            "A": "Sadece bitkilerin büyümesini sağlar.",\n            "B": "Atmosferdeki azot dengesini korur.",\n            "C": "Oksijen üretir ve besin zincirinin temelini oluşturur.",\n            "D": "Topraktaki mineral miktarını artırır.",\n            "E": "Su döngüsünü hızlandırır."\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",\n        "choices": {\n            "A": "Işık şiddeti",\n            "B": "Karbondioksit miktarı",\n            "C": "Sıcaklık",\n            "D": "Klorofil miktarı",\n            "E": "Su miktarı"\n        },\n        "correct_answer": "D"\n    }\n]\n```']
+[2025-07-30 22:55:07] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Fotosentezin temel amacı nedir?",
+        "choices": {
+            "A": "Oksijen üretmek",
+            "B": "Karbondioksit tüketmek",
+            "C": "Bitkinin büyümesi için besin üretmek",
+            "D": "Su buharı salmak",
+            "E": "Işık enerjisini ısıya dönüştürmek"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez için gerekli temel maddeler hangileridir?",
+        "choices": {
+            "A": "Oksijen ve glikoz",
+            "B": "Karbondioksit ve su",
+            "C": "Azot ve fosfat",
+            "D": "Klorofil ve nişasta",
+            "E": "ATP ve NADPH"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentez sonucunda hangi ürünler oluşur?",
+        "choices": {
+            "A": "Karbondioksit ve su",
+            "B": "Azot ve amonyak",
+            "C": "Oksijen ve glikoz",
+            "D": "Klorofil ve ATP",
+            "E": "Hidrojen ve metan"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bitkilerde fotosentez olayı hangi organelde gerçekleşir?",
+        "choices": {
+            "A": "Mitokondri",
+            "B": "Ribozom",
+            "C": "Endoplazmik retikulum",
+            "D": "Kloroplast",
+            "E": "Golgi aygıtı"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentezde ışık enerjisini emen temel pigment hangisidir?",
+        "choices": {
+            "A": "Karoten",
+            "B": "Klorofil",
+            "C": "Ksantofil",
+            "D": "Antosiyanin",
+            "E": "Hemoglobin"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentez kaç ana aşamadan oluşur?",
+        "choices": {
+            "A": "Bir",
+            "B": "Üç",
+            "C": "İki",
+            "D": "Dört",
+            "E": "Beş"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışığa bağımlı reaksiyonları sırasında üretilen enerji taşıyıcı moleküller hangileridir?",
+        "choices": {
+            "A": "Glikoz ve oksijen",
+            "B": "ATP ve NADPH",
+            "C": "Karbondioksit ve su",
+            "D": "Nişasta ve protein",
+            "E": "Amino asitler ve yağ asitleri"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezin ışıktan bağımsız reaksiyonlarında (Calvin Döngüsü) hangi gaz kullanılır?",
+        "choices": {
+            "A": "Oksijen",
+            "B": "Azot",
+            "C": "Karbondioksit",
+            "D": "Hidrojen",
+            "E": "Metan"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez, dünya üzerindeki yaşam için neden hayati öneme sahiptir?",
+        "choices": {
+            "A": "Sadece bitkilerin büyümesini sağlar.",
+            "B": "Atmosferdeki azot dengesini korur.",
+            "C": "Oksijen üretir ve besin zincirinin temelini oluşturur.",
+            "D": "Topraktaki mineral miktarını artırır.",
+            "E": "Su döngüsünü hızlandırır."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",
+        "choices": {
+            "A": "Işık şiddeti",
+            "B": "Karbondioksit miktarı",
+            "C": "Sıcaklık",
+            "D": "Klorofil miktarı",
+            "E": "Su miktarı"
+        },
+        "correct_answer": "D"
+    }
+]]
+[2025-07-30 22:55:07] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Fotosentezin temel amacı nedir?', 'choices': {'A': 'Oksijen üretmek', 'B': 'Karbondioksit tüketmek', 'C': 'Bitkinin büyümesi için besin üretmek', 'D': 'Su buharı salmak', 'E': 'Işık enerjisini ısıya dönüştürmek'}, 'correct_answer': 'C'}, {'question': 'Fotosentez için gerekli temel maddeler hangileridir?', 'choices': {'A': 'Oksijen ve glikoz', 'B': 'Karbondioksit ve su', 'C': 'Azot ve fosfat', 'D': 'Klorofil ve nişasta', 'E': 'ATP ve NADPH'}, 'correct_answer': 'B'}, {'question': 'Fotosentez sonucunda hangi ürünler oluşur?', 'choices': {'A': 'Karbondioksit ve su', 'B': 'Azot ve amonyak', 'C': 'Oksijen ve glikoz', 'D': 'Klorofil ve ATP', 'E': 'Hidrojen ve metan'}, 'correct_answer': 'C'}, {'question': 'Bitkilerde fotosentez olayı hangi organelde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Ribozom', 'C': 'Endoplazmik retikulum', 'D': 'Kloroplast', 'E': 'Golgi aygıtı'}, 'correct_answer': 'D'}, {'question': 'Fotosentezde ışık enerjisini emen temel pigment hangisidir?', 'choices': {'A': 'Karoten', 'B': 'Klorofil', 'C': 'Ksantofil', 'D': 'Antosiyanin', 'E': 'Hemoglobin'}, 'correct_answer': 'B'}, {'question': 'Fotosentez kaç ana aşamadan oluşur?', 'choices': {'A': 'Bir', 'B': 'Üç', 'C': 'İki', 'D': 'Dört', 'E': 'Beş'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışığa bağımlı reaksiyonları sırasında üretilen enerji taşıyıcı moleküller hangileridir?', 'choices': {'A': 'Glikoz ve oksijen', 'B': 'ATP ve NADPH', 'C': 'Karbondioksit ve su', 'D': 'Nişasta ve protein', 'E': 'Amino asitler ve yağ asitleri'}, 'correct_answer': 'B'}, {'question': 'Fotosentezin ışıktan bağımsız reaksiyonlarında (Calvin Döngüsü) hangi gaz kullanılır?', 'choices': {'A': 'Oksijen', 'B': 'Azot', 'C': 'Karbondioksit', 'D': 'Hidrojen', 'E': 'Metan'}, 'correct_answer': 'C'}, {'question': 'Fotosentez, dünya üzerindeki yaşam için neden hayati öneme sahiptir?', 'choices': {'A': 'Sadece bitkilerin büyümesini sağlar.', 'B': 'Atmosferdeki azot dengesini korur.', 'C': 'Oksijen üretir ve besin zincirinin temelini oluşturur.', 'D': 'Topraktaki mineral miktarını artırır.', 'E': 'Su döngüsünü hızlandırır.'}, 'correct_answer': 'C'}, {'question': 'Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?', 'choices': {'A': 'Işık şiddeti', 'B': 'Karbondioksit miktarı', 'C': 'Sıcaklık', 'D': 'Klorofil miktarı', 'E': 'Su miktarı'}, 'correct_answer': 'D'}]]
+[2025-07-30 22:55:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 29.0688 seconds]
+[2025-07-30 22:55:07] | INFO | [crud:read_by_email:152] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-30 22:55:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 29.0690 seconds]
+[2025-07-30 22:55:07] | INFO | [crud:create:49] | [the data: <app.models.models.Challenges object at 0x7ff8207c68d0> is added into the database.]
+[2025-07-30 22:55:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 29.1129 seconds]
+[2025-07-30 23:00:58] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:00:58] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:00:58] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:00:58] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:00:58] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:00:58] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:00:58] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:01:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 13.7450 seconds]
+[2025-07-30 23:01:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:01:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 13.7639 seconds]
+[2025-07-30 23:01:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 13.7674 seconds]
+[2025-07-30 23:01:12] | INFO | [crud:read_by_email:152] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:01:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 13.7675 seconds]
+[2025-07-30 23:01:13] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 15.1017 seconds]
+[2025-07-30 23:01:13] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:01:13] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 15.1235 seconds]
+[2025-07-30 23:01:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 15.1259 seconds]
+[2025-07-30 23:01:13] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:01:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 15.1260 seconds]
+[2025-07-30 23:01:18] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 20.0793 seconds]
+[2025-07-30 23:01:18] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:01:18] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 20.0993 seconds]
+[2025-07-30 23:01:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 20.1009 seconds]
+[2025-07-30 23:01:18] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:01:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 20.1009 seconds]
+[2025-07-30 23:02:16] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:02:16] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:02:16] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:02:16] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:02:16] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:02:16] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:02:16] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:02:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.1737 seconds]
+[2025-07-30 23:02:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:02:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.1936 seconds]
+[2025-07-30 23:02:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.1979 seconds]
+[2025-07-30 23:02:20] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:02:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.1980 seconds]
+[2025-07-30 23:02:21] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 5.5831 seconds]
+[2025-07-30 23:02:21] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:02:21] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 5.6023 seconds]
+[2025-07-30 23:02:21] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.6040 seconds]
+[2025-07-30 23:02:21] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:02:21] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.6041 seconds]
+[2025-07-30 23:02:24] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 8.3626 seconds]
+[2025-07-30 23:02:24] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:02:24] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 8.3847 seconds]
+[2025-07-30 23:02:24] | ERROR | [handler:inner:13] | [[DBHandler] Exception in read_by_id: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: '1' ('str' object cannot be interpreted as an integer)
+[SQL: SELECT challenges.id AS challenges_id, challenges.challenge_sender_id AS challenges_challenge_sender_id, challenges.challenge_receiver_id AS challenges_challenge_receiver_id, challenges.accepted_sender AS challenges_accepted_sender, challenges.accepted_receiver AS challenges_accepted_receiver, challenges.quiz_json AS challenges_quiz_json 
+FROM challenges 
+WHERE challenges.id = $1::INTEGER]
+[parameters: ('1',)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)]
+[2025-07-30 23:02:24] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.3988 seconds]
+[2025-07-30 23:02:26] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.4597 seconds]
+[2025-07-30 23:02:26] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:02:26] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.4796 seconds]
+[2025-07-30 23:02:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.4810 seconds]
+[2025-07-30 23:02:26] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:02:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.4811 seconds]
+[2025-07-30 23:03:21] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:03:21] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:03:21] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:03:21] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:03:21] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:03:21] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:03:21] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:03:25] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.7431 seconds]
+[2025-07-30 23:03:25] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:03:25] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.7632 seconds]
+[2025-07-30 23:03:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.7672 seconds]
+[2025-07-30 23:03:25] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:03:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.7673 seconds]
+[2025-07-30 23:03:26] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.6195 seconds]
+[2025-07-30 23:03:26] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:03:26] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.6372 seconds]
+[2025-07-30 23:03:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.6395 seconds]
+[2025-07-30 23:03:26] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:03:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.6396 seconds]
+[2025-07-30 23:03:27] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 5.8664 seconds]
+[2025-07-30 23:03:27] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:03:27] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 5.8834 seconds]
+[2025-07-30 23:03:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.8852 seconds]
+[2025-07-30 23:03:27] | ERROR | [handler:inner:13] | [[DBHandler] Exception in read_by_id: 'Challenges' object has no attribute 'to_dict']
+[2025-07-30 23:03:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.8857 seconds]
+[2025-07-30 23:03:28] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 7.0101 seconds]
+[2025-07-30 23:03:28] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:03:28] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 7.0291 seconds]
+[2025-07-30 23:03:28] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.0308 seconds]
+[2025-07-30 23:03:28] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:03:28] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.0309 seconds]
+[2025-07-30 23:04:08] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:04:08] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:04:08] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:04:08] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:04:08] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:04:08] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:04:08] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:04:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.2859 seconds]
+[2025-07-30 23:04:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:04:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.3048 seconds]
+[2025-07-30 23:04:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.3095 seconds]
+[2025-07-30 23:04:12] | INFO | [crud:read_by_id:65] | [Data read successfully: <app.models.models.User object at 0x7f2a405f2290>]
+[2025-07-30 23:04:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.3096 seconds]
+[2025-07-30 23:04:13] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 5.5459 seconds]
+[2025-07-30 23:04:13] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:04:13] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 5.5637 seconds]
+[2025-07-30 23:04:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.5656 seconds]
+[2025-07-30 23:04:13] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:04:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.5657 seconds]
+[2025-07-30 23:04:15] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 6.9891 seconds]
+[2025-07-30 23:04:15] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:04:15] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 7.0063 seconds]
+[2025-07-30 23:04:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.0079 seconds]
+[2025-07-30 23:04:15] | INFO | [crud:read_by_id:65] | [Data read successfully: <app.models.models.Challenges object at 0x7f2a4061ab10>]
+[2025-07-30 23:04:15] | ERROR | [handler:inner:13] | [[DBHandler] Exception in read_by_id: 'Challenges' object has no attribute 'to_dict']
+[2025-07-30 23:04:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.0084 seconds]
+[2025-07-30 23:04:16] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 7.7574 seconds]
+[2025-07-30 23:04:16] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:04:16] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 7.7760 seconds]
+[2025-07-30 23:04:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.7786 seconds]
+[2025-07-30 23:04:16] | INFO | [crud:read_challenges:192] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:04:16] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.7788 seconds]
+[2025-07-30 23:07:17] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:07:17] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:07:17] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:07:17] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:07:17] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:07:17] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:07:17] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:07:23] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 6.5665 seconds]
+[2025-07-30 23:07:23] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:07:23] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 6.5899 seconds]
+[2025-07-30 23:07:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 6.5947 seconds]
+[2025-07-30 23:07:23] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:07:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 6.5949 seconds]
+[2025-07-30 23:07:24] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 7.3275 seconds]
+[2025-07-30 23:07:24] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:07:24] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 7.3454 seconds]
+[2025-07-30 23:07:24] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.3476 seconds]
+[2025-07-30 23:07:24] | INFO | [crud:read_challenges:239] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:07:24] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.3478 seconds]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 8.6738 seconds]
+[2025-07-30 23:07:25] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 8.6951 seconds]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.6968 seconds]
+[2025-07-30 23:07:25] | INFO | [crud:read_challenge_by_id:83] | [Challenge found: <app.models.models.Challenges object at 0x7fb95831b810>]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.6969 seconds]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7090 seconds]
+[2025-07-30 23:07:25] | INFO | [crud:delete_challenge_by_id:172] | [Challenge deleted successfully: ID 1]
+[2025-07-30 23:07:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7092 seconds]
+[2025-07-30 23:07:26] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 9.7718 seconds]
+[2025-07-30 23:07:26] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:07:26] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 9.7910 seconds]
+[2025-07-30 23:07:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.7924 seconds]
+[2025-07-30 23:07:26] | INFO | [crud:read_challenges:239] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-30 23:07:26] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.7926 seconds]
+[2025-07-30 23:07:43] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 25.9774 seconds]
+[2025-07-30 23:07:43] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:07:43] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 25.9973 seconds]
+[2025-07-30 23:07:44] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fotosentez", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--bab51748-dbf0-4678-91ae-826c3cadcc33-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fotosentez', 'user_id': '2'}, 'id': '7ecda29e-3528-4f7a-9110-cdd6392112f0', 'type': 'tool_call'}] usage_metadata={'input_tokens': 276, 'output_tokens': 192, 'total_tokens': 468, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 164}}]
+[2025-07-30 23:07:54] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentezin temel amacı nedir?",\n        "choices": {"A": "Hayvanlar için oksijen salgılamak", "B": "Bitki için glikoz (besin) üretmek", "C": "Atmosferden karbondioksit emmek", "D": "Işık enerjisini ısı enerjisine dönüştürmek", "E": "Su moleküllerini parçalamak"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentez için ana reaktanlar (girdiler) aşağıdakilerden hangisidir?",\n        "choices": {"A": "Oksijen ve glikoz", "B": "Su ve oksijen", "C": "Karbondioksit ve su", "D": "Glikoz ve karbondioksit", "E": "Işık ve ATP"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ana ürünleri (çıktıları) nelerdir?",\n        "choices": {"A": "Karbondioksit ve su", "B": "Oksijen ve glikoz", "C": "ATP ve NADPH", "D": "Işık ve ısı", "E": "Nişasta ve su"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentez, bitki hücrelerinde öncelikli olarak hangi organelde gerçekleşir?",\n        "choices": {"A": "Mitokondri", "B": "Çekirdek", "C": "Ribozom", "D": "Kloroplast", "E": "Koful"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentez sırasında ışık enerjisini emmekten sorumlu pigment hangisidir?",\n        "choices": {"A": "Antosiyanin", "B": "Karotenoid", "C": "Klorofil", "D": "Ksantofil", "E": "Melanin"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez iki ana aşamadan oluşur. Bunlar ne olarak adlandırılır?",\n        "choices": {"A": "Glikoliz ve Krebs döngüsü", "B": "Işığa bağımlı reaksiyonlar ve Calvin döngüsü", "C": "Fermantasyon ve solunum", "D": "Oksidasyon ve redüksiyon", "E": "Anabolizma ve katabolizma"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Aşağıdakilerden hangisi fotosentezin ışığa bağımlı reaksiyonlarının doğrudan bir ürünü DEĞİLDİR?",\n        "choices": {"A": "ATP", "B": "NADPH", "C": "Oksijen", "D": "Glikoz", "E": "Proton gradyanı"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Calvin döngüsünde (ışıktan bağımsız reaksiyonlar) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?",\n        "choices": {"A": "Oksijen", "B": "Su", "C": "Karbondioksit", "D": "ATP", "E": "NADPH"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez için nihai enerji kaynağı nedir?",\n        "choices": {"A": "ATP\'den gelen kimyasal enerji", "B": "Isı enerjisi", "C": "Elektrik enerjisi", "D": "Güneşten gelen ışık enerjisi", "E": "Mekanik enerji"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Bitki yapraklarındaki hangi yapılar, fotosentez için karbondioksit alımından öncelikli olarak sorumludur?",\n        "choices": {"A": "Ksilem", "B": "Floem", "C": "Stoma", "D": "Kütikula", "E": "Kök tüyleri"},\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-30 23:07:54] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Fotosentezin temel amacı nedir?",
+        "choices": {"A": "Hayvanlar için oksijen salgılamak", "B": "Bitki için glikoz (besin) üretmek", "C": "Atmosferden karbondioksit emmek", "D": "Işık enerjisini ısı enerjisine dönüştürmek", "E": "Su moleküllerini parçalamak"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentez için ana reaktanlar (girdiler) aşağıdakilerden hangisidir?",
+        "choices": {"A": "Oksijen ve glikoz", "B": "Su ve oksijen", "C": "Karbondioksit ve su", "D": "Glikoz ve karbondioksit", "E": "Işık ve ATP"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ana ürünleri (çıktıları) nelerdir?",
+        "choices": {"A": "Karbondioksit ve su", "B": "Oksijen ve glikoz", "C": "ATP ve NADPH", "D": "Işık ve ısı", "E": "Nişasta ve su"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentez, bitki hücrelerinde öncelikli olarak hangi organelde gerçekleşir?",
+        "choices": {"A": "Mitokondri", "B": "Çekirdek", "C": "Ribozom", "D": "Kloroplast", "E": "Koful"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentez sırasında ışık enerjisini emmekten sorumlu pigment hangisidir?",
+        "choices": {"A": "Antosiyanin", "B": "Karotenoid", "C": "Klorofil", "D": "Ksantofil", "E": "Melanin"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez iki ana aşamadan oluşur. Bunlar ne olarak adlandırılır?",
+        "choices": {"A": "Glikoliz ve Krebs döngüsü", "B": "Işığa bağımlı reaksiyonlar ve Calvin döngüsü", "C": "Fermantasyon ve solunum", "D": "Oksidasyon ve redüksiyon", "E": "Anabolizma ve katabolizma"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Aşağıdakilerden hangisi fotosentezin ışığa bağımlı reaksiyonlarının doğrudan bir ürünü DEĞİLDİR?",
+        "choices": {"A": "ATP", "B": "NADPH", "C": "Oksijen", "D": "Glikoz", "E": "Proton gradyanı"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Calvin döngüsünde (ışıktan bağımsız reaksiyonlar) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?",
+        "choices": {"A": "Oksijen", "B": "Su", "C": "Karbondioksit", "D": "ATP", "E": "NADPH"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez için nihai enerji kaynağı nedir?",
+        "choices": {"A": "ATP'den gelen kimyasal enerji", "B": "Isı enerjisi", "C": "Elektrik enerjisi", "D": "Güneşten gelen ışık enerjisi", "E": "Mekanik enerji"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Bitki yapraklarındaki hangi yapılar, fotosentez için karbondioksit alımından öncelikli olarak sorumludur?",
+        "choices": {"A": "Ksilem", "B": "Floem", "C": "Stoma", "D": "Kütikula", "E": "Kök tüyleri"},
+        "correct_answer": "C"
+    }
+]]
+[2025-07-30 23:07:54] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Fotosentezin temel amacı nedir?', 'choices': {'A': 'Hayvanlar için oksijen salgılamak', 'B': 'Bitki için glikoz (besin) üretmek', 'C': 'Atmosferden karbondioksit emmek', 'D': 'Işık enerjisini ısı enerjisine dönüştürmek', 'E': 'Su moleküllerini parçalamak'}, 'correct_answer': 'B'}, {'question': 'Fotosentez için ana reaktanlar (girdiler) aşağıdakilerden hangisidir?', 'choices': {'A': 'Oksijen ve glikoz', 'B': 'Su ve oksijen', 'C': 'Karbondioksit ve su', 'D': 'Glikoz ve karbondioksit', 'E': 'Işık ve ATP'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ana ürünleri (çıktıları) nelerdir?', 'choices': {'A': 'Karbondioksit ve su', 'B': 'Oksijen ve glikoz', 'C': 'ATP ve NADPH', 'D': 'Işık ve ısı', 'E': 'Nişasta ve su'}, 'correct_answer': 'B'}, {'question': 'Fotosentez, bitki hücrelerinde öncelikli olarak hangi organelde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Çekirdek', 'C': 'Ribozom', 'D': 'Kloroplast', 'E': 'Koful'}, 'correct_answer': 'D'}, {'question': 'Fotosentez sırasında ışık enerjisini emmekten sorumlu pigment hangisidir?', 'choices': {'A': 'Antosiyanin', 'B': 'Karotenoid', 'C': 'Klorofil', 'D': 'Ksantofil', 'E': 'Melanin'}, 'correct_answer': 'C'}, {'question': 'Fotosentez iki ana aşamadan oluşur. Bunlar ne olarak adlandırılır?', 'choices': {'A': 'Glikoliz ve Krebs döngüsü', 'B': 'Işığa bağımlı reaksiyonlar ve Calvin döngüsü', 'C': 'Fermantasyon ve solunum', 'D': 'Oksidasyon ve redüksiyon', 'E': 'Anabolizma ve katabolizma'}, 'correct_answer': 'B'}, {'question': 'Aşağıdakilerden hangisi fotosentezin ışığa bağımlı reaksiyonlarının doğrudan bir ürünü DEĞİLDİR?', 'choices': {'A': 'ATP', 'B': 'NADPH', 'C': 'Oksijen', 'D': 'Glikoz', 'E': 'Proton gradyanı'}, 'correct_answer': 'D'}, {'question': 'Calvin döngüsünde (ışıktan bağımsız reaksiyonlar) glikoz sentezlemek için kullanılan birincil karbon kaynağı nedir?', 'choices': {'A': 'Oksijen', 'B': 'Su', 'C': 'Karbondioksit', 'D': 'ATP', 'E': 'NADPH'}, 'correct_answer': 'C'}, {'question': 'Fotosentez için nihai enerji kaynağı nedir?', 'choices': {'A': "ATP'den gelen kimyasal enerji", 'B': 'Isı enerjisi', 'C': 'Elektrik enerjisi', 'D': 'Güneşten gelen ışık enerjisi', 'E': 'Mekanik enerji'}, 'correct_answer': 'D'}, {'question': 'Bitki yapraklarındaki hangi yapılar, fotosentez için karbondioksit alımından öncelikli olarak sorumludur?', 'choices': {'A': 'Ksilem', 'B': 'Floem', 'C': 'Stoma', 'D': 'Kütikula', 'E': 'Kök tüyleri'}, 'correct_answer': 'C'}]]
+[2025-07-30 23:07:54] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 37.2416 seconds]
+[2025-07-30 23:07:54] | INFO | [crud:read_by_email:199] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:07:54] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 37.2418 seconds]
+[2025-07-30 23:07:54] | INFO | [crud:create:49] | [the data: <app.models.models.Challenges object at 0x7fb960171e10> is added into the database.]
+[2025-07-30 23:07:54] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 37.2454 seconds]
+[2025-07-30 23:08:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 63.7562 seconds]
+[2025-07-30 23:08:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:08:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 63.7732 seconds]
+[2025-07-30 23:08:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 63.7745 seconds]
+[2025-07-30 23:08:20] | INFO | [crud:read_by_email:199] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:08:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 63.7746 seconds]
+[2025-07-30 23:08:30] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 73.0161 seconds]
+[2025-07-30 23:08:30] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:08:30] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 73.0369 seconds]
+[2025-07-30 23:08:30] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 73.0384 seconds]
+[2025-07-30 23:08:30] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:08:30] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 73.0385 seconds]
+[2025-07-30 23:08:31] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 74.4989 seconds]
+[2025-07-30 23:08:31] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:08:31] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 74.5181 seconds]
+[2025-07-30 23:08:31] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 74.5195 seconds]
+[2025-07-30 23:08:31] | INFO | [crud:read_challenges:239] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:08:31] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 74.5196 seconds]
+[2025-07-30 23:08:33] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 76.5214 seconds]
+[2025-07-30 23:08:33] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:08:33] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 76.5395 seconds]
+[2025-07-30 23:08:33] | ERROR | [handler:inner:13] | [[DBHandler] Exception in read_by_id: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: '2' ('str' object cannot be interpreted as an integer)
+[SQL: SELECT challenges.id AS challenges_id, challenges.challenge_sender_id AS challenges_challenge_sender_id, challenges.challenge_receiver_id AS challenges_challenge_receiver_id, challenges.accepted_sender AS challenges_accepted_sender, challenges.accepted_receiver AS challenges_accepted_receiver, challenges.quiz_json AS challenges_quiz_json 
+FROM challenges 
+WHERE challenges.id = $1::INTEGER]
+[parameters: ('2',)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)]
+[2025-07-30 23:08:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 76.5456 seconds]
+[2025-07-30 23:09:28] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:09:28] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:09:28] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:09:28] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:09:28] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:09:28] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:09:28] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:09:32] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.3088 seconds]
+[2025-07-30 23:09:32] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:09:32] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.3288 seconds]
+[2025-07-30 23:09:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.3325 seconds]
+[2025-07-30 23:09:32] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:09:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.3326 seconds]
+[2025-07-30 23:09:33] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 5.2895 seconds]
+[2025-07-30 23:09:33] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:09:33] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 5.3081 seconds]
+[2025-07-30 23:09:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.3096 seconds]
+[2025-07-30 23:09:33] | INFO | [crud:read_challenges:239] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:09:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 5.3097 seconds]
+[2025-07-30 23:09:37] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 9.2089 seconds]
+[2025-07-30 23:09:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:09:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 9.2301 seconds]
+[2025-07-30 23:09:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.2314 seconds]
+[2025-07-30 23:09:37] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:09:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.2315 seconds]
+[2025-07-30 23:09:38] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 10.1059 seconds]
+[2025-07-30 23:09:38] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:09:38] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 10.1246 seconds]
+[2025-07-30 23:09:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.1263 seconds]
+[2025-07-30 23:09:38] | INFO | [crud:read_challenges:239] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-30 23:09:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 10.1264 seconds]
+[2025-07-30 23:09:42] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 14.6723 seconds]
+[2025-07-30 23:09:42] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:09:42] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 14.6934 seconds]
+[2025-07-30 23:09:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 14.6949 seconds]
+[2025-07-30 23:09:42] | INFO | [crud:read_challenge_by_id:83] | [Challenge found: <app.models.models.Challenges object at 0x7feb0044cf10>]
+[2025-07-30 23:09:42] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 14.6950 seconds]
+[2025-07-30 23:12:59] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-30 23:12:59] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-30 23:12:59] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-30 23:12:59] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-30 23:12:59] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-30 23:12:59] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-30 23:12:59] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-30 23:13:02] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 2.9824 seconds]
+[2025-07-30 23:13:02] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:13:02] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.0019 seconds]
+[2025-07-30 23:13:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.0066 seconds]
+[2025-07-30 23:13:02] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-30 23:13:02] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.0068 seconds]
+[2025-07-30 23:13:03] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 4.1828 seconds]
+[2025-07-30 23:13:03] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:13:03] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 4.2039 seconds]
+[2025-07-30 23:13:03] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.2055 seconds]
+[2025-07-30 23:13:03] | INFO | [crud:read_challenges:266] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-30 23:13:03] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 4.2057 seconds]
+[2025-07-30 23:13:07] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 7.7938 seconds]
+[2025-07-30 23:13:07] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:13:07] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 7.8132 seconds]
+[2025-07-30 23:13:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.8146 seconds]
+[2025-07-30 23:13:07] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:13:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 7.8147 seconds]
+[2025-07-30 23:13:08] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 8.6821 seconds]
+[2025-07-30 23:13:08] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:13:08] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 8.6999 seconds]
+[2025-07-30 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7017 seconds]
+[2025-07-30 23:13:08] | INFO | [crud:read_challenges:266] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-30 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 8.7018 seconds]
+[2025-07-30 23:13:09] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 9.7160 seconds]
+[2025-07-30 23:13:09] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:13:09] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 9.7358 seconds]
+[2025-07-30 23:13:09] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.7487 seconds]
+[2025-07-30 23:13:09] | INFO | [crud:mark_challenge_as_accepted:203] | [Challenge 2 accepted by user 1]
+[2025-07-30 23:13:09] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 9.7488 seconds]
+[2025-07-30 23:16:41] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 221.6984 seconds]
+[2025-07-30 23:16:41] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:16:41] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 221.7165 seconds]
+[2025-07-30 23:16:52] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 233.3627 seconds]
+[2025-07-30 23:16:52] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:16:52] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 233.3800 seconds]
+[2025-07-30 23:27:45] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 886.1506 seconds]
+[2025-07-30 23:27:45] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:27:45] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 886.1696 seconds]
+[2025-07-30 23:27:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 886.1709 seconds]
+[2025-07-30 23:27:45] | INFO | [crud:read_by_email:226] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:27:45] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 886.1710 seconds]
+[2025-07-30 23:27:59] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 900.2928 seconds]
+[2025-07-30 23:27:59] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:27:59] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 900.3094 seconds]
+[2025-07-30 23:27:59] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 900.3107 seconds]
+[2025-07-30 23:27:59] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:27:59] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 900.3108 seconds]
+[2025-07-30 23:28:37] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 938.0161 seconds]
+[2025-07-30 23:28:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:28:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 938.0831 seconds]
+[2025-07-30 23:28:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 938.0844 seconds]
+[2025-07-30 23:28:37] | INFO | [crud:read_challenges:266] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-30 23:28:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 938.0845 seconds]
+[2025-07-30 23:29:11] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 972.1234 seconds]
+[2025-07-30 23:29:11] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:29:11] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 972.1444 seconds]
+[2025-07-30 23:29:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 972.1465 seconds]
+[2025-07-30 23:29:11] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:29:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 972.1467 seconds]
+[2025-07-30 23:29:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 980.9067 seconds]
+[2025-07-30 23:29:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-30 23:29:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 980.9302 seconds]
+[2025-07-30 23:29:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 980.9319 seconds]
+[2025-07-30 23:29:20] | INFO | [crud:read_by_id:65] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-30 23:29:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 980.9320 seconds]
