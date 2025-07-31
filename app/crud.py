@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, or_
 from app.connection import Connection
 from typing import Union
 from app.logger import Logger
@@ -301,6 +301,20 @@ class CRUDOperations:
 
         self.logger.info(f"Challenges read with filters: {filters}. Found: {len(challenges)} records.")
         return challenges
+    
+
+    async def read_challenges_for_user(self, user_id: int):
+        query = (
+            select(Challenges)
+            .where(
+                or_(
+                    Challenges.challenge_sender_id == user_id,
+                    Challenges.challenge_receiver_id == user_id
+                )
+            )
+        )
+        result = await self.connection.session.execute(query)
+        return result.scalars().all()
 
 
 

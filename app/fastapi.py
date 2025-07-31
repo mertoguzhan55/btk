@@ -557,6 +557,54 @@ class FastAPIServer:
 
 
 
+        @self.app.get("/get_challenge_messages")
+        async def get_challenge_messages(request: Request):
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            # Sender veya Receiver olduğu tüm challenge'ları al
+            all_challenges = await self.crud.read_challenges_for_user(user_id)
+
+            messages = []
+            for ch in all_challenges:
+                if not ch.sender_answer_for_challenge or not ch.receiver_answer_for_challenge:
+                    continue  # Her iki taraf da cevaplamamışsa geç
+
+                sender_answers = json.loads(ch.sender_answer_for_challenge)
+                receiver_answers = json.loads(ch.receiver_answer_for_challenge)
+                quiz = ch.quiz_json if isinstance(ch.quiz_json, dict) else json.loads(ch.quiz_json)
+                corrects = [q["correct_answer"] for q in quiz["questions"]]
+
+                sender_score = sum([1 for s, c in zip(sender_answers, corrects) if s == c])
+                receiver_score = sum([1 for r, c in zip(receiver_answers, corrects) if r == c])
+
+                # Rakibin e-mailini al
+                opponent_id = ch.challenge_receiver_id if ch.challenge_sender_id == user_id else ch.challenge_sender_id
+                opponent = await self.crud.read_by_id(User, opponent_id)
+                opponent_email = opponent["name"] if opponent else "Bilinmeyen"
+
+                if user_id == ch.challenge_sender_id:
+                    user_score = sender_score
+                    opponent_score = receiver_score
+                else:
+                    user_score = receiver_score
+                    opponent_score = sender_score
+
+                if user_score > opponent_score:
+                    outcome = f"{opponent_email} kişisiyle yaptığınız düellodan galip ayrıldınız! +10 puan ✅ ({user_score} - {opponent_score})"
+                elif user_score == opponent_score:
+                    outcome = f"{opponent_email} ile berabere kaldınız. +1 puan 🤝 ({user_score} - {opponent_score})"
+                else:
+                    outcome = f"{opponent_email} karşısında maalesef kaybettiniz. 0 puan ❌ ({user_score} - {opponent_score})"
+
+                messages.append(outcome)
+
+            return JSONResponse(content={"messages": messages})
+
+
+
+
         @self.app.get("/logout")
         async def logout_user():
             response = RedirectResponse("/", status_code=status.HTTP_302_FOUND)
