@@ -27,6 +27,55 @@
 </head>
 <body>
     <style>
+        #floatingMessageBtn {
+    position: fixed;
+    top: 360px;
+    right: 30px;
+    z-index: 9999;
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #17a2b8, #6610f2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#challenge-quiz-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px; /* scrollbar için boşluk */
+}
+
+#floatingIncomingBtn {
+    position: fixed;
+    top: 300px; /* En aşağıda */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingIncomingBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingIncomingBtn:focus {
+    outline: none;
+}
 
 #floatingInfoBtn {
     position: fixed;
@@ -583,6 +632,49 @@
     }
 }
 
+
+#floatingChallengeBtn {
+    position: fixed;
+    top: 240px; /* Diğerlerinden aşağıda */
+    right: 30px;
+    z-index: 9999;
+
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingChallengeBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingMessageBtn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#floatingChallengeBtn:focus {
+    outline: none;
+}
+
+.notes-underline {
+    width: 160px;
+    height: 4px;
+    margin: 10px auto 0 auto;
+    background: rgba(13, 110, 253, 0.4); /* Bootstrap primary rengi, transparan */
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(13, 110, 253, 0.4); /* Hafif bir ışık efekti */
+}
+
+
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -656,17 +748,30 @@
 
         </div>
     </nav>
-
+    
 
     <!-- Quiz Başlatma Butonu (Sağ Alt Köşe) -->
     <button id="floatingQuizBtn" onclick="generateQuiz()" title="Quiz Oluştur">
-        Quiz
+        <i class="fas fa-clipboard"></i>
     </button>
 
+
     <!-- Bilgilerim Butonu -->
-<button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
-    Bilgilerim
-</button>
+    <button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
+        <i class="fas fa-user-circle"></i>
+    </button>
+
+    <button id="floatingChallengeBtn" onclick="openChallengeModal()" title="Challenge Gönder">
+        <i class="fas fa-bolt"></i>
+    </button>
+
+    <button id="floatingMessageBtn" onclick="openMessagesModal()" title="Mesajlarım">
+        <i class="fas fa-envelope"></i>
+    </button>
+        
+    <button id="floatingIncomingBtn" onclick="openIncomingChallengesModal()" title="Gelen Challenge'lar">
+        <i class="fas fa-inbox"></i>
+    </button>
 
 
     <!-- Quiz Modal -->
@@ -703,13 +808,14 @@
         <!-- diğer dersler -->
     </select>
 
-    <div class="container my-5">
+    <div class="container my-5 ">
         <div class="chat-container">
             <div class="text-center mb-4">
                 <div class="gif-class">
-                    <div style="height: 90px; width: 200px;"></div>
+                    <div style="height: 65px; width: 200px;"></div>
                 </div>
                 <div> NOTLARIM</div>
+                <div class="notes-underline"></div>
             </div>
     
             <!-- Ders seçme ve mesaj alanlarını kaldırıyoruz ama dış yapılar kalıyor -->
@@ -725,12 +831,35 @@
         </div>
     </div>
 
+
+    <!-- Challenge Modal -->
+<div class="modal fade" id="challengeModal" tabindex="-1" role="dialog" aria-labelledby="challengeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Challenge Gönder</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="email" id="challenge-email" class="form-control" placeholder="Rakibin e-posta adresi">
+          <input type="text" id="challenge-topic" class="form-control mt-3" placeholder="Konu girin (örn: çember, fotosentez...)">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">İptal</button>
+          <button class="btn btn-primary" onclick="sendChallenge()">Challenge Gönder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <!-- Quiz Konu Giriş Modalı -->
 <div class="modal fade" id="quizTopicModal" tabindex="-1" role="dialog" aria-labelledby="quizTopicModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content p-4">
         <div class="modal-header">
-          <h5 class="modal-title" id="quizTopicModalLabel">Konu Gir</h5>
+          <h5 class="modal-title" id="quizTopicModalLabel">Quiz Olmak İstediğin Konuyu Açıkla</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -794,6 +923,64 @@
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Gelen Challenge'lar Modalı -->
+<div class="modal fade" id="incomingChallengesModal" tabindex="-1" role="dialog" aria-labelledby="incomingChallengesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Gelen Challenge İstekleri</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="incoming-challenges-body">
+          <p class="text-muted text-center">Yükleniyor...</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="challengeQuizModal" tabindex="-1" role="dialog" aria-labelledby="challengeQuizModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Challenge Soruları</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="challenge-quiz-body">
+          <!-- Sorular burada gösterilecek -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" id="submitChallengeAnswersBtn">Cevapları Gönder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="messagesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Challenge Sonuçların</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="messages-body">
+          <p class="text-muted text-center">Yükleniyor...</p>
         </div>
       </div>
     </div>
@@ -1122,7 +1309,246 @@ function showNoteModal(note) {
     document.getElementById("modal-note-content").textContent = note.note;
     $('#noteDetailModal').modal('show');
 }
+
+
+function openChallengeModal() {
+    $('#challengeModal').modal('show');
+}
+
+
+
+async function sendChallenge() {
+    const email = document.getElementById("challenge-email").value.trim();
+    const topic = document.getElementById("challenge-topic").value.trim();
+
+    if (!email || !topic) {
+        alert("Lütfen e-posta ve konu girin.");
+        return;
+    }
+
+    try {
+        const res = await fetch("/send_challenge", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, topic })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            const { challenge_id, quiz } = data;
+
+            // Bu soruları göster
+            displayChallengeQuizModal(challenge_id, quiz, "sender");
+
+        } else {
+            alert(data.message || "Challenge gönderilemedi.");
+        }
+
+        $('#challengeModal').modal('hide');
+
+    } catch (err) {
+        console.error(err);
+        alert("Challenge gönderilemedi.");
+    }
+}
+
     
+function openIncomingChallengesModal() {
+    $('#incomingChallengesModal').modal('show');
+    fetchIncomingChallenges();
+}
+
+async function fetchIncomingChallenges() {
+    const container = document.getElementById("incoming-challenges-body");
+    container.innerHTML = "<p class='text-muted text-center'>Yükleniyor...</p>";
+
+    try {
+        const res = await fetch("/get_challenges");
+        const data = await res.json();
+        const challenges = data.challenges;
+
+        if (challenges.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center'>Henüz challenge isteğiniz yok.</p>";
+            return;
+        }
+
+        container.innerHTML = "";
+        challenges.forEach(c => {
+            const div = document.createElement("div");
+            div.className = "card mb-3 p-3";
+
+            div.innerHTML = `
+                <p><strong>Konu:</strong> ${c.topic}</p>
+                <button class="btn btn-success btn-sm mr-2" onclick="acceptChallenge('${c.id}')">Kabul Et</button>
+                <button class="btn btn-danger btn-sm" onclick="rejectChallenge('${c.id}')">Reddet</button>
+            `;
+
+            container.appendChild(div);
+        });
+    } catch (error) {
+        console.error("Challenge verisi alınamadı:", error);
+        container.innerHTML = "<p class='text-danger'>Challenge mesajları yüklenirken bir hata oluştu.</p>";
+    }
+}
+
+async function acceptChallenge(id) {
+    const res = await fetch("/accept_challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    });
+    const data = await res.json();
+
+    if (data.quiz) {
+        displayChallengeQuizModal(data.quiz_match_id, data.quiz, "receiver"); // aynı soruları göster
+    }
+
+    alert(data.message);
+    $('#incomingChallengesModal').modal('hide');
+}
+
+async function rejectChallenge(id) {
+    const res = await fetch("/reject_challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    });
+    const data = await res.json();
+    alert(data.message);
+    fetchIncomingChallenges(); // tekrar yükle
+}
+
+
+
+async function submitSenderChallengeAnswers(challengeId) {
+    const answers = [];
+
+    for (let i = 0; i < currentQuestions.length; i++) {
+        const selected = document.querySelector(`input[name="answer-${i}"]:checked`);
+        answers.push(selected ? selected.value : null);
+    }
+
+    try {
+        const res = await fetch("/submit_sender_answers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                challenge_id: challengeId,
+                answers: answers
+            })
+        });
+
+        const data = await res.json();
+        alert(data.message);
+        $('#quizModal').modal('hide');
+
+    } catch (err) {
+        console.error("Cevap gönderme hatası:", err);
+        alert("Gönderilemedi.");
+    }
+}
+
+
+let currentChallengeQuestions = [];
+let currentChallengeId = null;
+let currentChallengeRole = null;
+
+
+function displayChallengeQuizModal(challengeId, quiz, role) {
+    const quizBody = document.getElementById("challenge-quiz-body");
+    quizBody.innerHTML = "";
+    currentChallengeQuestions = quiz.questions;
+    currentChallengeId = challengeId;
+    currentChallengeRole = role
+
+    quiz.questions.forEach((q, idx) => {
+        const div = document.createElement("div");
+        div.classList.add("card", "mb-3", "p-3");
+
+        const optionsHtml = Object.entries(q.choices).map(
+            ([key, val]) => `
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="challenge-answer-${idx}" id="challenge-answer-${idx}-${key}" value="${key}">
+                <label class="form-check-label" for="challenge-answer-${idx}-${key}">${key}) ${val}</label>
+            </div>`
+        ).join("");
+
+        div.innerHTML = `
+            <p><strong>Soru ${idx + 1}:</strong> ${q.question}</p>
+            ${optionsHtml}
+            <div id="challenge-feedback-${idx}" class="mt-2 text-muted"></div>
+        `;
+        quizBody.appendChild(div);
+    });
+
+    $('#challengeQuizModal').modal('show');
+}
+
+
+document.getElementById("submitChallengeAnswersBtn").addEventListener("click", async () => {
+    const answers = [];
+
+    for (let i = 0; i < currentChallengeQuestions.length; i++) {
+        const selected = document.querySelector(`input[name="challenge-answer-${i}"]:checked`);
+        answers.push(selected ? selected.value : null);
+    }
+
+    try {
+        const res = await fetch("/submit_challenge_answers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                challenge_id: currentChallengeId,
+                answers: answers,
+                role: currentChallengeRole
+            })
+        });
+
+        const data = await res.json();
+        alert(data.message || "Gönderildi");
+        $('#challengeQuizModal').modal('hide');
+    } catch (err) {
+        console.error("Challenge cevap gönderme hatası:", err);
+        alert("Gönderilemedi.");
+    }
+});
+
+
+
+function openMessagesModal() {
+    $('#messagesModal').modal('show');
+    fetchChallengeMessages();
+}
+
+async function fetchChallengeMessages() {
+    const container = document.getElementById("messages-body");
+    container.innerHTML = "<p class='text-muted text-center'>Yükleniyor...</p>";
+
+    try {
+        const res = await fetch("/get_challenge_messages");
+        const data = await res.json();
+
+        if (!data.messages || data.messages.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center'>Henüz tamamlanmış challenge'ınız yok.</p>";
+            return;
+        }
+
+        container.innerHTML = "";
+        data.messages.forEach(msg => {
+            const div = document.createElement("div");
+            div.className = "card mb-3 p-3";
+            div.innerHTML = `<strong>${msg}</strong>`;
+            container.appendChild(div);
+        });
+    } catch (err) {
+        console.error("Mesajlar alınamadı:", err);
+        container.innerHTML = "<p class='text-danger'>Bir hata oluştu.</p>";
+    }
+}
+
+
+
     </script>
 
 </body>
