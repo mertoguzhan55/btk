@@ -8077,3 +8077,229 @@ WHERE challenges.challenge_receiver_id = $1::INTEGER AND challenges.accepted_rec
 [2025-08-01 00:22:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 574.2395 seconds]
 [2025-08-01 00:22:18] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
 [2025-08-01 00:22:18] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 574.2396 seconds]
+[2025-08-01 00:23:37] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-08-01 00:23:37] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-08-01 00:23:37] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-08-01 00:23:37] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-08-01 00:23:37] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-08-01 00:23:37] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-08-01 00:23:37] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-08-01 00:23:41] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 3.3306 seconds]
+[2025-08-01 00:23:41] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:23:41] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 3.3504 seconds]
+[2025-08-01 00:23:41] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.3557 seconds]
+[2025-08-01 00:23:41] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:23:41] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 3.3559 seconds]
+[2025-08-01 00:24:51] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 73.1723 seconds]
+[2025-08-01 00:24:51] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:24:51] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 73.1900 seconds]
+[2025-08-01 00:24:51] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 73.1915 seconds]
+[2025-08-01 00:24:51] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:24:51] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 73.1916 seconds]
+[2025-08-01 00:25:21] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Test]
+[2025-08-01 00:25:21] | INFO | [rag_pipeline:load_notes:36] | [Loading notes from JSON file: app/data/turkce_2.json]
+[2025-08-01 00:25:21] | INFO | [rag_pipeline:load_notes:48] | [2 notes loaded and converted to NoteChunk objects for subject 'turkce' and user 2.]
+[2025-08-01 00:25:21] | INFO | [rag_pipeline:update_vector_db:56] | [Updating vectorstore with 2 new note chunks...]
+[2025-08-01 00:25:21] | INFO | [rag_pipeline:update_vector_db:70] | [Loading existing vectorstore for user 2]
+[2025-08-01 00:25:22] | INFO | [rag_pipeline:update_vector_db:82] | [Vectorstore saved to vector_db/user_2]
+[2025-08-01 00:25:32] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 114.7843 seconds]
+[2025-08-01 00:25:32] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:25:32] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 114.8022 seconds]
+[2025-08-01 00:25:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 114.8041 seconds]
+[2025-08-01 00:25:32] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:25:32] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 114.8043 seconds]
+[2025-08-01 00:25:48] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Turkish]
+[2025-08-01 00:25:48] | INFO | [rag_pipeline:load_notes:36] | [Loading notes from JSON file: app/data/turkce_2.json]
+[2025-08-01 00:25:48] | INFO | [rag_pipeline:load_notes:48] | [3 notes loaded and converted to NoteChunk objects for subject 'turkce' and user 2.]
+[2025-08-01 00:25:48] | INFO | [rag_pipeline:update_vector_db:56] | [Updating vectorstore with 3 new note chunks...]
+[2025-08-01 00:25:48] | INFO | [rag_pipeline:update_vector_db:70] | [Loading existing vectorstore for user 2]
+[2025-08-01 00:25:49] | INFO | [rag_pipeline:update_vector_db:82] | [Vectorstore saved to vector_db/user_2]
+[2025-08-01 00:25:54] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 136.6858 seconds]
+[2025-08-01 00:25:54] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:25:54] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 136.7063 seconds]
+[2025-08-01 00:25:54] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 136.7083 seconds]
+[2025-08-01 00:25:54] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:25:54] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 136.7085 seconds]
+[2025-08-01 00:26:07] | INFO | [label_extractor_from_video:extract:47] | [extractor extract like this: Turkish word]
+[2025-08-01 00:26:07] | INFO | [rag_pipeline:load_notes:36] | [Loading notes from JSON file: app/data/turkce_2.json]
+[2025-08-01 00:26:07] | INFO | [rag_pipeline:load_notes:48] | [4 notes loaded and converted to NoteChunk objects for subject 'turkce' and user 2.]
+[2025-08-01 00:26:07] | INFO | [rag_pipeline:update_vector_db:56] | [Updating vectorstore with 4 new note chunks...]
+[2025-08-01 00:26:07] | INFO | [rag_pipeline:update_vector_db:70] | [Loading existing vectorstore for user 2]
+[2025-08-01 00:26:08] | INFO | [rag_pipeline:update_vector_db:82] | [Vectorstore saved to vector_db/user_2]
+[2025-08-01 00:26:13] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 155.2495 seconds]
+[2025-08-01 00:26:13] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:26:13] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 155.2668 seconds]
+[2025-08-01 00:26:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 155.2682 seconds]
+[2025-08-01 00:26:13] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:26:13] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 155.2683 seconds]
+[2025-08-01 00:26:57] | INFO | [agent:run:163] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fotosentez", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--4b414e7b-33d9-49bf-a370-43ed17a7c433-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fotosentez', 'user_id': '2'}, 'id': 'ceae878d-03d6-47b7-bb58-62ee68edb64f', 'type': 'tool_call'}] usage_metadata={'input_tokens': 285, 'output_tokens': 98, 'total_tokens': 383, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 70}}]
+[2025-08-01 00:26:57] | INFO | [rag_pipeline:query_with_scores:98] | [Querying vectorstore for user 2 with query: 'fotosentez']
+[2025-08-01 00:26:57] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5176 | İçerik: deneme3...]
+[2025-08-01 00:26:57] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5176): deneme3...]
+[2025-08-01 00:26:57] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5241 | İçerik: deneme2...]
+[2025-08-01 00:26:57] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5241): deneme2...]
+[2025-08-01 00:26:57] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5241 | İçerik: deneme2...]
+[2025-08-01 00:26:57] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5241): deneme2...]
+[2025-08-01 00:26:57] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5293 | İçerik: deneme1...]
+[2025-08-01 00:26:57] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5293): deneme1...]
+[2025-08-01 00:26:57] | INFO | [agent:quiz_generate:41] | [Doc Skoru: 0.5293 | İçerik: deneme1...]
+[2025-08-01 00:26:57] | WARNING | [agent:quiz_generate:46] | [Düşük skorlu doküman filtrelendi (Skor: 0.5293): deneme1...]
+[2025-08-01 00:27:10] | INFO | [agent:quiz_generate:75] | [Model output (raw): '```json\n[\n    {\n        "question": "Fotosentez nedir?",\n        "choices": {\n            "A": "Canlıların oksijen tüketerek enerji üretmesi olayıdır.",\n            "B": "Bitkilerin ışık enerjisi kullanarak su ve karbondioksitten besin (organik madde) üretmesi olayıdır.",\n            "C": "Hücrelerin protein sentezlemek için amino asitleri birleştirmesidir.",\n            "D": "Canlıların atık maddeleri vücutlarından uzaklaştırmasıdır.",\n            "E": "Hücrelerin bölünerek çoğalması sürecidir."\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezde kullanılan temel hammaddeler (reaktanlar) nelerdir?",\n        "choices": {\n            "A": "Oksijen ve glikoz",\n            "B": "Protein ve yağ",\n            "C": "Karbondioksit ve su",\n            "D": "Azot ve fosfor",\n            "E": "Klorofil ve nişasta"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentez sonucunda hangi maddeler üretilir?",\n        "choices": {\n            "A": "Karbondioksit ve su",\n            "B": "ATP ve ADP",\n            "C": "Glikoz (besin) ve oksijen",\n            "D": "Protein ve nişasta",\n            "E": "Yağ ve vitamin"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bitki hücrelerinde fotosentez olayı hangi organelde gerçekleşir?",\n        "choices": {\n            "A": "Mitokondri",\n            "B": "Ribozom",\n            "C": "Çekirdek",\n            "D": "Kloroplast",\n            "E": "Hücre zarı"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Fotosentezde klorofilin temel görevi nedir?",\n        "choices": {\n            "A": "Karbondioksiti bağlamak",\n            "B": "Suyu parçalamak",\n            "C": "Işık enerjisini soğurmak",\n            "D": "Glikozu depolamak",\n            "E": "Oksijen üretmek"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışığa bağımlı reaksiyonlarında ne üretilir?",\n        "choices": {\n            "A": "Glikoz ve oksijen",\n            "B": "Karbondioksit ve su",\n            "C": "ATP ve NADPH",\n            "D": "Protein ve yağ",\n            "E": "Nişasta ve selüloz"\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir ve temel amacı nedir?",\n        "choices": {\n            "A": "Tilakoit zarda gerçekleşir ve suyu parçalamaktır.",\n            "B": "Kloroplastın stromasında gerçekleşir ve karbondioksitten besin sentezlemektir.",\n            "C": "Mitokondride gerçekleşir ve ATP üretmektir.",\n            "D": "Çekirdekte gerçekleşir ve DNA sentezlemektir.",\n            "E": "Hücre zarında gerçekleşir ve madde taşımaktır."\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fotosentezde üretilen oksijenin canlılar için önemi nedir?",\n        "choices": {\n            "A": "Bitkinin büyümesini sağlar.",\n            "B": "Toprağı zenginleştirir.",\n            "C": "Su döngüsünü hızlandırır.",\n            "D": "Karbondioksit emilimini artırır.",\n            "E": "Solunum için kullanılır."\n        },\n        "correct_answer": "E"\n    },\n    {\n        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",\n        "choices": {\n            "A": "Işık şiddeti",\n            "B": "Karbondioksit miktarı",\n            "C": "Sıcaklık",\n            "D": "Toprak pH\'ı",\n            "E": "Su miktarı"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Aşağıdaki canlı gruplarından hangisi fotosentez yapma yeteneğine sahiptir?",\n        "choices": {\n            "A": "Mantarlar ve hayvanlar",\n            "B": "Tüm bakteriler",\n            "C": "Virüsler ve protozoalar",\n            "D": "Sadece bitkiler",\n            "E": "Bitkiler, algler ve bazı bakteriler"\n        },\n        "correct_answer": "E"\n    }\n]\n```']
+[2025-08-01 00:27:10] | INFO | [agent:quiz_generate:79] | [Cleaned content: [
+    {
+        "question": "Fotosentez nedir?",
+        "choices": {
+            "A": "Canlıların oksijen tüketerek enerji üretmesi olayıdır.",
+            "B": "Bitkilerin ışık enerjisi kullanarak su ve karbondioksitten besin (organik madde) üretmesi olayıdır.",
+            "C": "Hücrelerin protein sentezlemek için amino asitleri birleştirmesidir.",
+            "D": "Canlıların atık maddeleri vücutlarından uzaklaştırmasıdır.",
+            "E": "Hücrelerin bölünerek çoğalması sürecidir."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezde kullanılan temel hammaddeler (reaktanlar) nelerdir?",
+        "choices": {
+            "A": "Oksijen ve glikoz",
+            "B": "Protein ve yağ",
+            "C": "Karbondioksit ve su",
+            "D": "Azot ve fosfor",
+            "E": "Klorofil ve nişasta"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentez sonucunda hangi maddeler üretilir?",
+        "choices": {
+            "A": "Karbondioksit ve su",
+            "B": "ATP ve ADP",
+            "C": "Glikoz (besin) ve oksijen",
+            "D": "Protein ve nişasta",
+            "E": "Yağ ve vitamin"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bitki hücrelerinde fotosentez olayı hangi organelde gerçekleşir?",
+        "choices": {
+            "A": "Mitokondri",
+            "B": "Ribozom",
+            "C": "Çekirdek",
+            "D": "Kloroplast",
+            "E": "Hücre zarı"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Fotosentezde klorofilin temel görevi nedir?",
+        "choices": {
+            "A": "Karbondioksiti bağlamak",
+            "B": "Suyu parçalamak",
+            "C": "Işık enerjisini soğurmak",
+            "D": "Glikozu depolamak",
+            "E": "Oksijen üretmek"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışığa bağımlı reaksiyonlarında ne üretilir?",
+        "choices": {
+            "A": "Glikoz ve oksijen",
+            "B": "Karbondioksit ve su",
+            "C": "ATP ve NADPH",
+            "D": "Protein ve yağ",
+            "E": "Nişasta ve selüloz"
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir ve temel amacı nedir?",
+        "choices": {
+            "A": "Tilakoit zarda gerçekleşir ve suyu parçalamaktır.",
+            "B": "Kloroplastın stromasında gerçekleşir ve karbondioksitten besin sentezlemektir.",
+            "C": "Mitokondride gerçekleşir ve ATP üretmektir.",
+            "D": "Çekirdekte gerçekleşir ve DNA sentezlemektir.",
+            "E": "Hücre zarında gerçekleşir ve madde taşımaktır."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fotosentezde üretilen oksijenin canlılar için önemi nedir?",
+        "choices": {
+            "A": "Bitkinin büyümesini sağlar.",
+            "B": "Toprağı zenginleştirir.",
+            "C": "Su döngüsünü hızlandırır.",
+            "D": "Karbondioksit emilimini artırır.",
+            "E": "Solunum için kullanılır."
+        },
+        "correct_answer": "E"
+    },
+    {
+        "question": "Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?",
+        "choices": {
+            "A": "Işık şiddeti",
+            "B": "Karbondioksit miktarı",
+            "C": "Sıcaklık",
+            "D": "Toprak pH'ı",
+            "E": "Su miktarı"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Aşağıdaki canlı gruplarından hangisi fotosentez yapma yeteneğine sahiptir?",
+        "choices": {
+            "A": "Mantarlar ve hayvanlar",
+            "B": "Tüm bakteriler",
+            "C": "Virüsler ve protozoalar",
+            "D": "Sadece bitkiler",
+            "E": "Bitkiler, algler ve bazı bakteriler"
+        },
+        "correct_answer": "E"
+    }
+]]
+[2025-08-01 00:27:10] | INFO | [agent:quiz_generate:81] | [Cleaned content questions: [{'question': 'Fotosentez nedir?', 'choices': {'A': 'Canlıların oksijen tüketerek enerji üretmesi olayıdır.', 'B': 'Bitkilerin ışık enerjisi kullanarak su ve karbondioksitten besin (organik madde) üretmesi olayıdır.', 'C': 'Hücrelerin protein sentezlemek için amino asitleri birleştirmesidir.', 'D': 'Canlıların atık maddeleri vücutlarından uzaklaştırmasıdır.', 'E': 'Hücrelerin bölünerek çoğalması sürecidir.'}, 'correct_answer': 'B'}, {'question': 'Fotosentezde kullanılan temel hammaddeler (reaktanlar) nelerdir?', 'choices': {'A': 'Oksijen ve glikoz', 'B': 'Protein ve yağ', 'C': 'Karbondioksit ve su', 'D': 'Azot ve fosfor', 'E': 'Klorofil ve nişasta'}, 'correct_answer': 'C'}, {'question': 'Fotosentez sonucunda hangi maddeler üretilir?', 'choices': {'A': 'Karbondioksit ve su', 'B': 'ATP ve ADP', 'C': 'Glikoz (besin) ve oksijen', 'D': 'Protein ve nişasta', 'E': 'Yağ ve vitamin'}, 'correct_answer': 'C'}, {'question': 'Bitki hücrelerinde fotosentez olayı hangi organelde gerçekleşir?', 'choices': {'A': 'Mitokondri', 'B': 'Ribozom', 'C': 'Çekirdek', 'D': 'Kloroplast', 'E': 'Hücre zarı'}, 'correct_answer': 'D'}, {'question': 'Fotosentezde klorofilin temel görevi nedir?', 'choices': {'A': 'Karbondioksiti bağlamak', 'B': 'Suyu parçalamak', 'C': 'Işık enerjisini soğurmak', 'D': 'Glikozu depolamak', 'E': 'Oksijen üretmek'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışığa bağımlı reaksiyonlarında ne üretilir?', 'choices': {'A': 'Glikoz ve oksijen', 'B': 'Karbondioksit ve su', 'C': 'ATP ve NADPH', 'D': 'Protein ve yağ', 'E': 'Nişasta ve selüloz'}, 'correct_answer': 'C'}, {'question': 'Fotosentezin ışıktan bağımsız reaksiyonları (Calvin Döngüsü) nerede gerçekleşir ve temel amacı nedir?', 'choices': {'A': 'Tilakoit zarda gerçekleşir ve suyu parçalamaktır.', 'B': 'Kloroplastın stromasında gerçekleşir ve karbondioksitten besin sentezlemektir.', 'C': 'Mitokondride gerçekleşir ve ATP üretmektir.', 'D': 'Çekirdekte gerçekleşir ve DNA sentezlemektir.', 'E': 'Hücre zarında gerçekleşir ve madde taşımaktır.'}, 'correct_answer': 'B'}, {'question': 'Fotosentezde üretilen oksijenin canlılar için önemi nedir?', 'choices': {'A': 'Bitkinin büyümesini sağlar.', 'B': 'Toprağı zenginleştirir.', 'C': 'Su döngüsünü hızlandırır.', 'D': 'Karbondioksit emilimini artırır.', 'E': 'Solunum için kullanılır.'}, 'correct_answer': 'E'}, {'question': 'Aşağıdakilerden hangisi fotosentez hızını etkileyen çevresel faktörlerden biri değildir?', 'choices': {'A': 'Işık şiddeti', 'B': 'Karbondioksit miktarı', 'C': 'Sıcaklık', 'D': "Toprak pH'ı", 'E': 'Su miktarı'}, 'correct_answer': 'D'}, {'question': 'Aşağıdaki canlı gruplarından hangisi fotosentez yapma yeteneğine sahiptir?', 'choices': {'A': 'Mantarlar ve hayvanlar', 'B': 'Tüm bakteriler', 'C': 'Virüsler ve protozoalar', 'D': 'Sadece bitkiler', 'E': 'Bitkiler, algler ve bazı bakteriler'}, 'correct_answer': 'E'}]]
+[2025-08-01 00:28:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 274.6706 seconds]
+[2025-08-01 00:28:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:28:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 274.6877 seconds]
+[2025-08-01 00:28:23] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 286.1053 seconds]
+[2025-08-01 00:28:23] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:28:23] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 286.1256 seconds]
+[2025-08-01 00:28:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 286.1269 seconds]
+[2025-08-01 00:28:23] | INFO | [crud:read_by_email:262] | [User with email 'ali@gmail.com' found: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:28:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 286.1270 seconds]
+[2025-08-01 00:29:56] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 379.1128 seconds]
+[2025-08-01 00:29:56] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:29:56] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 379.1312 seconds]
+[2025-08-01 00:29:56] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 379.1325 seconds]
+[2025-08-01 00:29:56] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:29:56] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 379.1326 seconds]
+[2025-08-01 00:33:25] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 588.0692 seconds]
+[2025-08-01 00:33:25] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:33:25] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 588.0881 seconds]
+[2025-08-01 00:33:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 588.0916 seconds]
+[2025-08-01 00:33:25] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:33:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 588.0917 seconds]
+[2025-08-01 00:33:37] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 600.1253 seconds]
+[2025-08-01 00:33:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:33:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 600.1453 seconds]
+[2025-08-01 00:33:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 600.1471 seconds]
+[2025-08-01 00:33:37] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:33:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 600.1472 seconds]
+[2025-08-01 00:33:52] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 614.9962 seconds]
+[2025-08-01 00:33:52] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:33:52] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 615.0131 seconds]
+[2025-08-01 00:33:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 615.0145 seconds]
+[2025-08-01 00:33:52] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:33:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 615.0146 seconds]
+[2025-08-01 00:35:20] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 703.0505 seconds]
+[2025-08-01 00:35:20] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:35:20] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 703.0672 seconds]
+[2025-08-01 00:35:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 703.0686 seconds]
+[2025-08-01 00:35:20] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:35:20] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 703.0687 seconds]
+[2025-08-01 00:35:50] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 732.7700 seconds]
+[2025-08-01 00:35:50] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-08-01 00:35:50] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 732.7865 seconds]
+[2025-08-01 00:35:50] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 732.7884 seconds]
+[2025-08-01 00:35:50] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-08-01 00:35:50] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 732.7885 seconds]

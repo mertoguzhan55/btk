@@ -665,6 +665,16 @@
     outline: none;
 }
 
+.notes-underline {
+    width: 160px;
+    height: 4px;
+    margin: 10px auto 0 auto;
+    background: rgba(13, 110, 253, 0.4); /* Bootstrap primary rengi, transparan */
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(13, 110, 253, 0.4); /* Hafif bir ışık efekti */
+}
+
+
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -798,13 +808,14 @@
         <!-- diğer dersler -->
     </select>
 
-    <div class="container my-5">
+    <div class="container my-5 ">
         <div class="chat-container">
             <div class="text-center mb-4">
                 <div class="gif-class">
                     <div style="height: 65px; width: 200px;"></div>
                 </div>
                 <div> NOTLARIM</div>
+                <div class="notes-underline"></div>
             </div>
     
             <!-- Ders seçme ve mesaj alanlarını kaldırıyoruz ama dış yapılar kalıyor -->
