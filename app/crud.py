@@ -5,7 +5,7 @@ from app.connection import Connection
 from typing import Union
 from app.logger import Logger
 from sqlalchemy import select, desc
-from app.models.models import QuestionAnswer, Challenges
+from app.models.models import QuestionAnswer, Challenges, UserScore
 from app.handler import custom_db_crud_handler
 import asyncio
 
@@ -315,6 +315,21 @@ class CRUDOperations:
         )
         result = await self.connection.session.execute(query)
         return result.scalars().all()
+    
+    async def get_or_create_user_score(self, user_id: int):
+        score = await self.connection.session.get(UserScore, user_id)
+        if score is None:
+            score = UserScore(user_id=user_id, total_score=0)
+            self.connection.session.add(score)
+            await self.connection.session.commit()
+            await self.connection.session.refresh(score)
+        return score
+
+    async def update_user_score(self, user_id: int, points: int):
+        score = await self.get_or_create_user_score(user_id)
+        score.total_score += points
+        await self.connection.session.commit()
+        return score.total_score
 
 
 

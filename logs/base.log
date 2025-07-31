@@ -7449,3 +7449,542 @@ WHERE challenges.challenge_receiver_id = $1::INTEGER AND challenges.accepted_rec
 [2025-07-31 22:46:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 184.9715 seconds]
 [2025-07-31 22:46:48] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
 [2025-07-31 22:46:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 184.9717 seconds]
+[2025-07-31 23:03:21] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-31 23:03:21] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-31 23:03:21] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-31 23:03:21] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-31 23:03:21] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-31 23:03:21] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-31 23:03:21] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-31 23:03:39] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 18.6188 seconds]
+[2025-07-31 23:03:39] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:03:39] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 18.6943 seconds]
+[2025-07-31 23:03:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 18.6991 seconds]
+[2025-07-31 23:03:39] | INFO | [crud:read_by_email:264] | [No user found with email: mert@gmail.com]
+[2025-07-31 23:03:39] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 18.6992 seconds]
+[2025-07-31 23:03:40] | INFO | [crud:create:49] | [the data: <app.models.models.User object at 0x7f272ec9b3d0> is added into the database.]
+[2025-07-31 23:03:40] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 18.8700 seconds]
+[2025-07-31 23:03:44] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 23.7612 seconds]
+[2025-07-31 23:03:44] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:03:44] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 23.7826 seconds]
+[2025-07-31 23:03:44] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 23.7846 seconds]
+[2025-07-31 23:03:44] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:03:44] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 23.7847 seconds]
+[2025-07-31 23:04:25] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 63.9829 seconds]
+[2025-07-31 23:04:25] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:04:25] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 64.0018 seconds]
+[2025-07-31 23:04:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.0033 seconds]
+[2025-07-31 23:04:25] | INFO | [crud:read_by_email:264] | [No user found with email: ali@gmail.com]
+[2025-07-31 23:04:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.0034 seconds]
+[2025-07-31 23:04:25] | INFO | [crud:create:49] | [the data: <app.models.models.User object at 0x7f271460b690> is added into the database.]
+[2025-07-31 23:04:25] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.1593 seconds]
+[2025-07-31 23:04:27] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 66.2141 seconds]
+[2025-07-31 23:04:27] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:04:27] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 66.2364 seconds]
+[2025-07-31 23:04:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 66.2384 seconds]
+[2025-07-31 23:04:27] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-31 23:04:27] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 66.2385 seconds]
+[2025-07-31 23:04:30] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 69.6935 seconds]
+[2025-07-31 23:04:30] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:04:30] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 69.7150 seconds]
+[2025-07-31 23:04:30] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 69.7168 seconds]
+[2025-07-31 23:04:30] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-31 23:04:30] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 69.7170 seconds]
+[2025-07-31 23:04:30] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: []]
+[2025-07-31 23:04:30] | INFO | [fastapi:get_challenges:466] | [challenge list: []]
+[2025-07-31 23:04:32] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 71.2138 seconds]
+[2025-07-31 23:04:32] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:04:32] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 71.2343 seconds]
+[2025-07-31 23:05:08] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 107.2742 seconds]
+[2025-07-31 23:05:08] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:05:08] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 107.2963 seconds]
+[2025-07-31 23:05:09] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fizik \\u0131\\u015f\\u0131kta k\\u0131r\\u0131l\\u0131mlar", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--dae9b850-2442-4f06-b103-f1f5e7e3d0a4-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fizik ışıkta kırılımlar', 'user_id': '2'}, 'id': 'c99e2d24-24e2-43f7-a596-54226a4063a1', 'type': 'tool_call'}] usage_metadata={'input_tokens': 284, 'output_tokens': 100, 'total_tokens': 384, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 66}}]
+[2025-07-31 23:05:23] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Işığın bir ortamdan başka bir ortama geçerken doğrultu değiştirmesine ne ad verilir?",\n        "choices": {"A": "Yansıma", "B": "Kırılma", "C": "Saçılma", "D": "Soğurma", "E": "Polarizasyon"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Snell Yasası, ışığın kırılması olayında hangi nicelikler arasındaki ilişkiyi açıklar?",\n        "choices": {"A": "Gelen ışının şiddeti ile yansıyan ışının şiddeti", "B": "Gelen ışının açısı, kırılan ışının açısı ve ortamların kırılma indisleri", "C": "Işığın hızı ile dalga boyu", "D": "Ortamın sıcaklığı ile ışığın rengi", "E": "Işığın frekansı ile periyodu"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir ortamın kırılma indisi ne kadar büyükse, o ortamda ışığın hızı hakkında ne söylenebilir?",\n        "choices": {"A": "Işığın hızı artar.", "B": "Işığın hızı azalır.", "C": "Işığın hızı değişmez.", "D": "Işığın rengine bağlı olarak değişir.", "E": "Işığın frekansına bağlı olarak değişir."},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Tam iç yansıma olayının gerçekleşebilmesi için ışığın hangi koşullarda hareket etmesi gerekir?",\n        "choices": {"A": "Az yoğun ortamdan çok yoğun ortama geçerken", "B": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan küçükken", "C": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıya eşitken", "D": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan büyükken", "E": "Herhangi bir ortamdan boşluğa geçerken"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Kritik açı, ışığın kırılması olayında hangi özel durumu ifade eder?",\n        "choices": {"A": "Işığın normalden uzaklaşarak kırıldığı açı", "B": "Işığın normalle yaptığı açı", "C": "Kırılan ışının yüzeye paralel (90 derece) gittiği gelme açısı", "D": "Işığın tam yansıma yaptığı açı", "E": "Işığın hiç kırılmadığı açı"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Bir prizmadan geçen beyaz ışığın renklerine ayrılması olayı hangi fiziksel prensiple açıklanır?",\n        "choices": {"A": "Yansıma", "B": "Kırınım", "C": "Polarizasyon", "D": "Saçılma (Dispersiyon)", "E": "Girişim"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "Mercekler, ışığı odaklamak veya dağıtmak için hangi optik olayı kullanır?",\n        "choices": {"A": "Yansıma", "B": "Kırılma", "C": "Kırınım", "D": "Soğurma", "E": "Polarizasyon"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Su dolu bir bardağa konulan kalemin kırık görünmesinin temel nedeni nedir?",\n        "choices": {"A": "Işığın yansıması", "B": "Işığın kırılması", "C": "Işığın soğurulması", "D": "Işığın saçılması", "E": "Işığın girişim yapması"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fiber optik kabloların veri iletiminde yüksek verimlilikle çalışmasının temelinde yatan ışık olayı hangisidir?",\n        "choices": {"A": "Işığın kırınımı", "B": "Işığın polarizasyonu", "C": "Tam iç yansıma", "D": "Işığın saçılması", "E": "Işığın girişimi"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "Işık bir ortamdan başka bir ortama geçerken aşağıdaki niceliklerden hangisi değişmez?",\n        "choices": {"A": "Hız", "B": "Dalga boyu", "C": "Yön", "D": "Frekans", "E": "Şiddet"},\n        "correct_answer": "D"\n    }\n]\n```']
+[2025-07-31 23:05:23] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Işığın bir ortamdan başka bir ortama geçerken doğrultu değiştirmesine ne ad verilir?",
+        "choices": {"A": "Yansıma", "B": "Kırılma", "C": "Saçılma", "D": "Soğurma", "E": "Polarizasyon"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Snell Yasası, ışığın kırılması olayında hangi nicelikler arasındaki ilişkiyi açıklar?",
+        "choices": {"A": "Gelen ışının şiddeti ile yansıyan ışının şiddeti", "B": "Gelen ışının açısı, kırılan ışının açısı ve ortamların kırılma indisleri", "C": "Işığın hızı ile dalga boyu", "D": "Ortamın sıcaklığı ile ışığın rengi", "E": "Işığın frekansı ile periyodu"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir ortamın kırılma indisi ne kadar büyükse, o ortamda ışığın hızı hakkında ne söylenebilir?",
+        "choices": {"A": "Işığın hızı artar.", "B": "Işığın hızı azalır.", "C": "Işığın hızı değişmez.", "D": "Işığın rengine bağlı olarak değişir.", "E": "Işığın frekansına bağlı olarak değişir."},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Tam iç yansıma olayının gerçekleşebilmesi için ışığın hangi koşullarda hareket etmesi gerekir?",
+        "choices": {"A": "Az yoğun ortamdan çok yoğun ortama geçerken", "B": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan küçükken", "C": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıya eşitken", "D": "Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan büyükken", "E": "Herhangi bir ortamdan boşluğa geçerken"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Kritik açı, ışığın kırılması olayında hangi özel durumu ifade eder?",
+        "choices": {"A": "Işığın normalden uzaklaşarak kırıldığı açı", "B": "Işığın normalle yaptığı açı", "C": "Kırılan ışının yüzeye paralel (90 derece) gittiği gelme açısı", "D": "Işığın tam yansıma yaptığı açı", "E": "Işığın hiç kırılmadığı açı"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Bir prizmadan geçen beyaz ışığın renklerine ayrılması olayı hangi fiziksel prensiple açıklanır?",
+        "choices": {"A": "Yansıma", "B": "Kırınım", "C": "Polarizasyon", "D": "Saçılma (Dispersiyon)", "E": "Girişim"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "Mercekler, ışığı odaklamak veya dağıtmak için hangi optik olayı kullanır?",
+        "choices": {"A": "Yansıma", "B": "Kırılma", "C": "Kırınım", "D": "Soğurma", "E": "Polarizasyon"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Su dolu bir bardağa konulan kalemin kırık görünmesinin temel nedeni nedir?",
+        "choices": {"A": "Işığın yansıması", "B": "Işığın kırılması", "C": "Işığın soğurulması", "D": "Işığın saçılması", "E": "Işığın girişim yapması"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fiber optik kabloların veri iletiminde yüksek verimlilikle çalışmasının temelinde yatan ışık olayı hangisidir?",
+        "choices": {"A": "Işığın kırınımı", "B": "Işığın polarizasyonu", "C": "Tam iç yansıma", "D": "Işığın saçılması", "E": "Işığın girişimi"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "Işık bir ortamdan başka bir ortama geçerken aşağıdaki niceliklerden hangisi değişmez?",
+        "choices": {"A": "Hız", "B": "Dalga boyu", "C": "Yön", "D": "Frekans", "E": "Şiddet"},
+        "correct_answer": "D"
+    }
+]]
+[2025-07-31 23:05:23] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Işığın bir ortamdan başka bir ortama geçerken doğrultu değiştirmesine ne ad verilir?', 'choices': {'A': 'Yansıma', 'B': 'Kırılma', 'C': 'Saçılma', 'D': 'Soğurma', 'E': 'Polarizasyon'}, 'correct_answer': 'B'}, {'question': 'Snell Yasası, ışığın kırılması olayında hangi nicelikler arasındaki ilişkiyi açıklar?', 'choices': {'A': 'Gelen ışının şiddeti ile yansıyan ışının şiddeti', 'B': 'Gelen ışının açısı, kırılan ışının açısı ve ortamların kırılma indisleri', 'C': 'Işığın hızı ile dalga boyu', 'D': 'Ortamın sıcaklığı ile ışığın rengi', 'E': 'Işığın frekansı ile periyodu'}, 'correct_answer': 'B'}, {'question': 'Bir ortamın kırılma indisi ne kadar büyükse, o ortamda ışığın hızı hakkında ne söylenebilir?', 'choices': {'A': 'Işığın hızı artar.', 'B': 'Işığın hızı azalır.', 'C': 'Işığın hızı değişmez.', 'D': 'Işığın rengine bağlı olarak değişir.', 'E': 'Işığın frekansına bağlı olarak değişir.'}, 'correct_answer': 'B'}, {'question': 'Tam iç yansıma olayının gerçekleşebilmesi için ışığın hangi koşullarda hareket etmesi gerekir?', 'choices': {'A': 'Az yoğun ortamdan çok yoğun ortama geçerken', 'B': 'Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan küçükken', 'C': 'Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıya eşitken', 'D': 'Çok yoğun ortamdan az yoğun ortama geçerken ve gelme açısı kritik açıdan büyükken', 'E': 'Herhangi bir ortamdan boşluğa geçerken'}, 'correct_answer': 'D'}, {'question': 'Kritik açı, ışığın kırılması olayında hangi özel durumu ifade eder?', 'choices': {'A': 'Işığın normalden uzaklaşarak kırıldığı açı', 'B': 'Işığın normalle yaptığı açı', 'C': 'Kırılan ışının yüzeye paralel (90 derece) gittiği gelme açısı', 'D': 'Işığın tam yansıma yaptığı açı', 'E': 'Işığın hiç kırılmadığı açı'}, 'correct_answer': 'C'}, {'question': 'Bir prizmadan geçen beyaz ışığın renklerine ayrılması olayı hangi fiziksel prensiple açıklanır?', 'choices': {'A': 'Yansıma', 'B': 'Kırınım', 'C': 'Polarizasyon', 'D': 'Saçılma (Dispersiyon)', 'E': 'Girişim'}, 'correct_answer': 'D'}, {'question': 'Mercekler, ışığı odaklamak veya dağıtmak için hangi optik olayı kullanır?', 'choices': {'A': 'Yansıma', 'B': 'Kırılma', 'C': 'Kırınım', 'D': 'Soğurma', 'E': 'Polarizasyon'}, 'correct_answer': 'B'}, {'question': 'Su dolu bir bardağa konulan kalemin kırık görünmesinin temel nedeni nedir?', 'choices': {'A': 'Işığın yansıması', 'B': 'Işığın kırılması', 'C': 'Işığın soğurulması', 'D': 'Işığın saçılması', 'E': 'Işığın girişim yapması'}, 'correct_answer': 'B'}, {'question': 'Fiber optik kabloların veri iletiminde yüksek verimlilikle çalışmasının temelinde yatan ışık olayı hangisidir?', 'choices': {'A': 'Işığın kırınımı', 'B': 'Işığın polarizasyonu', 'C': 'Tam iç yansıma', 'D': 'Işığın saçılması', 'E': 'Işığın girişimi'}, 'correct_answer': 'C'}, {'question': 'Işık bir ortamdan başka bir ortama geçerken aşağıdaki niceliklerden hangisi değişmez?', 'choices': {'A': 'Hız', 'B': 'Dalga boyu', 'C': 'Yön', 'D': 'Frekans', 'E': 'Şiddet'}, 'correct_answer': 'D'}]]
+[2025-07-31 23:05:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 121.9641 seconds]
+[2025-07-31 23:05:23] | INFO | [crud:read_by_email:262] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:05:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 121.9643 seconds]
+[2025-07-31 23:05:23] | INFO | [crud:create_challenge:66] | [Challenge created: <app.models.models.Challenges object at 0x7f272ec6c2d0>]
+[2025-07-31 23:05:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 121.9816 seconds]
+[2025-07-31 23:05:36] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 135.5355 seconds]
+[2025-07-31 23:05:36] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:05:36] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 135.5557 seconds]
+[2025-07-31 23:05:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 135.5574 seconds]
+[2025-07-31 23:05:36] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f271465b590>]
+[2025-07-31 23:05:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 135.5575 seconds]
+[2025-07-31 23:05:36] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 1]
+[2025-07-31 23:05:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 135.5706 seconds]
+[2025-07-31 23:05:44] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 143.6407 seconds]
+[2025-07-31 23:05:44] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:05:44] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 143.6591 seconds]
+[2025-07-31 23:05:44] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 143.6604 seconds]
+[2025-07-31 23:05:44] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-31 23:05:44] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 143.6605 seconds]
+[2025-07-31 23:05:44] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: [<app.models.models.Challenges object at 0x7f2714619710>]]
+[2025-07-31 23:05:44] | INFO | [fastapi:get_challenges:466] | [challenge list: [{'id': 1, 'topic': 'Işığın bir ortamdan başka bir ortama geçerken doğrultu değiştirmesine ne ad verilir?'}]]
+[2025-07-31 23:05:50] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 148.8942 seconds]
+[2025-07-31 23:05:50] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:05:50] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 148.9166 seconds]
+[2025-07-31 23:05:50] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 148.9184 seconds]
+[2025-07-31 23:05:50] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f2714509210>]
+[2025-07-31 23:05:50] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 148.9185 seconds]
+[2025-07-31 23:05:50] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 1]
+[2025-07-31 23:05:50] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 148.9313 seconds]
+[2025-07-31 23:05:59] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 158.7788 seconds]
+[2025-07-31 23:06:00] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:06:00] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 158.7972 seconds]
+[2025-07-31 23:06:00] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 158.8001 seconds]
+[2025-07-31 23:06:00] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f27145216d0>]
+[2025-07-31 23:06:00] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 158.8002 seconds]
+[2025-07-31 23:06:00] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 1]
+[2025-07-31 23:06:00] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 158.8039 seconds]
+[2025-07-31 23:06:29] | DEBUG | [app:main:13] | [############ [NAME OF PROJECT] CONFIGURATIONS ############]
+[2025-07-31 23:06:29] | DEBUG | [app:main:14] | [{'project': {'name': 'Base', 'description': 'Base Repo', 'version': 'v1', 'company': 'Oguzhan', 'author': 'Mert OGUZHAN'}, 'logger': {'filepath': './logs/base.log', 'rotation': '50MB'}, 'connection': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'crud': {'database_type': 'postgresql', 'db_username': 'postgres', 'db_password': 'admin', 'db_host': 'localhost', 'db_port': '5432', 'db_name': 'workplace'}, 'fastapi': {'database_type': 'postgresql', 'host': '0.0.0.0', 'port': 8000, 'reload': 'true', 'log_level': 'info', 'chatbot_model_name': 'gemini-2.5-flash', 'temperature_for_chatbot': 0.2, 'retrieved_chunk_threshold_for_agent_quiz': 0.7}, 'LabelExtractor': {'model_name': 'gemini-2.5-flash', 'temperature': 0.2, 'max_retries': 2}, 'JsonHandler': {'directory': '/home/mert/projects/btk/app/data'}, 'RagPipeline': {'model_name': 'models/gemini-embedding-exp-03-07', 'vector_db_directory': 'vector_db'}}]
+[2025-07-31 23:06:29] | INFO | [video_transcriper:__post_init__:10] | [Video Transcipt post_init]
+[2025-07-31 23:06:29] | INFO | [rag_pipeline:__post_init__:32] | [Embedding model initializing...]
+[2025-07-31 23:06:29] | INFO | [fastapi:__post_init__:55] | [Fastapi init]
+[2025-07-31 23:06:29] | INFO | [chatbot:__post_init__:19] | [Initializing Chat LLM...]
+[2025-07-31 23:06:29] | INFO | [fastapi:run:78] | [Server Initialized!]
+[2025-07-31 23:06:35] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 6.8002 seconds]
+[2025-07-31 23:06:36] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:06:36] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 6.8189 seconds]
+[2025-07-31 23:06:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 6.8243 seconds]
+[2025-07-31 23:06:36] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:06:36] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 6.8244 seconds]
+[2025-07-31 23:06:57] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 28.0346 seconds]
+[2025-07-31 23:06:57] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:06:57] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 28.0530 seconds]
+[2025-07-31 23:06:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 28.0547 seconds]
+[2025-07-31 23:06:57] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'ali@gmail.com'}]
+[2025-07-31 23:06:57] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 28.0549 seconds]
+[2025-07-31 23:07:09] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 40.7883 seconds]
+[2025-07-31 23:07:10] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:07:10] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 40.8087 seconds]
+[2025-07-31 23:07:10] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "fizik \\u0131\\u015f\\u0131kta k\\u0131r\\u0131l\\u0131m", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--aa8a0d77-44e3-426d-9e41-4c6b642bd2dd-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'fizik ışıkta kırılım', 'user_id': '2'}, 'id': 'b13d120c-b2f7-4318-a181-9283a3ffefb8', 'type': 'tool_call'}] usage_metadata={'input_tokens': 282, 'output_tokens': 100, 'total_tokens': 382, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 68}}]
+[2025-07-31 23:07:23] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "Işık kırılımı nedir?",\n        "choices": {\n            "A": "Işığın bir yüzeyden geri yansıması olayıdır.",\n            "B": "Işığın bir ortamdan başka bir ortama geçerken hızının değişmesi sonucu yön değiştirmesidir.",\n            "C": "Işığın bir engele çarparak bükülmesi olayıdır.",\n            "D": "Işığın bir yüzey tarafından emilmesi olayıdır.",\n            "E": "Işığın farklı renklerine ayrılması olayıdır."\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Snell Yasası, ışık kırılımında hangi nicelikler arasındaki ilişkiyi açıklar?",\n        "choices": {\n            "A": "Işığın hızı ve dalga boyu.",\n            "B": "Gelen ışının açısı, kırılan ışının açısı ve ortamların kırıcılık indisleri.",\n            "C": "Işığın şiddeti ve frekansı.",\n            "D": "Ortamın sıcaklığı ve yoğunluğu.",\n            "E": "Yansıma açısı ve gelme açısı."\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir ortamın kırıcılık indisi (n) ne anlama gelir?",\n        "choices": {\n            "A": "Işığın o ortamda ne kadar yansıdığını gösterir.",\n            "B": "Işığın o ortamda ne kadar emildiğini gösterir.",\n            "C": "Işığın boşluktaki hızının, o ortamdaki hızına oranıdır.",\n            "D": "Ortamın ışığı ne kadar dağıttığını gösterir.",\n            "E": "Ortamın ışığı ne kadar geçirdiğini gösterir."\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Tam iç yansıma olayının gerçekleşebilmesi için hangi koşullar sağlanmalıdır?",\n        "choices": {\n            "A": "Işık, kırıcılık indisi az olan bir ortamdan kırıcılık indisi çok olan bir ortama geçmelidir.",\n            "B": "Gelen ışının açısı, kritik açıdan küçük olmalıdır.",\n            "C": "Işık, kırıcılık indisi çok olan bir ortamdan kırıcılık indisi az olan bir ortama geçmeli ve gelme açısı kritik açıdan büyük olmalıdır.",\n            "D": "Işık, her iki ortamda da aynı hızda hareket etmelidir.",\n            "E": "Işık, opak bir yüzeye çarpmalıdır."\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Kritik açı nedir?",\n        "choices": {\n            "A": "Işığın bir yüzeye dik geldiği açıdır.",\n            "B": "Kırılma açısının 0 derece olduğu gelme açısıdır.",\n            "C": "Kırılma açısının 90 derece olduğu gelme açısıdır.",\n            "D": "Yansıma açısının gelme açısına eşit olduğu açıdır.",\n            "E": "Işığın tam olarak emildiği açıdır."\n        },\n        "correct_answer": "C"\n    },\n    {\n        "question": "Beyaz ışığın bir prizmadan geçerken renklerine ayrılması olayına ne ad verilir?",\n        "choices": {\n            "A": "Yansıma",\n            "B": "Kırılma",\n            "C": "Kırınım",\n            "D": "Dağılım (Dispersiyon)",\n            "E": "Girişim"\n        },\n        "correct_answer": "D"\n    },\n    {\n        "question": "Gözlükler ve kontakt lensler, görme kusurlarını düzeltmek için ışığın hangi özelliğini kullanır?",\n        "choices": {\n            "A": "Yansıma",\n            "B": "Kırılma",\n            "C": "Kırınım",\n            "D": "Polarizasyon",\n            "E": "Soğurma"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Su dolu bir bardağın içindeki bir cismin, gerçekte olduğundan daha yukarıda görünmesinin sebebi nedir?",\n        "choices": {\n            "A": "Işığın yansıması",\n            "B": "Işığın kırılması",\n            "C": "Işığın soğurulması",\n            "D": "Işığın kırınımı",\n            "E": "Işığın polarizasyonu"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir ortamın kırıcılık indisi arttıkça, ışığın o ortamdaki hızı nasıl değişir?",\n        "choices": {\n            "A": "Artar",\n            "B": "Azalır",\n            "C": "Değişmez",\n            "D": "Önce artar sonra azalır",\n            "E": "Sıcaklığa bağlı olarak değişir"\n        },\n        "correct_answer": "B"\n    },\n    {\n        "question": "Fiber optik kablolar, veri iletiminde ışığın hangi prensibini temel alır?",\n        "choices": {\n            "A": "Işık kırınımı",\n            "B": "Işık yansıması",\n            "C": "Tam iç yansıma",\n            "D": "Işık polarizasyonu",\n            "E": "Işık emilimi"\n        },\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-31 23:07:23] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "Işık kırılımı nedir?",
+        "choices": {
+            "A": "Işığın bir yüzeyden geri yansıması olayıdır.",
+            "B": "Işığın bir ortamdan başka bir ortama geçerken hızının değişmesi sonucu yön değiştirmesidir.",
+            "C": "Işığın bir engele çarparak bükülmesi olayıdır.",
+            "D": "Işığın bir yüzey tarafından emilmesi olayıdır.",
+            "E": "Işığın farklı renklerine ayrılması olayıdır."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Snell Yasası, ışık kırılımında hangi nicelikler arasındaki ilişkiyi açıklar?",
+        "choices": {
+            "A": "Işığın hızı ve dalga boyu.",
+            "B": "Gelen ışının açısı, kırılan ışının açısı ve ortamların kırıcılık indisleri.",
+            "C": "Işığın şiddeti ve frekansı.",
+            "D": "Ortamın sıcaklığı ve yoğunluğu.",
+            "E": "Yansıma açısı ve gelme açısı."
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir ortamın kırıcılık indisi (n) ne anlama gelir?",
+        "choices": {
+            "A": "Işığın o ortamda ne kadar yansıdığını gösterir.",
+            "B": "Işığın o ortamda ne kadar emildiğini gösterir.",
+            "C": "Işığın boşluktaki hızının, o ortamdaki hızına oranıdır.",
+            "D": "Ortamın ışığı ne kadar dağıttığını gösterir.",
+            "E": "Ortamın ışığı ne kadar geçirdiğini gösterir."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Tam iç yansıma olayının gerçekleşebilmesi için hangi koşullar sağlanmalıdır?",
+        "choices": {
+            "A": "Işık, kırıcılık indisi az olan bir ortamdan kırıcılık indisi çok olan bir ortama geçmelidir.",
+            "B": "Gelen ışının açısı, kritik açıdan küçük olmalıdır.",
+            "C": "Işık, kırıcılık indisi çok olan bir ortamdan kırıcılık indisi az olan bir ortama geçmeli ve gelme açısı kritik açıdan büyük olmalıdır.",
+            "D": "Işık, her iki ortamda da aynı hızda hareket etmelidir.",
+            "E": "Işık, opak bir yüzeye çarpmalıdır."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Kritik açı nedir?",
+        "choices": {
+            "A": "Işığın bir yüzeye dik geldiği açıdır.",
+            "B": "Kırılma açısının 0 derece olduğu gelme açısıdır.",
+            "C": "Kırılma açısının 90 derece olduğu gelme açısıdır.",
+            "D": "Yansıma açısının gelme açısına eşit olduğu açıdır.",
+            "E": "Işığın tam olarak emildiği açıdır."
+        },
+        "correct_answer": "C"
+    },
+    {
+        "question": "Beyaz ışığın bir prizmadan geçerken renklerine ayrılması olayına ne ad verilir?",
+        "choices": {
+            "A": "Yansıma",
+            "B": "Kırılma",
+            "C": "Kırınım",
+            "D": "Dağılım (Dispersiyon)",
+            "E": "Girişim"
+        },
+        "correct_answer": "D"
+    },
+    {
+        "question": "Gözlükler ve kontakt lensler, görme kusurlarını düzeltmek için ışığın hangi özelliğini kullanır?",
+        "choices": {
+            "A": "Yansıma",
+            "B": "Kırılma",
+            "C": "Kırınım",
+            "D": "Polarizasyon",
+            "E": "Soğurma"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Su dolu bir bardağın içindeki bir cismin, gerçekte olduğundan daha yukarıda görünmesinin sebebi nedir?",
+        "choices": {
+            "A": "Işığın yansıması",
+            "B": "Işığın kırılması",
+            "C": "Işığın soğurulması",
+            "D": "Işığın kırınımı",
+            "E": "Işığın polarizasyonu"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir ortamın kırıcılık indisi arttıkça, ışığın o ortamdaki hızı nasıl değişir?",
+        "choices": {
+            "A": "Artar",
+            "B": "Azalır",
+            "C": "Değişmez",
+            "D": "Önce artar sonra azalır",
+            "E": "Sıcaklığa bağlı olarak değişir"
+        },
+        "correct_answer": "B"
+    },
+    {
+        "question": "Fiber optik kablolar, veri iletiminde ışığın hangi prensibini temel alır?",
+        "choices": {
+            "A": "Işık kırınımı",
+            "B": "Işık yansıması",
+            "C": "Tam iç yansıma",
+            "D": "Işık polarizasyonu",
+            "E": "Işık emilimi"
+        },
+        "correct_answer": "C"
+    }
+]]
+[2025-07-31 23:07:23] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': 'Işık kırılımı nedir?', 'choices': {'A': 'Işığın bir yüzeyden geri yansıması olayıdır.', 'B': 'Işığın bir ortamdan başka bir ortama geçerken hızının değişmesi sonucu yön değiştirmesidir.', 'C': 'Işığın bir engele çarparak bükülmesi olayıdır.', 'D': 'Işığın bir yüzey tarafından emilmesi olayıdır.', 'E': 'Işığın farklı renklerine ayrılması olayıdır.'}, 'correct_answer': 'B'}, {'question': 'Snell Yasası, ışık kırılımında hangi nicelikler arasındaki ilişkiyi açıklar?', 'choices': {'A': 'Işığın hızı ve dalga boyu.', 'B': 'Gelen ışının açısı, kırılan ışının açısı ve ortamların kırıcılık indisleri.', 'C': 'Işığın şiddeti ve frekansı.', 'D': 'Ortamın sıcaklığı ve yoğunluğu.', 'E': 'Yansıma açısı ve gelme açısı.'}, 'correct_answer': 'B'}, {'question': 'Bir ortamın kırıcılık indisi (n) ne anlama gelir?', 'choices': {'A': 'Işığın o ortamda ne kadar yansıdığını gösterir.', 'B': 'Işığın o ortamda ne kadar emildiğini gösterir.', 'C': 'Işığın boşluktaki hızının, o ortamdaki hızına oranıdır.', 'D': 'Ortamın ışığı ne kadar dağıttığını gösterir.', 'E': 'Ortamın ışığı ne kadar geçirdiğini gösterir.'}, 'correct_answer': 'C'}, {'question': 'Tam iç yansıma olayının gerçekleşebilmesi için hangi koşullar sağlanmalıdır?', 'choices': {'A': 'Işık, kırıcılık indisi az olan bir ortamdan kırıcılık indisi çok olan bir ortama geçmelidir.', 'B': 'Gelen ışının açısı, kritik açıdan küçük olmalıdır.', 'C': 'Işık, kırıcılık indisi çok olan bir ortamdan kırıcılık indisi az olan bir ortama geçmeli ve gelme açısı kritik açıdan büyük olmalıdır.', 'D': 'Işık, her iki ortamda da aynı hızda hareket etmelidir.', 'E': 'Işık, opak bir yüzeye çarpmalıdır.'}, 'correct_answer': 'C'}, {'question': 'Kritik açı nedir?', 'choices': {'A': 'Işığın bir yüzeye dik geldiği açıdır.', 'B': 'Kırılma açısının 0 derece olduğu gelme açısıdır.', 'C': 'Kırılma açısının 90 derece olduğu gelme açısıdır.', 'D': 'Yansıma açısının gelme açısına eşit olduğu açıdır.', 'E': 'Işığın tam olarak emildiği açıdır.'}, 'correct_answer': 'C'}, {'question': 'Beyaz ışığın bir prizmadan geçerken renklerine ayrılması olayına ne ad verilir?', 'choices': {'A': 'Yansıma', 'B': 'Kırılma', 'C': 'Kırınım', 'D': 'Dağılım (Dispersiyon)', 'E': 'Girişim'}, 'correct_answer': 'D'}, {'question': 'Gözlükler ve kontakt lensler, görme kusurlarını düzeltmek için ışığın hangi özelliğini kullanır?', 'choices': {'A': 'Yansıma', 'B': 'Kırılma', 'C': 'Kırınım', 'D': 'Polarizasyon', 'E': 'Soğurma'}, 'correct_answer': 'B'}, {'question': 'Su dolu bir bardağın içindeki bir cismin, gerçekte olduğundan daha yukarıda görünmesinin sebebi nedir?', 'choices': {'A': 'Işığın yansıması', 'B': 'Işığın kırılması', 'C': 'Işığın soğurulması', 'D': 'Işığın kırınımı', 'E': 'Işığın polarizasyonu'}, 'correct_answer': 'B'}, {'question': 'Bir ortamın kırıcılık indisi arttıkça, ışığın o ortamdaki hızı nasıl değişir?', 'choices': {'A': 'Artar', 'B': 'Azalır', 'C': 'Değişmez', 'D': 'Önce artar sonra azalır', 'E': 'Sıcaklığa bağlı olarak değişir'}, 'correct_answer': 'B'}, {'question': 'Fiber optik kablolar, veri iletiminde ışığın hangi prensibini temel alır?', 'choices': {'A': 'Işık kırınımı', 'B': 'Işık yansıması', 'C': 'Tam iç yansıma', 'D': 'Işık polarizasyonu', 'E': 'Işık emilimi'}, 'correct_answer': 'C'}]]
+[2025-07-31 23:07:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 53.8370 seconds]
+[2025-07-31 23:07:23] | INFO | [crud:read_by_email:262] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:07:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 53.8371 seconds]
+[2025-07-31 23:07:23] | INFO | [crud:create_challenge:66] | [Challenge created: <app.models.models.Challenges object at 0x7f7d18440ad0>]
+[2025-07-31 23:07:23] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 53.8530 seconds]
+[2025-07-31 23:07:33] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 64.7445 seconds]
+[2025-07-31 23:07:33] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:07:33] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 64.7629 seconds]
+[2025-07-31 23:07:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.7648 seconds]
+[2025-07-31 23:07:33] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d1848b150>]
+[2025-07-31 23:07:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.7649 seconds]
+[2025-07-31 23:07:33] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 2]
+[2025-07-31 23:07:33] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 64.7781 seconds]
+[2025-07-31 23:07:37] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 68.2357 seconds]
+[2025-07-31 23:07:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:07:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 68.2544 seconds]
+[2025-07-31 23:07:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 68.2560 seconds]
+[2025-07-31 23:07:37] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-31 23:07:37] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 68.2561 seconds]
+[2025-07-31 23:07:37] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: [<app.models.models.Challenges object at 0x7f7d184b8510>]]
+[2025-07-31 23:07:37] | INFO | [fastapi:get_challenges:466] | [challenge list: [{'id': 2, 'topic': 'Işık kırılımı nedir?'}]]
+[2025-07-31 23:07:38] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 69.4319 seconds]
+[2025-07-31 23:07:38] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:07:38] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 69.4566 seconds]
+[2025-07-31 23:07:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 69.4582 seconds]
+[2025-07-31 23:07:38] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d184cc510>]
+[2025-07-31 23:07:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 69.4583 seconds]
+[2025-07-31 23:07:38] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 2]
+[2025-07-31 23:07:38] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 69.4710 seconds]
+[2025-07-31 23:07:47] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 78.4479 seconds]
+[2025-07-31 23:07:47] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:07:47] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 78.4657 seconds]
+[2025-07-31 23:07:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 78.4675 seconds]
+[2025-07-31 23:07:47] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d182e8250>]
+[2025-07-31 23:07:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 78.4676 seconds]
+[2025-07-31 23:07:47] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 2]
+[2025-07-31 23:07:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 78.4807 seconds]
+[2025-07-31 23:08:15] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 105.8261 seconds]
+[2025-07-31 23:08:15] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:08:15] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 105.8443 seconds]
+[2025-07-31 23:08:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 105.8460 seconds]
+[2025-07-31 23:08:15] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-31 23:08:15] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 105.8461 seconds]
+[2025-07-31 23:08:15] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: []]
+[2025-07-31 23:08:15] | INFO | [fastapi:get_challenges:466] | [challenge list: []]
+[2025-07-31 23:08:16] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 107.7834 seconds]
+[2025-07-31 23:08:17] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:08:17] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 107.8029 seconds]
+[2025-07-31 23:08:17] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 107.8055 seconds]
+[2025-07-31 23:08:17] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:08:17] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 107.8056 seconds]
+[2025-07-31 23:08:55] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 146.6721 seconds]
+[2025-07-31 23:08:55] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:08:55] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 146.6917 seconds]
+[2025-07-31 23:08:56] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "matematik d\\u00f6rt i\\u015flem", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--b373a21b-ffa2-4133-b80f-5911b30ed416-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'matematik dört işlem', 'user_id': '2'}, 'id': 'f22cf906-6dbe-4bab-a455-f43d8748c537', 'type': 'tool_call'}] usage_metadata={'input_tokens': 279, 'output_tokens': 98, 'total_tokens': 377, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 68}}]
+[2025-07-31 23:09:05] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "25 + 17 işleminin sonucu kaçtır?",\n        "choices": {"A": "32", "B": "42", "C": "40", "D": "45", "E": "38"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "83 - 36 işleminin sonucu kaçtır?",\n        "choices": {"A": "57", "B": "43", "C": "47", "D": "53", "E": "49"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "15 x 6 işleminin sonucu kaçtır?",\n        "choices": {"A": "80", "B": "90", "C": "75", "D": "95", "E": "100"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "120 / 8 işleminin sonucu kaçtır?",\n        "choices": {"A": "12", "B": "10", "C": "15", "D": "18", "E": "20"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "50 + 25 - 18 işleminin sonucu kaçtır?",\n        "choices": {"A": "67", "B": "47", "C": "57", "D": "52", "E": "62"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "7 x 9 + 12 işleminin sonucu kaçtır?",\n        "choices": {"A": "70", "B": "75", "C": "81", "D": "65", "E": "72"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "96 / 4 - 10 işleminin sonucu kaçtır?",\n        "choices": {"A": "16", "B": "12", "C": "18", "D": "14", "E": "20"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "(18 + 6) / 3 işleminin sonucu kaçtır?",\n        "choices": {"A": "6", "B": "8", "C": "9", "D": "10", "E": "7"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "145 + 78 işleminin sonucu kaçtır?",\n        "choices": {"A": "213", "B": "233", "C": "223", "D": "220", "E": "218"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "300 - 125 işleminin sonucu kaçtır?",\n        "choices": {"A": "185", "B": "165", "C": "175", "D": "170", "E": "195"},\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-31 23:09:05] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "25 + 17 işleminin sonucu kaçtır?",
+        "choices": {"A": "32", "B": "42", "C": "40", "D": "45", "E": "38"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "83 - 36 işleminin sonucu kaçtır?",
+        "choices": {"A": "57", "B": "43", "C": "47", "D": "53", "E": "49"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "15 x 6 işleminin sonucu kaçtır?",
+        "choices": {"A": "80", "B": "90", "C": "75", "D": "95", "E": "100"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "120 / 8 işleminin sonucu kaçtır?",
+        "choices": {"A": "12", "B": "10", "C": "15", "D": "18", "E": "20"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "50 + 25 - 18 işleminin sonucu kaçtır?",
+        "choices": {"A": "67", "B": "47", "C": "57", "D": "52", "E": "62"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "7 x 9 + 12 işleminin sonucu kaçtır?",
+        "choices": {"A": "70", "B": "75", "C": "81", "D": "65", "E": "72"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "96 / 4 - 10 işleminin sonucu kaçtır?",
+        "choices": {"A": "16", "B": "12", "C": "18", "D": "14", "E": "20"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "(18 + 6) / 3 işleminin sonucu kaçtır?",
+        "choices": {"A": "6", "B": "8", "C": "9", "D": "10", "E": "7"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "145 + 78 işleminin sonucu kaçtır?",
+        "choices": {"A": "213", "B": "233", "C": "223", "D": "220", "E": "218"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "300 - 125 işleminin sonucu kaçtır?",
+        "choices": {"A": "185", "B": "165", "C": "175", "D": "170", "E": "195"},
+        "correct_answer": "C"
+    }
+]]
+[2025-07-31 23:09:05] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': '25 + 17 işleminin sonucu kaçtır?', 'choices': {'A': '32', 'B': '42', 'C': '40', 'D': '45', 'E': '38'}, 'correct_answer': 'B'}, {'question': '83 - 36 işleminin sonucu kaçtır?', 'choices': {'A': '57', 'B': '43', 'C': '47', 'D': '53', 'E': '49'}, 'correct_answer': 'C'}, {'question': '15 x 6 işleminin sonucu kaçtır?', 'choices': {'A': '80', 'B': '90', 'C': '75', 'D': '95', 'E': '100'}, 'correct_answer': 'B'}, {'question': '120 / 8 işleminin sonucu kaçtır?', 'choices': {'A': '12', 'B': '10', 'C': '15', 'D': '18', 'E': '20'}, 'correct_answer': 'C'}, {'question': '50 + 25 - 18 işleminin sonucu kaçtır?', 'choices': {'A': '67', 'B': '47', 'C': '57', 'D': '52', 'E': '62'}, 'correct_answer': 'C'}, {'question': '7 x 9 + 12 işleminin sonucu kaçtır?', 'choices': {'A': '70', 'B': '75', 'C': '81', 'D': '65', 'E': '72'}, 'correct_answer': 'B'}, {'question': '96 / 4 - 10 işleminin sonucu kaçtır?', 'choices': {'A': '16', 'B': '12', 'C': '18', 'D': '14', 'E': '20'}, 'correct_answer': 'D'}, {'question': '(18 + 6) / 3 işleminin sonucu kaçtır?', 'choices': {'A': '6', 'B': '8', 'C': '9', 'D': '10', 'E': '7'}, 'correct_answer': 'B'}, {'question': '145 + 78 işleminin sonucu kaçtır?', 'choices': {'A': '213', 'B': '233', 'C': '223', 'D': '220', 'E': '218'}, 'correct_answer': 'C'}, {'question': '300 - 125 işleminin sonucu kaçtır?', 'choices': {'A': '185', 'B': '165', 'C': '175', 'D': '170', 'E': '195'}, 'correct_answer': 'C'}]]
+[2025-07-31 23:09:05] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 156.5696 seconds]
+[2025-07-31 23:09:05] | INFO | [crud:read_by_email:262] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:09:05] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 156.5698 seconds]
+[2025-07-31 23:09:05] | INFO | [crud:create_challenge:66] | [Challenge created: <app.models.models.Challenges object at 0x7f7d184221d0>]
+[2025-07-31 23:09:05] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 156.5852 seconds]
+[2025-07-31 23:09:48] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 199.6991 seconds]
+[2025-07-31 23:09:48] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:09:48] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 199.7198 seconds]
+[2025-07-31 23:09:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 199.7212 seconds]
+[2025-07-31 23:09:48] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d18312590>]
+[2025-07-31 23:09:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 199.7213 seconds]
+[2025-07-31 23:09:48] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 3]
+[2025-07-31 23:09:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 199.7646 seconds]
+[2025-07-31 23:09:52] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 203.2477 seconds]
+[2025-07-31 23:09:52] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:09:52] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 203.2681 seconds]
+[2025-07-31 23:09:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 203.2702 seconds]
+[2025-07-31 23:09:52] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-31 23:09:52] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 203.2704 seconds]
+[2025-07-31 23:09:52] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: [<app.models.models.Challenges object at 0x7f7d1831eb90>]]
+[2025-07-31 23:09:52] | INFO | [fastapi:get_challenges:466] | [challenge list: [{'id': 3, 'topic': '25 + 17 işleminin sonucu kaçtır?'}]]
+[2025-07-31 23:09:53] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 204.5590 seconds]
+[2025-07-31 23:09:53] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:09:53] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 204.5787 seconds]
+[2025-07-31 23:09:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 204.5802 seconds]
+[2025-07-31 23:09:53] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d18336450>]
+[2025-07-31 23:09:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 204.5803 seconds]
+[2025-07-31 23:09:53] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 3]
+[2025-07-31 23:09:53] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 204.5928 seconds]
+[2025-07-31 23:10:07] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 218.7434 seconds]
+[2025-07-31 23:10:07] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:10:07] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 218.7618 seconds]
+[2025-07-31 23:10:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 218.7632 seconds]
+[2025-07-31 23:10:07] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d18346390>]
+[2025-07-31 23:10:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 218.7633 seconds]
+[2025-07-31 23:10:07] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 3]
+[2025-07-31 23:10:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 218.7759 seconds]
+[2025-07-31 23:10:37] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 248.6092 seconds]
+[2025-07-31 23:10:37] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:10:37] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 248.6272 seconds]
+[2025-07-31 23:10:38] | INFO | [challenge_generator:run:149] | [ai agent response: content='' additional_kwargs={'function_call': {'name': 'quiz_generate', 'arguments': '{"student_quiz_keywords": "matematik d\\u00f6rt i\\u015flem", "user_id": "2"}'}} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'model_name': 'gemini-2.5-flash', 'safety_ratings': []} id='run--0625f374-3448-4a4f-8971-faf0509a225b-0' tool_calls=[{'name': 'quiz_generate', 'args': {'student_quiz_keywords': 'matematik dört işlem', 'user_id': '2'}, 'id': '217758fc-8f6a-421e-a460-77308e240f77', 'type': 'tool_call'}] usage_metadata={'input_tokens': 279, 'output_tokens': 100, 'total_tokens': 379, 'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 70}}]
+[2025-07-31 23:10:48] | INFO | [challenge_generator:quiz_generate:61] | [Model output (raw): '```json\n[\n    {\n        "question": "15 + 23 işleminin sonucu kaçtır?",\n        "choices": {"A": "35", "B": "38", "C": "37", "D": "39", "E": "48"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "56 - 19 işleminin sonucu kaçtır?",\n        "choices": {"A": "36", "B": "35", "C": "37", "D": "38", "E": "47"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "12 x 7 işleminin sonucu kaçtır?",\n        "choices": {"A": "72", "B": "84", "C": "74", "D": "82", "E": "94"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "96 / 8 işleminin sonucu kaçtır?",\n        "choices": {"A": "10", "B": "11", "C": "12", "D": "13", "E": "14"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "45 + 28 - 17 işleminin sonucu kaçtır?",\n        "choices": {"A": "55", "B": "57", "C": "54", "D": "56", "E": "60"},\n        "correct_answer": "D"\n    },\n    {\n        "question": "6 x 9 + 15 işleminin sonucu kaçtır?",\n        "choices": {"A": "59", "B": "64", "C": "69", "D": "74", "E": "81"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "72 / 9 - 5 işleminin sonucu kaçtır?",\n        "choices": {"A": "2", "B": "3", "C": "4", "D": "5", "E": "6"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "(18 + 6) / 3 işleminin sonucu kaçtır?",\n        "choices": {"A": "6", "B": "7", "C": "8", "D": "9", "E": "10"},\n        "correct_answer": "C"\n    },\n    {\n        "question": "50 - (4 x 8) + 12 işleminin sonucu kaçtır?",\n        "choices": {"A": "28", "B": "30", "C": "32", "D": "34", "E": "36"},\n        "correct_answer": "B"\n    },\n    {\n        "question": "Bir sepette 25 elma vardı. 12 tanesi yendi ve 8 yeni elma eklendi. Sepette kaç elma kaldı?",\n        "choices": {"A": "19", "B": "20", "C": "21", "D": "22", "E": "23"},\n        "correct_answer": "C"\n    }\n]\n```']
+[2025-07-31 23:10:48] | INFO | [challenge_generator:quiz_generate:65] | [Cleaned content: [
+    {
+        "question": "15 + 23 işleminin sonucu kaçtır?",
+        "choices": {"A": "35", "B": "38", "C": "37", "D": "39", "E": "48"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "56 - 19 işleminin sonucu kaçtır?",
+        "choices": {"A": "36", "B": "35", "C": "37", "D": "38", "E": "47"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "12 x 7 işleminin sonucu kaçtır?",
+        "choices": {"A": "72", "B": "84", "C": "74", "D": "82", "E": "94"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "96 / 8 işleminin sonucu kaçtır?",
+        "choices": {"A": "10", "B": "11", "C": "12", "D": "13", "E": "14"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "45 + 28 - 17 işleminin sonucu kaçtır?",
+        "choices": {"A": "55", "B": "57", "C": "54", "D": "56", "E": "60"},
+        "correct_answer": "D"
+    },
+    {
+        "question": "6 x 9 + 15 işleminin sonucu kaçtır?",
+        "choices": {"A": "59", "B": "64", "C": "69", "D": "74", "E": "81"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "72 / 9 - 5 işleminin sonucu kaçtır?",
+        "choices": {"A": "2", "B": "3", "C": "4", "D": "5", "E": "6"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "(18 + 6) / 3 işleminin sonucu kaçtır?",
+        "choices": {"A": "6", "B": "7", "C": "8", "D": "9", "E": "10"},
+        "correct_answer": "C"
+    },
+    {
+        "question": "50 - (4 x 8) + 12 işleminin sonucu kaçtır?",
+        "choices": {"A": "28", "B": "30", "C": "32", "D": "34", "E": "36"},
+        "correct_answer": "B"
+    },
+    {
+        "question": "Bir sepette 25 elma vardı. 12 tanesi yendi ve 8 yeni elma eklendi. Sepette kaç elma kaldı?",
+        "choices": {"A": "19", "B": "20", "C": "21", "D": "22", "E": "23"},
+        "correct_answer": "C"
+    }
+]]
+[2025-07-31 23:10:48] | INFO | [challenge_generator:quiz_generate:67] | [Cleaned content questions: [{'question': '15 + 23 işleminin sonucu kaçtır?', 'choices': {'A': '35', 'B': '38', 'C': '37', 'D': '39', 'E': '48'}, 'correct_answer': 'B'}, {'question': '56 - 19 işleminin sonucu kaçtır?', 'choices': {'A': '36', 'B': '35', 'C': '37', 'D': '38', 'E': '47'}, 'correct_answer': 'C'}, {'question': '12 x 7 işleminin sonucu kaçtır?', 'choices': {'A': '72', 'B': '84', 'C': '74', 'D': '82', 'E': '94'}, 'correct_answer': 'B'}, {'question': '96 / 8 işleminin sonucu kaçtır?', 'choices': {'A': '10', 'B': '11', 'C': '12', 'D': '13', 'E': '14'}, 'correct_answer': 'C'}, {'question': '45 + 28 - 17 işleminin sonucu kaçtır?', 'choices': {'A': '55', 'B': '57', 'C': '54', 'D': '56', 'E': '60'}, 'correct_answer': 'D'}, {'question': '6 x 9 + 15 işleminin sonucu kaçtır?', 'choices': {'A': '59', 'B': '64', 'C': '69', 'D': '74', 'E': '81'}, 'correct_answer': 'C'}, {'question': '72 / 9 - 5 işleminin sonucu kaçtır?', 'choices': {'A': '2', 'B': '3', 'C': '4', 'D': '5', 'E': '6'}, 'correct_answer': 'B'}, {'question': '(18 + 6) / 3 işleminin sonucu kaçtır?', 'choices': {'A': '6', 'B': '7', 'C': '8', 'D': '9', 'E': '10'}, 'correct_answer': 'C'}, {'question': '50 - (4 x 8) + 12 işleminin sonucu kaçtır?', 'choices': {'A': '28', 'B': '30', 'C': '32', 'D': '34', 'E': '36'}, 'correct_answer': 'B'}, {'question': 'Bir sepette 25 elma vardı. 12 tanesi yendi ve 8 yeni elma eklendi. Sepette kaç elma kaldı?', 'choices': {'A': '19', 'B': '20', 'C': '21', 'D': '22', 'E': '23'}, 'correct_answer': 'C'}]]
+[2025-07-31 23:10:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 259.1112 seconds]
+[2025-07-31 23:10:48] | INFO | [crud:read_by_email:262] | [User with email 'mert@gmail.com' found: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:10:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 259.1478 seconds]
+[2025-07-31 23:10:48] | INFO | [crud:create_challenge:66] | [Challenge created: <app.models.models.Challenges object at 0x7f7d1834da10>]
+[2025-07-31 23:10:48] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 259.1537 seconds]
+[2025-07-31 23:12:07] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 338.2900 seconds]
+[2025-07-31 23:12:07] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:12:07] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 338.3119 seconds]
+[2025-07-31 23:12:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 338.3157 seconds]
+[2025-07-31 23:12:07] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d18368910>]
+[2025-07-31 23:12:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 338.3158 seconds]
+[2025-07-31 23:12:07] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 4]
+[2025-07-31 23:12:07] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 338.3591 seconds]
+[2025-07-31 23:12:11] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 341.9667 seconds]
+[2025-07-31 23:12:11] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:12:11] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 341.9847 seconds]
+[2025-07-31 23:12:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 341.9864 seconds]
+[2025-07-31 23:12:11] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 1, 'accepted_receiver': False}. Found: 1 records.]
+[2025-07-31 23:12:11] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 341.9866 seconds]
+[2025-07-31 23:12:11] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: [<app.models.models.Challenges object at 0x7f7d18335510>]]
+[2025-07-31 23:12:11] | INFO | [fastapi:get_challenges:466] | [challenge list: [{'id': 4, 'topic': '15 + 23 işleminin sonucu kaçtır?'}]]
+[2025-07-31 23:12:12] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 343.3386 seconds]
+[2025-07-31 23:12:12] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:12:12] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 343.3549 seconds]
+[2025-07-31 23:12:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 343.3563 seconds]
+[2025-07-31 23:12:12] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d18320c90>]
+[2025-07-31 23:12:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 343.3564 seconds]
+[2025-07-31 23:12:12] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 4]
+[2025-07-31 23:12:12] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 343.3691 seconds]
+[2025-07-31 23:12:47] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 378.7541 seconds]
+[2025-07-31 23:12:47] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:12:47] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 378.7731 seconds]
+[2025-07-31 23:12:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 378.7745 seconds]
+[2025-07-31 23:12:47] | INFO | [crud:read_challenge_by_id:119] | [Challenge found: <app.models.models.Challenges object at 0x7f7d1841bfd0>]
+[2025-07-31 23:12:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 378.7746 seconds]
+[2025-07-31 23:12:47] | INFO | [crud:update_challenge:83] | [Challenge updated successfully: ID 4]
+[2025-07-31 23:12:47] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 378.7871 seconds]
+[2025-07-31 23:13:06] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 397.2670 seconds]
+[2025-07-31 23:13:06] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:13:06] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 397.2860 seconds]
+[2025-07-31 23:13:06] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 397.2878 seconds]
+[2025-07-31 23:13:06] | INFO | [crud:read_challenges:302] | [Challenges read with filters: {'challenge_receiver_id': 2, 'accepted_receiver': False}. Found: 0 records.]
+[2025-07-31 23:13:06] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 397.2880 seconds]
+[2025-07-31 23:13:06] | INFO | [fastapi:get_challenges:445] | [gelen challengelar: []]
+[2025-07-31 23:13:06] | INFO | [fastapi:get_challenges:466] | [challenge list: []]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [create_engine method is done successfully and it took : 399.3436 seconds]
+[2025-07-31 23:13:08] | INFO | [handler:inner:38] | [Connection has been established.]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [create_session method is done successfully and it took : 399.3659 seconds]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3698 seconds]
+[2025-07-31 23:13:08] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3700 seconds]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3705 seconds]
+[2025-07-31 23:13:08] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3706 seconds]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3711 seconds]
+[2025-07-31 23:13:08] | INFO | [crud:read_by_id:101] | [Data read successfully: {'name': 'mert@gmail.com'}]
+[2025-07-31 23:13:08] | INFO | [handler:inner:25] | [close_session method is done successfully and it took : 399.3711 seconds]

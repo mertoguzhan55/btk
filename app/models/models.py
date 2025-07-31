@@ -18,6 +18,8 @@ class User(Base):
     created_at = Column(DateTime, default=func.now())
     questions = relationship("QuestionAnswer", back_populates="user", cascade="all, delete")
 
+    score = relationship("UserScore", uselist=False, back_populates="user")
+
     def to_dict(self):
         return {"name": self.email}
 
@@ -44,3 +46,12 @@ class Challenges(Base):
     quiz_json = Column(JSON)
     sender_answer_for_challenge = Column(String, default=None)
     receiver_answer_for_challenge = Column(String, default=None)
+
+
+class UserScore(Base):
+    __tablename__ = "user_scores"
+
+    user_id = Column(Integer, ForeignKey("users.id"), primary_key=True)
+    total_score = Column(Integer, default=0)
+
+    user = relationship("User", back_populates="score")

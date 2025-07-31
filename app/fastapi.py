@@ -553,6 +553,25 @@ class FastAPIServer:
 
             await self.crud.update_challenge(challenge)
 
+            # Her iki taraf cevapladıysa puan hesapla ve kaydet
+            if challenge.sender_answer_for_challenge and challenge.receiver_answer_for_challenge:
+                sender_answers = json.loads(challenge.sender_answer_for_challenge)
+                receiver_answers = json.loads(challenge.receiver_answer_for_challenge)
+                quiz = challenge.quiz_json if isinstance(challenge.quiz_json, dict) else json.loads(challenge.quiz_json)
+                corrects = [q["correct_answer"] for q in quiz["questions"]]
+
+                sender_score = sum([1 for s, c in zip(sender_answers, corrects) if s == c])
+                receiver_score = sum([1 for r, c in zip(receiver_answers, corrects) if r == c])
+
+                # Puanlama
+                if sender_score > receiver_score:
+                    await self.crud.update_user_score(challenge.challenge_sender_id, 10)
+                elif sender_score < receiver_score:
+                    await self.crud.update_user_score(challenge.challenge_receiver_id, 10)
+                else:
+                    await self.crud.update_user_score(challenge.challenge_sender_id, 1)
+                    await self.crud.update_user_score(challenge.challenge_receiver_id, 1)
+
             return JSONResponse(content={"message": f"{role} cevabı başarıyla kaydedildi."})
 
 
