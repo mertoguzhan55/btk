@@ -48,6 +48,42 @@ class CRUDOperations:
         await self.connection.session.commit()
         self.logger.info(f"the data: {obj} is added into the database.")
 
+    
+    @custom_db_crud_handler
+    async def create_challenge(self, challenge: Challenges) -> Challenges:
+        """
+        Creates a new Challenge entry in the database and returns the object with ID.
+
+        Args:
+            challenge (Challenges): The challenge instance to add.
+
+        Returns:
+            Challenges: The created challenge with ID populated.
+        """
+        self.connection.session.add(challenge)
+        await self.connection.session.commit()
+        await self.connection.session.refresh(challenge)  # Challenge nesnesine ID'yi yükler
+        self.logger.info(f"Challenge created: {challenge}")
+        return challenge
+    
+
+    @custom_db_crud_handler
+    async def update_challenge(self, challenge: Challenges) -> bool:
+        """
+        Updates a Challenge entry in the database.
+
+        Args:
+            challenge (Challenges): The challenge object with updated fields.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        await self.connection.session.merge(challenge)  # Merge güncel halini DB’ye yazar
+        await self.connection.session.commit()
+        self.logger.info(f"Challenge updated successfully: ID {challenge.id}")
+        return True
+
+
     @custom_db_crud_handler
     async def read_by_id(self, model: any, obj_id: int) -> Union[bool, dict]:
         """

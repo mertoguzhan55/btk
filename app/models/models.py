@@ -42,3 +42,5 @@ class Challenges(Base):
     accepted_sender = Column(Boolean, default=True)
     accepted_receiver = Column(Boolean, default=False)
     quiz_json = Column(JSON)
+    sender_answer_for_challenge = Column(String, default=None)
+    receiver_answer_for_challenge = Column(String, default=None)

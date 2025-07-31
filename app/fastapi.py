@@ -392,7 +392,6 @@ class FastAPIServer:
         # Kullanıcıya challenge mesajı gönder
         @self.app.post("/send_challenge")
         async def send_challenge(request: Request):
-
             await self.crud.initialize()
 
             payload = verify_token_from_cookie(request)
@@ -402,18 +401,32 @@ class FastAPIServer:
             challenge_receiver_user_email = data.get("email")
             challenge_topic = data.get("topic")
 
+            # Quiz json oluştur
             challenge_quiz_json = self.challenge_generator.run(challenge_topic, challenge_sender_id)
-            
-            challenge_receiver_user_id = await self.crud.read_by_email(User, challenge_receiver_user_email)
 
-            if not challenge_receiver_user_id:
+            # Kullanıcı kontrolü
+            challenge_receiver_user = await self.crud.read_by_email(User, challenge_receiver_user_email)
+            if not challenge_receiver_user:
                 return JSONResponse(status_code=404, content={"message": "Bu e-posta adresine sahip kullanıcı bulunamadı."})
 
-            challenge = Challenges(challenge_sender_id = challenge_sender_id, challenge_receiver_id = challenge_receiver_user_id.id, quiz_json = challenge_quiz_json)
+            # Challenge objesi oluştur
+            challenge = Challenges(
+                challenge_sender_id=challenge_sender_id,
+                challenge_receiver_id=challenge_receiver_user.id,
+                quiz_json=challenge_quiz_json,
+                sender_answer_for_challenge=None,
+                receiver_answer_for_challenge=None,
+                accepted_receiver=False
+            )
 
-            await self.crud.create(challenge)
+            # DB'ye yaz ve ID’yi al
+            created_challenge = await self.crud.create_challenge(challenge)
 
-            return JSONResponse(content={"message": "Challenge isteği gönderildi."})
+            return JSONResponse(content={
+                "message": "Challenge oluşturuldu.",
+                "challenge_id": created_challenge.id,
+                "quiz": challenge_quiz_json
+            })
         
 
 
@@ -429,17 +442,28 @@ class FastAPIServer:
             }
             incoming_challenges = await self.crud.read_challenges(filters=filters)
 
+            self.logger.info(f"gelen challengelar: {incoming_challenges}")
+
             challenges_list = []
             for c in incoming_challenges:
                 try:
-                    question = c.quiz_json.get("questions", [])[0].get("question", "Bilinmeyen Konu")
-                except Exception:
+                    # Eğer quiz_json string olarak kaydedildiyse, dict'e çevir:
+                    quiz = c.quiz_json
+                    if isinstance(quiz, str):
+                        quiz = json.loads(quiz)
+
+                    question = quiz.get("questions", [])[0].get("question", "Bilinmeyen Konu")
+
+                except Exception as e:
+                    self.logger.error(f"Challenge sorusu parse edilemedi: {e}")
                     question = "Bilinmeyen Konu"
 
                 challenges_list.append({
                     "id": c.id,
                     "topic": question
                 })
+
+            self.logger.info(f"challenge list: {challenges_list}")
 
             return JSONResponse(content={"challenges": challenges_list})
         
@@ -453,15 +477,26 @@ class FastAPIServer:
             data = await request.json()
             challenge_id = int(data.get("id"))
 
-            success = await self.crud.mark_challenge_as_accepted(challenge_id, user_id)
+            challenge = await self.crud.read_challenge_by_id(challenge_id)
 
-            if not success:
-                return JSONResponse(status_code=403, content={"message": "Bu challenge size ait değil veya bulunamadı."})
+            if not challenge or challenge.challenge_receiver_id != user_id:
+                return JSONResponse(status_code=403, content={"message": "Bu challenge size ait değil."})
+
+            challenge.accepted_receiver = True
+            await self.crud.update_challenge(challenge)
+
+            # Quiz sorularını geri dön
+            quiz_json = challenge.quiz_json
+            if isinstance(quiz_json, str):
+                quiz_json = json.loads(quiz_json)
 
             return JSONResponse(content={
                 "message": "Challenge kabul edildi!",
-                "quiz_match_id": challenge_id
+                "quiz_match_id": challenge_id,
+                "quiz": quiz_json,
+                "role": "receiver"
             })
+
         
 
 
@@ -484,6 +519,41 @@ class FastAPIServer:
             return JSONResponse(content={"message": "Challenge reddedildi."})
 
 
+
+        @self.app.post("/submit_challenge_answers")
+        async def submit_challenge_answers(request: Request):
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            data = await request.json()
+            challenge_id = data.get("challenge_id")
+            answers = data.get("answers")
+            role = data.get("role")  # "sender" veya "receiver"
+
+            if not challenge_id or not answers or role not in ["sender", "receiver"]:
+                raise HTTPException(status_code=400, detail="Eksik ya da hatalı veri.")
+
+            challenge = await self.crud.read_challenge_by_id(challenge_id)
+            if not challenge:
+                raise HTTPException(status_code=404, detail="Challenge bulunamadı.")
+
+            # Doğrulama: role ile user_id eşleşiyor mu
+            if role == "sender":
+                print(role)
+                if challenge.challenge_sender_id != user_id:
+                    raise HTTPException(status_code=403, detail="Gönderici siz değilsiniz.")
+                challenge.sender_answer_for_challenge = json.dumps(answers)
+
+            elif role == "receiver":
+                print(role)
+                if challenge.challenge_receiver_id != user_id:
+                    raise HTTPException(status_code=403, detail="Alıcı siz değilsiniz.")
+                challenge.receiver_answer_for_challenge = json.dumps(answers)
+
+            await self.crud.update_challenge(challenge)
+
+            return JSONResponse(content={"message": f"{role} cevabı başarıyla kaydedildi."})
 
 
 
