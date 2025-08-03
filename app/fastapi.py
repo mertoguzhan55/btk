@@ -145,41 +145,44 @@ class FastAPIServer:
                     "subject_name": subject_name,
                     "success": success
                 })
-            return self.templates.TemplateResponse("main_page.html", {"request": request})
+            return self.templates.TemplateResponse("register.html", {"request": request})
             
             
         @self.app.post("/add_youtube_transcript")
         async def add_youtube_transcript(request: Request, subject_id: str = Form(...), youtube_id: str = Form(...), language_code: str = Form(...)):
 
-            video_id = regex_for_id_extracting_from_the_link(youtube_id)
+            token = request.cookies.get("access_token")
+            if token:
+                video_id = regex_for_id_extracting_from_the_link(youtube_id)
 
-            text = self.transcripter.transcript(video_id, language_code)
+                text = self.transcripter.transcript(video_id, language_code)
 
-            self.logger.info(f"video transcript result:  {text}")
+                self.logger.info(f"video transcript result:  {text}")
 
-            label = self.label_extractor.extract(subject_id, text)
+                label = self.label_extractor.extract(subject_id, text)
 
-            try:
-                payload = verify_token_from_cookie(request)
-                user_id = int(payload["sub"])
+                try:
+                    payload = verify_token_from_cookie(request)
+                    user_id = int(payload["sub"])
 
-                saved_note = self.json_handler.add_note_to_subject(
-                    subject_id=subject_id,
-                    user_id=user_id,
-                    label=label,
-                    note_text=text
-                )
+                    saved_note = self.json_handler.add_note_to_subject(
+                        subject_id=subject_id,
+                        user_id=user_id,
+                        label=label,
+                        note_text=text
+                    )
 
-                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
+                    note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
 
-                self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
+                    self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
 
-                params = urlencode({"subject": subject_id, "success": "1"})
-                return RedirectResponse(url=f"/subject?{params}", status_code=303)
+                    params = urlencode({"subject": subject_id, "success": "1"})
+                    return RedirectResponse(url=f"/subject?{params}", status_code=303)
 
-            except Exception as e:
-                self.logger.error(f"Error processing note for subject_id '{subject_id}': {e}")
-                raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+                except Exception as e:
+                    self.logger.error(f"Error processing note for subject_id '{subject_id}': {e}")
+                    raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+            return self.templates.TemplateResponse("register.html", {"request": request})
             
 
 
@@ -188,7 +191,7 @@ class FastAPIServer:
             token = request.cookies.get("access_token")
 
             if not token:
-                raise HTTPException(status_code=401, detail="Unauthorized: No access token provided.")
+                return self.templates.TemplateResponse("register.html", {"request": request})
     
             try:
                 payload = verify_token_from_cookie(request)
@@ -219,7 +222,12 @@ class FastAPIServer:
             
 
         @self.app.post("/upload_pdf")
-        async def upload_pdf(subject_id: str = Form(...), pdf_file: UploadFile = File(...)):
+        async def upload_pdf(request: Request, subject_id: str = Form(...), pdf_file: UploadFile = File(...)):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             content = await pdf_file.read()
             # text = extract_text_from_pdf(content)  # OCR veya pdfplumber ile
             text = ""
@@ -231,6 +239,9 @@ class FastAPIServer:
         async def ask_question(request: Request):
 
             token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
 
             if token:
                 payload = verify_token_from_cookie(request)
@@ -273,6 +284,11 @@ class FastAPIServer:
         
         @self.app.get("/profile")
         async def get_profile_html(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
             try:
                 payload = verify_token_from_cookie(request)
@@ -297,6 +313,11 @@ class FastAPIServer:
 
         @self.app.post("/generate_quiz")
         async def generate_quiz(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
             
@@ -308,6 +329,11 @@ class FastAPIServer:
 
         @self.app.post("/evaluate_answer")
         async def evaluate_answer(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             data = await request.json()
             question = data.get("question")
             answer = data.get("answer")
@@ -327,6 +353,7 @@ class FastAPIServer:
         
         @self.app.get("/get_user_notes/{subject}")
         def get_user_notes_by_subject(request: Request, subject: str):
+            
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
             notes = []
@@ -364,6 +391,11 @@ class FastAPIServer:
 
         @self.app.delete("/delete_note/{subject}/{note_id}")
         async def delete_note(subject: str, note_id: int, request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             try:
                 payload = verify_token_from_cookie(request)
                 user_id = int(payload["sub"])
@@ -392,6 +424,11 @@ class FastAPIServer:
         # Kullanıcıya challenge mesajı gönder
         @self.app.post("/send_challenge")
         async def send_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
 
             payload = verify_token_from_cookie(request)
@@ -470,6 +507,11 @@ class FastAPIServer:
 
         @self.app.post("/accept_challenge")
         async def accept_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
@@ -502,6 +544,11 @@ class FastAPIServer:
 
         @self.app.post("/reject_challenge")
         async def reject_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
@@ -522,6 +569,11 @@ class FastAPIServer:
 
         @self.app.post("/submit_challenge_answers")
         async def submit_challenge_answers(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
