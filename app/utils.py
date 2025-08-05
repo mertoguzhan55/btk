@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
-from jose import jwt, JWTError
+from jose import jwt, JWTError, ExpiredSignatureError
 from dotenv import load_dotenv
 from fastapi import Request
 import os
@@ -26,9 +26,14 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
 def verify_token_from_cookie(request: Request):
     token = request.cookies.get("access_token")
     if not token:
+        print("token none geldi")
         return None
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms="HS256")
-        return payload  # içinde "sub" varsa user_id olarak döner
-    except JWTError:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+        return payload
+    except ExpiredSignatureError:
+        print("JWT süresi dolmuş.")
+        return None
+    except JWTError as e:
+        print(f"JWT decode hatası: {str(e)}")
         return None

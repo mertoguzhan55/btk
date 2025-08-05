@@ -5,7 +5,7 @@ from app.connection import Connection
 from typing import Union
 from app.logger import Logger
 from sqlalchemy import select, desc
-from app.models.models import QuestionAnswer, Challenges, UserScore
+from app.models.models import QuestionAnswer, Challenges, UserScore, User, WrongAnswer
 from app.handler import custom_db_crud_handler
 import asyncio
 
@@ -302,7 +302,7 @@ class CRUDOperations:
         self.logger.info(f"Challenges read with filters: {filters}. Found: {len(challenges)} records.")
         return challenges
     
-
+    @custom_db_crud_handler
     async def read_challenges_for_user(self, user_id: int):
         query = (
             select(Challenges)
@@ -316,6 +316,7 @@ class CRUDOperations:
         result = await self.connection.session.execute(query)
         return result.scalars().all()
     
+    @custom_db_crud_handler
     async def get_or_create_user_score(self, user_id: int):
         score = await self.connection.session.get(UserScore, user_id)
         if score is None:
@@ -325,11 +326,78 @@ class CRUDOperations:
             await self.connection.session.refresh(score)
         return score
 
+    @custom_db_crud_handler
     async def update_user_score(self, user_id: int, points: int):
-        score = await self.get_or_create_user_score(user_id)
-        score.total_score += points
-        await self.connection.session.commit()
-        return score.total_score
+        async with self.connection.session as session:
+            async with session.begin():
+                result = await session.execute(select(UserScore).where(UserScore.user_id == user_id))
+                user_score = result.scalar_one_or_none()
+                
+                if user_score is None:
+                    # Eğer kullanıcıya ait skor yoksa hata döndür veya yeni skor oluştur
+                    raise ValueError(f"No UserScore found for user_id: {user_id}")
+
+                user_score.total_score += points
+                await session.commit()
+                return user_score.total_score
+    
+    @custom_db_crud_handler
+    async def get_user_score_by_id(self, user_id: int) -> int:
+        score = await self.connection.session.get(UserScore, user_id)
+        await self.connection.close_session()
+        return score.total_score if score else 0
+    
+    @custom_db_crud_handler
+    async def get_top_users_by_score(self, limit: int = 5):
+        """
+        Retrieves top N users sorted by their total_score in descending order.
+        """
+        stmt = (
+            select(UserScore.user_id, User.username, User.email, UserScore.total_score)
+            .join(User, User.id == UserScore.user_id)
+            .order_by(UserScore.total_score.desc())
+            .limit(limit)
+        )
+
+        result = await self.connection.session.execute(stmt)
+        rows = result.all()
+        await self.connection.close_session()
+
+        top_users = [
+            {
+                "user_id": row.user_id,
+                "username": row.username,
+                "email": row.email,
+                "score": row.total_score
+            }
+            for row in rows
+        ]
+
+        self.logger.info(f"Top {limit} users retrieved for global ranking.")
+        return top_users
+    
+
+    @custom_db_crud_handler
+    async def get_last_wrong_answers(self, user_id: int, limit: int = 5):
+        """
+        Retrieves the last `limit` wrong answers for a specific user.
+
+        Args:
+            user_id (int): ID of the user.
+            limit (int): Number of records to retrieve (default 5).
+
+        Returns:
+            List[WrongAnswer]: List of WrongAnswer objects.
+        """
+        stmt = (
+            select(WrongAnswer)
+            .where(WrongAnswer.user_id == user_id)
+            .order_by(desc(WrongAnswer.created_at))  # veya created_at varsa onunla sırala
+            .limit(limit)
+        )
+        result = await self.connection.session.execute(stmt)
+        return result.scalars().all()
+    
 
 
 

@@ -50,6 +50,7 @@ class Chatbot:
         
         results_with_scores = self.rag_pipeline.query_with_scores(question, user_id=user_id, k=top_k)
 
+        self.logger.info(f"results from RAG: {results_with_scores}")
 
         filtered_results = [
             (doc, score) for doc, score in results_with_scores

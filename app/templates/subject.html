@@ -82,7 +82,7 @@
 <div class="container mt-5">
     <div class="text-center mb-5">
         <h1 class="display-4 text-primary">{{ subject_name }}</h1>
-        <p class="lead">Bu sayfa <strong>{{ subject_id }}</strong> dersi için oluşturuldu.</p>
+        <p class="lead">Dokümanlarını Kaydet</p>
     </div>
 
     <div class="action-boxes">
@@ -96,7 +96,7 @@
         </div>
         <div class="action-button" data-toggle="modal" data-target="#pdfModal">
             <i class="fas fa-file-pdf"></i>
-            <h5>PDF Yükle (OCR)</h5>
+            <h5>PDF Yükle</h5>
         </div>
     </div>
 </div>
@@ -114,7 +114,7 @@
           <input type="hidden" name="subject_id" value="{{ subject_id }}">
           <div class="form-group">
             <label>YouTube Video ID</label>
-            <input type="text" class="form-control" name="youtube_id" placeholder="Örn: dQw4w9WgXcQ" required>
+            <input type="text" class="form-control" name="youtube_id" placeholder="Örn: https://www.youtube.com/watch?v=kXYiU_JCYtU" required>
           </div>
           <div class="form-group">
             <label>Video Dili</label>
@@ -162,7 +162,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="pdfModalLabel">PDF Yükle (OCR ile Not Ekle)</h5>
+        <h5 class="modal-title" id="pdfModalLabel">PDF Yükle</h5>
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       </div>
       <div class="modal-body">
@@ -172,7 +172,7 @@
             <label>PDF Dosyası</label>
             <input type="file" class="form-control-file" name="pdf_file" accept=".pdf" required>
           </div>
-          <button type="submit" class="btn btn-dark btn-block">Yükle ve OCR ile Kaydet</button>
+          <button type="submit" class="btn btn-dark btn-block">Yükle</button>
         </form>
       </div>
     </div>

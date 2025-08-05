@@ -90,18 +90,18 @@ class QuizGeneratorAgent:
         @tool
         def evaluate_answer_tool(question: str, student_answer: str, correct_answer: str, user_id: str) -> dict:
             """
-            Öğrencinin verdiği cevabı değerlendir.
-
-            Doğruysa: 10 puan + tebrik mesajı  
-            Yanlışsa: 0 puan + neden yanlış olduğunu açıklayan detaylı geri bildirim
+            Öğrencinin verdiği cevabı değerlendirir.
+            Doğruysa: 10 puan ve tebrik mesajı.
+            Yanlışsa: 0 puan ve açıklayıcı, cesaretlendirici geri bildirim.
             """
             if student_answer == correct_answer:
                 return {
                     "feedback": f"✅ Doğru cevap! Cevabın ({student_answer}) doğru.",
-                    "score": 10.0
+                    "score": 10.0,
+                    "is_correct": True
                 }
             
-            # Eğer cevap yanlışsa, açıklayıcı geri bildirim ver
+            # Yanlışsa LLM ile geri bildirim oluştur
             prompt = f"""
             Sen bir öğretmensin. Aşağıda çoktan seçmeli bir soru, öğrencinin cevabı ve doğru cevap verilmiştir.
 
@@ -122,7 +122,6 @@ class QuizGeneratorAgent:
 
             Geri bildirim:
             """
-
             try:
                 response = self.llm.invoke(prompt)
                 feedback = response.content.strip()
@@ -132,7 +131,8 @@ class QuizGeneratorAgent:
 
             return {
                 "feedback": f"❌ {feedback}",
-                "score": 0.0
+                "score": 0.0,
+                "is_correct": False
             }
 
         self.evaluate_answer_tool = evaluate_answer_tool
@@ -171,12 +171,12 @@ class QuizGeneratorAgent:
 
         return {"questions": []}
     
-    def evaluate(self, question: str, student_answer: str, correct_answer:str,  user_id: str) -> dict:
+    def evaluate(self, question: str, student_answer: str, correct_answer:str,  user_id: int) -> dict:
         return self.evaluate_answer_tool.invoke({
             "question": question,
             "student_answer": student_answer,
             "correct_answer": correct_answer,
-            "user_id": user_id
+            "user_id": str(user_id)
         })
 
         

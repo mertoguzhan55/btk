@@ -430,86 +430,111 @@
         }
     }
 
-        /* Custom responsive height for message-container */
+    .navbar-light .navbar-nav .nav-link {
+    position: relative;
+    color: #343a40; /* daha koyu metin */
+    font-weight: 500;
+    padding-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+.navbar{
+    background-color: #f8f9fa;
+}
         
 
     </style>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <div class="container d-flex">
-            <button class="navbar-toggler d-flex align-items-center d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <div class="container d-flex">
+        <button class="navbar-toggler d-flex align-items-center d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
 
-            <a class="navbar-brand d-none d-lg-block" href="#">
-                <img src="../static/img/logo2_optimized.png"
-                alt="logo"
-                style="width: 90px; height: 70px;">
-            </a>
+        <a class="navbar-brand d-none d-lg-block" href="#">
+            <img src="../static/img/logo3.png"
+            alt="logo"
+            style="width: 90px; height: 70px;">
+        </a>
 
-            <a class="navbar-brand mx-auto d-block d-lg-none" href="#">
-                <img src="../static/img/logo2_optimized.png"
-                alt="logo"
-                style="width: 50px; height: auto;">
-            </a>
-
-            </div>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Hakkımda</a>
-                    </li>
-
-                    <li class="nav-item dropdown" style="max-height: 38px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ders Notlarım
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/subject?subject=biyoloji">Biyoloji</a>
-                            <a class="dropdown-item" href="/subject?subject=kimya">Kimya</a>
-                            <a class="dropdown-item" href="/subject?subject=matematik">Matematik</a>
-                            <a class="dropdown-item" href="/subject?subject=fizik">Fizik</a>
-                            <a class="dropdown-item" href="/subject?subject=turkce">Türkçe</a>
-                            <a class="dropdown-item" href="/subject?subject=tarih">Tarih</a>
-                            <a class="dropdown-item" href="/subject?subject=felsefe">Felsefe</a>
-                            <a class="dropdown-item" href="/subject?subject=din">Din Kültürü</a>
-                            <a class="dropdown-item" href="/subject?subject=edebiyat">Edebiyat</a>
-                            <a class="dropdown-item" href="/subject?subject=geometri">Geometri</a>
-                            <a class="dropdown-item" href="/subject?subject=cografya">Coğrafya</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="/profile">Profilim</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">İletişim</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <button class="modern-btn ml-3" onclick="logout()" style="padding: 6px 18px; font-size: 14px;">
-                            <i class="fa fa-sign-out-alt"></i> Çıkış Yap
-                        </button>
-                    </li>
-                </ul>
-            </div>
+        <a class="navbar-brand mx-auto d-block d-lg-none" href="#">
+            <img src="../static/img/logo3.png"
+            alt="logo"
+            style="width: 50px; height: auto;">
+        </a>
 
         </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutme">Hakkımda</a>
+                </li>
+
+                <li class="nav-item dropdown" style="max-height: 38px;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Not Ekle
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/subject?subject=biyoloji">Biyoloji</a>
+                        <a class="dropdown-item" href="/subject?subject=kimya">Kimya</a>
+                        <a class="dropdown-item" href="/subject?subject=matematik">Matematik</a>
+                        <a class="dropdown-item" href="/subject?subject=fizik">Fizik</a>
+                        <a class="dropdown-item" href="/subject?subject=turkce">Türkçe</a>
+                        <a class="dropdown-item" href="/subject?subject=tarih">Tarih</a>
+                        <a class="dropdown-item" href="/subject?subject=felsefe">Felsefe</a>
+                        <a class="dropdown-item" href="/subject?subject=din">Din Kültürü</a>
+                        <a class="dropdown-item" href="/subject?subject=edebiyat">Edebiyat</a>
+                        <a class="dropdown-item" href="/subject?subject=geometri">Geometri</a>
+                        <a class="dropdown-item" href="/subject?subject=cografya">Coğrafya</a>
+                    </div>
+                </li>
+
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="/profile">Profilim</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">İletişim</a>
+                </li>
+
+                <li class="nav-item">
+                    <button class="modern-btn ml-3" onclick="logout()" style="padding: 6px 18px; font-size: 14px;">
+                        <i class="fa fa-sign-out-alt"></i> Çıkış
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
 
     <div class="container my-5">
         <div class="chat-container">
             <div class="text-center mb-4">
-                <div class="gif-class">
+                <div class="gif-class" style="margin-top: 5px;">
                     <img src="../static/img/chatbot.gif" alt="Görsel Yüklenemedi" width="200" height="170" class="img-fluid">
                 </div>
-                <h2>Ask a question about the selected subject now!</h2>
+                <h2>Ders Seç ve Soru Sormaya Başla!</h2>
                 <div id="question-underline" class=" d-none"> <hr style="background-color: rgba(13, 110, 253, 0.4); border-radius: 4px;
             transition: all 0.4s ease-in-out;
             box-shadow: 0 0 25px 3px rgba(13, 110, 253, 0.6);">  </div>
@@ -611,33 +636,9 @@
 
 
             <div class="message-input d-flex" id="message-input">
-                <input id="question" type="text" class="form-control" placeholder="You can ask a question">
-                <button id="send-button" onclick="sendText()" style="border-radius: 55px; background-color:#000; color:#fff" class="send_btn_class btn btn-dark btn-sm rounded-circle px-3 py-2" >Send</button>
-                <button class="record-button ml-2" class="btn btn-primary ml-2 " id="recordBtn" title="Speech">
-                    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve">
-                <g>
-                    <g>
-                        <path d="M439.652,250.435c0-9.22-7.475-16.696-16.696-16.696c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,82.854-67.407,150.261-150.261,150.261s-150.261-67.407-150.261-150.261c0-9.22-7.475-16.696-16.696-16.696
-                            c-9.22,0-16.696,7.475-16.696,16.696c0,95.638,73.486,174.422,166.957,182.885v45.289h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            S179.997,512,189.217,512h133.565c9.22,0,16.696-7.475,16.696-16.696s-7.475-16.696-16.696-16.696h-50.087V433.32
-                            C366.166,424.857,439.652,346.073,439.652,250.435z"/>
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path d="M256,0c-64.442,0-116.87,52.428-116.87,116.87v133.565c0,64.442,52.428,116.87,116.87,116.87s116.87-52.428,116.87-116.87
-                            V116.87C372.87,52.428,320.442,0,256,0z M256,333.913c-40.313,0-74.042-28.837-81.799-66.894h163.597
-                            C330.042,305.076,296.313,333.913,256,333.913z M339.478,166.957h-50.087c-9.22,0-16.696,7.475-16.696,16.696
-                            c0,9.22,7.475,16.696,16.696,16.696h50.087v33.391H172.522v-33.391h50.087c9.22,0,16.696-7.475,16.696-16.696
-                            c0-9.22-7.475-16.696-16.696-16.696h-50.087v-33.391h50.087c9.22,0,16.696-7.475-16.696-16.696s-7.475-16.696-16.696-16.696
-                            h-48.407c7.757-38.057,41.485-66.783,81.799-66.783s74.042,28.725,81.799,66.783h-48.407c-9.22,0-16.696,7.475-16.696,16.696
-                            s7.475,16.696,16.696,16.696h50.087V166.957z"/>
-                    </g>
-                </g>
-                    </svg>
-                </button>
+                <input id="question" type="text" class="form-control" placeholder="Soru Sorabilirsin..">
+                <button id="send-button" onclick="sendText()" style="border-radius: 55px; background-color:#000; color:#fff" class="send_btn_class btn btn-dark btn-sm rounded-circle px-3 py-2" >Gönder</button>
+                
             </div>
 
 
@@ -649,38 +650,31 @@
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-4 text-center mb-3">
-                    <img src="../static/img/logo2_optimized.png"
+                    <img src="../static/img/logo3.png"
                         class="mb-3"
                         alt="logo"
                         style="max-width: 200px;">
-                    <h5>Follow Us</h5>
+                    <h5>Beni Takip Et</h5>
                     <ul class="list-unstyled">
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/instagram-brands-solid.ico" style="height: 18px; width:18px;margin-right: 5px;">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/linkedin-in-brands-solid_1_.ico" style="height: 18px; width:18px;margin-right: 5px;">LinkedIn</a></li>
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/square-youtube-brands-solid_2_.ico" style="height: 18px; width:18px;margin-right: 5px;">YouTube</a></li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/mertoguzhan/" class="text-white" target="_blank">
+                              <i class="fab fa-linkedin fa-lg mr-2"></i>LinkedIn
+                            </a>
+                          </li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-4 text-center mb-3">
-                    <h5>Contact Information</h5>
+                    <h5>İletişim Bilgisi</h5>
                     <ul class="list-unstyled">
                         <li>+90 555 555 5555</li>
-                        <li>Fax: +90 555 555 5555</li>
                         <li>Çankaya/Ankara TÜRKİYE</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-4 text-center mb-3">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.yongatek.com/" class="text-white">Home</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">About Us</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">Services</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
+                
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p>&copy; 2025, All Rights Reserved by Mert</p>
+                <p>&copy; 2025, All Rights Reserved by Mert Oğuzhan</p>
             </div>
         </div>
     </footer>

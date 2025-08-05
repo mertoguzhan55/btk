@@ -21,7 +21,7 @@ class User(Base):
     score = relationship("UserScore", uselist=False, back_populates="user")
 
     def to_dict(self):
-        return {"name": self.email}
+        return {"name": self.email, "email": self.email}
 
 class QuestionAnswer(Base):
     __tablename__ = 'question_answers'
@@ -55,3 +55,14 @@ class UserScore(Base):
     total_score = Column(Integer, default=0)
 
     user = relationship("User", back_populates="score")
+
+
+class WrongAnswer(Base):
+    __tablename__ = "wrong_answers"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    question = Column(String, nullable=False)
+    user_answer = Column(String, nullable=False)
+    correct_answer = Column(String, nullable=False)
+    created_at = Column(DateTime, default=func.now())
