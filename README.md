@@ -21,6 +21,46 @@ git clone https://github.com/mertoguzhan55/btk.git
 cd btk
 ```
 
+### 2. Docker-compose.yaml dosyasını şu şekilde değiştirin:
+
+```bash
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: workplace
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+
+volumes:
+  postgres-data:
+
+```
+
+```bash
+docker-compose up --build
+```
+
+ile database'i docker ile ayağa kaldırın.
+
+
 ---
 
 ### 🧪 2. `.env` Dosyasını Oluşturun
@@ -32,7 +72,7 @@ GOOGLE_API_KEY=your_google_api_key
 SECRET_KEY=your_44_char_secret
 ```
 
-> **GOOGLE_API_KEY**: https://aistudio.google.com/app/apikey adresinden alınmalıdır.  
+> **GOOGLE_API_KEY**: https://aistudio.google.com/app/apikey adresinden alınmalıdır.
 > **SECRET_KEY**: JWT için 44 haneli rastgele bir key üretin.
 
 ---
@@ -99,12 +139,16 @@ GOOGLE_API_KEY=your_google_api_key
 SECRET_KEY=your_44_char_secret
 ```
 
-> **GOOGLE_API_KEY**: https://aistudio.google.com/app/apikey adresinden alınmalıdır.  
+> **GOOGLE_API_KEY**: https://aistudio.google.com/app/apikey adresinden alınmalıdır.
 > **SECRET_KEY**: JWT için 44 haneli rastgele bir key üretin.
 
 ```
 docker compose up --build
 ```
+
+* Docker-compose.yaml dosyasını değiştirmeyin.
+* docker-compose ile ayağa kaldıracaksanız application'ı config.local dosyasında, **db_host** değerleri postgres olacak. Ancak yukarıdaki gibi lokalde çalıştıracaksanız db_host değerleri localhost olacak.
+
 Sonrasında başarılı bir şekilde uygulama çalışacaktır.
 
 
