@@ -21,6 +21,7 @@ from urllib.parse import urlencode
 from app.label_extractor_from_video import LabelExtractor
 from app.utils import verify_password, verify_token_from_cookie
 from app.chatbot import Chatbot
+from app.context_aware_summarizer import Summarizer
 from app.rag_pipeline import RagPipeline
 from app.models.models import QuestionAnswer, Challenges, WrongAnswer
 from app.agent import QuizGeneratorAgent
@@ -41,6 +42,7 @@ class FastAPIServer:
     log_level: str
     chatbot_model_name: str
     temperature_for_chatbot: float
+    summarizer_model_name: str
     crud: CRUDOperations
     transcripter: VideoTranscript
     label_extractor: LabelExtractor
@@ -57,6 +59,7 @@ class FastAPIServer:
         self.app.mount(f"/static", StaticFiles(directory="app/static"), name="static")
         self.logger.info("Fastapi init")
         self.pdf_parser = PdfParser()
+        self.summerizer = Summarizer(summarizer_model_name=self.summarizer_model_name)
         self.challenge_generator = ChallengeGenerator(logger=self.logger)
         self.flas_card_agent = FlashCardAgent(logger=self.logger)
         self.agent = QuizGeneratorAgent(self.rag_pipeline, retrieved_chunk_threshold_for_agent_quiz = self.retrieved_chunk_threshold_for_agent_quiz, logger=self.logger)
@@ -293,20 +296,22 @@ class FastAPIServer:
                 if not subject_id or not question:
                     return {"error": "Subject ID ve soru gereklidir."}
 
-                # Cevabı üret
 
-                # Bunları bir metne çevir
+                # Database'den kullanıcının son 3 soru-cevap çiftini getir
+                context_aware = await self.crud.get_last_3_conversations_by_user(user_id)
 
-                # Chatbot'a ver
+                # BUrada bu context aware'i summarize edilir.
+                summarized_context_aware = self.summerizer.sumarize(context_aware)
+
+                self.logger.info(f"summarized context aware: {summarized_context_aware}")
+
                 answer = self.chatbot.ask_question(
                     subject_id=subject_id,
                     question=question,
                     user_id=user_id,
+                    summarized_context_aware = summarized_context_aware
                 )
 
-
-                payload = verify_token_from_cookie(request)
-                user_id = int(payload["sub"])
 
                 question_answer = QuestionAnswer(
                     user_id=user_id,

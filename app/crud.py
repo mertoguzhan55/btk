@@ -399,6 +399,34 @@ class CRUDOperations:
         return result.scalars().all()
     
 
+    @custom_db_crud_handler
+    async def get_last_3_conversations_by_user(self, user_id: int) -> str:
+        """
+        Retrieves the last 3 question-answer pairs for a given user_id and returns
+        them as a single concatenated string.
+
+        Args:
+            user_id (int): ID of the user.
+
+        Returns:
+            str: Combined string of the last 3 "Q: ... A: ..." entries.
+        """
+        stmt = (
+            select(QuestionAnswer)
+            .where(QuestionAnswer.user_id == user_id)
+            .order_by(desc(QuestionAnswer.created_at))
+            .limit(3)
+        )
+
+        result = await self.connection.session.execute(stmt)
+        qa_list = result.scalars().all()
+        await self.connection.close_session()
+
+        combined = "\n\n".join([f"Q: {qa.question}\nA: {qa.answer}" for qa in qa_list])
+        self.logger.info(f"Combined last 3 conversations retrieved for user_id {user_id}")
+        return combined
+    
+
 
 
 

@@ -33,6 +33,7 @@ reload= "true"
 log_level= "info"
 chatbot_model_name = "gemini-2.5-flash"
 temperature_for_chatbot = 0.2
+summarizer_model_name = "gemini-2.5-flash"
 retrieved_chunk_threshold_for_agent_quiz = 0.7
 
 [LabelExtractor]
