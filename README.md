@@ -89,10 +89,26 @@ btk/
 
 ## 🚀 Docker Compose Kurulum Rehberi
 
+### 🧪 1- `.env` Dosyasını Oluşturun
+
+btk klasörüne girdikten sonra aşağıdaki gibi bir `.env` dosyası oluşturun:
+
+
+```env
+GOOGLE_API_KEY=your_google_api_key
+SECRET_KEY=your_44_char_secret
+```
+
+> **GOOGLE_API_KEY**: https://aistudio.google.com/app/apikey adresinden alınmalıdır.  
+> **SECRET_KEY**: JWT için 44 haneli rastgele bir key üretin.
+
 ```
 docker compose up --build
 ```
 Sonrasında başarılı bir şekilde uygulama çalışacaktır.
+
+
+
 
 
 
