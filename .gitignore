@@ -1,6 +1,3 @@
 __pycache__
 extras
-.env
-vector_db
-data
 *.log
