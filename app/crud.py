@@ -334,12 +334,14 @@ class CRUDOperations:
                 user_score = result.scalar_one_or_none()
                 
                 if user_score is None:
-                    # Eğer kullanıcıya ait skor yoksa hata döndür veya yeni skor oluştur
-                    raise ValueError(f"No UserScore found for user_id: {user_id}")
+                    # Yeni kullanıcı skoru başlat
+                    user_score = UserScore(user_id=user_id, total_score=points)
+                    session.add(user_score)
+                else:
+                    user_score.total_score += points
 
-                user_score.total_score += points
-                await session.commit()
-                return user_score.total_score
+            await session.commit()
+            return user_score.total_score
     
     @custom_db_crud_handler
     async def get_user_score_by_id(self, user_id: int) -> int:

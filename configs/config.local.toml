@@ -13,7 +13,7 @@ rotation="50MB"
     database_type= "postgresql"
     db_username= "postgres"
     db_password= "admin"
-    db_host= "localhost"
+    db_host= "postgres"
     db_port= "5432"
     db_name= "workplace"
 
@@ -21,7 +21,7 @@ rotation="50MB"
     database_type= "postgresql"
     db_username= "postgres"
     db_password= "admin"
-    db_host= "localhost"
+    db_host= "postgres"
     db_port= "5432"
     db_name= "workplace"
 
@@ -42,7 +42,7 @@ temperature = 0.2 # temperature düşürdüğümde (0'a yaklaştığımda) daha 
 max_retries = 2
 
 [JsonHandler]
-directory = "/home/mert/projects/btk/app/data"
+directory = "/app/app/data"
 
 [RagPipeline]
 model_name= "models/gemini-embedding-exp-03-07"

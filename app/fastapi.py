@@ -148,7 +148,7 @@ class FastAPIServer:
             await self.crud.create(user)
 
             token = create_access_token({"sub": str(user.id)})
-            response = RedirectResponse("/main_page", status_code=status.HTTP_302_FOUND)
+            response = RedirectResponse("/main_page", status_code=303)
             response.set_cookie(key="access_token", value=token, httponly=True, max_age=9000)
             return response
         
@@ -710,13 +710,13 @@ class FastAPIServer:
 
                 # Puanlama
                 if sender_score > receiver_score:
-                    print("sender_score > receiver score")
+                    self.logger.info("sender_score > receiver score")
                     await self.crud.update_user_score(challenge.challenge_sender_id, 10)
                 elif sender_score < receiver_score:
-                    print("sender_score < receiver score")
+                    self.logger.info("sender_score < receiver score")
                     await self.crud.update_user_score(challenge.challenge_receiver_id, 10)
                 else:
-                    print("sender_score = receiver score")
+                    self.logger.info("sender_score = receiver score")
                     await self.crud.update_user_score(challenge.challenge_sender_id, 1)
                     await self.crud.update_user_score(challenge.challenge_receiver_id, 1)
 

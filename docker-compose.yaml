@@ -1,5 +1,21 @@
 version: "3.8"
 services:
+
+  easy-path:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot-app
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
   postgres:
     image: postgres
     container_name: postgres-container
