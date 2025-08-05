@@ -27,9 +27,17 @@
 </head>
 <body>
     <style>
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+
         #floatingMessageBtn {
     position: fixed;
-    top: 360px;
+    top: 430px;
     right: 30px;
     z-index: 9999;
     padding: 12px 22px;
@@ -52,7 +60,7 @@
 
 #floatingIncomingBtn {
     position: fixed;
-    top: 300px; /* En aşağıda */
+    top: 360px; /* En aşağıda */
     right: 30px;
     z-index: 9999;
 
@@ -69,7 +77,7 @@
 }
 
 #floatingIncomingBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -79,7 +87,7 @@
 
 #floatingInfoBtn {
     position: fixed;
-    top: 180px; /* Quiz butonunun altına gelsin */
+    top: 220px; /* Quiz butonunun altına gelsin */
     right: 30px;
     z-index: 9999;
 
@@ -96,7 +104,7 @@
 }
 
 #floatingInfoBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -107,7 +115,7 @@
         /* Sağ alt köşede yuvarlak quiz butonu */
         #floatingQuizBtn {
     position: fixed;
-    top: 120px; /* ⬅ Aşağı yerine yukarıya taşıdık */
+    top: 150px; /* ⬅ Aşağı yerine yukarıya taşıdık */
     right: 30px;
     z-index: 9999;
 
@@ -124,7 +132,7 @@
 }
 
 #floatingQuizBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -143,7 +151,7 @@
             transition: transform 0.3s ease;
         }
         #quiz-body .card:hover {
-            transform: scale(1.01);
+            transform: scale(1.2);
         }
 
         #clearBtn {
@@ -173,14 +181,14 @@
     #clearBtn:hover {
         /* Hover Efekti */
         background-color: #cd0707; /* Daha koyu kırmızı */
-        transform: scale(1.1); /* Butonu biraz büyüt */
+        transform: scale(1.2); /* Butonu biraz büyüt */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Gölgeyi belirginleştir */
     }
 
     #clearBtn:active {
         /* Tıklama Anındaki Efekt */
         background-color: #b00606; /* Daha da koyu kırmızı */
-        transform: scale(0.95); /* Butonu biraz küçült */
+        transform: scale(1.2); /* Butonu biraz küçült */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Gölgeyi küçült */
     }
 
@@ -635,7 +643,7 @@
 
 #floatingChallengeBtn {
     position: fixed;
-    top: 240px; /* Diğerlerinden aşağıda */
+    top: 290px; /* Diğerlerinden aşağıda */
     right: 30px;
     z-index: 9999;
 
@@ -652,12 +660,12 @@
 }
 
 #floatingChallengeBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 #floatingMessageBtn:hover{
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -674,10 +682,108 @@
     box-shadow: 0 0 12px rgba(13, 110, 253, 0.4); /* Hafif bir ışık efekti */
 }
 
+#userScoreLabel {
+    position: fixed;
+    top: 40px; /* Eskiden 60px idi */
+    right: 30px;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    font-size: 16px;
+}
 
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#floatingRankingBtn {
+    position: fixed;
+    top: 500px; /* En altta gösterilecek */
+    right: 30px;
+    z-index: 9999;
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    color: white;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+#floatingRankingBtn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+#floatingRankingBtn:focus {
+    outline: none;
+}
+
+
+#floatingFlashcardBtn {
+    position: fixed;
+    top: 570px; /* Diğer butonlardan aşağıda */
+    right: 30px;
+    z-index: 9999;
+    background: linear-gradient(135deg, #17a2b8, #6610f2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#floatingFlashcardBtn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    position: relative;
+    color: #343a40;
+    font-weight: 500;
+    padding-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+.navbar{
+    background-color: #f8f9fa;
+}
     </style>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <div class="container d-flex">
             <button class="navbar-toggler d-flex align-items-center d-lg-none" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -686,13 +792,13 @@
 
 
             <a class="navbar-brand d-none d-lg-block" href="#">
-                <img src="../static/img/logo2_optimized.png"
+                <img src="../static/img/logo3.png"
                 alt="logo"
                 style="width: 90px; height: 70px;">
             </a>
 
             <a class="navbar-brand mx-auto d-block d-lg-none" href="#">
-                <img src="../static/img/logo2_optimized.png"
+                <img src="../static/img/logo3.png"
                 alt="logo"
                 style="width: 50px; height: auto;">
             </a>
@@ -701,15 +807,15 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hakkımda</a>
+                        <a class="nav-link" href="/aboutme">Hakkımda</a>
                     </li>
 
                     <li class="nav-item dropdown" style="max-height: 38px;">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ders Notlarım
+                            Not Ekle
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/subject?subject=biyoloji">Biyoloji</a>
@@ -727,10 +833,6 @@
                     </li>
 
                     <li class="nav-item"></li>
-                        <a class="nav-link" href="#">YKSAgent</a>
-                    </li>
-
-                    <li class="nav-item"></li>
                         <a class="nav-link" href="/profile">Profilim</a>
                     </li>
 
@@ -740,7 +842,7 @@
 
                     <li class="nav-item">
                         <button class="modern-btn ml-3" onclick="logout()" style="padding: 6px 18px; font-size: 14px;">
-                            <i class="fa fa-sign-out-alt"></i> Çıkış Yap
+                            <i class="fa fa-sign-out-alt"></i> Çıkış
                         </button>
                     </li>
                 </ul>
@@ -750,27 +852,39 @@
     </nav>
     
 
+    <div id="userScoreLabel" class="userScoreLabel">
+        Toplam Puan: {{ total_score }}
+    </div>
+
     <!-- Quiz Başlatma Butonu (Sağ Alt Köşe) -->
-    <button id="floatingQuizBtn" onclick="generateQuiz()" title="Quiz Oluştur">
+    <button id="floatingQuizBtn" class="floating-btn" onclick="generateQuiz()" title="Quiz Oluştur">
         <i class="fas fa-clipboard"></i>
     </button>
 
 
     <!-- Bilgilerim Butonu -->
-    <button id="floatingInfoBtn" onclick="showInfoModal()" title="Bilgilerim">
+    <button id="floatingInfoBtn" class="floating-btn" onclick="showInfoModal()" title="Bilgilerim">
         <i class="fas fa-user-circle"></i>
     </button>
 
-    <button id="floatingChallengeBtn" onclick="openChallengeModal()" title="Challenge Gönder">
+    <button id="floatingChallengeBtn" class="floating-btn" onclick="openChallengeModal()" title="Challenge Gönder">
         <i class="fas fa-bolt"></i>
     </button>
 
-    <button id="floatingMessageBtn" onclick="openMessagesModal()" title="Mesajlarım">
+    <button id="floatingMessageBtn" class="floating-btn" onclick="openMessagesModal()" title="Mesajlarım">
         <i class="fas fa-envelope"></i>
     </button>
         
-    <button id="floatingIncomingBtn" onclick="openIncomingChallengesModal()" title="Gelen Challenge'lar">
+    <button id="floatingIncomingBtn" class="floating-btn" onclick="openIncomingChallengesModal()" title="Gelen Challenge'lar">
         <i class="fas fa-inbox"></i>
+    </button>
+
+    <button id="floatingRankingBtn" class="floating-btn" onclick="openRankingModal()" title="Global Sıralama">
+        <i class="fas fa-trophy"></i>
+    </button>
+
+    <button id="floatingFlashcardBtn" class="floating-btn" onclick="openFlashcardModal()" title="Flashcard Konularım">
+        <i class="fas fa-clone"></i>
     </button>
 
 
@@ -789,7 +903,9 @@
         </div>
         <div class="modal-footer">
             <button class="btn btn-success" onclick="submitAnswers()">Cevapları Gönder</button>
+            <button id="saveWrongBtn" class="btn btn-secondary" disabled>Yanlışlarımı Kaydet</button>
         </div>
+
         </div>
     </div>
     </div>
@@ -802,9 +918,15 @@
         <option value="all">Tüm Dersler</option>
         <option value="biyoloji">Biyoloji</option>
         <option value="kimya">Kimya</option>
+        <option value="matematik">Matematik</option>
         <option value="fizik">Fizik</option>
         <option value="cografya">Coğrafya</option>
         <option value="tarih">Tarih</option>
+        <option value="edebiyat">Edebiyat</option>
+        <option value="geometri">Geometri</option>
+        <option value="felsefe">Felsefe</option>
+        <option value="turkce">Türkçe</option>
+        <option value="din">Din Kültürü ve Ahlak Bilgisi</option>
         <!-- diğer dersler -->
     </select>
 
@@ -896,7 +1018,6 @@
         </div>
         <div class="modal-body">
           <p><strong>ID:</strong> {{ user_id }}</p>
-          <p><strong>İsim:</strong> {{ username }}</p>
           <p><strong>Email:</strong> {{ email }}</p>
         </div>
         <div class="modal-footer">
@@ -991,46 +1112,167 @@
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-4 text-center mb-3">
-                    <img src="../static/img/logo2_optimized.png"
+                    <img src="../static/img/logo3.png"
                         class="mb-3"
                         alt="logo"
                         style="max-width: 200px;">
-                    <h5>Follow Us</h5>
+                    <h5>Beni Takip Et</h5>
                     <ul class="list-unstyled">
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/instagram-brands-solid.ico" style="height: 18px; width:18px;margin-right: 5px;">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/linkedin-in-brands-solid_1_.ico" style="height: 18px; width:18px;margin-right: 5px;">LinkedIn</a></li>
-                        <li><a href="https://www.linkedin.com/company/yongatek/posts/?feedView=all" class="text-white"><img src="../static/img/square-youtube-brands-solid_2_.ico" style="height: 18px; width:18px;margin-right: 5px;">YouTube</a></li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/mertoguzhan/" class="text-white" target="_blank">
+                              <i class="fab fa-linkedin fa-lg mr-2"></i>LinkedIn
+                            </a>
+                          </li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-4 text-center mb-3">
-                    <h5>Contact Information</h5>
+                    <h5>İletişim Bilgisi</h5>
                     <ul class="list-unstyled">
                         <li>+90 555 555 5555</li>
-                        <li>Fax: +90 555 555 5555</li>
                         <li>Çankaya/Ankara TÜRKİYE</li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-4 text-center mb-3">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.yongatek.com/" class="text-white">Home</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">About Us</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">Services</a></li>
-                        <li><a href="https://www.yongatek.com/" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
+                
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p>&copy; 2025, All Rights Reserved by Mert</p>
+                <p>&copy; 2025, All Rights Reserved by Mert Oğuzhan</p>
             </div>
         </div>
     </footer>
 
+    <div class="modal fade" id="rankingModal" tabindex="-1" role="dialog" aria-labelledby="rankingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content p-4">
+            <div class="modal-header">
+              <h5 class="modal-title" id="rankingModalLabel">Global Sıralama</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="ranking-body">
+              <p class="text-muted text-center">Yükleniyor...</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" id="flashcardModal" tabindex="-1" role="dialog" aria-labelledby="flashcardModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-4">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="flashcardModalLabel">Yanlış Konu Özetleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Kaydırmalı flashcard içerikleri buraya gelecek -->
+                    <div id="flashcard-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" id="flashcardContent">
+                            <!-- JS ile doldurulacak -->
+                        </div>
+                        <a class="carousel-control-prev" href="#flashcard-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#flashcard-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+      
 
     <script type='text/javascript' src='../static/js/index.js'></script>
 
     <script>
+
+let cachedFlashcards = null;
+
+async function openFlashcardModal() {
+    $('#flashcardModal').modal('show');
+    const container = document.getElementById("flashcardContent");
+
+    if (cachedFlashcards) {
+        renderFlashcardsUI(cachedFlashcards);
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="carousel-item active">
+            <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                <div class="spinner-border text-primary" role="status"></div>
+            </div>
+        </div>
+    `;
+
+    try {
+        const res = await fetch("/get_flashcards");
+        const data = await res.json();
+
+        if (!data.flashcards || data.flashcards.length === 0) {
+            container.innerHTML = `
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                        <p class="text-muted">Gösterilecek flashcard bulunamadı.</p>
+                    </div>
+                </div>`;
+            return;
+        }
+
+        cachedFlashcards = data.flashcards;
+        renderFlashcardsUI(cachedFlashcards);
+
+    } catch (error) {
+        console.error("Flashcard verileri alınamadı:", error);
+        container.innerHTML = `
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                    <p class="text-danger">Veriler alınamadı.</p>
+                </div>
+            </div>`;
+    }
+}
+
+
+function renderFlashcardsUI(flashcards) {
+    const container = document.getElementById("flashcardContent");
+    container.innerHTML = "";
+
+    flashcards.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+        card.innerHTML = `
+            <div class="card mx-auto shadow" style="max-width: 600px; padding: 20px; border-radius: 16px;">
+                <h5 class="text-primary">Soru:</h5>
+                <p>${item.question}</p>
+                <h6 class="text-danger">Senin Cevabın:</h6>
+                <p>${item.user_answer}</p>
+                <h6 class="text-success">Doğru Cevap:</h6>
+                <p>${item.correct_answer}</p>
+                <h6 class="text-info">Konu Anlatımı:</h6>
+                <p>${item.explanation}</p>
+            </div>`;
+        container.appendChild(card);
+    });
+}
+
+
+
+
+
         document.addEventListener("DOMContentLoaded", () => {
     renderNotes("all");
 });
@@ -1149,58 +1391,111 @@
     }
 
 
+    let wrongAnswers = [];
+
+
     async function submitAnswers() {
-    // Loading başlat
-    document.getElementById("loading-overlay").style.display = "flex";
+        // Loading başlat
+        document.getElementById("loading-overlay").style.display = "flex";
 
-    const feedbackPromises = [];
+        const feedbackPromises = [];
 
-    for (let i = 0; i < currentQuestions.length; i++) {
-        const question = currentQuestions[i];
-        const selectedOption = document.querySelector(`input[name="answer-${i}"]:checked`);
-        const answer = selectedOption ? selectedOption.value : null;
+        for (let i = 0; i < currentQuestions.length; i++) {
+            const question = currentQuestions[i];
+            const selectedOption = document.querySelector(`input[name="answer-${i}"]:checked`);
+            const answer = selectedOption ? selectedOption.value : null;
 
-        const feedbackEl = document.getElementById(`feedback-${i}`);
+            const feedbackEl = document.getElementById(`feedback-${i}`);
 
-        if (!answer) {
-            feedbackEl.innerHTML = "Lütfen bir şık seçin.";
-            feedbackEl.classList.remove("text-success");
-            feedbackEl.classList.add("text-danger");
-            continue;
+            if (!answer) {
+                feedbackEl.innerHTML = "Lütfen bir şık seçin.";
+                feedbackEl.classList.remove("text-success");
+                feedbackEl.classList.add("text-danger");
+                continue;
+            }
+
+            // Her fetch isteğini Promise olarak kaydet
+            const promise = fetch("/evaluate_answer", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    question: question.question,
+                    answer: answer,
+                    correct_answer: correctAnswers[i]
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                feedbackEl.innerHTML = `<strong>Geri Bildirim:</strong> ${data.feedback} <br><strong>Puan:</strong> ${data.score}`;
+                feedbackEl.classList.remove("text-danger");
+                feedbackEl.classList.add("text-success");
+            })
+            .catch(err => {
+                feedbackEl.innerHTML = `<strong>Hata:</strong> Değerlendirme sırasında sorun oluştu.`;
+                feedbackEl.classList.add("text-danger");
+            });
+
+            feedbackPromises.push(promise);
         }
 
-        // Her fetch isteğini Promise olarak kaydet
-        const promise = fetch("/evaluate_answer", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                question: question.question,
-                answer: answer,
-                correct_answer: correctAnswers[i]
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            feedbackEl.innerHTML = `<strong>Geri Bildirim:</strong> ${data.feedback} <br><strong>Puan:</strong> ${data.score}`;
-            feedbackEl.classList.remove("text-danger");
-            feedbackEl.classList.add("text-success");
-        })
-        .catch(err => {
-            feedbackEl.innerHTML = `<strong>Hata:</strong> Değerlendirme sırasında sorun oluştu.`;
-            feedbackEl.classList.add("text-danger");
-        });
+        // Tüm fetch işlemleri bitene kadar bekle
+        await Promise.all(feedbackPromises);
 
-        feedbackPromises.push(promise);
+        // Loading kapat
+        document.getElementById("loading-overlay").style.display = "none";
+
+        wrongAnswers = [];
+
+        for (let i = 0; i < currentQuestions.length; i++) {
+            const question = currentQuestions[i];
+            const selected = document.querySelector(`input[name="answer-${i}"]:checked`);
+            const selectedAnswer = selected ? selected.value : null;
+            const correct = correctAnswers[i];
+
+            if (selectedAnswer && selectedAnswer !== correct) {
+                wrongAnswers.push({
+                    question: question.question,
+                    selected_answer: selectedAnswer,
+                    correct_answer: correct
+                });
+            }
+        }
+
+        // "Yanlışlarımı Kaydet" butonunu etkinleştir
+        document.getElementById("saveWrongBtn").disabled = false;
     }
 
-    // Tüm fetch işlemleri bitene kadar bekle
-    await Promise.all(feedbackPromises);
-
-    // Loading kapat
-    document.getElementById("loading-overlay").style.display = "none";
-}
-
     
+
+    document.getElementById("saveWrongBtn").addEventListener("click", async () => {
+        console.log(wrongAnswers)
+        if (wrongAnswers.length === 0) {
+            alert("Kaydedilecek yanlış cevap bulunamadı.");
+            return;
+        }
+
+        try {
+            const res = await fetch("/save_wrong_answers", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ wrong_answers: wrongAnswers })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("Yanlış cevaplar başarıyla kaydedildi.");
+                document.getElementById("saveWrongBtn").disabled = true;
+            } else {
+                alert("Kaydedilemedi: " + (data.detail || "Bilinmeyen hata."));
+            }
+        } catch (err) {
+            console.error("Yanlış cevapları kaydederken hata:", err);
+            alert("Bir hata oluştu.");
+        }
+    });
+
+
 
 
     async function logout() {
@@ -1326,6 +1621,10 @@ async function sendChallenge() {
         return;
     }
 
+    // LOADING başlat ve butonları devre dışı bırak
+    document.getElementById("loading-overlay").style.display = "flex";
+    disableFloatingButtons();
+
     try {
         const res = await fetch("/send_challenge", {
             method: "POST",
@@ -1337,10 +1636,7 @@ async function sendChallenge() {
 
         if (res.ok) {
             const { challenge_id, quiz } = data;
-
-            // Bu soruları göster
             displayChallengeQuizModal(challenge_id, quiz, "sender");
-
         } else {
             alert(data.message || "Challenge gönderilemedi.");
         }
@@ -1350,7 +1646,28 @@ async function sendChallenge() {
     } catch (err) {
         console.error(err);
         alert("Challenge gönderilemedi.");
+    } finally {
+        // LOADING kapat ve butonları yeniden aktif et
+        document.getElementById("loading-overlay").style.display = "none";
+        enableFloatingButtons();
     }
+}
+
+
+function disableFloatingButtons() {
+    document.querySelectorAll(".floating-btn").forEach(btn => {
+        btn.disabled = true;
+        btn.style.pointerEvents = "none";
+        btn.style.opacity = "0.6";
+    });
+}
+
+function enableFloatingButtons() {
+    document.querySelectorAll(".floating-btn").forEach(btn => {
+        btn.disabled = false;
+        btn.style.pointerEvents = "auto";
+        btn.style.opacity = "1";
+    });
 }
 
     
@@ -1379,7 +1696,7 @@ async function fetchIncomingChallenges() {
             div.className = "card mb-3 p-3";
 
             div.innerHTML = `
-                <p><strong>Konu:</strong> ${c.topic}</p>
+                <p><strong>Yeni bir challenge isteği var.</strong></p>
                 <button class="btn btn-success btn-sm mr-2" onclick="acceptChallenge('${c.id}')">Kabul Et</button>
                 <button class="btn btn-danger btn-sm" onclick="rejectChallenge('${c.id}')">Reddet</button>
             `;
@@ -1547,6 +1864,37 @@ async function fetchChallengeMessages() {
     }
 }
 
+
+function openRankingModal() {
+    $('#rankingModal').modal('show');
+    fetchGlobalRanking();
+}
+
+async function fetchGlobalRanking() {
+    const container = document.getElementById("ranking-body");
+    container.innerHTML = "<p class='text-muted text-center'>Yükleniyor...</p>";
+
+    try {
+        const res = await fetch("/get_global_ranking");
+        const data = await res.json();
+
+        if (!data || data.length === 0) {
+            container.innerHTML = "<p class='text-muted text-center'>Henüz sıralama verisi yok.</p>";
+            return;
+        }
+
+        const listItems = data.map((user, index) => 
+            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>${index + 1}. ${user.email}</strong>
+                <span class="badge badge-primary badge-pill">${user.score} puan</span>
+            </li>`).join("");
+
+        container.innerHTML = `<ul class="list-group">${listItems}</ul>`;
+    } catch (err) {
+        console.error("Sıralama verisi alınamadı:", err);
+        container.innerHTML = "<p class='text-danger'>Bir hata oluştu.</p>";
+    }
+}
 
 
     </script>

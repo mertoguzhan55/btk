@@ -31,7 +31,7 @@ class Chatbot:
             If the question is in English, answer in English.
 
             Previous Conversation:
-            {context}
+            {summarized_context_aware}
 
             Context:
             {context}
@@ -44,12 +44,13 @@ class Chatbot:
         )
         self.output_parser = StrOutputParser()
 
-    def ask_question(self, subject_id: str, question: str, user_id: int, top_k: int = 3):
+    def ask_question(self, subject_id: str, question: str, user_id: int, summarized_context_aware: str, top_k: int = 3):
 
         self.logger.info(f"Asking question for subject '{subject_id}' by user {user_id}: {question}")
         
         results_with_scores = self.rag_pipeline.query_with_scores(question, user_id=user_id, k=top_k)
 
+        self.logger.info(f"results from RAG: {results_with_scores}")
 
         filtered_results = [
             (doc, score) for doc, score in results_with_scores
@@ -63,8 +64,14 @@ class Chatbot:
         context = "\n".join([doc.page_content for doc, _ in filtered_results])
 
         chain = self.prompt_template | self.llm | self.output_parser
+        
+        # Burada summarized edilmiş geçmiş konuşmalar olacak
+        previous_context = ""
+
         answer = chain.invoke({
             "context": context,
+            "previous_context": previous_context,
+            "summarized_context_aware": summarized_context_aware,
             "question": question,
             "subject_id": subject_id
         })

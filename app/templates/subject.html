@@ -1,141 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>{{ subject_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS + Font Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
     <style>
-        .section-box {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        .custom-alert {
-            position: relative;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: #d4edda;
-            color: #155724;
-            font-weight: 500;
+        .action-boxes {
             display: flex;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: slideFadeIn 0.5s forwards;
-            z-index: 1000;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .custom-alert.success {
-            background-color: #e0f8ea;
-            color: #1e7e34;
+        .action-button {
+            width: 250px;
+            height: 160px;
+            background-color: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            text-align: center;
+            padding: 30px 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
         }
 
-        .custom-alert-icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
+        .action-button:hover {
+            background-color: #f1f1f1;
+            transform: translateY(-5px);
         }
 
-        @keyframes slideFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .action-button i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #e71d1d;
         }
 
-        @keyframes slideFadeOut {
-            to {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
+        .action-button h5 {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .modal-title {
+            font-weight: bold;
+            color: #e72011;
+        }
+
+        .modal.fade .modal-dialog {
+            transform: translateY(-50px);
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.show .modal-dialog {
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
-    {% if success == "1" %}
-        <div id="customAlert" class="custom-alert success">
-            <span class="custom-alert-icon">✅</span>
-            <span class="custom-alert-message">Not başarıyla eklendi.</span>
+    
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary">{{ subject_name }}</h1>
+        <p class="lead">Dokümanlarını Kaydet</p>
+    </div>
+
+    <div class="action-boxes">
+        <div class="action-button" data-toggle="modal" data-target="#youtubeModal">
+            <i class="fab fa-youtube"></i>
+            <h5>YouTube Transkript</h5>
         </div>
-    {% endif %}
-
-    <div class="container mt-5">
-
-        <div class="text-center mb-4">
-            <h1 class="display-4 text-primary">{{ subject_name }}</h1>
-            <p class="lead">Bu sayfa <strong>{{ subject_id }}</strong> dersi için oluşturuldu.</p>
+        <div class="action-button" data-toggle="modal" data-target="#textModal">
+            <i class="fas fa-keyboard"></i>
+            <h5>Metin Notu Ekle</h5>
         </div>
-
-        <!-- YouTube Video Transkript Formu -->
-        <div class="section-box">
-            <h4>YouTube Video ID ile Transkript Ekle</h4>
-            <form action="/add_youtube_transcript" method="POST">
-                <input type="hidden" name="subject_id" value="{{ subject_id }}">
-        
-                <div class="form-group">
-                    <label for="youtube_id">YouTube Video ID</label>
-                    <input type="text" class="form-control" id="youtube_id" name="youtube_id" placeholder="Örn: dQw4w9WgXcQ" required>
-                </div>
-        
-                <div class="form-group">
-                    <label for="language_code">Video Dili</label>
-                    <select class="form-control" id="language_code" name="language_code" required>
-                        <option value="tr" selected>Türkçe</option>
-                        <option value="en">İngilizce</option>
-                        <option value="de">Almanca</option>
-                        <option value="fr">Fransızca</option>
-                        <option value="es">İspanyolca</option>
-                        <option value="ar">Arapça</option>
-                        <option value="ru">Rusça</option>
-                    </select>
-                </div>
-        
-                <button type="submit" class="btn btn-primary">Transkript Al ve Kaydet</button>
-            </form>
-        </div>
-
-        <!-- Doğrudan Metin Notu Ekle -->
-        <div class="section-box">
-            <h4>Metin Notu Ekle</h4>
-            <form action="/add_text_note" method="POST">
-                <input type="hidden" name="subject_id" value="{{ subject_id }}">
-                <div class="form-group">
-                    <label for="note_text">Not Metni</label>
-                    <textarea class="form-control" id="note_text" name="note_text" rows="4" placeholder="Notunuzu buraya yazın..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Kaydet</button>
-            </form>
-        </div>
-
-        <!-- PDF Dosyası Yükle -->
-        <div class="section-box">
-            <h4>PDF Yükle (OCR ile Not Ekle)</h4>
-            <form action="/upload_pdf" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="subject_id" value="{{ subject_id }}">
-                <div class="form-group">
-                    <label for="pdf_file">PDF Dosyası</label>
-                    <input type="file" class="form-control-file" id="pdf_file" name="pdf_file" accept=".pdf" required>
-                </div>
-                <button type="submit" class="btn btn-dark">Yükle ve OCR ile Kaydet</button>
-            </form>
+        <div class="action-button" data-toggle="modal" data-target="#pdfModal">
+            <i class="fas fa-file-pdf"></i>
+            <h5>PDF Yükle</h5>
         </div>
     </div>
-</body>
+</div>
+
+<!-- YouTube Modal -->
+<div class="modal fade" id="youtubeModal" tabindex="-1" role="dialog" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="youtubeModalLabel">YouTube Transkript Ekle</h5>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form action="/add_youtube_transcript" method="POST">
+          <input type="hidden" name="subject_id" value="{{ subject_id }}">
+          <div class="form-group">
+            <label>YouTube Video ID</label>
+            <input type="text" class="form-control" name="youtube_id" placeholder="Örn: https://www.youtube.com/watch?v=kXYiU_JCYtU" required>
+          </div>
+          <div class="form-group">
+            <label>Video Dili</label>
+            <select class="form-control" name="language_code" required>
+              <option value="tr" selected>Türkçe</option>
+              <option value="en">İngilizce</option>
+              <option value="de">Almanca</option>
+              <option value="fr">Fransızca</option>
+              <option value="es">İspanyolca</option>
+              <option value="ar">Arapça</option>
+              <option value="ru">Rusça</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Kaydet</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Text Note Modal -->
+<div class="modal fade" id="textModal" tabindex="-1" role="dialog" aria-labelledby="textModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="textModalLabel">Metin Notu Ekle</h5>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form action="/add_text_note" method="POST">
+          <input type="hidden" name="subject_id" value="{{ subject_id }}">
+          <div class="form-group">
+            <label>Not Metni</label>
+            <textarea class="form-control" name="note_text" rows="4" placeholder="Notunuzu buraya yazın..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success btn-block">Kaydet</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PDF Upload Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">PDF Yükle</h5>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form action="/upload_pdf" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="subject_id" value="{{ subject_id }}">
+          <div class="form-group">
+            <label>PDF Dosyası</label>
+            <input type="file" class="form-control-file" name="pdf_file" accept=".pdf" required>
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">Yükle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS Includes -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 <script>
-    window.addEventListener("DOMContentLoaded", function() {
-        const alertBox = document.getElementById("customAlert");
-        if (alertBox) {
-            setTimeout(() => {
-                alertBox.style.animation = "slideFadeOut 0.5s forwards";
-                setTimeout(() => alertBox.remove(), 500);
-            }, 3000);
-        }
-    });
+ if (window.location.href.includes("success=1")) {
+        // Tarayıcı geçmişine yazılmasın diye replace kullanıyoruz
+        history.replaceState(null, "", "/main_page");
+
+        // Geri tuşuna basılırsa yakala ve anasayfaya yönlendir
+        window.addEventListener("popstate", function () {
+            window.location.href = "/main_page";
+        });
+    }
+
 </script>
+
+</body>
 </html>

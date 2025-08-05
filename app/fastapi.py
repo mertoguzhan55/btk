@@ -9,6 +9,7 @@ from fastapi import BackgroundTasks
 from typing import List
 from uuid import uuid4
 from app.logger import Logger
+import tempfile
 import os
 import json
 from app.utils import verify_password, hash_password, create_access_token
@@ -20,11 +21,14 @@ from urllib.parse import urlencode
 from app.label_extractor_from_video import LabelExtractor
 from app.utils import verify_password, verify_token_from_cookie
 from app.chatbot import Chatbot
+from app.context_aware_summarizer import Summarizer
 from app.rag_pipeline import RagPipeline
-from app.models.models import QuestionAnswer, Challenges
+from app.models.models import QuestionAnswer, Challenges, WrongAnswer
 from app.agent import QuizGeneratorAgent
 from app. challenge_generator import ChallengeGenerator
+from app.flash_card_agent import FlashCardAgent
 from app.crud import CRUDOperations
+from app.pdf_parser import PdfParser
 from app.models.models import User
 
 
@@ -38,6 +42,7 @@ class FastAPIServer:
     log_level: str
     chatbot_model_name: str
     temperature_for_chatbot: float
+    summarizer_model_name: str
     crud: CRUDOperations
     transcripter: VideoTranscript
     label_extractor: LabelExtractor
@@ -53,7 +58,10 @@ class FastAPIServer:
         self.templates = Jinja2Templates(directory="app/templates")
         self.app.mount(f"/static", StaticFiles(directory="app/static"), name="static")
         self.logger.info("Fastapi init")
+        self.pdf_parser = PdfParser()
+        self.summerizer = Summarizer(summarizer_model_name=self.summarizer_model_name)
         self.challenge_generator = ChallengeGenerator(logger=self.logger)
+        self.flas_card_agent = FlashCardAgent(logger=self.logger)
         self.agent = QuizGeneratorAgent(self.rag_pipeline, retrieved_chunk_threshold_for_agent_quiz = self.retrieved_chunk_threshold_for_agent_quiz, logger=self.logger)
         self.chatbot = Chatbot(rag_pipeline=self.rag_pipeline, model_name=self.chatbot_model_name, temperature=self.temperature_for_chatbot, logger=self.logger)
 
@@ -87,6 +95,16 @@ class FastAPIServer:
                 return self.templates.TemplateResponse("main_page.html", {"request": request})
             
             return self.templates.TemplateResponse("register.html", {"request": request})
+        
+
+        @self.app.get("/aboutme")
+        async def base(request: Request):
+            token = request.cookies.get("access_token")
+
+            if token:
+                return self.templates.TemplateResponse("aboutme.html", {"request": request})
+            
+            return self.templates.TemplateResponse("register.html", {"request": request})
 
 
         @self.app.post("/login")
@@ -100,7 +118,7 @@ class FastAPIServer:
 
             token = create_access_token({"sub": str(user.id)})
             response = RedirectResponse("/main_page", status_code=status.HTTP_302_FOUND)
-            response.set_cookie(key="access_token", value=token, httponly=True, max_age=900)
+            response.set_cookie(key="access_token", value=token, httponly=True, max_age=9000)
             
             return response
         
@@ -131,7 +149,7 @@ class FastAPIServer:
 
             token = create_access_token({"sub": str(user.id)})
             response = RedirectResponse("/main_page", status_code=status.HTTP_302_FOUND)
-            response.set_cookie(key="access_token", value=token, httponly=True, max_age=900)
+            response.set_cookie(key="access_token", value=token, httponly=True, max_age=9000)
             return response
         
         @self.app.get("/subject", response_class=HTMLResponse)
@@ -145,41 +163,44 @@ class FastAPIServer:
                     "subject_name": subject_name,
                     "success": success
                 })
-            return self.templates.TemplateResponse("main_page.html", {"request": request})
+            return self.templates.TemplateResponse("register.html", {"request": request})
             
             
         @self.app.post("/add_youtube_transcript")
         async def add_youtube_transcript(request: Request, subject_id: str = Form(...), youtube_id: str = Form(...), language_code: str = Form(...)):
 
-            video_id = regex_for_id_extracting_from_the_link(youtube_id)
+            token = request.cookies.get("access_token")
+            if token:
+                video_id = regex_for_id_extracting_from_the_link(youtube_id)
 
-            text = self.transcripter.transcript(video_id, language_code)
+                text = self.transcripter.transcript(video_id, language_code)
 
-            self.logger.info(f"video transcript result:  {text}")
+                self.logger.info(f"video transcript result:  {text}")
 
-            label = self.label_extractor.extract(subject_id, text)
+                label = self.label_extractor.extract(subject_id, text)
 
-            try:
-                payload = verify_token_from_cookie(request)
-                user_id = int(payload["sub"])
+                try:
+                    payload = verify_token_from_cookie(request)
+                    user_id = int(payload["sub"])
 
-                saved_note = self.json_handler.add_note_to_subject(
-                    subject_id=subject_id,
-                    user_id=user_id,
-                    label=label,
-                    note_text=text
-                )
+                    saved_note = self.json_handler.add_note_to_subject(
+                        subject_id=subject_id,
+                        user_id=user_id,
+                        label=label,
+                        note_text=text
+                    )
 
-                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
+                    note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
 
-                self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
+                    self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
 
-                params = urlencode({"subject": subject_id, "success": "1"})
-                return RedirectResponse(url=f"/subject?{params}", status_code=303)
+                    params = urlencode({"subject": subject_id, "success": "1"})
+                    return RedirectResponse(url=f"/subject?{params}", status_code=303)
 
-            except Exception as e:
-                self.logger.error(f"Error processing note for subject_id '{subject_id}': {e}")
-                raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+                except Exception as e:
+                    self.logger.error(f"Error processing note for subject_id '{subject_id}': {e}")
+                    raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+            return self.templates.TemplateResponse("register.html", {"request": request})
             
 
 
@@ -188,7 +209,7 @@ class FastAPIServer:
             token = request.cookies.get("access_token")
 
             if not token:
-                raise HTTPException(status_code=401, detail="Unauthorized: No access token provided.")
+                return self.templates.TemplateResponse("register.html", {"request": request})
     
             try:
                 payload = verify_token_from_cookie(request)
@@ -219,18 +240,49 @@ class FastAPIServer:
             
 
         @self.app.post("/upload_pdf")
-        async def upload_pdf(subject_id: str = Form(...), pdf_file: UploadFile = File(...)):
-            content = await pdf_file.read()
-            # text = extract_text_from_pdf(content)  # OCR veya pdfplumber ile
-            text = ""
-            # text → vector db'ye subject_id ile kaydedilir
-            return RedirectResponse(url=f"/subject?subject={subject_id}", status_code=303)
+        async def upload_pdf(request: Request, subject_id: str = Form(...), pdf_file: UploadFile = File(...)):
+            token = request.cookies.get("access_token")
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+
+            try:
+                payload = verify_token_from_cookie(request)
+                user_id = int(payload["sub"])
+
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+                    tmp.write(await pdf_file.read())
+                    tmp_path = tmp.name
+
+
+                text = self.pdf_parser.parse(tmp_path)
+
+                label = self.label_extractor.extract(subject_id, text)
+
+                self.json_handler.add_note_to_subject(
+                    subject_id=subject_id,
+                    user_id=user_id,
+                    label=label,
+                    note_text=text
+                )
+
+                note_chunks = self.rag_pipeline.load_notes(f"app/data/{subject_id}_{user_id}.json", subject_id=subject_id, user_id=user_id)
+                self.rag_pipeline.update_vector_db(note_chunks, user_id=user_id)
+
+                params = urlencode({"subject": subject_id, "success": "1"})
+                return RedirectResponse(url=f"/subject?{params}", status_code=303)
+
+            except Exception as e:
+                self.logger.error(f"PDF işleme hatası: {e}")
+                raise HTTPException(status_code=500, detail=f"PDF işlenemedi: {str(e)}")
         
 
         @self.app.post("/ask-question")
         async def ask_question(request: Request):
 
             token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
 
             if token:
                 payload = verify_token_from_cookie(request)
@@ -244,20 +296,22 @@ class FastAPIServer:
                 if not subject_id or not question:
                     return {"error": "Subject ID ve soru gereklidir."}
 
-                # Cevabı üret
 
-                # Bunları bir metne çevir
+                # Database'den kullanıcının son 3 soru-cevap çiftini getir
+                context_aware = await self.crud.get_last_3_conversations_by_user(user_id)
 
-                # Chatbot'a ver
+                # BUrada bu context aware'i summarize edilir.
+                summarized_context_aware = self.summerizer.sumarize(context_aware)
+
+                self.logger.info(f"summarized context aware: {summarized_context_aware}")
+
                 answer = self.chatbot.ask_question(
                     subject_id=subject_id,
                     question=question,
                     user_id=user_id,
+                    summarized_context_aware = summarized_context_aware
                 )
 
-
-                payload = verify_token_from_cookie(request)
-                user_id = int(payload["sub"])
 
                 question_answer = QuestionAnswer(
                     user_id=user_id,
@@ -273,30 +327,53 @@ class FastAPIServer:
         
         @self.app.get("/profile")
         async def get_profile_html(request: Request):
+            token = request.cookies.get("access_token")
+            
+            if not token:
+                print("Token cookie'de bulunamadı.")
+                return self.templates.TemplateResponse("register.html", {"request": request})
+
             await self.crud.initialize()
-            try:
-                payload = verify_token_from_cookie(request)
-                user_id = int(payload["sub"])
 
-                # Veritabanından kullanıcı bilgilerini al
-                user = await self.crud.read_by_id(User, user_id)
-                print(user)
-
-                if user is None:
-                    return self.templates.TemplateResponse("error.html", {"request": request, "message": "Kullanıcı bulunamadı."})
-
-                return self.templates.TemplateResponse("user_profile.html", {
+            payload = verify_token_from_cookie(request)
+            
+            if payload is None:
+                print("Token geçersiz ya da süresi dolmuş.")
+                # Cookie'yi temizle (isteğe bağlı)
+                response = self.templates.TemplateResponse("register.html", {
                     "request": request,
-                    "user_id": user_id,
-                    "email": user["name"]
+                    "message": "Oturum süreniz dolmuş. Lütfen tekrar giriş yapın."
                 })
+                response.delete_cookie("access_token")  # Güvenlik için
+                return response
 
-            except Exception as e:
-                return self.templates.TemplateResponse("error.html", {"request": request, "message": str(e)})
+            user_id = int(payload["sub"])
+
+            user = await self.crud.read_by_id(User, user_id)
+            if user is None:
+                print("Kullanıcı veritabanında bulunamadı.")
+                return self.templates.TemplateResponse("error.html", {"request": request, "message": "Kullanıcı bulunamadı."})
+
+            total_score = await self.crud.get_user_score_by_id(user_id)
+            print(total_score)
+
+            return self.templates.TemplateResponse("user_profile.html", {
+                "request": request,
+                "user_id": user_id,
+                "email": user["name"],
+                "total_score": total_score
+            })
+
+
 
 
         @self.app.post("/generate_quiz")
         async def generate_quiz(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
             
@@ -308,6 +385,11 @@ class FastAPIServer:
 
         @self.app.post("/evaluate_answer")
         async def evaluate_answer(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             data = await request.json()
             question = data.get("question")
             answer = data.get("answer")
@@ -317,16 +399,54 @@ class FastAPIServer:
             print(f"answer: {answer}")
 
             payload = verify_token_from_cookie(request)
-            user_id = str(payload["sub"])
+            user_id = int(payload["sub"])
 
             response = self.agent.evaluate(question, answer, correct_answer, user_id)
 
+
             return JSONResponse(content=response)
+        
+
+        @self.app.post("/save_wrong_answers")
+        async def save_wrong_answers(request: Request, data: dict):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
+            await self.crud.initialize()
+            wrong_answers_from_ui = data.get("wrong_answers", [])
+
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            if not user_id:
+                return {"detail": "user_id eksik"}, 400
+
+            for item in wrong_answers_from_ui:
+
+                wrong_answer = WrongAnswer(
+                    question=item["question"],
+                    user_answer=item["selected_answer"],
+                    correct_answer=item["correct_answer"],
+                    user_id=user_id
+                )
+                
+                await self.crud.create(wrong_answer)
+            
+            return JSONResponse(content={"backend": "success"})
+
 
 
         
         @self.app.get("/get_user_notes/{subject}")
         def get_user_notes_by_subject(request: Request, subject: str):
+
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
             notes = []
@@ -364,6 +484,11 @@ class FastAPIServer:
 
         @self.app.delete("/delete_note/{subject}/{note_id}")
         async def delete_note(subject: str, note_id: int, request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             try:
                 payload = verify_token_from_cookie(request)
                 user_id = int(payload["sub"])
@@ -392,6 +517,11 @@ class FastAPIServer:
         # Kullanıcıya challenge mesajı gönder
         @self.app.post("/send_challenge")
         async def send_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
 
             payload = verify_token_from_cookie(request)
@@ -470,6 +600,11 @@ class FastAPIServer:
 
         @self.app.post("/accept_challenge")
         async def accept_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
@@ -502,6 +637,11 @@ class FastAPIServer:
 
         @self.app.post("/reject_challenge")
         async def reject_challenge(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
@@ -522,6 +662,11 @@ class FastAPIServer:
 
         @self.app.post("/submit_challenge_answers")
         async def submit_challenge_answers(request: Request):
+            token = request.cookies.get("access_token")
+
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+            
             await self.crud.initialize()
             payload = verify_token_from_cookie(request)
             user_id = int(payload["sub"])
@@ -565,10 +710,13 @@ class FastAPIServer:
 
                 # Puanlama
                 if sender_score > receiver_score:
+                    print("sender_score > receiver score")
                     await self.crud.update_user_score(challenge.challenge_sender_id, 10)
                 elif sender_score < receiver_score:
+                    print("sender_score < receiver score")
                     await self.crud.update_user_score(challenge.challenge_receiver_id, 10)
                 else:
+                    print("sender_score = receiver score")
                     await self.crud.update_user_score(challenge.challenge_sender_id, 1)
                     await self.crud.update_user_score(challenge.challenge_receiver_id, 1)
 
@@ -622,6 +770,43 @@ class FastAPIServer:
             return JSONResponse(content={"messages": messages})
 
 
+        @self.app.get("/get_global_ranking")
+        async def get_global_ranking():
+            await self.crud.initialize()
+            top_users = await self.crud.get_top_users_by_score(limit=5)
+            return top_users
+        
+
+        @self.app.get("/get_flashcards")
+        async def get_flashcards(request: Request):
+            token = request.cookies.get("access_token")
+            if not token:
+                return self.templates.TemplateResponse("register.html", {"request": request})
+
+            await self.crud.initialize()
+            payload = verify_token_from_cookie(request)
+            user_id = int(payload["sub"])
+
+            flashcards = await self.crud.get_last_wrong_answers(user_id=user_id)
+            
+            flashcard_dicts = [
+                {
+                    "question": f.question,
+                    "user_answer": f.user_answer,
+                    "correct_answer": f.correct_answer
+                }
+                for f in flashcards
+            ]
+
+            explanations = self.flas_card_agent.generate_advice_for_wrong_answers(flashcard_dicts)
+
+            # Frontend için birleşik JSON
+            return JSONResponse(content={
+                "flashcards": [
+                    {**card, "explanation": explanation}
+                    for card, explanation in zip(flashcard_dicts, explanations)
+                ]
+            })
 
 
         @self.app.get("/logout")

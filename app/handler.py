@@ -8,7 +8,7 @@ def custom_db_crud_handler(func):
             return result
         except Exception as e:
             import traceback
-            traceback.print_exc()  # <== burası
+            traceback.print_exc()
             await self.connection.session.rollback()
             self.logger.error(f"[DBHandler] Exception in {func.__name__}: {e}")
             return False
